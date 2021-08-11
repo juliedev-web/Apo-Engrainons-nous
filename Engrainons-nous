@@ -1,0 +1,24 @@
+#### Engrainons-nous
+
+## Les bases
+
+=> Couleur dominante ? Je pensais à du vert comme la nature 
+=> pour le logo je pensais a une des icones disponible gatuitement sur https://fontawesome.com/v5.15/icons?d=gallery&p=2&q=leaf
+
+## Organisation du projet
+
+=> Un front responsive ( pas de bootstrap si possible )
+=> Une API en back ( pour ce qui est de l'organisation bdd mongo ou sql a voir selon affinité)
+
+## Module de bases
+
+=> page d'acceuil avec actualité / connexion / inscription
+=> une page avec gestion de profil / gestion de partage de graine
+=> une page d'affichage des graines (dispo ou non ) avec possibilité de filtre 
+=> une page de graine ou on y retrouveras la graine et divers informations tel que les periodes de semis / mise en terre / autre graines correspondante / possibilité de poser des question sous les graines 
+=> possibilité de mettre en favoris les graines qui nous interesse pour etre notifié en qu'a de nouvelle disponibilité ( soit par graines unique soit par variété )
+=> possibilité d'envoyer un message en privé a un utilisateur
+=> un systeme de choix et d'envoie de demande de graine ( avec un systeme d'acceptation / refus et possibilité de suivre l'envoie genre une fonction commande envoyer et une commande recut )
+
+=> une administration pour gerer les user / message / probleme :) 
+
