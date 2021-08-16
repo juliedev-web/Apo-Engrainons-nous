@@ -2,7 +2,7 @@
 
 .department-filter {
   position: relative;
-  width: 50%;
+  width: 100%;
 
   select {
     padding: 0.4rem;
@@ -11,6 +11,7 @@
     background-color: vars.$bgd-input-color;
     border-radius: 0 4px 4px 0;
     border: 1px solid vars.$border-input;
+    text-align-last: center;
   }
 
   .faMapMarkerAlt {
