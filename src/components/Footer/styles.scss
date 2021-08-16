@@ -1,0 +1,16 @@
+@use 'src/styles/vars';
+
+.footer {
+  background-color: vars.$bgd-footer-color;
+  padding: 1rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+}
+
+.faUserAlt {
+  color: #CACACA;
+}
