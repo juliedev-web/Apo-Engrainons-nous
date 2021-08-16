@@ -1,0 +1,21 @@
+@use 'src/styles/vars';
+
+.categories-filter {
+  position: relative;
+  width: 50%;
+
+  select {
+    padding: 0.4rem;
+    width: 100%;
+    padding-left: 2.2rem;
+    background-color: vars.$bgd-input-color;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid vars.$border-input;
+  }
+
+  .faBars {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.6rem
+  }
+}

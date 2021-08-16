@@ -1,0 +1,46 @@
+@use 'src/styles/vars';
+
+.header {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: vars.$bgd-primary-color;
+  border-radius: 0% 24% 34% 0% / 0% 0% 100% 0%;
+  border-bottom: 2px solid #4E5A53;
+  border-right: 2px solid #4E5A53;
+
+
+  padding: 1.4rem 0.8rem;
+
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+
+
+  &__logo {
+    width: 60px;
+  }
+  
+  &__content {
+    color: white;
+    margin-left: 1rem;
+    text-align: left;
+    
+    &__title {
+      font-size: 1.6rem;
+      font-family: 'Indie Flower', cursive;
+
+      margin-bottom: 0.4rem;
+    }
+
+    &__subtitle {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      width: 70%;
+      color: #cacaca
+    }
+  }
+
+  
+}
