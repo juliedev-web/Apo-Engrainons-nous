@@ -9,7 +9,7 @@ import './styles.scss';
 const SearchSeedInput = () => (
   <div className="search-seed-input">
     <input type="text" placeholder="Recherchez un nom de graine" />
-    <FontAwesomeIcon icon={faSearch} size="xs" className="faSearch" />
+    <FontAwesomeIcon icon={faSearch} size="lg" className="faSearch" />
   </div>
 );
 

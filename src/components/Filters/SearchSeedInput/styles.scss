@@ -5,6 +5,7 @@
   position: relative;
 
   input {
+    font-size: 1rem;
     width: 100%;
     padding: 0.4rem;
     background-color: vars.$bgd-input-color;
@@ -15,6 +16,6 @@
   .faSearch {
     position: absolute;
     right: 0.8rem;
-    top: 0.6rem;
+    top: 0.4rem;
   }
 }

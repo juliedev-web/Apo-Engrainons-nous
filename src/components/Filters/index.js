@@ -12,7 +12,6 @@ const Filters = () => (
 
     <div className="inputs-select">
       <CategoriesFilter />
-      <DepartmentFilter />
     </div>
 
     <SearchSeedInput />
