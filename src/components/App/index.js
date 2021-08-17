@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // == Composant
 import Header from 'src/components/Header';
@@ -8,7 +8,7 @@ import NavBarMobile from 'src/components/NavBarMobile';
 import List from 'src/components/List';
 import FooterDesktop from 'src/components/FooterDesktop';
 
-
+import list from 'src/data/list';
 // == Import
 import './styles.scss';
 
