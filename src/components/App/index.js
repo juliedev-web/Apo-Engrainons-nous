@@ -2,15 +2,16 @@
 import React, { useState, useEffect } from 'react';
 
 // == Composant
-import Header from 'src/components/Header';
+import HeaderMobile from 'src/components/Header/HeaderMobile';
+import HeaderDesktop from 'src/components/Header/HeaderDesktop';
 import Filters from 'src/components/Filters';
 import NavBarMobile from 'src/components/NavBarMobile';
 import List from 'src/components/List';
 import FooterDesktop from 'src/components/FooterDesktop';
 
-
 // == Import
 import './styles.scss';
+import list from 'src/data/list';
 
 // == Composant
 const App = () => {
@@ -27,11 +28,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="header-resize">
-        <Header />
-        {/* <HeaderMobile /> */}
-        {/* <HeaderDesktop /> */}
-      </div>
+      {width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />}
       <Filters />
       <List list={list} />
       {width < breakpoint ? <NavBarMobile /> : <FooterDesktop />}

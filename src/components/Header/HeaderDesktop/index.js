@@ -13,12 +13,12 @@ const HeaderDesktop = () => {
   return (
     <div className="containerTitle">
       <div className="headerDesktop">
-        <img src={logo} alt="logo feuilles" className="header__logo" />
-        <div className="header__content">
-          <h1 className="header__content__title">
+        <img src={logo} alt="logo feuilles" className="headerDesktop__logo" />
+        <div className="headerDesktop__content">
+          <h1 className="headerDesktop__content__title">
             Engrainons-nous !
           </h1>
-          <p className="header__content__subtitle">
+          <p className="headerDesktop__content__subtitle">
             Bienvenue sur notre plateforme d'échange de graine !
           </p>
         </div>
