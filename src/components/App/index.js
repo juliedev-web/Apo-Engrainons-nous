@@ -16,11 +16,11 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div className="app">
-    <Header />
+    {/* <Header /> */}
     <SignIn />
     {/* <Filters />
     <List list={list} /> */}
-    <NavBar />
+    {/* <NavBar /> */}
   </div>
 );
 
