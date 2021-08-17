@@ -7,12 +7,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Footer = () => (
-  <div className="footer">
+const NavBar = () => (
+  <div className="navbar">
     <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
     <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     <FontAwesomeIcon icon={faBars} className="faUserAlt" />
   </div>
 );
 
-export default Footer;
+export default NavBar;
