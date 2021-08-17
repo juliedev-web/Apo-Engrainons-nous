@@ -41,6 +41,30 @@
       color: #cacaca
     }
   }
+}
 
+
+// Tablet
+@media only screen and (min-width: 620px) {
+  .header {
+    &__logo {
+    width: 80px;
+    margin-left: 2rem;
+    }
+    
+    &__content {
+      
+      &__title {
+        font-size: 3rem;
+        margin-left: 2rem;;
+      }
   
+      &__subtitle {
+        font-size: 1.4rem;
+        margin-left: 8rem;;
+        width: 70%;
+      }
+    }
+
+    }
 }

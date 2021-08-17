@@ -10,8 +10,10 @@ const List = ({ list }) => (
       <div className="card">
         <img src={seed.img_url} alt="img" />
         <div className="content">
-          <h2>{seed.title}</h2>
-          <h3>{seed.variety}</h3>
+          <div className="description">
+            <h2>{seed.title}</h2>
+            <h3>{seed.variety}</h3>
+          </div>
           <h4>{seed.date}</h4>
         </div>
       </div>
