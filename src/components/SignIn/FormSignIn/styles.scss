@@ -1,0 +1,43 @@
+@use 'src/styles/vars';
+
+.signin-form {
+
+ display: flex;
+ flex-direction: column;
+
+  h2 {
+    font-size: 1.8em;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+    text-align: center;
+  }
+
+  .signInput {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    font-size: 1rem;
+    width: 80%;
+    margin: auto;
+    padding: 0.4rem;
+    background-color: vars.$bgd-input-color;
+    border: 1px solid vars.$border-input;
+    border-radius: 4px;
+    margin-bottom: 1.2em;
+  }
+
+  button {
+    padding: 0.4em;
+    margin: auto;
+    margin-top: 2em;
+    background-color: vars.$bgd-primary-color;
+    color: white;
+  }
+
+  a {
+    margin-top: 3em;
+    text-align: center;
+  }
+}

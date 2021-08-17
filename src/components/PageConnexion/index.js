@@ -8,7 +8,7 @@ import FormConnexion from './FormConnexion';
 const PageConnexion = () => {
   console.log('toto');
   return (
-    <div>
+    <div
       <Header />
       <FormConnexion />
       <Navbar />

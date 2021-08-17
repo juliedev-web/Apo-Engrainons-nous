@@ -7,7 +7,6 @@ import Filters from 'src/components/Filters';
 import NavBar from 'src/components/NavBar';
 import List from 'src/components/List';
 
-import list from 'src/data/list';
 
 // == Import
 import './styles.scss';
