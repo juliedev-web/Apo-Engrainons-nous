@@ -34,3 +34,14 @@
     margin-bottom: 0;
   }
 }
+
+// desktop
+
+@media only screen and (min-width: 1025px) {
+  .categories-filter {
+  select {
+    font-size: 1.2rem;
+  }
+}
+}
+
