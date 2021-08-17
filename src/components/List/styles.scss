@@ -1,21 +1,27 @@
 .list {
   font-family: 'Nunito', sans-serif;
+  background-color: #E4ECF1;
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 2rem;
+
   padding: 3rem;
+
+  align-items: center;
+
   border-top: 2px solid rgba(133, 150, 172, 0.582);
   border-left: 2px solid rgba(133, 150, 172, 0.623);
+
   border-radius: 50px 0 0 0 ;
-  gap: 2rem;
 
   box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
 
-  background-color: #E4ECF1;
 
   .card {
     width: 100%;
+
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.164);
@@ -30,25 +36,87 @@
 
     .content {
       background-color: white;
-      padding: 0.2rem;
+      padding: 0.6rem;
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349);
 
+      display: flex;
+      justify-content: space-between;
 
-      h2 {
-      font-weight: bold;
-      padding: 0.2rem;
-      }
+      .description {
+        h2 {
+          font-weight: bold;
+          font-size: 1.2rem;
+          padding: 0.6rem 0.2rem;
+        }
 
-      h3 {
-        color: rgb(104, 104, 104);
-        font-size: 0.8rem;
-        padding: 0.2rem;
+        h3 {
+          color: rgb(104, 104, 104);
+          font-size: 1rem;
+          padding: 0.4rem;
+        }
       }
 
       h4 {
-        color: rgb(175, 175, 175);
-        font-size: 0.6rem;
-        padding: 0.2rem;
+        color: rgb(148, 148, 148);
+        font-size: 0.7rem;
+        padding: 0.8rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 620px) {
+
+  .list {
+    font-family: 'Nunito', sans-serif;
+    background-color: #E4ECF1;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+    padding: 2rem;
+
+    align-items: center;
+
+    border-top: 2px solid rgba(133, 150, 172, 0.582);
+    border-left: 2px solid rgba(133, 150, 172, 0.623);
+
+    border-radius: 50px 0 0 0 ;
+
+
+    box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
+
+
+    .card {
+      width: calc(50% - 1rem);
+      font-size: 20px;
+
+      .content {
+        background-color: white;
+
+        padding: 0.6rem;
+
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349);
+
+
+        h2 {
+        font-weight: bold;
+        padding: 0.4em;
+        }
+
+        h3 {
+          color: rgb(104, 104, 104);
+          font-size: 0.8em;
+          padding: 0.4rem;
+        }
+
+        h4 {
+          color: rgb(175, 175, 175);
+          font-size: 0.6em;
+          padding: 0.4rem;
+        }
       }
     }
   }
