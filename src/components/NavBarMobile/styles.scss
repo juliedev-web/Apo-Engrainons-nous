@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.navbar {
+.navbar-mobile {
   font-size: 20px; // FontAwesome Icon Size
 
   width: 100%;
@@ -25,7 +25,7 @@
 
 
 @media only screen and (min-width: 599px) {
-  .navbar {
+  .navbar-mobile {
     font-size: 46px; // FontAwesome Icon Size
   
     width: 100%;
@@ -51,7 +51,7 @@
 
 
 @media only screen and (min-width: 1025px) {
-  .navbar {
+  .navbar-mobile {
     font-size: 46px; // FontAwesome Icon Size
   
     width: 100%;
