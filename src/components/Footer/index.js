@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => (
   <div className="footer">
-    <FontAwesomeIcon icon={faUserAlt} size="lg" className="faUserAlt" />
-    <FontAwesomeIcon icon={faPlus} size="lg" className="faUserAlt" />
-    <FontAwesomeIcon icon={faBars} size="lg" className="faUserAlt" />
+    <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
+    <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+    <FontAwesomeIcon icon={faBars} className="faUserAlt" />
   </div>
 );
 
