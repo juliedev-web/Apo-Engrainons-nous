@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Components
+// Components
 import Header from 'src/components/Header';
 import NavBarMobile from 'src/components/NavBarMobile';
 import FormSignIn from './FormSignIn';
@@ -14,6 +14,6 @@ export default function SignIn() {
       <Header />
       <FormSignIn />
       <NavBarMobile />
-  </div>
+    </div>
   );
 }

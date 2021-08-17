@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // == Composant
 import HeaderMobile from 'src/components/Header/HeaderMobile';
