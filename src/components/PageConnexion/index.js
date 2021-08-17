@@ -2,7 +2,7 @@ import React from 'react';
 
 // == Composant
 import Header from 'src/components/Header';
-import Footer from 'src/components/Footer';
+import Navbar from 'src/components/Navbar';
 import FormConnexion from './FormConnexion';
 
 const PageConnexion = () => {
@@ -11,7 +11,7 @@ const PageConnexion = () => {
     <div>
       <Header />
       <FormConnexion />
-      <Footer />
+      <Navbar />
     </div>
   );
 };

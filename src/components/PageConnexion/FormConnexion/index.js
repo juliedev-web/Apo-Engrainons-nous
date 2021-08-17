@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const FormConnexion = () => {
   console.log('toto');
@@ -14,5 +15,8 @@ const FormConnexion = () => {
   );
 };
 
+FormConnexion.propTypes = {
+
+};
+
 export default FormConnexion;
-// test
