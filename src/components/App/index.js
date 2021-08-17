@@ -11,13 +11,13 @@ import list from 'src/data/list';
 
 // == Import
 import './styles.scss';
-import FormConnexion from '../PageConnexion/FormConnexion';
 
 // == Composant
 const App = () => (
   <div className="app">
     <Header />
-    <FormConnexion />
+    <Filters />
+    <List list={list} />
     <NavBar />
   </div>
 );
