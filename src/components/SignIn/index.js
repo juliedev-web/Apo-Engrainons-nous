@@ -2,7 +2,7 @@ import React from 'react';
 
 //Components
 import Header from 'src/components/Header';
-import NavBar from 'src/components/NavBar';
+import NavBarMobile from 'src/components/NavBarMobile';
 import FormSignIn from './FormSignIn';
 
 import './styles.scss';
@@ -13,7 +13,7 @@ export default function SignIn() {
     <div className="sign-in">
       <Header />
       <FormSignIn />
-      <NavBar />
+      <NavBarMobile />
   </div>
   );
 }

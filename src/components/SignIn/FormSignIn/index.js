@@ -6,7 +6,7 @@ import './styles.scss';
 export default function FormSignIn() {
   console.log('FormSignIn');
   return (
-    <div className="signin-form">
+    <div className="container">
       <h2>Inscription</h2>
       <div className="signInput">
         <input type="text" placeholder="Pseudo" />
