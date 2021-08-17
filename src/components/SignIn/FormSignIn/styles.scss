@@ -1,16 +1,20 @@
 @use 'src/styles/vars';
 
-.signin-input {
+.signin-form {
 
  display: flex;
  flex-direction: column;
-
 
   h2 {
     font-size: 1.8em;
     margin-top: 2em;
     margin-bottom: 1.2em;
     text-align: center;
+  }
+
+  .signInput {
+    display: flex;
+    flex-direction: column;
   }
 
   input {

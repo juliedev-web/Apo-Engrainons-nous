@@ -1,18 +1,25 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 export default function FormSignIn() {
   console.log('FormSignIn');
   return (
-    <div className="signin-input">
+    <div className="signin-form">
       <h2>Inscription</h2>
-      <input type="text" placeholder="Pseudo" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Mot de passe" />
-      <input type="password" placeholder="Confirmation du mot de passe" />
-      <input type="text" placeholder="Ville" />
+      <div className="signInput">
+        <input type="text" placeholder="Pseudo" />
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Ville" />
+        <input type="password" placeholder="Mot de passe" />
+        <input type="password" placeholder="Confirmer votre mot de passe" />
+      </div>
       <button type="button"> <a href="/"> Valider</a></button>
     </div>
   );
 };
+
+// FormSignIn.propTypes = {
+
+// };
