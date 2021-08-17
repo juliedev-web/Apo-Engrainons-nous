@@ -5,14 +5,15 @@ import './styles.scss';
 import {
   faUserAlt, faPlus, faBars,
 } from '@fortawesome/free-solid-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBar = () => (
-  <div className="navbar">
+const NavBarMobile = () => (
+  <div className="navbar-mobile">
     <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
     <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     <FontAwesomeIcon icon={faBars} className="faUserAlt" />
   </div>
 );
 
-export default NavBar;
+export default NavBarMobile;
