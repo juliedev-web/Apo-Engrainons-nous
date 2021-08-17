@@ -15,7 +15,7 @@ const CategoriesFilter = () => (
         Catégories
       </option>
     </select>
-    <FontAwesomeIcon icon={faBars} size="xs" className="faBars" />
+    <FontAwesomeIcon icon={faBars} size="lg" className="faBars" />
   </div>
 );
 
