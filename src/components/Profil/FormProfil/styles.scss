@@ -27,6 +27,12 @@
     margin-bottom: 1.2em;
   }
 
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+  }
+
   button {
     padding: 0.4em;
     margin: auto;
@@ -34,7 +40,9 @@
     background-color: vars.$bgd-primary-color;
     color: white;
   }
-
+  .button-delete{
+    background-color: vars.$bgd-footer-color;
+  }
   a {
     margin-top: 3em;
     text-align: center;
@@ -76,6 +84,12 @@
       grid-row: 2;
     }
 
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     button {
       padding: 0.5em;
       margin: 2em auto;
@@ -90,7 +104,5 @@
     }
 
   }
-
-
 
 }

@@ -9,8 +9,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const HeaderDesktop = () => {
-  console.log('toto');
+const HeaderDesktop = ({ isLogged }) => {
+  console.log('isLogged', isLogged);
   return (
     <div className="containerTitle">
       <div className="headerDesktop">
@@ -52,7 +52,7 @@ const HeaderDesktop = () => {
         </NavLink>
         <NavLink
           className="navbar_link"
-          to="/connexion"
+          to={isLogged ? '/compte' : '/connexion'}
           exact
           activeClassName="navbar_link--active"
         >
