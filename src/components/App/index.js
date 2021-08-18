@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 
 import HomePage from 'src/components/HomePage';
 import FormConnexion from 'src/components/PageConnexion/FormConnexion';
+import SignIn from 'src/components/SignIn';
 
 // == Import
 import './styles.scss';
@@ -25,7 +26,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <HomePage width={width} breakpoint={breakpoint} list={list} />
+      <Homepage width={width} breakpoint={breakpoint} list={list} />
     </div>
   );
 };
