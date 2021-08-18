@@ -1,0 +1,37 @@
+@use 'src/styles/vars';
+
+.form-404 {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
+
+  h2 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  img {
+    width: 320px;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 80%;
+  }
+  .navlink {
+    border: solid 1px black;
+    padding: 0.5em;
+    margin: 2em auto;
+    background-color: vars.$bgd-primary-color;
+    color: white;
+    font-size: 1.5em;
+    transition: 0.2s;
+  }
+  .navlink:hover {
+    color: vars.$bgd-primary-color;
+    background-color: white;
+    border: solid 3px vars.$bgd-primary-color;
+  }
+}
