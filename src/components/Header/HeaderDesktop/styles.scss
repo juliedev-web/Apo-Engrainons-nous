@@ -5,7 +5,6 @@
 .headerDesktop {
 
   width: 50%;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -22,6 +21,7 @@
 
 
   &__logo {
+    margin-left: 2em;
     width: 60px;
   }
   
@@ -78,3 +78,6 @@
   color: black;
 }
 
+.navbar_link--active {
+  border-bottom: 3px solid vars.$bgd-primary-color;
+}
