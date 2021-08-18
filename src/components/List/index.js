@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -20,7 +21,7 @@ const List = ({ list }) => (
       }
 
       return (
-        <div key={seed.id} className="card">
+        <NavLink to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
           <img src={seed.img_url} alt="img" />
 
           <div className="content">
@@ -33,7 +34,7 @@ const List = ({ list }) => (
               <p className="content__infos__date">{`${dt}/${month}/${year}`}</p>
             </div>
           </div>
-        </div>
+        </NavLink>
       );
     })}
   </div>

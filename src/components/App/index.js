@@ -12,6 +12,7 @@ import SignIn from 'src/components/SignIn';
 import './styles.scss';
 import list from 'src/data/list';
 import Page404 from '../Page404';
+import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
 const App = () => {
@@ -37,6 +38,9 @@ const App = () => {
         </Route>
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
+        </Route>
+        <Route path="/detail-graine/:id" exact>
+          <PageDetailSeed width={width} breakpoint={breakpoint} />
         </Route>
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
