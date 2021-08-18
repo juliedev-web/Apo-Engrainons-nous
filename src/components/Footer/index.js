@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import NavBarMobile from 'src/components/Footer/NavBarMobile';
 import FooterDesktop from 'src/components/Footer/FooterDesktop';
 
-const Footer = ({ width, breakpoint }) => (width < breakpoint ? <NavBarMobile /> : <FooterDesktop />);
+const Footer = ({ width, breakpoint, isLogged }) => (width < breakpoint ? <NavBarMobile isLogged={isLogged} /> : <FooterDesktop />);
 
 Footer.propTypes = {
   width: PropTypes.number.isRequired,
