@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -12,7 +13,12 @@ const FormConnexion = () => {
       <input type="password" name="password" placeholder="Mot de passe" />
       <button type="button">Valider</button>
       <a>Mot de passe oublié</a>
-      <a href="">Inscrivez-vous</a>
+      <NavLink
+        to="/inscription"
+        exact
+      >
+        Inscrivez-vous
+      </NavLink>
     </div>
   );
 };
