@@ -32,11 +32,13 @@ const HeaderDesktop = () => {
           activeClassName="navbar_link--active"
         >
           <div className="iconText">
-              <FontAwesomeIcon icon={faHome} className="faUserAlt" />
-              <span>Accueil</span>
+            <FontAwesomeIcon
+              icon={faHome}
+              className="faUserAlt"
+            />
+            <span>Accueil</span>
           </div>
-        </NavLink> 
-        
+        </NavLink>
         <NavLink
           className="navbar_link"
           to="/partager-une-graine"
@@ -48,7 +50,6 @@ const HeaderDesktop = () => {
             <span>Partager une graine</span>
           </div>
         </NavLink>
-        
         <NavLink
           className="navbar_link"
           to="/compte"
@@ -60,7 +61,6 @@ const HeaderDesktop = () => {
             <span>Profil</span>
           </div>
         </NavLink>
-        
       </div>
     </div>
   );

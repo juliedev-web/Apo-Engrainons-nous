@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -10,8 +11,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavBarMobile = () => (
   <div className="navbar-mobile">
-    <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-    <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+    <NavLink
+      className="navbar_link"
+      to="/compte"
+      exact
+      activeClassName="navbar_link--active"
+    >
+      <FontAwesomeIcon
+        icon={faUserAlt}
+        className="faUserAlt"
+      />
+    </NavLink>
+    <NavLink
+      className="navbar_link"
+      to="/partager-une-graine"
+      exact
+      activeClassName="navbar_link--active"
+    >
+      <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+    </NavLink>
     <FontAwesomeIcon icon={faBars} className="faUserAlt" />
   </div>
 );
