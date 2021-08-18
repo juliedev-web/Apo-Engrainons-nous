@@ -1,18 +1,18 @@
 .list {
   background-color: #E4ECF1;
 
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: 2rem;
-
+  
   padding: 3rem;
-
+  
   align-items: center;
-
+  
   border-top: 2px solid rgba(133, 150, 172, 0.582);
   border-left: 2px solid rgba(133, 150, 172, 0.623);
-
+  
   border-radius: 50px 0 0 0 ;
 
   box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
@@ -28,8 +28,7 @@
     img {
       display: block;
       width: 100%;
-      min-height: 100px;
-      max-height: 150px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -69,10 +68,10 @@
   .list {
     background-color: #E4ECF1;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    // gap: 2rem;
     
     padding: 2rem;
 
@@ -88,8 +87,10 @@
 
 
     .card {
-      width: calc(50% - 1rem);
-      font-size: 20px;
+
+      img {
+        height: 200px;
+      }
 
       .content {
         background-color: white;
@@ -124,15 +125,20 @@
 // Desktop
 @media only screen and (min-width: 1025px) {
   .list {
-    gap: 2rem;
-    
-    padding: 5rem 10rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 4rem;
+      
+    padding: 5rem;
 
     border-radius: 200px 0 0 0;
 
     .card {
-      width: 20%;
       font-size: 20px;
+      
+      img {
+        height: 220px;
+      }
     }
   }
 }

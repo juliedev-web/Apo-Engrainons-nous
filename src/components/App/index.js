@@ -1,6 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import  { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Composant
 
@@ -34,8 +34,6 @@ const App = () => {
         <Route path="/connexion" exact>
           <PageConnexion width={width} breakpoint={breakpoint} />
         </Route>
-      </Switch>
-      <Switch>
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
         </Route>

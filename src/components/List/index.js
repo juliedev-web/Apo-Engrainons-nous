@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const List = ({ list }) => (
   <div className="list">
     {list.map((seed) => (
-      <div className="card">
+      <div key={seed.id} className="card">
         <img src={seed.img_url} alt="img" />
         <div className="content">
           <div className="description">
@@ -22,7 +22,9 @@ const List = ({ list }) => (
 );
 
 List.propTypes = {
-  list: PropTypes.array.isRequired,
+  list: PropTypes.arrayOf(
+    PropTypes.object.isRequired,
+  ).isRequired,
 };
 
 export default List;
