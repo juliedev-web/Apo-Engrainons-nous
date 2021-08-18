@@ -1,5 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
+import  { Route, Switch } from 'react-router-dom';
 
 // == Composant
 
@@ -26,7 +27,19 @@ const App = () => {
 
   return (
     <div className="app">
-      <HomePage width={width} breakpoint={breakpoint} list={list} />
+      <Switch>
+        <Route path="/" exact>
+          <HomePage width={width} breakpoint={breakpoint} list={list} />
+        </Route>
+        <Route path="/connexion" exact>
+          <PageConnexion width={width} breakpoint={breakpoint} />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route path="/inscription" exact>
+          <SignIn width={width} breakpoint={breakpoint} />
+        </Route>
+      </Switch>
     </div>
   );
 };
