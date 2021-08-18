@@ -25,16 +25,45 @@
   }
 
   button {
-    padding: 0.4em;
+    padding: 0.6em 0.8em;
     margin: auto;
     margin-top: 2em;
     background-color: vars.$bgd-primary-color;
+    border-radius: 5px;
     color: white;
   }
 
-  a {
-    margin-top: 3em;
+  button:hover {
+    background-color: white;
+    color: #418608;
+    text-decoration: underline;
+    border: 2px solid #418608;
+  }
+
+  .forget-password {
     text-align: center;
+    margin-top: 2rem ;
+  }
+
+  .forget-password:hover {
+    text-decoration: underline;
+    color: #000000;
+  }
+
+  .insciption {
+    text-align: center;
+    margin-top: 2rem ;
+  }
+
+  .subscribe {
+    color: #418608;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: 0.2s;
+  }
+  .subscribe:hover {
+    color: #1490e9;
+    font-weight: bold;
   }
 }
 

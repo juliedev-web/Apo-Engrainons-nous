@@ -9,7 +9,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBarMobile = ( {isLogged }) => (
+const NavBarMobile = ({ isLogged }) => (
   <div className="navbar-mobile">
     <NavLink
       className="navbar_link"

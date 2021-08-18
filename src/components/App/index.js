@@ -8,6 +8,7 @@ import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
+import PageShareSeed from 'src/components/PageShareSeed';
 
 // == Import
 import './styles.scss';
@@ -27,7 +28,7 @@ const App = () => {
     // Return a function from the effect that removes the event listener
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <div className="app">
@@ -50,6 +51,9 @@ const App = () => {
         </Route>
         <Route path="/detail-graine/:id" exact>
           <PageDetailSeed width={width} breakpoint={breakpoint} />
+        </Route>
+        <Route path="/partager-une-graine" exact>
+          <PageShareSeed width={width} breakpoint={breakpoint} />
         </Route>
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
