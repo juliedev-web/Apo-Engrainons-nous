@@ -4,8 +4,9 @@ import React, { useEffect } from 'react';
 // == Composant
 
 import HomePage from 'src/components/HomePage';
-import FormConnexion from 'src/components/PageConnexion/FormConnexion';
+import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
+
 
 // == Import
 import './styles.scss';

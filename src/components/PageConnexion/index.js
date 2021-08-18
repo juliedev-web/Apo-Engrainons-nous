@@ -2,16 +2,16 @@ import React from 'react';
 
 // == Composant
 import Header from 'src/components/Header';
-import NavBarMobile from 'src/components/NavBarMobile';
+import Footer from 'src/components/Footer';
 import FormConnexion from './FormConnexion';
 
-const PageConnexion = () => {
+const PageConnexion = ({ width, breakpoint }) => {
   console.log('toto');
   return (
-    <div
-      <Header />
+    <div>
+      <Header width={width} breakpoint={breakpoint} />
       <FormConnexion />
-      <NavBarMobile />
+      <Footer width={width} breakpoint={breakpoint} />
     </div>
   );
 };
