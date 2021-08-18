@@ -1,0 +1,108 @@
+@use 'src/styles/vars';
+
+.container {
+ display: flex;
+ flex-direction: column;
+
+  h2 {
+    font-size: 1.8em;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+    text-align: center;
+  }
+
+  .signInput {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    font-size: 1rem;
+    width: 80%;
+    margin: auto;
+    padding: 0.4rem;
+    background-color: vars.$bgd-input-color;
+    border: 1px solid vars.$border-input;
+    border-radius: 4px;
+    margin-bottom: 1.2em;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+  }
+
+  button {
+    padding: 0.4em;
+    margin: auto;
+    margin-top: 2em;
+    background-color: vars.$bgd-primary-color;
+    color: white;
+  }
+  .button-delete{
+    background-color: vars.$bgd-footer-color;
+  }
+  a {
+    margin-top: 3em;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    h2 {
+      font-weight: semi-bold;
+      font-size: 3em;
+    }
+
+    .signInput {
+      display: grid;
+      grid-template-columns: repeat (2, 1fr);
+      grid-template-rows: 3;
+    }
+
+    input:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+    }
+    input:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    input:nth-child(3) {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    input:nth-child(4) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    input:nth-child(5) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 0.5em;
+      margin: 2em auto;
+      background-color: vars.$bgd-primary-color;
+      color: white;
+      font-size: 1.5em;
+    }
+  
+    a {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+  }
+
+}
