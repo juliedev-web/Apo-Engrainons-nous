@@ -7,7 +7,6 @@ import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 
-
 // == Import
 import './styles.scss';
 import list from 'src/data/list';
@@ -27,7 +26,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <Homepage width={width} breakpoint={breakpoint} list={list} />
+      <HomePage width={width} breakpoint={breakpoint} list={list} />
     </div>
   );
 };
