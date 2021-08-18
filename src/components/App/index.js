@@ -7,7 +7,7 @@ import  { Route, Switch } from 'react-router-dom';
 import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
-
+import Profil from 'src/components/Profil';
 
 // == Import
 import './styles.scss';
