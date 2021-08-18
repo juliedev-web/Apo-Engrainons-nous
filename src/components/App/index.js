@@ -2,12 +2,8 @@
 import React, { useEffect } from 'react';
 
 // == Composant
-import HeaderMobile from 'src/components/Header/HeaderMobile';
-import HeaderDesktop from 'src/components/Header/HeaderDesktop';
-import Filters from 'src/components/Filters';
-import NavBarMobile from 'src/components/NavBarMobile';
-import List from 'src/components/List';
-import FooterDesktop from 'src/components/FooterDesktop';
+
+import HomePage from 'src/components/HomePage';
 import FormConnexion from 'src/components/PageConnexion/FormConnexion';
 
 // == Import
@@ -29,9 +25,7 @@ const App = () => {
 
   return (
     <div className="app">
-      {width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />}
-      <FormConnexion />
-      {width < breakpoint ? <NavBarMobile /> : <FooterDesktop />}
+      <HomePage width={width} breakpoint={breakpoint} list={list} />
     </div>
   );
 };
