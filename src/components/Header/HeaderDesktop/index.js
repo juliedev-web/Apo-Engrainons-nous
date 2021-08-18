@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
@@ -24,18 +25,42 @@ const HeaderDesktop = () => {
         </div>
       </div>
       <div className="menuDesktop">
-        <div className="iconText">
-          <FontAwesomeIcon icon={faHome} className="faUserAlt" />
-          <span>Accueil</span>
-        </div>
-        <div className="iconText">
-          <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
-          <span>Partager une graine</span>
-        </div>
-        <div className="iconText">
-          <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-          <span>Profil</span>
-        </div>
+        <NavLink
+          className="navbar_link"
+          to="/"
+          exact
+          activeClassName="navbar_link--active"
+        >
+          <div className="iconText">
+              <FontAwesomeIcon icon={faHome} className="faUserAlt" />
+              <span>Accueil</span>
+          </div>
+        </NavLink> 
+        
+        <NavLink
+          className="navbar_link"
+          to="/partager-une-graine"
+          exact
+          activeClassName="navbar_link--active"
+        >
+          <div className="iconText">
+            <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+            <span>Partager une graine</span>
+          </div>
+        </NavLink>
+        
+        <NavLink
+          className="navbar_link"
+          to="/compte"
+          exact
+          activeClassName="navbar_link--active"
+        >
+          <div className="iconText">
+            <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
+            <span>Profil</span>
+          </div>
+        </NavLink>
+        
       </div>
     </div>
   );
