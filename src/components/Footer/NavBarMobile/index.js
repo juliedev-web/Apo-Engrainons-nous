@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 import {
@@ -9,7 +11,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBarMobile = ( {isLogged }) => (
+const NavBarMobile = ({ isLogged }) => (
   <div className="navbar-mobile">
     <NavLink
       className="navbar_link"
@@ -22,6 +24,7 @@ const NavBarMobile = ( {isLogged }) => (
         className="faUserAlt"
       />
     </NavLink>
+
     <NavLink
       className="navbar_link"
       to="/partager-une-graine"
@@ -30,8 +33,13 @@ const NavBarMobile = ( {isLogged }) => (
     >
       <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     </NavLink>
+
     <FontAwesomeIcon icon={faBars} className="faUserAlt" />
   </div>
 );
+
+NavBarMobile.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
 
 export default NavBarMobile;
