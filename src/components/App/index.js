@@ -1,6 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import  { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // == Composant
 
@@ -12,6 +12,7 @@ import Profil from 'src/components/Profil';
 // == Import
 import './styles.scss';
 import list from 'src/data/list';
+import Page404 from '../Page404';
 
 // == Composant
 const App = () => {
@@ -35,10 +36,14 @@ const App = () => {
         <Route path="/connexion" exact>
           <PageConnexion width={width} breakpoint={breakpoint} />
         </Route>
-      </Switch>
-      <Switch>
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
+        </Route>
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} />
+        </Route>
+        <Route>
+          <Page404 width={width} breakpoint={breakpoint} />
         </Route>
       </Switch>
     </div>

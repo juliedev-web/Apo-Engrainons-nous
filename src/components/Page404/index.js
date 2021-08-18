@@ -1,21 +1,20 @@
 import React from 'react';
-
 import './styles.scss';
 
 // == Composant
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import FormConnexion from './FormConnexion';
+import Form404 from './Form404';
 
-const PageConnexion = ({ width, breakpoint }) => {
+const Page404 = ({ width, breakpoint }) => {
   console.log('toto');
   return (
-    <div className="page-connexion">
+    <div className="page-404">
       <Header width={width} breakpoint={breakpoint} />
-      <FormConnexion />
+      <Form404 />
       <Footer width={width} breakpoint={breakpoint} />
     </div>
   );
 };
 
-export default PageConnexion;
+export default Page404;
