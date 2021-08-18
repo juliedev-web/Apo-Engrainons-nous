@@ -12,7 +12,7 @@ const HomePage = ({ list, width, breakpoint, isLogged }) => {
       <Header width={width} breakpoint={breakpoint} isLogged={isLogged} />
       <Filters />
       <List list={list} />
-      <Footer width={width} breakpoint={breakpoint} />
+      <Footer width={width} breakpoint={breakpoint} isLogged={isLogged} />
     </div>
   );
 };

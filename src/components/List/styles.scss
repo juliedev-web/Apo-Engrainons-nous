@@ -1,18 +1,18 @@
 .list {
   background-color: #E4ECF1;
 
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: 2rem;
-
+  
   padding: 3rem;
-
+  
   align-items: center;
-
+  
   border-top: 2px solid rgba(133, 150, 172, 0.582);
   border-left: 2px solid rgba(133, 150, 172, 0.623);
-
+  
   border-radius: 50px 0 0 0 ;
 
   box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
@@ -28,38 +28,47 @@
     img {
       display: block;
       width: 100%;
-      min-height: 100px;
-      max-height: 150px;
+      height: 200px;
       object-fit: cover;
     }
 
     .content {
-      background-color: white;
-      padding: 0.6rem;
+      background-color: rgb(201, 26, 26);
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349);
 
       display: flex;
       justify-content: space-between;
 
-      .description {
-        h2 {
+      &__description {
+        padding: 1rem;
+
+        &__category {
+          margin-bottom: 1rem;
           font-weight: bold;
           font-size: 1.2rem;
-          padding: 0.6rem 0.2rem;
         }
 
-        h3 {
+        &__variety {
           color: rgb(104, 104, 104);
           font-size: 1rem;
-          padding: 0.4rem;
         }
       }
 
-      h4 {
-        color: rgb(148, 148, 148);
-        font-size: 0.7rem;
-        padding: 0.8rem;
+      &__infos {
+        text-align: right;
+        padding: 1rem;
+
+        &__pseudo {
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+        &__date {
+          font-size: 1rem;
+          color: rgb(104, 104, 104);
+        }
       }
+
     }
   }
 }
@@ -69,10 +78,10 @@
   .list {
     background-color: #E4ECF1;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    // gap: 2rem;
     
     padding: 2rem;
 
@@ -88,8 +97,10 @@
 
 
     .card {
-      width: calc(50% - 1rem);
-      font-size: 20px;
+
+      img {
+        height: 200px;
+      }
 
       .content {
         background-color: white;
@@ -124,15 +135,20 @@
 // Desktop
 @media only screen and (min-width: 1025px) {
   .list {
-    gap: 2rem;
-    
-    padding: 5rem 10rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 4rem;
+      
+    padding: 5rem;
 
     border-radius: 200px 0 0 0;
 
     .card {
-      width: 20%;
       font-size: 20px;
+      
+      img {
+        height: 220px;
+      }
     }
   }
 }

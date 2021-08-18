@@ -2,12 +2,12 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
-import FormProfil from './FormProfil';
 import Footer from 'src/components/Footer';
+import FormProfil from './FormProfil';
 
 import './styles.scss';
 
-export default function Profil({width, breakpoint}) {
+export default function Profil({ width, breakpoint }) {
   console.log('Sign-in');
   return (
     <div className="sign-in">
