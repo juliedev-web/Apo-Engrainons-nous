@@ -2,18 +2,18 @@ import React from 'react';
 
 // Components
 import Header from 'src/components/Header';
-import NavBarMobile from 'src/components/NavBarMobile';
 import FormSignIn from './FormSignIn';
+import Footer from 'src/components/Footer';
 
 import './styles.scss';
 
-export default function SignIn() {
+export default function SignIn({width, breakpoint}) {
   console.log('Sign-in');
   return (
     <div className="sign-in">
-      <Header />
+      <Header width={width} breakpoint={breakpoint} />
       <FormSignIn />
-      <NavBarMobile />
+      <Footer width={width} breakpoint={breakpoint} />
     </div>
   );
 }
