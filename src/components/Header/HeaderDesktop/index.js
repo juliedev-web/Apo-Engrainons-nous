@@ -63,8 +63,46 @@ const HeaderDesktop = ({ isLogged }) => {
         </NavLink>
       </div>
     </div>
-  );
-};
+    <div className="menuDesktop">
+      <NavLink
+        className="navbar_link"
+        to="/"
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon
+            icon={faHome}
+            className="faUserAlt"
+          />
+          <span>Accueil</span>
+        </div>
+      </NavLink>
+      <NavLink
+        className="navbar_link"
+        to="/partager-une-graine"
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+          <span>Partager une graine</span>
+        </div>
+      </NavLink>
+      <NavLink
+        className="navbar_link"
+        to={isLogged ? '/compte' : '/connexion'}
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
+          <span>Profil</span>
+        </div>
+      </NavLink>
+    </div>
+  </div>
+);
 
 HeaderDesktop.propTypes = {
 
