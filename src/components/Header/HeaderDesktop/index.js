@@ -10,7 +10,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const HeaderDesktop = ({ isLogged }) => {
-  console.log('isLogged', isLogged);
+  console.log('isLoggedHeadDesk', isLogged);
   return (
     <div className="containerTitle">
       <div className="headerDesktop">

@@ -4,6 +4,6 @@ import React from 'react';
 import NavBarMobile from 'src/components/Footer/NavBarMobile';
 import FooterDesktop from 'src/components/Footer/FooterDesktop';
 
-const Footer = ({ width, breakpoint }) => (width < breakpoint ? <NavBarMobile /> : <FooterDesktop />);
+const Footer = ({ width, breakpoint, isLogged }) => (width < breakpoint ? <NavBarMobile /> : <FooterDesktop isLogged={isLogged} />);
 
 export default Footer;
