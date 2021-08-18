@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <Homepage width={width} breakpoint={breakpoint} list={list} />
+      <HomePage width={width} breakpoint={breakpoint} list={list} />
     </div>
   );
 };
