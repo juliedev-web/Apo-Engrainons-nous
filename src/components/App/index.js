@@ -48,7 +48,9 @@ const App = () => {
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
         </Route>
-
+        <Route path="/detail-graine/:id" exact>
+          <PageDetailSeed width={width} breakpoint={breakpoint} />
+        </Route>
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
         </Route>
