@@ -9,11 +9,11 @@ export default function FormSignIn() {
     <div className="container">
       <h2>Inscription</h2>
       <div className="signInput">
-        <input type="text" placeholder="Pseudo" />
-        <input type="email" placeholder="Email" />
-        <input type="text" placeholder="Ville" />
-        <input type="password" placeholder="Mot de passe" />
-        <input type="password" placeholder="Confirmer votre mot de passe" />
+        <input name="pseudo" type="text" placeholder="Pseudo" />
+        <input name="email" type="email" placeholder="Email" />
+        <input name="city" type="text" placeholder="Ville" />
+        <input name="password" type="password" placeholder="Mot de passe" />
+        <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" />
       </div>
       <button type="button"> <a href="/"> Valider</a></button>
     </div>
