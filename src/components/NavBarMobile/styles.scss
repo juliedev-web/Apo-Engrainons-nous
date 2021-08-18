@@ -48,29 +48,3 @@
     color: #CACACA;
   }
 }
-
-
-@media only screen and (min-width: 1025px) {
-  .navbar-mobile {
-    font-size: 46px; // FontAwesome Icon Size
-  
-    width: 100%;
-  
-    position: sticky;
-    top: 0;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 10rem;
-  
-    background-color: vars.$bgd-footer-color;
-  
-    padding: 0.8rem 2.6rem;
-  }
-  
-  .faUserAlt {
-    color: #CACACA;
-  }
-}

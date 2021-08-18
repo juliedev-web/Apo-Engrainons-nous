@@ -8,6 +8,7 @@ import Filters from 'src/components/Filters';
 import NavBarMobile from 'src/components/NavBarMobile';
 import List from 'src/components/List';
 import FooterDesktop from 'src/components/FooterDesktop';
+import FormConnexion from 'src/components/PageConnexion/FormConnexion';
 
 // == Import
 import './styles.scss';
@@ -29,8 +30,7 @@ const App = () => {
   return (
     <div className="app">
       {width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />}
-      <Filters />
-      <List list={list} />
+      <FormConnexion />
       {width < breakpoint ? <NavBarMobile /> : <FooterDesktop />}
     </div>
   );
