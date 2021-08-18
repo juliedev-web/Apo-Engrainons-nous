@@ -52,7 +52,7 @@ const HeaderDesktop = () => {
         </NavLink>
         <NavLink
           className="navbar_link"
-          to="/compte"
+          to="/connexion"
           exact
           activeClassName="navbar_link--active"
         >
