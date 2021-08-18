@@ -30,12 +30,21 @@ const App = () => {
   }, []);
   const [isLogged, setIsLogged] = useState(false);
 
+  const [isModaleOpen, setIsModalOpen] = useState(true);
+
   return (
     <div className="app">
       <Switch>
+
         <Route path="/" exact>
-          <HomePage width={width} breakpoint={breakpoint} list={list} isLogged={isLogged} />
+          <HomePage
+            width={width}
+            breakpoint={breakpoint}
+            list={list}
+            isLogged={isLogged}
+          />
         </Route>
+
         {isLogged ? (
           <Route path="/compte" exact>
             <Profil width={width} breakpoint={breakpoint} />
@@ -46,18 +55,23 @@ const App = () => {
               <PageConnexion width={width} breakpoint={breakpoint} />
             </Route>
           )}
+
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
         </Route>
+
         <Route path="/detail-graine/:id" exact>
           <PageDetailSeed width={width} breakpoint={breakpoint} />
         </Route>
+
         <Route path="/partager-une-graine" exact>
           <PageShareSeed width={width} breakpoint={breakpoint} />
         </Route>
+
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
         </Route>
+
       </Switch>
     </div>
   );
