@@ -1,13 +1,15 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 // Components
 import Header from 'src/components/Header';
-import FormSignIn from './FormSignIn';
 import Footer from 'src/components/Footer';
+import FormSignIn from './FormSignIn';
 
 import './styles.scss';
 
-export default function SignIn({width, breakpoint}) {
+export default function SignIn({ width, breakpoint }) {
   console.log('Sign-in');
   return (
     <div className="sign-in">
@@ -17,3 +19,8 @@ export default function SignIn({width, breakpoint}) {
     </div>
   );
 }
+
+SignIn.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+};
