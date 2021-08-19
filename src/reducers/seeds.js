@@ -2,10 +2,6 @@ export const initialState = {
 
 };
 
-export const initialState = {
-
-};
-
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     // lorsque je viens de déclencher la requête
