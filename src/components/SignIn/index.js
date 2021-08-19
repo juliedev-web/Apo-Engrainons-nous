@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // Components
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import FormSignIn from './FormSignIn';
+import FormSignIn from 'src/containers/FormSignIn';
 
 import './styles.scss';
 
