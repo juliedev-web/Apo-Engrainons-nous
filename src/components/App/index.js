@@ -28,7 +28,7 @@ const App = () => {
     // Return a function from the effect that removes the event listener
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   const [isModaleOpen, setIsModalOpen] = useState(true);
 
