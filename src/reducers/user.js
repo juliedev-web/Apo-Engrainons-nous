@@ -1,14 +1,34 @@
 export const initialState = {
+  pseudoInputValue: '',
+  emailInputValue: '',
+  cityInputValue: '',
+  passwordInputValue: '',
+  passwordConfirmInputValue: '',
 
+  passwordConfirmMessage: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    // lorsque je viens de déclencher la requête
-    case 'GET_RECIPES':
+    case 'ON_INPUT_CHANGE_SIGNIN':
       return {
         ...state,
-        isLoading: true,
+        [action.inputName]: action.inputValue,
+      };
+    case 'PWD_NOT_CONFIRMED':
+      return {
+        ...state,
+        passwordConfirmMessage: 'Les mots de passe ne correspondent pas !',
+      };
+    case 'PWD_WRONG':
+      return {
+        ...state,
+        passwordConfirmMessage: 'password required minimum 8char, 1number, 1lowercase, 1uppercase',
+      };
+    case 'ON_SIGNIN_SUBMIT':
+      return {
+        ...state,
+        passwordConfirmMessage: '',
       };
 
     default:

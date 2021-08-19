@@ -1,18 +1,32 @@
 import axios from 'axios';
 
 const authMiddleware = (store) => (next) => (action) => {
-  if (action.type === 'SUBMIT_LOGIN') {
-    // on commence par récupérer un instantané du state
-    // dans lequel nous viendrons piocher email et password
+  if (action.type === 'ON_SIGNIN_SUBMIT') {
     const state = store.getState();
+
+    if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
+      store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
+      return;
+    }
+
+    if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
+      store.dispatch({ type: 'PWD_WRONG' });
+      return;
+    }
+
+    next(action);
+
+    console.log('après next');
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:3001/login',
+      url: 'http://localhost:3001/signin',
       data: {
-        // on vient chercher dans le state ce qui nous intéresse
-        email: state.user.email,
-        password: state.user.password,
+        pseudo: state.user.pseudoInputValue,
+        email: state.user.emailInputValue,
+        city: state.user.cityInputValue,
+        password: state.user.passwordInputValue,
+        confirm: state.user.passwordConfirmInputValue,
       },
     };
 
