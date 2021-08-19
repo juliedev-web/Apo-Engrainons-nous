@@ -16,7 +16,7 @@ export default function FormProfil({
 }) {
   console.log('FormProfil');
 
-  const editProfil = true;
+  const editProfil = false;
   return (
     <div className="container">
       <h2>Mon compte</h2>

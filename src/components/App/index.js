@@ -32,7 +32,7 @@ const App = () => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  const isLogged = true;
+  const isLogged = false;
 
   return (
     <div className="app">
