@@ -7,3 +7,7 @@ export const createChangePseudoInputValueAction = (inputValue, inputName) => ({
 export const createSubmitSigninAction = () => ({
   type: 'ON_SIGNIN_SUBMIT',
 });
+
+export const createSubmitConnexion = () => ({
+  type: 'ON_CONNEXION_SUBMIT',
+});

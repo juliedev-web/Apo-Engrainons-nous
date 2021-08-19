@@ -4,8 +4,9 @@ export const initialState = {
   cityInputValue: '',
   passwordInputValue: '',
   passwordConfirmInputValue: '',
-
   passwordConfirmMessage: '',
+
+  isLogged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -30,7 +31,13 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         passwordConfirmMessage: '',
       };
-
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isLogged: action.ok,
+        emailInputValue: '',
+        passwordInputValue: '',
+      };
     default:
       return state;
   }

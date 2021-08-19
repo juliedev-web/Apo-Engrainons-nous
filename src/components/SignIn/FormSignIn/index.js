@@ -8,8 +8,8 @@ export default function FormSignIn({
 
   pseudoInputValue,
   emailInputValue,
-  cityInputValue,
   passwordInputValue,
+  cityInputValue,
   passwordConfirmInputValue,
   handleInputValueChange,
   handleSubmitSignin,
