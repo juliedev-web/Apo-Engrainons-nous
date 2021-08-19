@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
   ),
   handleSubmitProfil: (e) => {
     e.preventDefault();
-    dispatch(createSubmitProfilAction);
+    dispatch(createSubmitProfilAction());
   },
 });
 

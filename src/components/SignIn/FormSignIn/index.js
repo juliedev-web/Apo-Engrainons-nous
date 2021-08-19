@@ -5,7 +5,6 @@ import './styles.scss';
 
 export default function FormSignIn({
   passwordConfirmMessage,
-
   pseudoInputValue,
   emailInputValue,
   cityInputValue,
@@ -34,7 +33,6 @@ export default function FormSignIn({
 
 FormSignIn.propTypes = {
   passwordConfirmMessage: PropTypes.string.isRequired,
-
   pseudoInputValue: PropTypes.string.isRequired,
   emailInputValue: PropTypes.string.isRequired,
   cityInputValue: PropTypes.string.isRequired,

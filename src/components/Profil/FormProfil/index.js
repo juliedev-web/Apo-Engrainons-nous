@@ -42,9 +42,9 @@ export default function FormProfil({
         )
       }
       <section className="button-container">
-        <Link className="btn ok valider" href="/compte"> Valider</Link>
-        <Link className="btn ok mes-graines" href="/compte/liste/graine?id=id_graine"> Mes graines</Link>
-        <Link className="btn supprimer" to="/"> Supprimer mon compte</Link>
+        <Link className="btn ok valider" to="/compte" type="submit"> Valider</Link>
+        <Link className="btn ok mes-graines" to="/compte/liste/graine?id=id_graine" type="submit"> Mes graines</Link>
+        <Link className="btn supprimer" to="/" type="submit"> Supprimer mon compte</Link>
       </section>
     </div>
   );
