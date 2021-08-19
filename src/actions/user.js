@@ -11,3 +11,7 @@ export const createSubmitSigninAction = () => ({
 export const createSubmitConnexion = () => ({
   type: 'ON_CONNEXION_SUBMIT',
 });
+
+export const createSubmitProfilAction = () => ({
+  type: 'ON_PROFIL_SUBMIT',
+});

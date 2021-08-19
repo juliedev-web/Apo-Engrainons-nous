@@ -6,8 +6,8 @@
   justify-content: space-between;
 }
 
-img {
-  width: 100px;
+.photo-profil {
+  width: 30%;
 }
 
 .card-dev{
@@ -18,9 +18,24 @@ img {
   align-items: center;
   margin: auto;
   padding: 1em;
+
+  p {
+    font-size: 2em;
+  }
 }
+
+
 
 .socials > ul {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.img-github {
+  width: 50%;
+}
+
+.img-linkedIn {
+  width: 10%;
 }

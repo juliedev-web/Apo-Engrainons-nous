@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -15,24 +14,15 @@ export default function TeamCards() {
       <h2>L'équipe d'Engrainons-nous</h2>
       <section className="card-container">
         <article className="card-dev">
-          <img src={Cedric} alt="photo de profil"/>
+          <img className="photo-profil" src={Cedric} alt="Cedric" />
           <h2>Cédric Cubat</h2>
           <p>Product Owner et Lead dev back</p>
           <div className="socials">
             <ul>
               <li>
-                <Link
-                  to="https://github.com/"
-                >
-                  <img src={Github} alt="logo Github" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="https://https://www.linkedin.com/"
-                >
-                  <img src={LinkedIn} alt="logo Github" />
-                </Link>
+                <a href="https://github.com/CedricCT" target="blank">
+                  <img className="img-github" src={Github} alt="logo Github" />
+                </a>
               </li>
             </ul>
           </div>
