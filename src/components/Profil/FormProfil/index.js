@@ -1,24 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
-export default function FormProfil() {
+export default function FormProfil({
+  passwordConfirmMessage,
+  pseudoInputValue,
+  emailInputValue,
+  cityInputValue,
+  passwordInputValue,
+  passwordConfirmInputValue,
+  handleInputValueChange,
+  handleSubmitProfil,
+}) {
   console.log('FormProfil');
 
-  const editProfil = false;
+  const editProfil = true;
   return (
     <div className="container">
       <h2>Mon compte</h2>
       {
       editProfil ? (
-        <form>
+        <form onSubmit={handleSubmitProfil}>
           <div className="signInput">
-            <input name="pseudo" type="text" placeholder="Pseudo" required />
-            <input name="email" type="email" placeholder="Email" required />
-            <input name="city" type="text" placeholder="Ville" required />
-            <input name="password" type="password" placeholder="Mot de passe" required />
-            <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required />
+            <input name="pseudo" type="text" placeholder="Pseudo" required value={pseudoInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'pseudoInputValue')} />
+            <input name="email" type="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
+            <input name="city" type="text" placeholder="Ville" required value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
+            <input name="password" type="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
+            <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
+            {passwordConfirmMessage && <p>{passwordConfirmMessage}</p>}
           </div>
         </form>
       )
@@ -38,3 +49,14 @@ export default function FormProfil() {
     </div>
   );
 }
+
+FormProfil.propTypes = {
+  passwordConfirmMessage: PropTypes.string.isRequired,
+  pseudoInputValue: PropTypes.string.isRequired,
+  emailInputValue: PropTypes.string.isRequired,
+  cityInputValue: PropTypes.string.isRequired,
+  passwordInputValue: PropTypes.string.isRequired,
+  passwordConfirmInputValue: PropTypes.string.isRequired,
+  handleInputValueChange: PropTypes.func.isRequired,
+  handleSubmitProfil: PropTypes.func.isRequired,
+};
