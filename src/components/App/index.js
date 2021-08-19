@@ -30,8 +30,6 @@ const App = () => {
   }, []);
   const [isLogged, setIsLogged] = useState(false);
 
-  const [isModaleOpen, setIsModalOpen] = useState(true);
-
   return (
     <div className="app">
       <Switch>
