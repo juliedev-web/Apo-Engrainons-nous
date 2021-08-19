@@ -58,6 +58,15 @@
     border: solid 3px #bc1536;
   }
 
+  label {
+    font-size: 0.8em;
+    font-style: italic;
+    line-height: 1.2em;
+    width:80%;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -88,11 +97,11 @@
     }
     input:nth-child(4) {
       grid-column: 2;
-      grid-row: 2;
+      grid-row: 1;
     }
     input:nth-child(5) {
       grid-column: 2;
-      grid-row: 3;
+      grid-row: 2;
     }
 
     .button-container {
@@ -107,6 +116,10 @@
       font-size: 1.5em;
     }
 
+    label {
+      font-size: 0.8em;
+      font-style: italic;
+    }
   }
 
 }
