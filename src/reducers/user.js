@@ -5,6 +5,8 @@ export const initialState = {
   passwordInputValue: '',
   passwordConfirmInputValue: '',
   passwordConfirmMessage: '',
+
+  isLogged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -28,6 +30,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         passwordConfirmMessage: '',
+      };
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isLogged: action.ok,
+        emailInputValue: '',
+        passwordInputValue: '',
       };
     default:
       return state;

@@ -1,20 +1,14 @@
 import { connect } from 'react-redux';
 
-import FormSignIn from 'src/components/SignIn/FormSignIn';
-
+import FormConnexion from 'src/components/PageConnexion/FormConnexion';
 import {
   createChangePseudoInputValueAction,
-  createSubmitSigninAction,
+  createSubmitConnexion,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
-  pseudoInputValue: state.user.pseudoInputValue,
   emailInputValue: state.user.emailInputValue,
-  cityInputValue: state.user.cityInputValue,
   passwordInputValue: state.user.passwordInputValue,
-  passwordConfirmInputValue: state.user.passwordConfirmInputValue,
-
-  passwordConfirmMessage: state.user.passwordConfirmMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -24,8 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
 
   handleSubmitSignin: (e) => {
     e.preventDefault();
-    dispatch(createSubmitSigninAction());
+    dispatch(createSubmitConnexion());
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(FormConnexion);
