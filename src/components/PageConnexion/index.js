@@ -6,7 +6,7 @@ import './styles.scss';
 // == Composant
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import FormConnexion from './FormConnexion';
+import FormConnexion from 'src/containers/FormConnexion';
 
 const PageConnexion = ({ width, breakpoint }) => (
   <div className="page-connexion">
