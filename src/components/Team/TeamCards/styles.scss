@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+img {
+  width: 100px;
+}
+
+.card-dev{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 1em;
+}
+
+.socials > ul {
+  display: flex;
+  flex-direction: row;
+}
