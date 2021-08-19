@@ -9,26 +9,24 @@ const ComponentSeed = () => {
   console.log('toto');
   return (
     <div className="container-seed">
-      <div className="imgCat">
-        <img src={seed.img_url} alt={seed.category_name} />
-        <div>
+      <div className="top">
+        <div className="imgCat">
+          <img src={seed.img_url} alt={seed.category_name} />
+        </div>
+        <div className="descriptionVariety">
           <h2>Catégorie : </h2>
           <p>{seed.category_name}</p>
           <h2>Nom de la variété : </h2>
           <p> {seed.variety_name}</p>
+          <h2>Description : </h2>
+          <p>
+            {seed.description}
+          </p>
+          <h2>Conseils :</h2>
+          <p>
+            {seed.conseil}
+          </p>
         </div>
-      </div>
-      <div className="description">
-        <h2>Description : </h2>
-        <p>
-          {seed.description}
-        </p>
-      </div>
-      <div className="conseils">
-        <h2>Conseils :</h2>
-        <p>
-          {seed.conseil}
-        </p>
       </div>
       <button type="button">Contacter le propriètaire</button>
     </div>

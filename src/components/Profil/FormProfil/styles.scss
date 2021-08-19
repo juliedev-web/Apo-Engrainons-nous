@@ -33,19 +33,19 @@
     align-items: space-between;
   }
 
-  button {
-    padding: 0.4em;
+  .btn {
+    padding: 0.6em;
     margin: auto;
     margin-top: 2em;
     background-color: vars.$bgd-primary-color;
     color: white;
   }
-  .button-delete{
-    background-color: #bc1536;
+  .ok {
+    background-color: #4A6C2F;
   }
-  a {
-    margin-top: 3em;
-    text-align: center;
+
+  .supprimer {
+    background-color: #bc1536;
   }
 }
 
