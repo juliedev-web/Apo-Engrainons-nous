@@ -4,7 +4,6 @@ export const initialState = {
   cityInputValue: '',
   passwordInputValue: '',
   passwordConfirmInputValue: '',
-
   passwordConfirmMessage: '',
 };
 
@@ -30,7 +29,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         passwordConfirmMessage: '',
       };
-
     default:
       return state;
   }

@@ -4,6 +4,7 @@ import FormProfil from 'src/components/Profil/FormProfil';
 
 import {
   createChangePseudoInputValueAction,
+  createSubmitProfilAction,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -19,6 +20,10 @@ const mapDispatchToProps = (dispatch) => ({
   handleInputValueChange: (inputValue, inputName) => (
     dispatch(createChangePseudoInputValueAction(inputValue, inputName))
   ),
+  handleSubmitProfil: (e) => {
+    e.preventDefault();
+    dispatch(createSubmitProfilAction);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormProfil);
