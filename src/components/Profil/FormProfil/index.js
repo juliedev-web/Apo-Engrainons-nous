@@ -12,7 +12,7 @@ export default function FormProfil() {
       <h2>Mon compte</h2>
       {
       editProfil ? (
-        <form action="">
+        <form>
           <div className="signInput">
             <input name="pseudo" type="text" placeholder="Pseudo" required />
             <input name="email" type="email" placeholder="Email" required />
