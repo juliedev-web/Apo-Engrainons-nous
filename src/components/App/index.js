@@ -8,6 +8,7 @@ import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
+import Team from 'src/components/Team';
 
 // == Import
 import './styles.scss';
@@ -50,6 +51,9 @@ const App = () => {
         </Route>
         <Route path="/detail-graine/:id" exact>
           <PageDetailSeed width={width} breakpoint={breakpoint} />
+        </Route>
+        <Route path="/equipe" exact>
+          <Team width={width} breakpoint={breakpoint} />
         </Route>
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />

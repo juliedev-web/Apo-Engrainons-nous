@@ -8,14 +8,16 @@ export default function FormSignIn() {
   return (
     <div className="container">
       <h2>Inscription</h2>
-      <div className="signInput">
-        <input name="pseudo" type="text" placeholder="Pseudo" />
-        <input name="email" type="email" placeholder="Email" />
-        <input name="city" type="text" placeholder="Ville" />
-        <input name="password" type="password" placeholder="Mot de passe" />
-        <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" />
-      </div>
-      <button type="button"> <a href="/"> Valider</a></button>
+      <form>
+        <div className="signInput">
+          <input name="pseudo" type="text" placeholder="Pseudo" required/>
+          <input name="email" type="email" placeholder="Email" required />
+          <input name="city" type="text" placeholder="Ville" required/>
+          <input name="password" type="password" placeholder="Mot de passe" required />
+          <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required/>
+        </div>
+      </form>
+      <button type="button"> <a href="/">Valider</a></button>
     </div>
   );
 };

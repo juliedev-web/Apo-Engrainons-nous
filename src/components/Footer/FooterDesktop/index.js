@@ -5,7 +5,7 @@ import './styles.scss';
 
 const FooterDesktop = () => (
   <div className="footer-desktop">
-    <a href="#">L'équipe</a>
+    <a href="/equipe">L'équipe</a>
     <a href="#">engrainons-nous@gmail.io</a>
   </div>
 );
