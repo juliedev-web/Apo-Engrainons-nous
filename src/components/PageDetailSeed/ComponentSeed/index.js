@@ -21,11 +21,11 @@ const ComponentSeed = ({ seed, getOneSeed }) => {
           <p>{seed.variety_name}</p>
           <h2>Description : </h2>
           <p>
-          {seed.description}
+            {seed.description}
           </p>
           <h2>Conseils :</h2>
           <p>
-          {seed.conseil}
+            {seed.conseil}
           </p>
         </div>
       </div>
