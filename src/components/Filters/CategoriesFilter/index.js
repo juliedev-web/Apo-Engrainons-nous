@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const CategoriesFilter = ({ category, getCategory }) => {
-  console.log(getCategory);
   useEffect(() => {
     getCategory();
   }, []);

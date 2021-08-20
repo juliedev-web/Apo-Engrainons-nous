@@ -10,7 +10,6 @@ import FormSignIn from 'src/containers/FormSignIn';
 import './styles.scss';
 
 export default function SignIn({ width, breakpoint }) {
-  console.log('Sign-in');
   return (
     <div className="sign-in">
       <Header width={width} breakpoint={breakpoint} />
