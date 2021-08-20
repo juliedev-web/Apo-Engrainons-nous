@@ -80,6 +80,8 @@ const App = ({ isLogged }) => {
   );
 };
 
+
+//Props validation
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
 };
