@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-
 const ComponentSeed = ({ seed, getOneSeed }) => {
-  console.log(seed);
   useEffect(() => {
     getOneSeed();
   }, []);
@@ -31,7 +29,7 @@ const ComponentSeed = ({ seed, getOneSeed }) => {
       </div>
       <button type="button">Contacter le propriétaire</button>
     </div>
-  )
+  );
 };
 
 ComponentSeed.propTypes = {
