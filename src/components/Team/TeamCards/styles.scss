@@ -1,0 +1,41 @@
+@use 'src/styles/vars';
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.photo-profil {
+  width: 30%;
+}
+
+.card-dev{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 1em;
+
+  p {
+    font-size: 2em;
+  }
+}
+
+
+
+.socials > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.img-github {
+  width: 50%;
+}
+
+.img-linkedIn {
+  width: 10%;
+}

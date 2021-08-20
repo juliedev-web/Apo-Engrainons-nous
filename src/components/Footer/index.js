@@ -1,18 +1,18 @@
+/* eslint-disable max-len */
 import React from 'react';
 
-import './styles.scss';
+import PropTypes from 'prop-types';
 
-import {
-  faUserAlt, faPlus, faBars,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import NavBarMobile from 'src/containers/NavBarMobile';
+import FooterDesktop from 'src/components/Footer/FooterDesktop';
 
-const Footer = () => (
-  <div className="footer">
-    <FontAwesomeIcon icon={faUserAlt} size="lg" className="faUserAlt" />
-    <FontAwesomeIcon icon={faPlus} size="lg" className="faUserAlt" />
-    <FontAwesomeIcon icon={faBars} size="lg" className="faUserAlt" />
-  </div>
-);
+const Footer = ({
+  width,
+  breakpoint,
+}) => (width < breakpoint ? <NavBarMobile /> : <FooterDesktop />);
+Footer.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+};
 
 export default Footer;

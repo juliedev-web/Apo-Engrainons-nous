@@ -1,0 +1,50 @@
+@use 'src/styles/vars';
+
+.navbar-mobile {
+  font-size: 20px; // FontAwesome Icon Size
+
+  width: 100%;
+
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: vars.$bgd-footer-color;
+
+  padding: 0.8rem 2.6rem;
+
+}
+
+.faUserAlt {
+  color: #CACACA;
+}
+
+
+
+@media only screen and (min-width: 599px) {
+  .navbar-mobile {
+    font-size: 46px; // FontAwesome Icon Size
+  
+    width: 100%;
+  
+    position: fixed;
+    bottom: 0;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10rem;
+  
+    background-color: vars.$bgd-footer-color;
+  
+    padding: 0.8rem 2.6rem;
+  }
+  
+  .faUserAlt {
+    color: #CACACA;
+  }
+}

@@ -7,6 +7,7 @@
 
 
   select {
+    
     font-size: 1rem;
     padding: 0.4rem;
     width: 100%;
@@ -20,40 +21,27 @@
   .faBars {
     position: absolute;
     left: 0.5rem;
-    top: 0.4rem
+    top: 0.5rem
   }
 }
 
 
 // Tablet
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 599px) {
   .categories-filter {
-    position: relative;
-
     width: 45%;
 
     margin-bottom: 0;
-
-    
-    select {
-      padding: 0.4rem;
-
-      font-size: 1rem;
-      
-
-      background-color: vars.$bgd-input-color;
-
-      text-align-last: center;
-
-      border-radius: 4px;
-      border: 1px solid vars.$border-input;
-
-    }
-  
-    .faBars {
-      position: absolute;
-      left: 0.5rem;
-      top: 0.4rem
-    }
   }
 }
+
+// desktop
+
+@media only screen and (min-width: 1025px) {
+  .categories-filter {
+  select {
+    font-size: 1.2rem;
+  }
+}
+}
+

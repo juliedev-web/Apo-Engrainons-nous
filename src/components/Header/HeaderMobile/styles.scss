@@ -1,8 +1,7 @@
 @use 'src/styles/vars';
 
-.header {
+.headerMobile {
   width: 100%;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -35,7 +34,6 @@
     }
 
     &__subtitle {
-      font-family: 'Nunito', sans-serif;
       font-size: 0.9rem;
       width: 80%;
       color: #cacaca
@@ -45,8 +43,8 @@
 
 
 // Tablet
-@media only screen and (min-width: 620px) {
-  .header {
+@media only screen and (min-width: 599px) {
+  .headerMobile {
     &__logo {
     width: 80px;
     margin-left: 2rem;
