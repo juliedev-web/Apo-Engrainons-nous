@@ -18,7 +18,7 @@ const authMiddleware = (store) => (next) => (action) => {
     case 'GETTING_CATEGORY': {
       const options = {
         method: 'GET',
-        url: 'https://engrainonsnous.herokuapp.com/seed/category',
+        url: 'https://engrainonsnous.herokuapp.com/category',
       };
       axios(options).then((response) => {
         console.log(`toto ${response.data}`);
