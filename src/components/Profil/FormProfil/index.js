@@ -43,6 +43,7 @@ export default function FormProfil({
         )
       }
       <section className="button-container">
+        <button type="submit"> Modifier mon compte</button>
         <button type="submit"> Valider</button>
         <button type="submit"> Mes graines</button>
         <button className="btn-delete" type="submit"> Supprimer mon compte</button>
