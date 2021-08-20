@@ -1,14 +1,13 @@
 export const initialState = {
-
+  list: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    // lorsque je viens de déclencher la requête
-    case 'GET_RECIPES':
+    case 'GETTING_LIST_SUCCESS':
       return {
         ...state,
-        isLoading: true,
+        list: [...action.data],
       };
 
     default:
