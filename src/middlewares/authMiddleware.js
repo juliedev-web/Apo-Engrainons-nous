@@ -7,20 +7,16 @@ const authMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
-        console.log('password confirm not good');
         store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
         return;
       }
 
       if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
-        console.log('password not enough strong');
         store.dispatch({ type: 'PWD_WRONG' });
         return;
       }
 
       next(action);
-
-      console.log('après next');
 
       const options = {
         method: 'POST',
@@ -35,7 +31,6 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response);
         store.dispatch({ type: 'SIGNIN_SUCCESS' });
       }).catch((error) => {
         console.error(error);
@@ -54,7 +49,6 @@ const authMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        console.log(response.data);
         store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
       }).catch((error) => {
         console.error(error);
@@ -79,8 +73,6 @@ const authMiddleware = (store) => (next) => (action) => {
       }
 
       next(action);
-
-      console.log('après next');
 
       const options = {
         method: 'POST',

@@ -8,7 +8,6 @@ import Github from 'src/assets/image/github.png';
 import LinkedIn from 'src/assets/image/linkedIn.png';
 
 export default function TeamCards() {
-  console.log('TeamCards');
   return (
     <div className="container">
       <h2>L'équipe d'Engrainons-nous</h2>
@@ -30,7 +29,7 @@ export default function TeamCards() {
       </section>
     </div>
   );
-};
+}
 
 // FormSignIn.propTypes = {
 

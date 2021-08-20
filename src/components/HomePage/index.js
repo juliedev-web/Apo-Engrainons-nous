@@ -11,27 +11,23 @@ const HomePage = ({
   list,
   width,
   breakpoint,
-}) => {
-  console.log('Homepage');
+}) => (
+  <div className="home-page">
+    <Header
+      width={width}
+      breakpoint={breakpoint}
+    />
 
-  return (
-    <div className="home-page">
-      <Header
-        width={width}
-        breakpoint={breakpoint}
-      />
+    <Filters />
 
-      <Filters />
+    <List list={list} />
 
-      <List list={list} />
-
-      <Footer
-        width={width}
-        breakpoint={breakpoint}
-      />
-    </div>
-  );
-};
+    <Footer
+      width={width}
+      breakpoint={breakpoint}
+    />
+  </div>
+);
 
 HomePage.propTypes = {
   list: PropTypes.array.isRequired,
