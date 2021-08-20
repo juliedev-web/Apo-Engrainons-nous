@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { password, mail } from '../data/db';
+// import { password, mail } from '../data/db';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -7,11 +7,13 @@ const authMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
+        console.log('password confirm not good');
         store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
         return;
       }
 
       if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
+        console.log('password not enough strong');
         store.dispatch({ type: 'PWD_WRONG' });
         return;
       }
@@ -22,7 +24,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
       const options = {
         method: 'POST',
-        url: 'http://localhost:3001/signin',
+        url: 'https://engrainonsnous.herokuapp.com/signup',
         data: {
           pseudo: state.user.pseudoInputValue,
           email: state.user.emailInputValue,
@@ -33,36 +35,35 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'SIGNIN_SUCCESS', data: response.data });
+        console.log(response);
+        store.dispatch({ type: 'SIGNIN_SUCCESS' });
       }).catch((error) => {
         console.error(error);
       });
     }
       break;
+
     case 'ON_CONNEXION_SUBMIT': {
       const state = store.getState();
       const options = {
         method: 'POST',
-        url: 'http://localhost:3001/signin',
+        url: 'https://engrainonsnous.herokuapp.com/signin',
         data: {
           email: state.user.emailInputValue,
           password: state.user.passwordInputValue,
         },
       };
-      // axios(options).then((response) => {
-      //   store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
-      // }).catch((error) => {
-      //   console.error(error);
-      // });
-      console.log(mail);
-      console.log(password);
-      console.log(state.user.emailInputValue);
-      console.log(state.user.passwordInputValue);
-      if (mail === state.user.emailInputValue) {
-        if (password === state.user.passwordInputValue) {
-          store.dispatch({ type: 'LOGIN_SUCCESS', ok: true });
-        }
-      }
+      axios(options).then((response) => {
+        console.log(response.data);
+        store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
+      }).catch((error) => {
+        console.error(error);
+      });
+      // if (mail === state.user.emailInputValue) {
+      //   if (password === state.user.passwordInputValue) {
+      //     store.dispatch({ type: 'LOGIN_SUCCESS', ok: true });
+      //   }
+      // }
     }
       break;
     case 'ON_PROFIL_SUBMIT': {

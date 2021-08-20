@@ -4,7 +4,9 @@ export const initialState = {
   cityInputValue: '',
   passwordInputValue: '',
   passwordConfirmInputValue: '',
+
   passwordConfirmMessage: '',
+  inscriptionConfirmMessage: '',
 
   isLogged: false,
 };
@@ -34,9 +36,14 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_SUCCESS':
       return {
         ...state,
-        isLogged: action.ok,
+        isLogged: true,
         emailInputValue: '',
         passwordInputValue: '',
+      };
+    case 'SIGNIN_SUCCESS':
+      return {
+        ...state,
+        passwordConfirmMessage: 'Votre compte à bien été créé',
       };
     default:
       return state;
