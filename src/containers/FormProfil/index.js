@@ -14,6 +14,7 @@ const mapStateToProps = (state) => ({
   passwordInputValue: state.user.passwordInputValue,
   passwordConfirmInputValue: state.user.passwordConfirmInputValue,
   passwordConfirmMessage: state.user.passwordConfirmMessage,
+  profil: state.user.profil,
 });
 
 const mapDispatchToProps = (dispatch) => ({

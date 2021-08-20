@@ -11,16 +11,14 @@ const HomePage = ({
   list,
   width,
   breakpoint,
-  isLogged,
 }) => {
-  console.log('isLoggedHomepage', isLogged);
+  console.log('Homepage');
 
   return (
     <div className="home-page">
       <Header
         width={width}
         breakpoint={breakpoint}
-        isLogged={isLogged}
       />
 
       <Filters />
@@ -30,7 +28,6 @@ const HomePage = ({
       <Footer
         width={width}
         breakpoint={breakpoint}
-        isLogged={isLogged}
       />
     </div>
   );
@@ -40,7 +37,6 @@ HomePage.propTypes = {
   list: PropTypes.array.isRequired,
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
-  isLogged: PropTypes.bool.isRequired,
 };
 
 export default HomePage;

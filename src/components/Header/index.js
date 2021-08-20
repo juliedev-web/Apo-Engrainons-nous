@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import HeaderMobile from 'src/components/Header/HeaderMobile';
-import HeaderDesktop from 'src/components/Header/HeaderDesktop';
+import HeaderDesktop from 'src/containers/HeaderDesktop';
 
-const Header = ({ width, breakpoint, isLogged }) => (
-  width < breakpoint ? <HeaderMobile /> : <HeaderDesktop isLogged={isLogged} />
+const Header = ({ width, breakpoint }) => (
+  width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />
 );
 
 Header.propTypes = {

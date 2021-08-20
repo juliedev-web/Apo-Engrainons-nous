@@ -7,7 +7,7 @@ import Footer from 'src/components/Footer';
 import Form404 from './Form404';
 
 const Page404 = ({ width, breakpoint }) => {
-  console.log('toto');
+  console.log('404');
   return (
     <div className="page-404">
       <Header width={width} breakpoint={breakpoint} />
