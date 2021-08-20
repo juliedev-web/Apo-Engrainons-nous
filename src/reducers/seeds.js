@@ -13,7 +13,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data],
       };
-      
+
     case 'GETTING_CATEGORY_SUCCESS':
       return {
         ...state,
@@ -26,23 +26,24 @@ const reducer = (state = initialState, action = {}) => {
         seed: {
           ...action.data,
         },
-        
+      };
+
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
         list: [...action.data],
       };
-  
+
     case 'GET_CATEGORY_FILTERED':
       console.log(action);
       return {
         ...state,
         categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,
       };
-  
+
     default:
       return state;
-  };
+  }
 };
 
 export default reducer;
