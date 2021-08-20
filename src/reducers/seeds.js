@@ -1,6 +1,7 @@
 export const initialState = {
   list: [],
   category: [],
+  seed: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,9 +16,16 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         category: [...action.data],
       };
+    case 'GETTING_ONE_SEED_SUCCESS':
+      return {
+        ...state,
+        seed: {
+          ...action.data,
+        },
+      };
     default:
       return state;
-  }
+  };
 };
 
 export default reducer;

@@ -4,7 +4,7 @@ import './styles.scss';
 // == Composant
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import ComponentSeed from './ComponentSeed';
+import ComponentSeed from 'src/containers/ComponentSeed';
 
 const PageDetailSeed = ({ width, breakpoint }) => (
   <div className="page-detail-seed">
