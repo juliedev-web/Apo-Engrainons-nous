@@ -67,9 +67,16 @@ const App = ({ isLogged }) => {
           <Team width={width} breakpoint={breakpoint} />
         </Route>
 
-        <Route path="/partager-une-graine" exact>
-          <PageShareSeed width={width} breakpoint={breakpoint} />
-        </Route>
+        {isLogged ? (
+          <Route path="/partager-une-graine" exact>
+            <PageShareSeed width={width} breakpoint={breakpoint} />
+          </Route>
+        )
+          : (
+            <Route path="/connexion" exact>
+              <PageConnexion width={width} breakpoint={breakpoint} />
+            </Route>
+          )}
 
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
@@ -80,8 +87,7 @@ const App = ({ isLogged }) => {
   );
 };
 
-
-//Props validation
+// Props validation
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
 };

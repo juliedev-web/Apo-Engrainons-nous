@@ -9,12 +9,15 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const CategoriesFilter = ({
-  category, getCategory, handleOptionClick, selectedValue, categoryName,
+  category,
+  getCategory,
+  handleOptionClick,
+  selectedValue,
+  categoryName,
 }) => {
   useEffect(() => {
     getCategory();
   }, []);
-  console.log('toto', category);
   return (
     <div className="categories-filter">
       <select name="" id="categories" value={selectedValue} onChange={(e) => handleOptionClick(e.target.value)}>
@@ -31,7 +34,11 @@ const CategoriesFilter = ({
 };
 
 CategoriesFilter.propTypes = {
-
+  category: PropTypes.array.isRequired,
+  getCategory: PropTypes.func.isRequired,
+  handleOptionClick: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
 };
 
 export default CategoriesFilter;
