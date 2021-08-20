@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getCategory: () => dispatch({ type: 'GETTING_CATEGORY' }),
   handleOptionClick: (categoryId) => {
-    console.log(categoryId);
     dispatch({ type: 'GET_CATEGORY_FILTERED', categoryId });
   },
 });

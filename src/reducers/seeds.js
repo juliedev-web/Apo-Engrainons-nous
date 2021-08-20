@@ -35,7 +35,6 @@ const reducer = (state = initialState, action = {}) => {
       };
 
     case 'GET_CATEGORY_FILTERED':
-      console.log(action);
       return {
         ...state,
         categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,

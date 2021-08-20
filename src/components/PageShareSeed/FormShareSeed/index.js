@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoriesFilter from 'src/components/Filters/CategoriesFilter';
+import CategoriesFilter from 'src/containers/CategoriesFilter';
 
 import './styles.scss';
 
