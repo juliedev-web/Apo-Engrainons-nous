@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,8 @@ export default function FormSignIn({
 }) {
   const history = useHistory();
 
-  const redirectToPageConnexion = () => {
+  const onSubmit = (e) => {
+    handleSubmitSignin(e);
     setTimeout(() => history.push('/connexion'), 1000);
   };
 
@@ -27,7 +28,7 @@ export default function FormSignIn({
       {inscriptionConfirmMessage ? (
         <p className="inscription-confirm-message">{inscriptionConfirmMessage}</p>
       ) : (
-        <form onSubmit={handleSubmitSignin}>
+        <form onSubmit={onSubmit}>
           <section className="btn-input-container">
             <div className="signInput">
               <input name="pseudo" type="text" placeholder="Pseudo" required value={pseudoInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'pseudoInputValue')} />
@@ -38,7 +39,7 @@ export default function FormSignIn({
               <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
               {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
             </div>
-            <button type="submit" onClick={redirectToPageConnexion}>Valider</button>
+            <button type="submit">Valider</button>
           </section>
         </form>
       )}
