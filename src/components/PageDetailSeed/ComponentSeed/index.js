@@ -1,37 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import './styles.scss';
 
 import seed from 'src/data/seed';
 
-const ComponentSeed = () => (
+const ComponentSeed = ({
+  category,
+  variety,
+  conseil,
+  description,
+}) => (
   <div className="container-seed">
     <div className="top">
       <div className="imgCat">
-        <img src={seed.img_url} alt={seed.category_name} />
+        <img src="" alt="legume" />
       </div>
       <div className="descriptionVariety">
         <h2>Catégorie : </h2>
-        <p>{seed.category_name}</p>
+        <p>{category}</p>
         <h2>Nom de la variété : </h2>
-        <p> {seed.variety_name}</p>
+        <p>{variety}</p>
         <h2>Description : </h2>
         <p>
-          {seed.description}
+          {description}
         </p>
         <h2>Conseils :</h2>
         <p>
-          {seed.conseil}
+          {conseil}
         </p>
       </div>
     </div>
-    <button type="button">Contacter le propriètaire</button>
+    <button type="button">Contacter le propriétaire</button>
   </div>
 );
 
 ComponentSeed.propTypes = {
-
+  category: PropTypes.string.isRequired,
+  variety: PropTypes.string.isRequired,
+  conseil: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default ComponentSeed;
