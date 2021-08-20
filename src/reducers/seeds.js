@@ -1,6 +1,8 @@
 export const initialState = {
   list: [],
   category: [],
+  selectedValue: '',
+  categoryName: 'Catégories',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -14,6 +16,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         category: [...action.data],
+      };
+    case 'GETTING_CATEGORY_FILTERED_SUCCESS':
+      return {
+        ...state,
+        list: [...action.data],
+      };
+    case 'GET_CATEGORY_FILTERED':
+      console.log(action);
+      return {
+        ...state,
+        categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,
       };
     default:
       return state;
