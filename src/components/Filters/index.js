@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-import CategoriesFilter from './CategoriesFilter';
+import CategoriesFilter from '../../containers/CategoriesFilter';
 import SearchSeedInput from './SearchSeedInput';
 
 const Filters = () => (

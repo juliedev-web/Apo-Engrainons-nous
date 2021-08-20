@@ -1,5 +1,6 @@
 export const initialState = {
   list: [],
+  category: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -9,7 +10,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data],
       };
-
+    case 'GETTING_CATEGORY_SUCCESS':
+      return {
+        ...state,
+        category: [...action.data],
+      };
     default:
       return state;
   }
