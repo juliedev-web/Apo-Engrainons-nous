@@ -10,7 +10,7 @@ export const initialState = {
 
   isLogged: false,
   profil: {
-    pseudo: '',
+    pseudo: 'Profil',
     email: '',
     city: '',
   },

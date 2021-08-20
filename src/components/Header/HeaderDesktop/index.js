@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const HeaderDesktop = ({ isLogged }) => {
+const HeaderDesktop = ({ isLogged, pseudo }) => {
   console.log('isLogged', isLogged);
 
   return (
@@ -59,7 +59,7 @@ const HeaderDesktop = ({ isLogged }) => {
         >
           <div className="iconText">
             <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-            <span>Profil</span>
+            <span>{ pseudo }</span>
           </div>
         </NavLink>
       </div>
@@ -69,5 +69,6 @@ const HeaderDesktop = ({ isLogged }) => {
 
 HeaderDesktop.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 export default HeaderDesktop;
