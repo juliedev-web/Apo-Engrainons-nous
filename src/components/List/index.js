@@ -6,7 +6,6 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 const List = ({ list, getList }) => {
-  console.log(getList);
   useEffect(() => {
     getList();
   }, []);

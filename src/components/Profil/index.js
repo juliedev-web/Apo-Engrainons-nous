@@ -8,7 +8,6 @@ import FormProfil from 'src/containers/FormProfil';
 import './styles.scss';
 
 export default function Profil({ width, breakpoint }) {
-  console.log('Sign-in');
   return (
     <div className="sign-in">
       <Header width={width} breakpoint={breakpoint} />

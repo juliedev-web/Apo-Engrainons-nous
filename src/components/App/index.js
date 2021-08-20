@@ -21,7 +21,6 @@ import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
 const App = ({ isLogged }) => {
-  console.log('App is Logged', isLogged);
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
 

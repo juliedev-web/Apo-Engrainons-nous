@@ -14,8 +14,6 @@ export default function FormProfil({
   handleSubmitProfil,
   profil,
 }) {
-  console.log('FormProfil');
-
   const editProfil = false;
   return (
     <div className="container">
