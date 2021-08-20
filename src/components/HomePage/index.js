@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
 import Filters from 'src/components/Filters';
-import List from 'src/components/List';
+import List from 'src/containers/List';
 import Footer from 'src/components/Footer';
 
 const HomePage = ({
