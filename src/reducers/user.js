@@ -9,6 +9,11 @@ export const initialState = {
   inscriptionConfirmMessage: '',
 
   isLogged: false,
+  profil: {
+    pseudo: '',
+    email: '',
+    city: '',
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,6 +44,11 @@ const reducer = (state = initialState, action = {}) => {
         isLogged: true,
         emailInputValue: '',
         passwordInputValue: '',
+        profil: {
+          pseudo: action.data.user.pseudo,
+          email: action.data.user.email,
+          city: action.data.user.city,
+        },
       };
     case 'SIGNIN_SUCCESS':
       return {

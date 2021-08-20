@@ -12,6 +12,7 @@ export default function FormProfil({
   passwordConfirmInputValue,
   handleInputValueChange,
   handleSubmitProfil,
+  profil,
 }) {
   console.log('FormProfil');
 
@@ -35,9 +36,9 @@ export default function FormProfil({
       )
         : (
           <div className="signInput">
-            <p>pseudo</p>
-            <p>email</p>
-            <p>city</p>
+            <p>{profil.pseudo}</p>
+            <p>{profil.email}</p>
+            <p>{profil.city}</p>
           </div>
         )
       }
@@ -59,4 +60,9 @@ FormProfil.propTypes = {
   passwordConfirmInputValue: PropTypes.string.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
   handleSubmitProfil: PropTypes.func.isRequired,
+  profil: PropTypes.shape({
+    pseudo: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
 };
