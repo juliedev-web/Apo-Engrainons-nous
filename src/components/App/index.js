@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 // == Composant
 
 import HomePage from 'src/components/HomePage';
@@ -20,7 +20,8 @@ import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
-const App = () => {
+const App = ({ isLogged }) => {
+  console.log('App is Logged', isLogged);
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
 
@@ -78,6 +79,10 @@ const App = () => {
       </Switch>
     </div>
   );
+};
+
+App.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export
