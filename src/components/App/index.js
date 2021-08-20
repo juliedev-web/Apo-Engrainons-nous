@@ -32,8 +32,6 @@ const App = () => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  const isLogged = false;
-
   return (
     <div className="app">
       <Switch>
@@ -43,7 +41,6 @@ const App = () => {
             width={width}
             breakpoint={breakpoint}
             list={list}
-            isLogged={isLogged}
           />
         </Route>
 

@@ -10,8 +10,8 @@ const Footer = ({
   width,
   breakpoint,
 }) => {
-  const isLogged = false;
-  return (width < breakpoint ? <NavBarMobile isLogged={isLogged} /> : <FooterDesktop />);
+
+  return (width < breakpoint ? <NavBarMobile /> : <FooterDesktop />);
 };
 Footer.propTypes = {
   width: PropTypes.number.isRequired,
