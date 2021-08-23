@@ -4,13 +4,11 @@ export const initialState = {
   cityInputValue: '',
   passwordInputValue: '',
   passwordConfirmInputValue: '',
-
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
-
   isLogged: false,
   profil: {
-    pseudo: 'Profil',
+    pseudo: '',
     email: '',
     city: '',
   },
@@ -54,7 +52,9 @@ const reducer = (state = initialState, action = {}) => {
     case 'SIGNIN_SUCCESS':
       return {
         ...state,
-        passwordConfirmMessage: 'Votre compte à bien été créé',
+        emailInputValue: '',
+        passwordInputValue: '',
+        passwordConfirmMessage: 'Votre compte a bien été créé',
       };
     case 'ON_TOGGLE_CLICK_PROFIL':
       return {
@@ -63,6 +63,28 @@ const reducer = (state = initialState, action = {}) => {
         pseudoInputValue: state.profil.pseudo,
         emailInputValue: state.profil.email,
         cityInputValue: state.profil.city,
+      };
+    case 'UPDATE_SUCCESS_WITH_PASSWORD':
+      return {
+        ...state,
+        editProfil: false,
+        profil: {
+          pseudo: action.data.user.pseudo,
+          email: action.data.user.email,
+          city: action.data.user.city,
+        },
+      };
+    case 'UPDATE_SUCCESS_WITHOUT_PASSWORD':
+      return {
+        ...state,
+        editProfil: false,
+        profil: {
+          pseudo: action.data.user.pseudo,
+          email: action.data.user.email,
+          city: action.data.user.city,
+          passwordInputValue: '',
+          passwordConfirmInputValue: '',
+        },
       };
     default:
       return state;

@@ -19,3 +19,7 @@ export const createSubmitProfilAction = () => ({
 export const toggleEditProfil = () =>({
   type: 'ON_TOGGLE_CLICK_PROFIL',
 });
+
+export const updateProfil = () =>({
+  type: 'UPDATE_PROFIL',
+});
