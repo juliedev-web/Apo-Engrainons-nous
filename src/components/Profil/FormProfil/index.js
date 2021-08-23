@@ -11,7 +11,7 @@ export default function FormProfil({
   passwordConfirmInputValue,
   passwordConfirmMessage,
   handleInputValueChange,
-  handleSubmitProfil,
+  handleSubmitEditProfil,
   profil,
   editProfil,
   toggleEditProfil,
@@ -22,14 +22,14 @@ export default function FormProfil({
       {/* Show profil informations or inputs to modify profil infos */}
       {
       editProfil ? (
-        <form onSubmit={handleSubmitProfil}>
+        <form onSubmit={handleSubmitEditProfil}>
           <div className="signInput">
-            <input name="pseudo" type="text" placeholder="Pseudo" required value={pseudoInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'pseudoInputValue')} />
-            <input name="email" type="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
-            <input name="city" type="text" placeholder="Ville" required value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
+            <input name="pseudo" type="text" placeholder="Pseudo" value={pseudoInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'pseudoInputValue')} />
+            <input name="email" type="email" placeholder="Email" value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
+            <input name="city" type="text" placeholder="Ville" value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
             <label> Au moins 8 caractères, une majuscule, une minuscule et un caractère spécial</label>
-            <input name="password" type="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
-            <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
+            <input name="password" type="password" placeholder="Mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
+            <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
             {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
           </div>
           <button className="valider" type="submit">Valider</button>
@@ -61,7 +61,7 @@ FormProfil.propTypes = {
   passwordConfirmInputValue: PropTypes.string.isRequired,
   passwordConfirmMessage: PropTypes.string.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
-  handleSubmitProfil: PropTypes.func.isRequired,
+  handleSubmitEditProfil: PropTypes.func.isRequired,
   profil: PropTypes.shape({
     pseudo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
