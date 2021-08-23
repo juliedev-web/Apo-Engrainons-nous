@@ -1,5 +1,7 @@
 @use 'src/styles/vars';
 
+//CSS for mobile first
+
 .container {
  display: flex;
  flex-direction: column;
@@ -9,6 +11,11 @@
     margin-top: 2em;
     margin-bottom: 1.2em;
     text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
   }
 
   .signInput {
@@ -68,6 +75,8 @@
   }
 
 }
+
+//Desktop media query
 
 @media screen and (min-width: 768px) {
   .container {
