@@ -13,8 +13,10 @@ export default function FormProfil({
   handleInputValueChange,
   handleSubmitProfil,
   profil,
+  editProfil,
+  toggleEditProfil,
 }) {
-  const editProfil = false;
+
   return (
     <div className="container">
       <h2>Mon compte</h2>
@@ -41,8 +43,7 @@ export default function FormProfil({
         )
       }
       <section className="button-container">
-        <button type="submit"> Modifier mon compte</button>
-        <button type="submit"> Valider</button>
+        <button type="button" onClick={toggleEditProfil}> {editProfil ? 'Annuler' : 'Modifier mon compte'}</button>
         <button type="submit"> Mes graines</button>
         <button className="btn-delete" type="submit"> Supprimer mon compte</button>
       </section>
@@ -64,4 +65,6 @@ FormProfil.propTypes = {
     email: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
   }).isRequired,
+  editProfil: PropTypes.bool.isRequired,
+  toggleEditProfil: PropTypes.func.isRequired,
 };

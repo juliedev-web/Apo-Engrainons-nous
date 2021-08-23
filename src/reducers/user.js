@@ -1,8 +1,8 @@
 export const initialState = {
   pseudoInputValue: '',
-  emailInputValue: '',
+  emailInputValue: 'ju@ju.com',
   cityInputValue: '',
-  passwordInputValue: '',
+  passwordInputValue: 'Julie@2021',
   passwordConfirmInputValue: '',
 
   passwordConfirmMessage: '',
@@ -14,6 +14,7 @@ export const initialState = {
     email: '',
     city: '',
   },
+  editProfil: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -55,6 +56,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         passwordConfirmMessage: 'Votre compte à bien été créé',
       };
+    case 'ON_TOGGLE_CLICK_PROFIL':
+      return {
+        ...state,
+        editProfil: !state.editProfil,
+      }
     default:
       return state;
   }
