@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // FontAwesome
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -8,19 +8,37 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const CategoriesFilter = () => (
-  <div className="categories-filter">
-    <select name="" id="department">
-      <option value="">
-        Catégories
-      </option>
-    </select>
-    <FontAwesomeIcon icon={faBars} size="lg" className="faBars" />
-  </div>
-);
+const CategoriesFilter = ({
+  category,
+  getCategory,
+  handleOptionClick,
+  selectedValue,
+  categoryName,
+}) => {
+  useEffect(() => {
+    getCategory();
+  }, []);
+  return (
+    <div className="categories-filter">
+      <select name="" id="categories" value={selectedValue} onChange={(e) => handleOptionClick(e.target.value)}>
+        <option value="">{categoryName}</option>
+        {category.map((cat) => (
+          <option value={cat.id} key={cat.id}>
+            {cat.name}
+          </option>
+        ))}
+      </select>
+      <FontAwesomeIcon icon={faBars} size="lg" className="faBars" />
+    </div>
+  );
+};
 
 CategoriesFilter.propTypes = {
-
+  category: PropTypes.array.isRequired,
+  getCategory: PropTypes.func.isRequired,
+  handleOptionClick: PropTypes.func.isRequired,
+  selectedValue: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
 };
 
 export default CategoriesFilter;

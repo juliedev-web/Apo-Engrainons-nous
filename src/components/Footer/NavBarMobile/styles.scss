@@ -1,11 +1,11 @@
 @use 'src/styles/vars';
 
-.navbar {
+.navbar-mobile {
   font-size: 20px; // FontAwesome Icon Size
 
   width: 100%;
 
-  position: sticky;
+  position: fixed;
   bottom: 0;
 
   display: flex;
@@ -24,13 +24,13 @@
 
 
 
-@media only screen and (min-width: 620px) {
-  .footer {
-    font-size: 26px; // FontAwesome Icon Size
+@media only screen and (min-width: 599px) {
+  .navbar-mobile {
+    font-size: 46px; // FontAwesome Icon Size
   
     width: 100%;
   
-    position: sticky;
+    position: fixed;
     bottom: 0;
   
     display: flex;
