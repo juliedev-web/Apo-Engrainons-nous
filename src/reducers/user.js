@@ -1,8 +1,8 @@
 export const initialState = {
   pseudoInputValue: '',
-  emailInputValue: 'ju@ju.com',
+  emailInputValue: '',
   cityInputValue: '',
-  passwordInputValue: 'Julie@2021',
+  passwordInputValue: '',
   passwordConfirmInputValue: '',
 
   passwordConfirmMessage: '',
