@@ -60,6 +60,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         editProfil: !state.editProfil,
+        pseudoInputValue: state.profil.pseudo,
+        emailInputValue: state.profil.email,
+        cityInputValue: state.profil.city,
       }
     default:
       return state;
