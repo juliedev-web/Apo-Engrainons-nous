@@ -51,7 +51,6 @@ const reducer = (state = initialState, action = {}) => {
         inputSearchValue: action.inputValue,
       };
     case 'ON_SEARCH_SUBMIT':
-      // console.log(filterByVariety(state.list, state.inputSearchValue));
       return {
         ...state,
         listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
