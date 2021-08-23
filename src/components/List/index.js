@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import ReactPaginate from 'react-paginate';
 import { formatDate } from '../../selectors/seeds';
 
 import './styles.scss';
-import ReactPaginate from 'react-paginate';
 
 const List = ({ list }) => {
   const [pageNumber, setPageNumber] = useState(0);
