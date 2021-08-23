@@ -38,7 +38,8 @@ const List = ({ list }) => {
         {displaySeeds}
       </div>
       <ReactPaginate
-        pageRangeDisplayed={3}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={1}
         previousLabel="<"
         nextLabel=">"
         pageCount={pageCount}
