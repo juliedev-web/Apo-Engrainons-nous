@@ -10,7 +10,7 @@ import './styles.scss';
 const List = ({ list }) => (
   <div className="list">
     {list.map((seed) => (
-      <NavLink to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
+      <NavLink exact to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
         <img src={seed.category_img} alt="img" />
 
         <div className="content">

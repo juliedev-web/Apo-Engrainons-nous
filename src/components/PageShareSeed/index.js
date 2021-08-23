@@ -3,7 +3,7 @@ import React from 'react';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import PropTypes from 'prop-types';
-import FormShareSeed from './FormShareSeed';
+import FormShareSeed from 'src/containers/FormShareSeed';
 
 import './styles.scss';
 

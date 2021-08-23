@@ -11,7 +11,7 @@ const Form404 = () => (
     <img src={seed} alt="logo 404" className="logo404" />
     <p>J'ai beau être charmante, votre recherche n'en est pas moins désarmante.</p>
     <p>La page que vous recherchez n'existe pas 😉 !</p>
-    <NavLink className="navlink" to="/">Retour a l'accueil</NavLink>
+    <NavLink exact className="navlink" to="/">Retour a l'accueil</NavLink>
   </div>
 );
 

@@ -63,7 +63,7 @@ const reducer = (state = initialState, action = {}) => {
         pseudoInputValue: state.profil.pseudo,
         emailInputValue: state.profil.email,
         cityInputValue: state.profil.city,
-      }
+      };
     default:
       return state;
   }
