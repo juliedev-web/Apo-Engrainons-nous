@@ -60,7 +60,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
       >
         <div className="iconText">
           <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-          <span>{ pseudo }</span>
+          <span>{ pseudo || 'Profil' }</span>
         </div>
       </NavLink>
 

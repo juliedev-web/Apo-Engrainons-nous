@@ -33,13 +33,14 @@ const List = ({ list }) => {
     setPageNumber(selected);
   };
   return (
-    <>
+    <div className="listContainer">
       <div className="list">
         {displaySeeds}
       </div>
       <ReactPaginate
-        previousLabel="Précédent"
-        nextLabel="Suivant"
+        pageRangeDisplayed={3}
+        previousLabel="<"
+        nextLabel=">"
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName="paginationBttns"
@@ -48,7 +49,7 @@ const List = ({ list }) => {
         disabledClassName="paginationDisabled"
         activeClassName="paginationActive"
       />
-    </>
+    </div>
   );
 };
 List.propTypes = {
