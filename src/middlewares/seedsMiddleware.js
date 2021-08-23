@@ -35,7 +35,6 @@ const authMiddleware = (store) => (next) => (action) => {
       };
       next(action);
       axios(options).then((response) => {
-        console.log(response);
         store.dispatch({ type: 'GETTING_CATEGORY_FILTERED_SUCCESS', data: response.data.result });
       }).catch((error) => {
         console.error(error);

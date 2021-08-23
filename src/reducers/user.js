@@ -22,21 +22,25 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.inputName]: action.inputValue,
       };
+
     case 'PWD_NOT_CONFIRMED':
       return {
         ...state,
         passwordConfirmMessage: 'Les mots de passe ne correspondent pas !',
       };
+
     case 'PWD_WRONG':
       return {
         ...state,
         passwordConfirmMessage: 'password required minimum 8char, 1number, 1lowercase, 1uppercase',
       };
+
     case 'ON_SIGNIN_SUBMIT':
       return {
         ...state,
         passwordConfirmMessage: '',
       };
+
     case 'LOGIN_SUCCESS':
       return {
         ...state,
@@ -49,6 +53,7 @@ const reducer = (state = initialState, action = {}) => {
           city: action.data.user.city,
         },
       };
+
     case 'SIGNIN_SUCCESS':
       return {
         ...state,
@@ -56,6 +61,7 @@ const reducer = (state = initialState, action = {}) => {
         passwordInputValue: '',
         passwordConfirmMessage: 'Votre compte a bien été créé',
       };
+
     case 'ON_TOGGLE_CLICK_PROFIL':
       return {
         ...state,
@@ -64,6 +70,7 @@ const reducer = (state = initialState, action = {}) => {
         emailInputValue: state.profil.email,
         cityInputValue: state.profil.city,
       };
+
     case 'UPDATE_SUCCESS_WITH_PASSWORD':
       return {
         ...state,
@@ -74,6 +81,7 @@ const reducer = (state = initialState, action = {}) => {
           city: action.data.user.city,
         },
       };
+
     case 'UPDATE_SUCCESS_WITHOUT_PASSWORD':
       return {
         ...state,
@@ -86,6 +94,7 @@ const reducer = (state = initialState, action = {}) => {
           passwordConfirmInputValue: '',
         },
       };
+
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // == Composant
 
@@ -20,7 +20,7 @@ import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
-const App = ({ isLogged, getList }) => {
+const App = ({ getList }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
 
@@ -52,16 +52,13 @@ const App = ({ isLogged, getList }) => {
           <PageConnexion width={width} breakpoint={breakpoint} />
         </Route>
 
-        {
-          isLogged
-            ? (
-              <Route path="/compte" exact>
-                <Profil width={width} breakpoint={breakpoint} />
-              </Route>
-            ) : (
-              <Redirect to="/connexion" />
-            )
-        }
+        <Route path="/equipe" exact>
+          <Team width={width} breakpoint={breakpoint} />
+        </Route>
+
+        <Route path="/detail-graine/:id" exact>
+          <PageDetailSeed width={width} breakpoint={breakpoint} />
+        </Route>
 
         <Route path="/compte" exact>
           <Profil width={width} breakpoint={breakpoint} />
@@ -71,24 +68,21 @@ const App = ({ isLogged, getList }) => {
           <SignIn width={width} breakpoint={breakpoint} />
         </Route>
 
-        <Route path="/detail-graine/:id" exact>
-          <PageDetailSeed width={width} breakpoint={breakpoint} />
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} />
         </Route>
 
-        <Route path="/equipe" exact>
-          <Team width={width} breakpoint={breakpoint} />
+        <Route path="/partager-une-graine" exact>
+          <PageShareSeed width={width} breakpoint={breakpoint} />
         </Route>
 
-        {
-          isLogged
-            ? (
-              <Route path="/partager-une-graine" exact>
-                <PageShareSeed width={width} breakpoint={breakpoint} />
-              </Route>
-            ) : (
-              <Redirect to="/connexion" />
-            )
-        }
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} />
+        </Route>
+
+        <Route path="/partager-une-graine" exact>
+          <PageShareSeed width={width} breakpoint={breakpoint} />
+        </Route>
 
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />
@@ -102,7 +96,6 @@ const App = ({ isLogged, getList }) => {
 // Props validation
 App.propTypes = {
   getList: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

@@ -13,37 +13,34 @@ const List = ({ list }) => {
   const pagesVisited = pageNumber * seedPerPage;
   const displaySeeds = list
     .slice(pagesVisited, pagesVisited + seedPerPage)
-    .map((l) => {
-      console.log('toto');
-      return (
-        <NavLink to={`/detail-graine/${l.id}`} key={l.id} className="card">
-          <img src={l.category_img} alt="img" />
-          <div className="content">
-            <div className="content__description">
-              <p className="content__description__category">{l.category_name}</p>
-              <p className="content__description__variety">{l.variety_name}</p>
-            </div>
-            <div className="content__infos">
-              <p className="content__infos__pseudo">{l.pseudo_user}</p>
-              <p className="content__infos__date">{formatDate(l)}</p>
-            </div>
+    .map((l) => (
+      <NavLink to={`/detail-graine/${l.id}`} key={l.id} className="card">
+        <img src={l.category_img} alt="img" />
+        <div className="content">
+          <div className="content__description">
+            <p className="content__description__category">{l.category_name}</p>
+            <p className="content__description__variety">{l.variety_name}</p>
           </div>
-        </NavLink>
-      );
-    });
+          <div className="content__infos">
+            <p className="content__infos__pseudo">{l.pseudo_user}</p>
+            <p className="content__infos__date">{formatDate(l)}</p>
+          </div>
+        </div>
+      </NavLink>
+    ));
   const pageCount = Math.ceil(list.length / seedPerPage);
   const changePage = ({ selected }) => {
-    console.log(selected);
     setPageNumber(selected);
   };
   return (
-    <>
+    <div className="listContainer">
       <div className="list">
         {displaySeeds}
       </div>
       <ReactPaginate
-        previousLabel="Précédent"
-        nextLabel="Suivant"
+        pageRangeDisplayed={3}
+        previousLabel="<"
+        nextLabel=">"
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName="paginationBttns"
@@ -52,7 +49,7 @@ const List = ({ list }) => {
         disabledClassName="paginationDisabled"
         activeClassName="paginationActive"
       />
-    </>
+    </div>
   );
 };
 List.propTypes = {

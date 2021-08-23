@@ -14,7 +14,7 @@
 // Tablet
 @media only screen and (min-width: 599px) {
   .filter {
-    width: 95%;
+    width: 85%;
 
     margin: 2.5rem auto;
     padding: 2rem 0;
@@ -34,7 +34,8 @@
 // Desktop
 @media only screen and (min-width: 1025px) {
   .filter {
-    width: 95%;
+    width: 40%;
+    min-width: 580px;
 
     margin: 2.5rem auto;
     padding: 2rem 0;
@@ -48,13 +49,5 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-}
-
-// desktop
-
-@media only screen and (min-width: 1025px) {
-  .filter {
-    width: 40%;
   }
 }
