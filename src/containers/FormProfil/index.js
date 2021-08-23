@@ -6,6 +6,7 @@ import {
   createChangePseudoInputValueAction,
   createSubmitProfilAction,
   toggleEditProfil,
+  updateProfil,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -29,6 +30,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleEditProfil: () => {
     dispatch(toggleEditProfil());
+  },
+  handleSubmitEditProfil: (e) => {
+    e.preventDefault();
+    dispatch(updateProfil());
   }
 });
 

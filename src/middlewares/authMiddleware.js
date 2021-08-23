@@ -91,7 +91,55 @@ const authMiddleware = (store) => (next) => (action) => {
       }).catch((error) => {
         console.error(error);
       });
-    };
+    }
+      break;
+    case 'UPDATE_PROFIL': {
+      const state = store.getState();
+      if (state.user.passwordInputValue.length > 0) {
+        if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
+          store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
+          return;
+        };
+        if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
+          store.dispatch({ type: 'PWD_WRONG' });
+          return;
+        };
+        const options = {
+          method: 'POST',
+          url: 'http://localhost:3001/user/profil',
+          data: {
+            pseudo: state.user.pseudoInputValue,
+            email: state.user.emailInputValue,
+            city: state.user.cityInputValue,
+            password: state.user.passwordInputValue,
+            confirm: state.user.passwordConfirmInputValue,
+          },
+        };
+        axios(options).then((response) => {
+          store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD', data: response.data });
+        }).catch((error) => {
+          console.error(error);
+        });
+        return;
+      };
+      next(action);
+
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:3001/user/profil',
+        data: {
+          pseudo: state.user.pseudoInputValue,
+          email: state.user.emailInputValue,
+          city: state.user.cityInputValue,
+        },
+      };
+
+      axios(options).then((response) => {
+        store.dispatch({ type: 'UPDATE_SUCCESS_WITHOUT_PASSWORD', data: response.data });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
       break;
     default:
       next(action);
