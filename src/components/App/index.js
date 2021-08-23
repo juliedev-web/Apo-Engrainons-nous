@@ -1,6 +1,6 @@
 // == Import npm
-import React, { useEffect, useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // == Composant
 
@@ -44,16 +44,24 @@ const App = ({ isLogged }) => {
           />
         </Route>
 
-        {isLogged ? (
-          <Route path="/compte" exact>
-            <Profil width={width} breakpoint={breakpoint} />
-          </Route>
-        )
-          : (
-            <Route path="/connexion" exact>
-              <PageConnexion width={width} breakpoint={breakpoint} />
-            </Route>
-          )}
+        <Route path="/connexion" exact>
+          <PageConnexion width={width} breakpoint={breakpoint} />
+        </Route>
+
+        {
+          isLogged
+            ? (
+              <Route path="/compte" exact>
+                <Profil width={width} breakpoint={breakpoint} />
+              </Route>
+            ) : (
+              <Redirect to="/connexion" />
+            )
+        }
+
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} />
+        </Route>
 
         <Route path="/inscription" exact>
           <SignIn width={width} breakpoint={breakpoint} />
@@ -67,16 +75,16 @@ const App = ({ isLogged }) => {
           <Team width={width} breakpoint={breakpoint} />
         </Route>
 
-        {isLogged ? (
-          <Route path="/partager-une-graine" exact>
-            <PageShareSeed width={width} breakpoint={breakpoint} />
-          </Route>
-        )
-          : (
-            <Route path="/connexion" exact>
-              <PageConnexion width={width} breakpoint={breakpoint} />
-            </Route>
-          )}
+        {
+          isLogged
+            ? (
+              <Route path="/partager-une-graine" exact>
+                <PageShareSeed width={width} breakpoint={breakpoint} />
+              </Route>
+            ) : (
+              <Redirect to="/connexion" />
+            )
+        }
 
         <Route>
           <Page404 width={width} breakpoint={breakpoint} />

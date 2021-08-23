@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 const FooterDesktop = () => (
   <div className="footer-desktop">
-    <a href="/equipe">L'équipe</a>
-    <a href="#">engrainons-nous@gmail.io</a>
+    <Link to="/equipe">L'équipe</Link>
+    <p>engrainons-nous@gmail.io</p>
   </div>
 );
 

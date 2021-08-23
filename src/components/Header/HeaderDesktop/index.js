@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-import logo from 'src/assets/image/logo.png';
+import logo from 'src/assets/image/Logo.png';
+
 import {
   faHome, faPlus, faUserAlt,
 } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +24,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
       </div>
     </div>
     <div className="menuDesktop">
+
       <NavLink
         className="navbar_link"
         to="/"
@@ -37,6 +39,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
           <span>Accueil</span>
         </div>
       </NavLink>
+
       <NavLink
         className="navbar_link"
         to="/partager-une-graine"
@@ -48,6 +51,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
           <span>Partager une graine</span>
         </div>
       </NavLink>
+
       <NavLink
         className="navbar_link"
         to={isLogged ? '/compte' : '/connexion'}
@@ -59,6 +63,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
           <span>{ pseudo }</span>
         </div>
       </NavLink>
+
     </div>
   </div>
 );
