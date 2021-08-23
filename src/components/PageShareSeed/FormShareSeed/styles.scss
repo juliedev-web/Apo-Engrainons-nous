@@ -13,6 +13,22 @@
     align-items: center;
     flex-direction: column;
 
+    .link-to-connexion {
+      span {
+        display: block;
+        text-align: center;
+        margin-right: 0.4rem;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        color: #62923b;
+        font-weight: bold;
+      }
+
+      span:hover {
+        color: rgb(21, 58, 180);
+      }
+    }
+
     .fields-zone {
       padding: 2rem;
 
