@@ -5,8 +5,4 @@ const mapStateToProps = (state) => ({
   list: state.seeds.listFiltered,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getList: () => dispatch({ type: 'GETTING_LIST' }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps)(List);

@@ -1,49 +1,32 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import './styles.scss';
 
 import PropTypes from 'prop-types';
 
-const List = ({ list, getList }) => {
-  console.log(list);
-  useEffect(() => {
-    getList();
-  }, []);
-  return (
-    <div className="list">
-      {list.map((seed) => {
-        const date = new Date(seed.created_at);
-        const year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let dt = date.getDate();
+import { formatDate } from '../../selectors/seeds';
 
-        if (dt < 10) {
-          dt = `0${dt}`;
-        }
-        if (month < 10) {
-          month = `0${month}`;
-        }
-        return (
-          <NavLink to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
-            <img src={seed.category_img} alt="img" />
+import './styles.scss';
 
-            <div className="content">
-              <div className="content__description">
-                <p className="content__description__category">{seed.category_name}</p>
-                <p className="content__description__variety">{seed.variety_name}</p>
-              </div>
-              <div className="content__infos">
-                <p className="content__infos__pseudo">{seed.pseudo_user}</p>
-                <p className="content__infos__date">{`${dt}/${month}/${year}`}</p>
-              </div>
-            </div>
-          </NavLink>
-        );
-      })}
-    </div>
-  );
-};
+const List = ({ list }) => (
+  <div className="list">
+    {list.map((seed) => (
+      <NavLink to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
+        <img src={seed.category_img} alt="img" />
+
+        <div className="content">
+          <div className="content__description">
+            <p className="content__description__category">{seed.category_name}</p>
+            <p className="content__description__variety">{seed.variety_name}</p>
+          </div>
+          <div className="content__infos">
+            <p className="content__infos__pseudo">{seed.pseudo_user}</p>
+            <p className="content__infos__date">{formatDate(seed)}</p>
+          </div>
+        </div>
+      </NavLink>
+    ))}
+  </div>
+);
 List.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.object.isRequired,
