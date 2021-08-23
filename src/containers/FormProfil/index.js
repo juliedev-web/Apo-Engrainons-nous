@@ -5,6 +5,7 @@ import FormProfil from 'src/components/Profil/FormProfil';
 import {
   createChangePseudoInputValueAction,
   createSubmitProfilAction,
+  toggleEditProfil,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => ({
   passwordConfirmInputValue: state.user.passwordConfirmInputValue,
   passwordConfirmMessage: state.user.passwordConfirmMessage,
   profil: state.user.profil,
+  editProfil: state.user.editProfil,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -25,6 +27,9 @@ const mapDispatchToProps = (dispatch) => ({
     e.preventDefault();
     dispatch(createSubmitProfilAction());
   },
+  toggleEditProfil: () => {
+    dispatch(toggleEditProfil());
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormProfil);

@@ -91,7 +91,7 @@ const authMiddleware = (store) => (next) => (action) => {
       }).catch((error) => {
         console.error(error);
       });
-    }
+    };
       break;
     default:
       next(action);

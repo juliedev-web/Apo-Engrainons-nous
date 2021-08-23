@@ -15,3 +15,7 @@ export const createSubmitConnexion = () => ({
 export const createSubmitProfilAction = () => ({
   type: 'ON_PROFIL_SUBMIT',
 });
+
+export const toggleEditProfil = () =>({
+  type: 'ON_TOGGLE_CLICK_PROFIL',
+});
