@@ -3,12 +3,12 @@ import { filterByVariety } from '../selectors/seeds';
 
 export const initialState = {
   list: [],
+  listFiltered: [],
   category: [],
   seed: {},
   selectedValue: '',
   categoryName: 'Catégories',
   inputSearchValue: '',
-  listFiltered: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
