@@ -11,6 +11,11 @@
     text-align: center;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   .signInput {
     display: flex;
     flex-direction: column;

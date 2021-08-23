@@ -28,7 +28,7 @@ export default function FormProfil({
             <input name="email" type="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
             <input name="city" type="text" placeholder="Ville" required value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
           </div>
-          <button type="submit">Valider</button>
+          <button className="valider" type="submit">Valider</button>
         </form>
       )
         : (
