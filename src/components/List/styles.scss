@@ -86,10 +86,10 @@
   }
   
   .paginationBttns a {
-    padding: 0.4rem;
+    padding: 0.2rem 0.6rem;
     margin: 0.3rem;
-    border-radius: 5px;
-    border: 1px solid black;
+    border-radius: 50%;
+    // border: 1px solid black;
     cursor: pointer;
     transition: 0.3s;
   }
@@ -169,7 +169,7 @@
     }
 
     .paginationBttns a {
-      padding: 10px;
+      padding: 0.4rem 0.8rem;
       margin: 8px;
     }
   }
