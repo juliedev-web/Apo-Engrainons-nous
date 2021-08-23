@@ -20,9 +20,13 @@ import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
-const App = ({ isLogged }) => {
+const App = ({ isLogged, getList }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
+
+  useEffect(() => {
+    getList();
+  }, []);
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -97,6 +101,7 @@ const App = ({ isLogged }) => {
 
 // Props validation
 App.propTypes = {
+  getList: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
 };
 
