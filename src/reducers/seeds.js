@@ -37,7 +37,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
-        list: [...action.data],
+        listFiltered: [...action.data],
       };
 
     case 'GET_CATEGORY_FILTERED':
