@@ -1,9 +1,14 @@
+// import
+import { filterByVariety } from '../selectors/seeds';
+
 export const initialState = {
   list: [],
   category: [],
   seed: {},
   selectedValue: '',
   categoryName: 'Catégories',
+  inputSearchValue: '',
+  listFiltered: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -12,6 +17,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: [...action.data],
+        listFiltered: [...action.data],
       };
 
     case 'GETTING_CATEGORY_SUCCESS':
@@ -38,6 +44,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,
+      };
+    case 'SEARCH_CHANGE':
+      return {
+        ...state,
+        inputSearchValue: action.inputValue,
+      };
+    case 'ON_SEARCH_SUBMIT':
+      // console.log(filterByVariety(state.list, state.inputSearchValue));
+      return {
+        ...state,
+        listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
       };
 
     default:
