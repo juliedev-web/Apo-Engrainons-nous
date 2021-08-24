@@ -9,6 +9,7 @@ export const initialState = {
   selectedValue: '',
   categoryName: 'Catégories',
   inputSearchValue: '',
+  selectedCategoryId: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -44,6 +45,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,
+        selectedCategoryId: action.categoryId,
       };
     case 'SEARCH_CHANGE':
       return {
@@ -54,6 +56,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
+      };
+    case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
+      return {
+        ...state,
+        selectedCategoryId: '',
       };
 
     default:
