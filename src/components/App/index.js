@@ -2,12 +2,14 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// == Composant
+
+// == Component
 
 import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
+import MySeeds from 'src/components/PageMySeeds';
 
 import Team from 'src/components/Team';
 
@@ -66,7 +68,19 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <SignIn width={width} breakpoint={breakpoint} />
+        </Route>
+
+        <Route path="/mesgraines" exact>
+          <MySeeds width={width} breakpoint={breakpoint} />
+        </Route>
+
+        <Route path="/partager-une-graine" exact>
+          <PageShareSeed width={width} breakpoint={breakpoint} />
+        </Route>
+
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/partager-une-graine" exact>
