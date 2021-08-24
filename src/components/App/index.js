@@ -69,10 +69,6 @@ const App = ({ getList, menuIsOpen }) => {
           <SignIn width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
-        <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
-        </Route>
-
         <Route path="/partager-une-graine" exact>
           <PageShareSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
