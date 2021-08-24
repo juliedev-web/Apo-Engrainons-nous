@@ -4,13 +4,15 @@ import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import PropTypes from 'prop-types';
 import FormShareSeed from 'src/containers/FormShareSeed';
+import MenuModal from 'src/containers/MenuModal';
 
 import './styles.scss';
 
-const PageShareSeed = ({ width, breakpoint }) => (
+const PageShareSeed = ({ width, breakpoint, menuIsOpen }) => (
   <div className="page-share-seed">
     <Header width={width} breakpoint={breakpoint} />
-    <FormShareSeed />
+    <MenuModal />
+    { !menuIsOpen && <FormShareSeed /> }
     <Footer width={width} breakpoint={breakpoint} />
   </div>
 );

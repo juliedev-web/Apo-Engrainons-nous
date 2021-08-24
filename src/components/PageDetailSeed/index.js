@@ -5,11 +5,14 @@ import './styles.scss';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import ComponentSeed from 'src/containers/ComponentSeed';
+import MenuModal from 'src/containers/MenuModal';
 
-const PageDetailSeed = ({ width, breakpoint }) => (
+const PageDetailSeed = ({ width, breakpoint, menuIsOpen }) => (
   <div className="page-detail-seed">
     <Header width={width} breakpoint={breakpoint} />
-    <ComponentSeed />
+
+    <MenuModal />
+    { !menuIsOpen && <ComponentSeed />}
     <Footer width={width} breakpoint={breakpoint} />
   </div>
 );

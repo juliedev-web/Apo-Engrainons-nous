@@ -4,7 +4,7 @@ import App from 'src/components/App';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
-
+  menuIsOpen: state.user.menuIsOpen,
 });
 
 const mapDispatchToProps = (dispatch) => ({
