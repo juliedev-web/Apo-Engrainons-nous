@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import logo from 'src/assets/image/Logo.png';
 
@@ -7,7 +8,9 @@ import './styles.scss';
 
 const HeaderMobile = () => (
   <div className="headerMobile">
-    <img src={logo} alt="logo feuilles" className="headerMobile__logo" />
+    <Link to="/">
+      <img src={logo} alt="logo feuilles" className="headerMobile__logo" />
+    </Link>
     <div className="headerMobile__content">
       <h1 className="headerMobile__content__title">
         Engrainons-nous !
