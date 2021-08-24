@@ -102,6 +102,12 @@ const reducer = (state = initialState, action = {}) => {
         menuIsOpen: !state.menuIsOpen,
       };
 
+    case 'CLOSE_MODAL':
+      return {
+        ...state,
+        menuIsOpen: false,
+      };
+
     default:
       return state;
   }

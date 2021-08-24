@@ -10,9 +10,12 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBarMobile = ({ isLogged, handleMenuIsOpenClick, menuIsOpen }) => (
+const NavBarMobile = ({
+  isLogged, handleMenuIsOpenClick, menuIsOpen, closeModal,
+}) => (
   <div className="navbar-mobile">
     <NavLink
+      onClick={closeModal}
       className="navbar_link"
       to={isLogged ? '/compte' : '/connexion'}
       exact
@@ -25,6 +28,7 @@ const NavBarMobile = ({ isLogged, handleMenuIsOpenClick, menuIsOpen }) => (
     </NavLink>
 
     <NavLink
+      onClick={closeModal}
       className="navbar_link"
       to="/partager-une-graine"
       exact
@@ -45,6 +49,10 @@ const NavBarMobile = ({ isLogged, handleMenuIsOpenClick, menuIsOpen }) => (
 
 NavBarMobile.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  handleMenuIsOpenClick: PropTypes.func.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+
 };
 
 export default NavBarMobile;

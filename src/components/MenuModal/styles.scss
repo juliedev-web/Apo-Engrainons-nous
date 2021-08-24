@@ -1,0 +1,36 @@
+.menu-modal {
+  position: fixed;
+  z-index: 1;
+
+  height: 100%;
+
+  padding: 2rem;
+
+  font-size: 2rem;
+
+  background-color: #283844;
+  color: #CACACA;
+
+  transition: 0.6s;
+  transform: translateX(-100%);
+  
+  &.isOpen {
+    width: 100%;
+    transform: translateX(0);
+    overflow: none;
+  }
+
+  &__links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &__link {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+
+

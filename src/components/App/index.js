@@ -22,7 +22,7 @@ import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
-const App = ({ getList }) => {
+const App = ({ getList, menuIsOpen }) => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
 
@@ -47,23 +47,24 @@ const App = ({ getList }) => {
             width={width}
             breakpoint={breakpoint}
             list={list}
+            menuIsOpen={menuIsOpen}
           />
         </Route>
 
         <Route path="/connexion" exact>
-          <PageConnexion width={width} breakpoint={breakpoint} />
+          <PageConnexion width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/equipe" exact>
-          <Team width={width} breakpoint={breakpoint} />
+          <Team width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/detail-graine/:id" exact>
-          <PageDetailSeed width={width} breakpoint={breakpoint} />
+          <PageDetailSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} />
+          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/inscription" exact>
@@ -79,15 +80,15 @@ const App = ({ getList }) => {
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} />
+          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/partager-une-graine" exact>
-          <PageShareSeed width={width} breakpoint={breakpoint} />
+          <PageShareSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route>
-          <Page404 width={width} breakpoint={breakpoint} />
+          <Page404 width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
       </Switch>
@@ -98,6 +99,7 @@ const App = ({ getList }) => {
 // Props validation
 App.propTypes = {
   getList: PropTypes.func.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };
 
 // == Export

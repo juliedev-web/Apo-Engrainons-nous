@@ -6,14 +6,16 @@ import PropTypes from 'prop-types';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import FormSignIn from 'src/containers/FormSignIn';
+import MenuModal from 'src/containers/MenuModal';
 
 import './styles.scss';
 
-export default function SignIn({ width, breakpoint }) {
+export default function SignIn({ width, breakpoint, menuIsOpen }) {
   return (
     <div className="sign-in">
       <Header width={width} breakpoint={breakpoint} />
-      <FormSignIn />
+      <MenuModal />
+      { !menuIsOpen && <FormSignIn /> }
       <Footer width={width} breakpoint={breakpoint} />
     </div>
   );

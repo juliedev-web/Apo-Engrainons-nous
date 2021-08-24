@@ -24,7 +24,7 @@ const FormShareSeed = ({ isLogged }) => (
         <button type="button">Valider</button>
       ) : (
         <Link className="link-to-connexion" to="/connexion">
-          pour partager vos graines
+          pour partager nes
           <span>se connecter</span>
         </Link>
       )}
@@ -32,7 +32,6 @@ const FormShareSeed = ({ isLogged }) => (
     <div className="fake-footer" />
   </div>
 );
-
 FormShareSeed.propTypes = {
   isLogged: PropTypes.bool.isRequired,
 };

@@ -1,6 +1,8 @@
 @use 'src/styles/vars';
 
 .navbar-mobile {
+  z-index: 2;
+
   position: relative;
   font-size: 20px; // FontAwesome Icon Size
 

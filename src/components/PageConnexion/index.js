@@ -7,11 +7,13 @@ import './styles.scss';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import FormConnexion from 'src/containers/FormConnexion';
+import MenuModal from 'src/containers/MenuModal';
 
-const PageConnexion = ({ width, breakpoint }) => (
+const PageConnexion = ({ width, breakpoint, menuIsOpen }) => (
   <div className="page-connexion">
     <Header width={width} breakpoint={breakpoint} />
-    <FormConnexion />
+    <MenuModal />
+    { !menuIsOpen && <FormConnexion />}
     <Footer width={width} breakpoint={breakpoint} />
   </div>
 );
