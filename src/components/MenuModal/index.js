@@ -13,9 +13,16 @@ const MenuModal = ({ menuIsOpen, closeModal, isLogged }) => {
       <div className="menu-modal__links-container">
         <Link onClick={closeModal} to="/" className="menu-modal__links-container__link">Accueil</Link>
         <Link onClick={closeModal} to="/partager-une-graine" className="menu-modal__links-container__link">Partager une graine</Link>
-        <Link onClick={closeModal} to="/connexion" className="menu-modal__links-container__link">Connexion/Inscription</Link>
+
+        {
+          isLogged ? (
+            <Link onClick={closeModal} to={isLogged ? '/compte' : '/connexion'} className="menu-modal__links-container__link">Profil</Link>
+          ) : (
+            <Link onClick={closeModal} to="/connexion" className="menu-modal__links-container__link">Connexion/Inscription</Link>
+          )
+        }
+
         <Link onClick={closeModal} to="/equipe" className="menu-modal__links-container__link">L'équipe</Link>
-        <Link onClick={closeModal} to={isLogged ? '/compte' : '/connexion'} className="menu-modal__links-container__link">Profil</Link>
         <Link to="#" className="menu-modal__links-container__link">Déconnexion</Link>
       </div>
     </div>
