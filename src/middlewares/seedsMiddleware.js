@@ -54,6 +54,29 @@ const authMiddleware = (store) => (next) => (action) => {
 
       break;
 
+    case 'ON_SUBMIT_SHARED_SEED': {
+      const state = store.getState();
+
+      const options = {
+        method: 'POST',
+        url: 'https://engrainonsnous.herokuapp.com/create/seed',
+        data: {
+          user_id: state.user.profil.id,
+          variety_name: state.user.varietyInputValue,
+          category_id: state.seeds.selectedCategoryId,
+          description: state.user.textAreaDetailValue,
+          advice: state.user.textAreaAdviceValue,
+        },
+      };
+      axios(options).then((response) => {
+        console.log(response);
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS' });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
+
     default:
       next(action);
   }
