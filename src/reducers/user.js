@@ -13,6 +13,7 @@ export const initialState = {
     city: '',
   },
   editProfil: false,
+  menuIsOpen: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -93,6 +94,12 @@ const reducer = (state = initialState, action = {}) => {
           passwordInputValue: '',
           passwordConfirmInputValue: '',
         },
+      };
+
+    case 'ON_MENU_CLICK':
+      return {
+        ...state,
+        menuIsOpen: !state.menuIsOpen,
       };
 
     default:

@@ -10,7 +10,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const NavBarMobile = ({ isLogged }) => (
+const NavBarMobile = ({ isLogged, handleMenuIsOpenClick, menuIsOpen }) => (
   <div className="navbar-mobile">
     <NavLink
       className="navbar_link"
@@ -33,7 +33,13 @@ const NavBarMobile = ({ isLogged }) => (
       <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     </NavLink>
 
-    <FontAwesomeIcon icon={faBars} className="faUserAlt" />
+    {/* <FontAwesomeIcon icon={faBars} className="faUserAlt" /> */}
+    <div
+      className={menuIsOpen ? 'menu-burger menu-burger--active' : 'menu-burger'}
+      onClick={handleMenuIsOpenClick}
+    >
+      <div className="barre" />
+    </div>
   </div>
 );
 
