@@ -17,7 +17,7 @@ export default function Seedslist() {
           <li className="detail-list_item detail-category">
             <NavLink
               className="seed-category"
-              to="/detail-graine/id"
+              to="/detail-graine/1"
               exact
               activeClassName="seed-category--active"
             >
@@ -27,7 +27,7 @@ export default function Seedslist() {
           <li className="detail-list_item detail-variety">
             <NavLink
               className="seed-variety"
-              to="/detail-graine/id"
+              to="/detail-graine/1"
               exact
               activeClassName="seed-category--active"
             >

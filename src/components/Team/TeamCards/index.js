@@ -13,9 +13,9 @@ export default function TeamCards() {
       <h2>L'équipe d'Engrainons-nous</h2>
       <section className="card-container">
         <article className="card-dev">
-          <img className="photo-profil" src={Cedric} alt="Cedric" />
           <h2>Cédric Cubat</h2>
-          <p>Product Owner et Lead dev back</p>
+          <img className="photo-profil" src={Cedric} alt="Cedric" />
+          <p className="role">Product Owner et Lead dev back</p>
           <div className="socials">
             <ul>
               <li>
