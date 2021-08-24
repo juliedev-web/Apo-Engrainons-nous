@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleMenuIsOpenClick: () => dispatch({ type: 'ON_MENU_CLICK' }),
+  closeModal: () => dispatch({ type: 'CLOSE_MODAL' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBarMobile);
