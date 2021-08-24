@@ -2,7 +2,8 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// == Composant
+
+// == Component
 
 import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
@@ -18,7 +19,7 @@ import './styles.scss';
 import list from 'src/data/list';
 import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
-import MySeeds from '../PageMySeeds';
+import MySeeds from 'src/components/PageMySeeds';
 
 // == Composant
 const App = ({ getList }) => {
