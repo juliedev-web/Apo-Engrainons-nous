@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -47,7 +48,16 @@ export default function FormProfil({
       {/* Button toggle on click Modify or Cancel */}
       <section className="button-container">
         <button type="button" onClick={toggleEditProfil}> {editProfil ? 'Annuler' : 'Modifier mon compte'}</button>
-        <button type="submit"> Mes graines</button>
+        <button type="submit">
+          <NavLink
+            className="myseeds"
+            to="/mesgraines"
+            exact
+            activeClassName="myseed--active"
+          >
+            Mes graines
+          </NavLink>
+        </button>
         <button className="btn-delete" type="submit"> Supprimer mon compte</button>
       </section>
     </div>
