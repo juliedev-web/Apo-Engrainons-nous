@@ -31,6 +31,8 @@ const MenuModal = ({ menuIsOpen, closeModal, isLogged }) => {
 
 MenuModal.propTypes = {
   menuIsOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 export default MenuModal;

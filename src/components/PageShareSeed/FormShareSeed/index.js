@@ -23,8 +23,8 @@ const FormShareSeed = ({ isLogged }) => (
       {isLogged ? (
         <button type="button">Valider</button>
       ) : (
-        <Link className="link-to-connexion" to="/connexion">
-          pour partager vos graines
+        <Link graink className="link-to-connexion" to="/connexion">
+          pour partager nes
           <span>se connecter</span>
         </Link>
       )}
