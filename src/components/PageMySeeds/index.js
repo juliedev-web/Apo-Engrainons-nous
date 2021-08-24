@@ -2,9 +2,9 @@ import React from 'react';
 
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import SeedsList from 'src/containers/SeedsList';
+import SeedsList from './SeedsList';
 
-import './style.scss';
+import './styles.scss';
 
 export default function MySeeds() {
   return (

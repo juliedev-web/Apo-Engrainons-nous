@@ -18,6 +18,7 @@ import './styles.scss';
 import list from 'src/data/list';
 import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
+import MySeeds from '../PageMySeeds';
 
 // == Composant
 const App = ({ getList }) => {
@@ -68,8 +69,8 @@ const App = ({ getList }) => {
           <SignIn width={width} breakpoint={breakpoint} />
         </Route>
 
-        <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} />
+        <Route path="/mesgraines" exact>
+          <MySeeds width={width} breakpoint={breakpoint} />
         </Route>
 
         <Route path="/partager-une-graine" exact>
