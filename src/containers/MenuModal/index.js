@@ -6,7 +6,8 @@ const mapStateToProps = (state) => ({
   menuIsOpen: state.user.menuIsOpen,
 });
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
+  closeModal: () => dispatch({ type: 'CLOSE_MODAL' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuModal);
