@@ -9,6 +9,7 @@ import HomePage from 'src/components/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
+import MySeeds from 'src/components/PageMySeeds';
 
 import Team from 'src/components/Team';
 
@@ -19,7 +20,6 @@ import './styles.scss';
 import list from 'src/data/list';
 import Page404 from '../Page404';
 import PageDetailSeed from '../PageDetailSeed';
-import MySeeds from 'src/components/PageMySeeds';
 
 // == Composant
 const App = ({ getList }) => {

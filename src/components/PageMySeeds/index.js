@@ -6,7 +6,7 @@ import SeedsList from './SeedsList';
 
 import './styles.scss';
 
-export default function MySeeds() {
+export default function MySeeds({width, breakpoint}) {
   return (
     <div className="myseeds">
       <Header width={width} breakpoint={breakpoint} />
