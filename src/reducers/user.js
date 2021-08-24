@@ -6,11 +6,15 @@ export const initialState = {
   passwordConfirmInputValue: '',
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
+  varietyInputValue: '',
+  textAreaDetailValue: '',
+  textAreaAdviceValue: '',
   isLogged: false,
   profil: {
     pseudo: '',
     email: '',
     city: '',
+    id: '',
   },
   editProfil: false,
   menuIsOpen: false,
@@ -52,6 +56,7 @@ const reducer = (state = initialState, action = {}) => {
           pseudo: action.data.user.pseudo,
           email: action.data.user.email,
           city: action.data.user.city,
+          id: action.data.user.id,
         },
       };
 
@@ -106,6 +111,18 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         menuIsOpen: false,
+      };
+    case 'ON_SHARE_SEED_FORM_CHANGE':
+      return {
+        ...state,
+        [action.inputName]: action.inputValue,
+      };
+    case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
+      return {
+        ...state,
+        varietyInputValue: '',
+        textAreaDetailValue: '',
+        textAreaAdviceValue: '',
       };
 
     default:
