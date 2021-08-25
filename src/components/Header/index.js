@@ -1,26 +1,17 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
-import logo from 'src/assets/image/logo.png';
+import HeaderMobile from 'src/components/Header/HeaderMobile';
+import HeaderDesktop from 'src/containers/HeaderDesktop';
 
-import './styles.scss';
-
-const Header = () => (
-  <div className="header">
-    <img src={logo} alt="logo feuilles" className="header__logo" />
-    <div className="header__content">
-      <h1 className="header__content__title">
-        Engrainons-nous !
-      </h1>
-      <p className="header__content__subtitle">
-        Bienvenue sur notre plateforme d'échange de graine !
-      </p>
-    </div>
-  </div>
+const Header = ({ width, breakpoint }) => (
+  width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />
 );
 
 Header.propTypes = {
-
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
 };
 
 export default Header;

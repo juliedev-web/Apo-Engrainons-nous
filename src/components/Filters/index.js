@@ -1,20 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-import CategoriesFilter from './CategoriesFilter';
-import SearchSeedInput from './SearchSeedInput';
+import CategoriesFilter from '../../containers/CategoriesFilter';
+import SearchSeedInput from '../../containers/SearchSeedInput';
 
 const Filters = () => (
   <div className="filter">
-    <CategoriesFilter />
+    <CategoriesFilter from="homePage" />
     <SearchSeedInput />
   </div>
 );
-
-Filters.propTypes = {
-
-};
 
 export default Filters;
