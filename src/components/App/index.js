@@ -68,23 +68,19 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn width={width} breakpoint={breakpoint} />
+          <SignIn width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/mesgraines" exact>
-          <MySeeds width={width} breakpoint={breakpoint} />
-        </Route>
-
-        <Route path="/partager-une-graine" exact>
-          <PageShareSeed width={width} breakpoint={breakpoint} />
-        </Route>
-
-        <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <MySeeds width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route path="/partager-une-graine" exact>
           <PageShareSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+        </Route>
+
+        <Route path="/compte" exact>
+          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
         </Route>
 
         <Route>

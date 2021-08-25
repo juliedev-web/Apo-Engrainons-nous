@@ -11,13 +11,18 @@ import adviceData from 'src/data/conseils';
 import detailData from 'src/data/detail';
 
 const FormShareSeed = ({
-  isLogged, varietyInputValue, handleInputValue, textAreaDetailValue, textAreaAdviceValue, handleOnSubmit,
+  isLogged,
+  varietyInputValue,
+  handleInputValue,
+  textAreaDetailValue,
+  textAreaAdviceValue,
+  handleOnSubmit,
 }) => (
   <div className="form-seed">
     <h2>Partagez vos graines</h2>
     <form onSubmit={handleOnSubmit}>
       <div className="fields-zone">
-        <CategoriesFilter />
+        <CategoriesFilter from="sharedSeedPage" />
         <input className="input" placeholder="Nom de la variété" value={varietyInputValue} onChange={(e) => handleInputValue(e.target.value, 'varietyInputValue')} type="text" name="seed_name" />
         <textarea className="description" placeholder={detailData} name="description" cols="100" rows="20" value={textAreaDetailValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaDetailValue')} />
         <textarea className="conseil" placeholder={adviceData} name="advice" cols="100" rows="20" value={textAreaAdviceValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaAdviceValue')} />
@@ -36,6 +41,11 @@ const FormShareSeed = ({
 );
 FormShareSeed.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  varietyInputValue: PropTypes.string.isRequired,
+  handleInputValue: PropTypes.func.isRequired,
+  textAreaDetailValue: PropTypes.string.isRequired,
+  textAreaAdviceValue: PropTypes.string.isRequired,
+  handleOnSubmit: PropTypes.func.isRequired,
 };
 
 export default FormShareSeed;
