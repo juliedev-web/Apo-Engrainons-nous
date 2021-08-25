@@ -9,6 +9,8 @@ import './styles.scss';
 
 const List = ({ list }) => {
   const [pageNumber, setPageNumber] = useState(0);
+  console.log(pageNumber + 1);
+
   const seedPerPage = 12;
   const pagesVisited = pageNumber * seedPerPage;
   const displaySeeds = list
