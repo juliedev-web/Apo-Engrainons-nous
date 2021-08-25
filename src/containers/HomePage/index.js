@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getPage: (pageNumber) => {
-    dispatch({ type: 'GET_LIST_PAGE', pageNumber });
+    dispatch({ type: 'GET_LIST_PAGE', pageNumber: pageNumber });
   },
 });
 
