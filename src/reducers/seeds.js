@@ -57,12 +57,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
       };
-    case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
-      return {
-        ...state,
-        selectedCategoryId: '',
-      };
-
     default:
       return state;
   }
