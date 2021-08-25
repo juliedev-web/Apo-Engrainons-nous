@@ -82,10 +82,13 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         editProfil: false,
         profil: {
-          pseudo: action.data.user.pseudo,
-          email: action.data.user.email,
-          city: action.data.user.city,
+          ...state.profil,
+          pseudo: state.pseudoInputValue,
+          email: state.emailInputValue,
+          city: state.cityInputValue,
         },
+        passwordInputValue: '',
+        passwordConfirmInputValue: '',
       };
 
     case 'UPDATE_SUCCESS_WITHOUT_PASSWORD':
@@ -93,11 +96,10 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         editProfil: false,
         profil: {
-          pseudo: action.data.user.pseudo,
-          email: action.data.user.email,
-          city: action.data.user.city,
-          passwordInputValue: '',
-          passwordConfirmInputValue: '',
+          ...state.profil,
+          pseudo: state.pseudoInputValue,
+          email: state.emailInputValue,
+          city: state.cityInputValue,
         },
       };
 
