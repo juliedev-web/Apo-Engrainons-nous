@@ -31,7 +31,6 @@ export default function FormProfil({
             <label htmlFor="password"> Au moins 8 caractères, une majuscule, une minuscule et un caractère spécial</label>
             <input name="password" type="password" placeholder="Mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
             <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
-            {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
           </div>
           <button className="valider" type="submit">Valider</button>
         </form>

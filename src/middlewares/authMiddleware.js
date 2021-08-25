@@ -76,7 +76,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
       const options = {
         method: 'POST',
-        url: 'http://localhost:3001/user/profil',
+        url: 'https://engrainonsnous.herokuapp.com/user/profil',
         data: {
           pseudo: state.user.pseudoInputValue,
           email: state.user.emailInputValue,
@@ -95,18 +95,30 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     case 'UPDATE_PROFIL': {
       const state = store.getState();
+      console.log(state.user.passwordInputValue.length > 0);
       if (state.user.passwordInputValue.length > 0) {
+        console.log(state.user.passwordInputValue);
+        console.log('check password good :', state.user.passwordInputValue !== state.user.passwordConfirmInputValue);
+        console.log('check password good :', !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue));
+
         if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
           store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
           return;
-        };
+        }
         if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
           store.dispatch({ type: 'PWD_WRONG' });
           return;
-        };
+        }
+
+        console.log(state.user.pseudoInputValue,
+          state.user.emailInputValue,
+          state.user.cityInputValue,
+          state.user.passwordInputValue,
+          state.user.passwordConfirmInputValue);
+
         const options = {
-          method: 'POST',
-          url: 'http://localhost:3001/user/profil',
+          method: 'PATCH',
+          url: `https://engrainonsnous.herokuapp.com/update/user/${state.user.profil.id}`,
           data: {
             pseudo: state.user.pseudoInputValue,
             email: state.user.emailInputValue,
@@ -116,17 +128,19 @@ const authMiddleware = (store) => (next) => (action) => {
           },
         };
         axios(options).then((response) => {
-          store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD', data: response.data });
+          console.log(response);
+          store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD' });
         }).catch((error) => {
           console.error(error);
         });
         return;
-      };
+      }
+
       next(action);
 
       const options = {
-        method: 'POST',
-        url: 'http://localhost:3001/user/profil',
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/update/user/${state.user.profil.id}`,
         data: {
           pseudo: state.user.pseudoInputValue,
           email: state.user.emailInputValue,
@@ -135,7 +149,8 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'UPDATE_SUCCESS_WITHOUT_PASSWORD', data: response.data });
+        console.log(response);
+        store.dispatch({ type: 'UPDATE_SUCCESS_WITHOUT_PASSWORD' });
       }).catch((error) => {
         console.error(error);
       });
