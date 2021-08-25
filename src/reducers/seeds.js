@@ -9,6 +9,7 @@ export const initialState = {
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
   totalSeedsNumber: 0,
+  pageNumber: '1',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -18,6 +19,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data.seed],
         totalSeedsNumber: action.data.nbSeed,
+        pageNumber: action.pageNumber,
       };
 
     case 'GETTING_CATEGORY_SUCCESS':
