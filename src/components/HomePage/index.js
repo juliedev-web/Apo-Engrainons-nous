@@ -16,10 +16,11 @@ const HomePage = ({
   breakpoint,
   menuIsOpen,
   getPage,
+  pageNumber,
 }) => {
   const history = useHistory();
   useEffect(() => {
-    history.push('/page/1');
+    history.push(`/page/${pageNumber}`);
     getPage(0);
   }, []);
   return (
@@ -50,6 +51,7 @@ const HomePage = ({
   );
 };
 HomePage.propTypes = {
+  pageNumber: PropTypes.string.isRequired,
   getPage: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
   width: PropTypes.number.isRequired,
