@@ -105,8 +105,8 @@ const authMiddleware = (store) => (next) => (action) => {
           return;
         };
         const options = {
-          method: 'POST',
-          url: 'http://localhost:3001/user/profil',
+          method: 'PATCH',
+          url: `http://localhost:3001/update/user/${state.user.profil.id}`,
           data: {
             pseudo: state.user.pseudoInputValue,
             email: state.user.emailInputValue,
@@ -125,8 +125,8 @@ const authMiddleware = (store) => (next) => (action) => {
       next(action);
 
       const options = {
-        method: 'POST',
-        url: 'http://localhost:3001/user/profil',
+        method: 'PATCH',
+        url: `http://localhost:3001/update/user/${state.user.profil.id}`,
         data: {
           pseudo: state.user.pseudoInputValue,
           email: state.user.emailInputValue,
