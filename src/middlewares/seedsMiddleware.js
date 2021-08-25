@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const authMiddleware = (store) => (next) => (action) => {
+const seedsMiddleWare = (store) => (next) => (action) => {
   switch (action.type) {
     case 'GETTING_LIST': {
       const options = {
@@ -29,6 +29,11 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
 
     case 'GET_CATEGORY_FILTERED': {
+      if (action.categoryId === 'categories') {
+        store.dispatch({ type: 'GETTING_LIST' });
+        return;
+      }
+
       const options = {
         method: 'GET',
         url: `https://engrainonsnous.herokuapp.com/category/${action.categoryId}`,
@@ -63,7 +68,7 @@ const authMiddleware = (store) => (next) => (action) => {
         data: {
           user_id: state.user.profil.id,
           variety_name: state.user.varietyInputValue,
-          category_id: state.seeds.selectedCategoryId,
+          category_id: state.seeds.selectedNewSeedCategory,
           description: state.user.textAreaDetailValue,
           advice: state.user.textAreaAdviceValue,
         },
@@ -82,4 +87,4 @@ const authMiddleware = (store) => (next) => (action) => {
   }
 };
 
-export default authMiddleware;
+export default seedsMiddleWare;
