@@ -51,6 +51,7 @@ const authMiddleware = (store) => (next) => (action) => {
         store.dispatch({ type: 'GETTING_ONE_SEED_SUCCESS', data: response.data.result[0] });
       });
     }
+
       break;
 
     case 'ON_SUBMIT_SHARED_SEED': {

@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleSubmitEditProfil: (e) => {
     e.preventDefault();
     dispatch(updateProfil());
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormProfil);
