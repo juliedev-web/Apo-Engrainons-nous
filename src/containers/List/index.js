@@ -1,8 +1,16 @@
 import { connect } from 'react-redux';
+
 import List from 'src/components/List';
 
 const mapStateToProps = (state) => ({
-  list: state.seeds.listFiltered,
+  list: state.seeds.list,
+  totalSeedsNumber: state.seeds.totalSeedsNumber,
 });
 
-export default connect(mapStateToProps)(List);
+const mapDispatchToProps = (dispatch) => ({
+  handlePageChange: (pageNumber) => {
+    dispatch({ type: 'GET_LIST_PAGE', pageNumber });
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
