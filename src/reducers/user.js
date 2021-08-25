@@ -126,6 +126,17 @@ const reducer = (state = initialState, action = {}) => {
         textAreaDetailValue: '',
         textAreaAdviceValue: '',
       };
+    case 'ON_DISCONNECT_CLICK':
+      return {
+        ...state,
+        isLogged: false,
+        profil: {
+          pseudo: '',
+          email: '',
+          city: '',
+          id: '',
+        },
+      };
 
     default:
       return state;
