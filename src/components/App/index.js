@@ -41,7 +41,7 @@ const App = ({ getList, menuIsOpen }) => {
     <div className="app">
       <Switch>
 
-        <Route path="/">
+        <Route path="/" exact>
           <HomePage
             width={width}
             breakpoint={breakpoint}
