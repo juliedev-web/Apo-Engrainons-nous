@@ -7,7 +7,7 @@ import SearchSeedInput from '../../containers/SearchSeedInput';
 
 const Filters = () => (
   <div className="filter">
-    <CategoriesFilter />
+    <CategoriesFilter from="homePage" />
     <SearchSeedInput />
   </div>
 );

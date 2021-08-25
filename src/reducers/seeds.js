@@ -6,10 +6,9 @@ export const initialState = {
   listFiltered: [],
   category: [],
   seed: {},
-  selectedValue: '',
-  categoryName: 'Catégories',
   inputSearchValue: '',
-  selectedCategoryId: '',
+  selectedCategoryIdFilter: '',
+  selectedNewSeedCategory: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,6 +18,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data],
         listFiltered: [...action.data],
+        selectedCategoryIdFilter: '',
       };
 
     case 'GETTING_CATEGORY_SUCCESS':
@@ -44,18 +44,25 @@ const reducer = (state = initialState, action = {}) => {
     case 'GET_CATEGORY_FILTERED':
       return {
         ...state,
-        categoryName: state.category.find((cat) => cat.id === +action.categoryId).name,
-        selectedCategoryId: action.categoryId,
+        selectedCategoryIdFilter: action.categoryId,
       };
+
     case 'SEARCH_CHANGE':
       return {
         ...state,
         inputSearchValue: action.inputValue,
       };
+
     case 'ON_SEARCH_SUBMIT':
       return {
         ...state,
         listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
+      };
+
+    case 'SELECT_CATEGORY_ID':
+      return {
+        ...state,
+        selectedNewSeedCategory: action.categoryId,
       };
     default:
       return state;

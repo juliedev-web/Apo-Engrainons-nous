@@ -12,16 +12,16 @@ const CategoriesFilter = ({
   category,
   getCategory,
   handleOptionClick,
-  selectedValue,
-  categoryName,
+  from,
 }) => {
   useEffect(() => {
     getCategory();
   }, []);
+
   return (
     <div className="categories-filter">
-      <select name="category" id="categories" value={selectedValue} onChange={(e) => handleOptionClick(e.target.value)}>
-        <option value="">{categoryName}</option>
+      <select name="category" id="categories" onChange={(e) => handleOptionClick(e.target.value, from)}>
+        <option value="categories">Catégories</option>
         {category.map((cat) => (
           <option value={cat.id} key={cat.id}>
             {cat.name}
@@ -36,9 +36,8 @@ const CategoriesFilter = ({
 CategoriesFilter.propTypes = {
   category: PropTypes.array.isRequired,
   getCategory: PropTypes.func.isRequired,
+  from: PropTypes.string.isRequired,
   handleOptionClick: PropTypes.func.isRequired,
-  selectedValue: PropTypes.string.isRequired,
-  categoryName: PropTypes.string.isRequired,
 };
 
 export default CategoriesFilter;

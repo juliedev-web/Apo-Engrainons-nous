@@ -20,6 +20,7 @@ const PageShareSeed = ({ width, breakpoint, menuIsOpen }) => (
 PageShareSeed.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };
 
 export default PageShareSeed;
