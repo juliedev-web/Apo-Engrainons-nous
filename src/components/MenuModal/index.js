@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const MenuModal = ({ menuIsOpen, closeModal, isLogged }) => {
+const MenuModal = ({
+  menuIsOpen, closeModal, isLogged, handleDisconnect,
+}) => {
   console.log('test');
   return (
     <div className={`menu-modal ${menuIsOpen && 'isOpen'}`}>
@@ -23,7 +25,19 @@ const MenuModal = ({ menuIsOpen, closeModal, isLogged }) => {
         }
 
         <Link onClick={closeModal} to="/equipe" className="menu-modal__links-container__link">L'équipe</Link>
-        <Link to="#" className="menu-modal__links-container__link">Déconnexion</Link>
+        {
+          isLogged && (
+            <Link
+              to="/"
+              className="menu-modal__links-container__link"
+              onClick={() => {
+                handleDisconnect();
+                closeModal();
+              }}
+            >Déconnexion
+            </Link>
+          )
+        }
       </div>
     </div>
   );

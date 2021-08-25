@@ -35,6 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
     e.preventDefault();
     dispatch(updateProfil());
   },
+  handleDisconnect: () => {
+    dispatch({ type: 'ON_DISCONNECT_CLICK' });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormProfil);
