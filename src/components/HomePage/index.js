@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './styles.scss';
 
 import PropTypes from 'prop-types';
@@ -15,16 +15,24 @@ const HomePage = ({
   width,
   breakpoint,
   menuIsOpen,
-}) => (
-  <div className="home-page">
-    <Header
-      width={width}
-      breakpoint={breakpoint}
-    />
+  getPage,
+  pageNumber,
+}) => {
+  const history = useHistory();
+  useEffect(() => {
+    history.push(`/page/${pageNumber}`);
+    getPage(0);
+  }, []);
+  return (
+    <div className="home-page">
+      <Header
+        width={width}
+        breakpoint={breakpoint}
+      />
 
-    <MenuModal />
+      <MenuModal />
 
-    {
+      {
       !menuIsOpen && (
         <>
           <Filters />
@@ -33,16 +41,18 @@ const HomePage = ({
       )
     }
 
-    <Footer
-      width={width}
-      breakpoint={breakpoint}
-    />
+      <Footer
+        width={width}
+        breakpoint={breakpoint}
+      />
 
-  </div>
+    </div>
 
-);
-
+  );
+};
 HomePage.propTypes = {
+  pageNumber: PropTypes.string.isRequired,
+  getPage: PropTypes.func.isRequired,
   list: PropTypes.array.isRequired,
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,

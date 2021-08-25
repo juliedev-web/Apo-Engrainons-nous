@@ -3,12 +3,13 @@ import { filterByVariety } from '../selectors/seeds';
 
 export const initialState = {
   list: [],
-  listFiltered: [],
   category: [],
   seed: {},
   inputSearchValue: '',
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
+  totalSeedsNumber: 0,
+  pageNumber: '1',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,9 +17,9 @@ const reducer = (state = initialState, action = {}) => {
     case 'GETTING_LIST_SUCCESS':
       return {
         ...state,
-        list: [...action.data],
-        listFiltered: [...action.data],
-        selectedCategoryIdFilter: '',
+        list: [...action.data.seed],
+        totalSeedsNumber: action.data.nbSeed,
+        pageNumber: action.pageNumber,
       };
 
     case 'GETTING_CATEGORY_SUCCESS':

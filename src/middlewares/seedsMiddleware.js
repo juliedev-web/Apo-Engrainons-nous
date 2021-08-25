@@ -2,13 +2,16 @@ import axios from 'axios';
 
 const seedsMiddleWare = (store) => (next) => (action) => {
   switch (action.type) {
-    case 'GETTING_LIST': {
+    case 'GET_LIST_PAGE': {
+      console.log(action.pageNumber);
+
       const options = {
         method: 'GET',
-        url: 'https://engrainonsnous.herokuapp.com/',
+        url: `https://engrainonsnous.herokuapp.com/paginate/seed/${action.pageNumber * 12}`,
       };
+
       axios(options).then((response) => {
-        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data });
+        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data, pageNumber: action.pageNumber });
       }).catch((error) => {
         console.error(error);
       });
