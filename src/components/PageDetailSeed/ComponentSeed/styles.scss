@@ -26,6 +26,13 @@
     color: white;
     margin-top: 2rem;
   }
+
+  button:hover {
+    color: vars.$bgd-primary-color;
+    background-color: white;
+    border: solid 3px vars.$bgd-primary-color;
+  }
+
   .imgCat{
     img {
       width: 100%;
