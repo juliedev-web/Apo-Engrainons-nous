@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="engrainons-nous.com">
+  <a href="https://engrainons-nous.com">
     <img alt="Engrainons-nous-logo's" height="125" src="https://nsa40.casimages.com/img/2021/08/23/210823090920339037.png">
   </a><br>
 
@@ -54,45 +54,44 @@ Site font (except for the logo)
 Palette de couleurs
 --------------------
 
-<style>
-white {
-    background-color:#FFFFFF;
-    border-style : solid;
-    border-width:1px;
-}
-</style>
-<style>
-alabaster {
-    background-color:#E9EDE6;
-}
-</style>
-<style>
-alice {
-    background-color:#E4EBF0;
-}
-</style>
-<style>
-prussian {
-    background-color:#173042;
-    color:#FFFFFF;
-}
-</style>
-<style>
-olive {
-    background-color:#4A6C2F;
-    color:#FFFFFF
-}
-</style>
-- White : <white>#FFFFFF<white>
-- Alabaster : <alabaster>#E9EDE6<alabaster>
-- Alice Blue : <alice>#E4EBF0<alice>
-- Prussian Blue : <prussian>#173042<prussian>
-- Dark Olive Green : <olive>#4A6C2F<olive>
+- White : <input type="color" value="#FFFFFF"> soit #FFFFFF</input>
+- Alabaster : <input type="color" value="#E9EDE6"> soit #E9EDE6</input>
+- Alice Blue : <input type="color" value="#E4EBF0"> soit #E4EBF0</input>
+- Prussian Blue : <input type="color" value="#173042"> soit #173042</input>
+- Dark Olive Green : <input type="color" value="#4A6C2F"> soit #4A6C2F</input>
 
 <a href='https://www.casimages.com/i/210823090920253557.png.html' target='_blank' title='Color palette of website'><img src='https://nsa40.casimages.com/img/2021/08/23/210823090920253557.png' border='0' alt='Color palette : White (#FFFFFF), Alabaster (#E9EDE6), Alice Blue (#E4EBF0), Prussian Blue (#173042), Dark Olive Green (#4A6C2F)' /></a>
 
-## Pour tester le projet en local après l'avoir cloné :
+## To test the project locally after cloning it :
 
-npm install -y
-Cela installera les dépendances nécessaires selon les informations contenues dans le package.json
-NPM
+**Node version 14 minimum is required**
+
+Install Node.js :
+
+Debian / Ubuntu
+```
+sudo apt-get update
+sudo apt-get install nodejs npm
+```
+
+When is good, to verify the installation, run this :
+```
+nodejs --version
+```
+Then, once Node.JS & NPM are installed, do :
+```
+npm install
+```
+This will install the necessary dependencies according to the information in the project's package.json file
+
+<p align="center">
+	<a href="https://yarn.pm/thelounge"><img
+		alt="npm version"
+		src="https://img.shields.io/npm/v/thelounge.svg?colorA=333a41&maxAge=3600"></a>
+	<a href="https://github.com/thelounge/thelounge/actions"><img
+		alt="Build Status"
+		src="https://github.com/thelounge/thelounge/workflows/Build/badge.svg"></a>
+	<a href="https://npm-stat.com/charts.html?package=thelounge&from=2016-02-12"><img
+		alt="Total downloads on npm"
+		src="https://img.shields.io/npm/dy/thelounge.svg?colorA=333a41&colorB=007dc7&maxAge=3600&label=Downloads"></a>
+</p>
