@@ -16,6 +16,8 @@ const mapStateToProps = (state) => ({
   passwordInputValue: state.user.passwordInputValue,
   passwordConfirmInputValue: state.user.passwordConfirmInputValue,
   passwordConfirmMessage: state.user.passwordConfirmMessage,
+  deleteConfirmMessage: state.user.deleteConfirmMessage,
+  confirmDelete: state.user.confirmDelete,
   profil: state.user.profil,
   editProfil: state.user.editProfil,
 });
@@ -37,6 +39,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleDisconnect: () => {
     dispatch({ type: 'ON_DISCONNECT_CLICK' });
+  },
+  handleDeleteClick: () => {
+    dispatch({ type: 'ON_DELETE_CLICK' });
+  },
+  handleDeleteConfirm: () => {
+    dispatch({ type: 'ON_DELETE_CONFIRM' });
   },
 });
 

@@ -9,6 +9,8 @@ export const initialState = {
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
+  deleteConfirmMessage: '',
+  confirmDelete: false,
   isLogged: false,
   profil: {
     pseudo: '',
@@ -137,7 +139,39 @@ const reducer = (state = initialState, action = {}) => {
           id: '',
         },
       };
-
+    case 'ON_DELETE_CLICK':
+      return {
+        ...state,
+        confirmDelete: true,
+      };
+    case 'GETTING_LIST_SUCCESS':
+      return {
+        ...state,
+        deleteConfirmMessage: '',
+      };
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        pseudoInputValue: '',
+        emailInputValue: '',
+        cityInputValue: '',
+        passwordInputValue: '',
+        passwordConfirmInputValue: '',
+        passwordConfirmMessage: '',
+        inscriptionConfirmMessage: '',
+        varietyInputValue: '',
+        textAreaDetailValue: '',
+        textAreaAdviceValue: '',
+        deleteConfirmMessage: 'Votre compte a bien été supprimé.',
+        confirmDelete: false,
+        isLogged: false,
+        profil: {
+          pseudo: '',
+          email: '',
+          city: '',
+          id: '',
+        },
+      };
     default:
       return state;
   }
