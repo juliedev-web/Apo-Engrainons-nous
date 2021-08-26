@@ -65,7 +65,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         emailInputValue: '',
         passwordInputValue: '',
-        passwordConfirmMessage: 'Votre compte a bien été créé',
+        inscriptionConfirmMessage: 'Votre compte a bien été créé',
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':

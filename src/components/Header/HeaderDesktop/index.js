@@ -27,7 +27,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
 
       <NavLink
         className="navbar_link"
-        to="/"
+        to="/page/1"
         exact
         activeClassName="navbar_link--active"
       >
