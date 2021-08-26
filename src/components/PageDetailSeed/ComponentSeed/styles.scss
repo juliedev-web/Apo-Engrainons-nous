@@ -6,72 +6,119 @@
   justify-content: space-around;
   align-items: center;
   padding: 2rem;
+
   .descriptionVariety {
     p {
       font-size: 0.8rem;
       margin-bottom: 0.7em;
 
     }
+
     h2 {
       font-weight: bold;
       margin-bottom: 0.7em;
       font-size: 1rem;
     }
   }
+
   button {
-    width: 80%;
+    width: 200px;
     border: solid 1px black;
     padding: 0.5em;
     background-color: vars.$bgd-primary-color;
     color: white;
     margin-top: 2rem;
+    margin-bottom: 4rem;
   }
-
-  button:hover {
-    color: vars.$bgd-primary-color;
-    background-color: white;
-    border: solid 3px vars.$bgd-primary-color;
-  }
-
+  
   .imgCat{
+
     img {
-      width: 100%;
-      margin-bottom: 2em;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 0.5em;
+      border-radius: 20px;
+      object-fit: cover;
     }
   }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 599px) {
   .container-seed {
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem;
-  .descriptionVariety {
-    width: 60%;
-    padding: 2em 0 0 2em;
-  }
-  button {
-    width: 20%;
-    margin-top: 4em;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+
+    .descriptionVariety {
+      padding: 2em 0 0 2em;
     }
-  .top {
-    display: flex;
-    .imgCat {
+
+    button {
+      margin-top: 4em;
+      }
+
+    .top {
       display: flex;
-      width: 40%;
-      img {
-      width: 100%;
-      margin-bottom: 0em;
+      justify-content: center;
+
+      .imgCat {
+        
+        img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+
+      h2 {
+        font-weight: bold;
+        margin-bottom: 1em;
+
+      }
+      
+      p {
+        margin-bottom: 1em;
       }
     }
-    h2 {
-      font-weight: bold;
-      margin-bottom: 1em;
-
-    }
-    p {
-      margin-bottom: 1em;
-    }
   }
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .container-seed {
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+
+    .descriptionVariety {
+      padding: 2em 0 0 2em;
+    }
+
+    button {
+      margin-top: 4em;
+      }
+
+    .top {
+      display: flex;
+      justify-content: center;
+
+      .imgCat {
+        display: flex;
+
+        img {
+          width: 400px;
+          height: 400px;
+        }
+      }
+
+      h2 {
+        font-weight: bold;
+        margin-bottom: 1em;
+
+      }
+      
+      p {
+        margin-bottom: 1em;
+      }
+    }
   }
 }
