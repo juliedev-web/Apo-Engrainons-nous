@@ -6,7 +6,7 @@ import List from 'src/components/List';
 const mapStateToProps = (state, ownProps) => ({
   list: state.seeds.list,
   totalSeedsNumber: state.seeds.totalSeedsNumber,
-  pageNumber: ownProps.match.params.pageNumber,
+  pageNumber: ownProps.match.params.pageNumber || '1',
 });
 
 const mapDispatchToProps = (dispatch) => ({

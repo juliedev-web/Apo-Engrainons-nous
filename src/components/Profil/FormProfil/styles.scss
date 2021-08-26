@@ -69,14 +69,15 @@
 
   .btn-delete {
     background-color: #bc1536;
+    
     &--confirm {
-      background-color: orange;
+      background-color: rgb(182, 118, 0);
       color: white;
     }
     &--confirm:hover {
       background-color: white;
-      color: orange;
-      border: solid 3px orange;
+      color: rgb(182, 118, 0);
+      border: solid 3px rgb(182, 118, 0);
     }
   }
   .btn-deconnexion {

@@ -5,7 +5,7 @@ import HomePage from 'src/components/HomePage';
 
 const mapStateToProps = (state, ownProps) => ({
   list: state.seeds.list,
-  pageNumber: ownProps.match.params.pageNumber,
+  pageNumber: ownProps.match.params.pageNumber || '1',
 });
 
 const mapDispatchToProps = (dispatch) => ({
