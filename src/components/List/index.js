@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,9 @@ import { formatDate } from '../../selectors/seeds';
 
 import './styles.scss';
 
-const List = ({ list, totalSeedsNumber, handlePageChange }) => {
+const List = ({
+  list, totalSeedsNumber, handlePageChange, pageNumber,
+}) => {
   const history = useHistory();
   const seedPerPage = 12;
   const pageCount = Math.ceil(totalSeedsNumber / seedPerPage);
@@ -48,6 +50,7 @@ const List = ({ list, totalSeedsNumber, handlePageChange }) => {
         nextLinkClassName="nextBttn"
         disabledClassName="paginationDisabled"
         activeClassName="paginationActive"
+        initialPage={+pageNumber - 1}
       />
     </div>
   );
@@ -58,6 +61,7 @@ List.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.object.isRequired,
   ).isRequired,
+  pageNumber: PropTypes.string.isRequired,
 };
 
 export default List;

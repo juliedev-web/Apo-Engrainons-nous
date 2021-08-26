@@ -16,11 +16,12 @@ const HomePage = ({
   breakpoint,
   menuIsOpen,
   getPage,
+  pageNumber,
 }) => {
   const history = useHistory();
   useEffect(() => {
-    history.push('/page/1');
-    getPage(0);
+    history.push(`/page/${+pageNumber || 1}`);
+    getPage(+pageNumber - 1);
   }, []);
   return (
     <div className="home-page">
@@ -55,6 +56,7 @@ HomePage.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
+  pageNumber: PropTypes.string.isRequired,
 };
 
 export default HomePage;

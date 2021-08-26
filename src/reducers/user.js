@@ -6,9 +6,13 @@ export const initialState = {
   passwordConfirmInputValue: '',
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
+  connectionFailedMessage: '',
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
+  deleteConfirmMessage: '',
+  validateUpdateProfil: false,
+  confirmDelete: false,
   isLogged: false,
   profil: {
     pseudo: '',
@@ -18,6 +22,7 @@ export const initialState = {
   },
   editProfil: false,
   menuIsOpen: false,
+  myList: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -65,7 +70,13 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         emailInputValue: '',
         passwordInputValue: '',
-        passwordConfirmMessage: 'Votre compte a bien été créé',
+        inscriptionConfirmMessage: 'Votre compte a bien été créé',
+      };
+
+    case 'LOGIN_FAIL':
+      return {
+        ...state,
+        connectionFailedMessage: 'Email ou mot de passe incorrect(s)',
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':
@@ -136,6 +147,62 @@ const reducer = (state = initialState, action = {}) => {
           city: '',
           id: '',
         },
+      };
+    case 'ON_DELETE_CLICK':
+      return {
+        ...state,
+        confirmDelete: true,
+      };
+    case 'GETTING_LIST_SUCCESS':
+      return {
+        ...state,
+        deleteConfirmMessage: '',
+      };
+    case 'CLOSE_EDIT_MESSAGE':
+      return {
+        ...state,
+        validateUpdateProfil: '',
+      };
+
+    case 'ON_VALIDATE_CONFIRM':
+      return {
+        ...state,
+        validateUpdateProfil: 'Votre compte a bien été mis a jour.',
+      };
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        pseudoInputValue: '',
+        emailInputValue: '',
+        cityInputValue: '',
+        passwordInputValue: '',
+        passwordConfirmInputValue: '',
+        passwordConfirmMessage: '',
+        inscriptionConfirmMessage: '',
+        varietyInputValue: '',
+        textAreaDetailValue: '',
+        textAreaAdviceValue: '',
+        deleteConfirmMessage: 'Votre compte a bien été supprimé.',
+        confirmDelete: false,
+        isLogged: false,
+        profil: {
+          pseudo: '',
+          email: '',
+          city: '',
+          id: '',
+        },
+      };
+
+    case 'GET_USER_SEEDS_LIST_SUCCESS':
+      return {
+        ...state,
+        myList: [...action.list],
+      };
+
+    case 'CANCEL_CONFIRM_DELETE_BTN':
+      return {
+        ...state,
+        confirmDelete: false,
       };
 
     default:

@@ -9,6 +9,7 @@ export const initialState = {
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
   totalSeedsNumber: 0,
+  showMail: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,7 +38,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
-        listFiltered: [...action.data],
+        list: [...action.data],
       };
 
     case 'GET_CATEGORY_FILTERED':
@@ -52,17 +53,30 @@ const reducer = (state = initialState, action = {}) => {
         inputSearchValue: action.inputValue,
       };
 
-    case 'ON_SEARCH_SUBMIT':
-      return {
-        ...state,
-        listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
-      };
+      // case 'ON_SEARCH_SUBMIT':
+      //   return {
+      //     ...state,
+      //     list: [...filterByVariety(state.list, state.inputSearchValue)],
+      //   };
 
     case 'SELECT_CATEGORY_ID':
       return {
         ...state,
         selectedNewSeedCategory: action.categoryId,
       };
+
+    case 'ON_TOGGLE_CLICK_MAIL_OWNER':
+      return {
+        ...state,
+        showMail: !state.showMail,
+      };
+
+    case 'ON_INPUT_SEARCH_SUCCESS':
+      return {
+        ...state,
+        list: action.list,
+      };
+
     default:
       return state;
   }

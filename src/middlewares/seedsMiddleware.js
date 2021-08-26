@@ -83,6 +83,38 @@ const seedsMiddleWare = (store) => (next) => (action) => {
     }
       break;
 
+    case 'GET_USER_SEEDS_LIST': {
+      const state = store.getState();
+      const options = {
+        method: 'GET',
+        url: `https://engrainonsnous.herokuapp.com/user/seedlist/${state.user.profil.id}`,
+      };
+
+      axios(options).then((response) => {
+        console.log(response.data);
+        store.dispatch({ type: 'GET_USER_SEEDS_LIST_SUCCESS', list: response.data.seed });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
+
+    case 'ON_SEARCH_SUBMIT': {
+      const state = store.getState();
+      const options = {
+        method: 'GET',
+        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}`,
+      };
+
+      axios(options).then((response) => {
+        console.log(response.data);
+        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data.resul });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
+
     default:
       next(action);
   }
