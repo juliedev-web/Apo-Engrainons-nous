@@ -49,16 +49,18 @@ const authMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
+        console.log(response.data);
+        if (response.data.return === 'Email ou mot de passe incorrect') {
+          store.dispatch({ type: 'LOGIN_FAIL', data: response.data.return });
+        }
+        else {
+          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
+        }
       }).catch((error) => {
         console.error(error);
       });
-      // if (mail === state.user.emailInputValue) {
-      //   if (password === state.user.passwordInputValue) {
-      //     store.dispatch({ type: 'LOGIN_SUCCESS', ok: true });
-      //   }
-      // }
     }
+
       break;
     case 'ON_PROFIL_SUBMIT': {
       const state = store.getState();

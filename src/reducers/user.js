@@ -6,6 +6,7 @@ export const initialState = {
   passwordConfirmInputValue: '',
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
+  connectionFailedMessage: '',
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
@@ -70,6 +71,12 @@ const reducer = (state = initialState, action = {}) => {
         emailInputValue: '',
         passwordInputValue: '',
         inscriptionConfirmMessage: 'Votre compte a bien été créé',
+      };
+
+    case 'LOGIN_FAIL':
+      return {
+        ...state,
+        connectionFailedMessage: 'Email ou mot de passe incorrect(s)',
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':
