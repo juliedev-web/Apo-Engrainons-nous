@@ -3,9 +3,9 @@ import React, { useEffect } from 'react';
 // FontAwesome
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+// PropTypes
 import PropTypes from 'prop-types';
-
+// Import CSS
 import './styles.scss';
 
 const CategoriesFilter = ({

@@ -21,7 +21,9 @@ const SearchSeedInput = ({ handleInputSearchChange, inputSearchValue, handleSubm
 };
 
 SearchSeedInput.propTypes = {
-
+  handleInputSearchChange: PropTypes.func.isRequired,
+  inputSearchValue: PropTypes.string.isRequired,
+  handleSubmitSearch: PropTypes.func.isRequired,
 };
 
 export default SearchSeedInput;

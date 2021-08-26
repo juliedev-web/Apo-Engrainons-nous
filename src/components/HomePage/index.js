@@ -33,13 +33,13 @@ const HomePage = ({
       <MenuModal />
 
       {
-      !menuIsOpen && (
-        <>
-          <Filters />
-          <List list={list} />
-        </>
-      )
-    }
+        !menuIsOpen && (
+          <>
+            <Filters />
+            <List list={list} />
+          </>
+        )
+      }
 
       <Footer
         width={width}
@@ -60,5 +60,3 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
-
-// un commentaire
