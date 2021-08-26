@@ -9,6 +9,7 @@ const FormConnexion = ({
   passwordInputValue,
   handleInputValueChange,
   handleSubmitSignin,
+  passwordConfirmMessage,
 }) => {
   const history = useHistory();
 
@@ -22,6 +23,7 @@ const FormConnexion = ({
       <form onSubmit={onSubmit}>
         <input type="email" name="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
         <input type="password" name="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
+        {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
         <button type="submit">Valider</button>
       </form>
       <Link className="forget-password" to="#">Mot de passe oublié ?</Link>
@@ -38,7 +40,7 @@ const FormConnexion = ({
   );
 };
 FormConnexion.propTypes = {
-
+  passwordConfirmMessage: PropTypes.string.isRequired,
 };
 
 export default FormConnexion;

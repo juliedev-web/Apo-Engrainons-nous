@@ -9,6 +9,7 @@ import {
 const mapStateToProps = (state) => ({
   emailInputValue: state.user.emailInputValue,
   passwordInputValue: state.user.passwordInputValue,
+  passwordConfirmMessage: state.user.passwordConfirmMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
     e.preventDefault();
     dispatch(createSubmitConnexion());
   },
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormConnexion);

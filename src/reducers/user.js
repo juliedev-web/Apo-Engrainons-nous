@@ -68,6 +68,12 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirmMessage: 'Votre compte a bien été créé',
       };
 
+    case 'LOGIN_FAIL':
+      return {
+        ...state,
+        passwordConfirmMessage: 'Email ou mot de passe incorect',
+      };
+
     case 'ON_TOGGLE_CLICK_PROFIL':
       return {
         ...state,
