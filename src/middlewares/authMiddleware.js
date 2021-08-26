@@ -49,6 +49,7 @@ const authMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
+        console.log(response.data);
         if (response.data.returns === 'Email ou mot de passe incorrect') {
           store.dispatch({ type: 'LOGIN_FAIL', data: response.data.returns });
         }
