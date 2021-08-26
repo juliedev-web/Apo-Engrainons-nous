@@ -1,5 +1,4 @@
 // import
-import { filterByVariety } from '../selectors/seeds';
 
 export const initialState = {
   list: [],
@@ -57,12 +56,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         inputSearchValue: action.inputValue,
       };
-
-    // case 'ON_SEARCH_SUBMIT':
-    //   return {
-    //     ...state,
-    //     list: [...filterByVariety(state.list, state.inputSearchValue)],
-    //   };
 
     case 'SELECT_CATEGORY_ID':
       return {

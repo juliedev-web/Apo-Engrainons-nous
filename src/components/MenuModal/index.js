@@ -47,6 +47,7 @@ MenuModal.propTypes = {
   menuIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  handleDisconnect: PropTypes.func.isRequired,
 };
 
 export default MenuModal;
