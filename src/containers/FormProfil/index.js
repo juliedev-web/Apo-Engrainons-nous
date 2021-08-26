@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   deleteConfirmMessage: state.user.deleteConfirmMessage,
   confirmDelete: state.user.confirmDelete,
   profil: state.user.profil,
+  validateUpdateProfil: state.user.validateUpdateProfil,
   editProfil: state.user.editProfil,
 });
 
@@ -45,6 +46,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleDeleteConfirm: () => {
     dispatch({ type: 'ON_DELETE_CONFIRM' });
+  },
+  validateEditProfil: () => {
+    dispatch({ type: 'ON_VALIDATE_CONFIRM' });
+  },
+  closeEditMessage: () => {
+    dispatch({ type: 'CLOSE_EDIT_MESSAGE' });
   },
 });
 

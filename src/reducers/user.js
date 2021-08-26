@@ -10,6 +10,7 @@ export const initialState = {
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
   deleteConfirmMessage: '',
+  validateUpdateProfil: false,
   confirmDelete: false,
   isLogged: false,
   profil: {
@@ -149,6 +150,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         deleteConfirmMessage: '',
+      };
+    case 'CLOSE_EDIT_MESSAGE':
+      return {
+        ...state,
+        validateUpdateProfil: '',
+      };
+
+    case 'ON_VALIDATE_CONFIRM':
+      return {
+        ...state,
+        validateUpdateProfil: 'Votre compte a bien été mis a jour.',
       };
     case 'DELETE_SUCCESS':
       return {

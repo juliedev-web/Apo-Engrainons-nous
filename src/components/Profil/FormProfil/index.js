@@ -15,6 +15,9 @@ export default function FormProfil({
   handleDeleteClick,
   handleInputValueChange,
   handleSubmitEditProfil,
+  validateEditProfil,
+  validateUpdateProfil,
+  closeEditMessage,
   profil,
   editProfil,
   toggleEditProfil,
@@ -31,6 +34,11 @@ export default function FormProfil({
             <>
               <h2>Mon compte</h2>
               {
+                validateUpdateProfil && (
+                  <p className="accountUpdateButton"> {validateUpdateProfil}</p>
+                )
+              }
+              {
                 editProfil ? (
                   <form onSubmit={handleSubmitEditProfil}>
                     <div className="signInput">
@@ -41,7 +49,18 @@ export default function FormProfil({
                       <input name="password" type="password" placeholder="Mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
                       <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
                     </div>
-                    <button className="valider" type="submit">Valider</button>
+                    <button
+                      className="valider"
+                      onClick={() => {
+                        validateEditProfil();
+                        // setTimeout(() => {
+                        //   console.log('settimoutProfil');
+                        //   closeEditMessage();
+                        // }, 2000);
+                      }}
+                      type="submit"
+                    >Valider
+                    </button>
                   </form>
                 )
                   : (
@@ -99,11 +118,13 @@ FormProfil.propTypes = {
   passwordConfirmInputValue: PropTypes.string.isRequired,
   confirmDelete: PropTypes.bool.isRequired,
   passwordConfirmMessage: PropTypes.string.isRequired,
+  validateEditProfil: PropTypes.func.isRequired,
   deleteConfirmMessage: PropTypes.string.isRequired,
   handleDisconnect: PropTypes.func.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
   handleDeleteClick: PropTypes.func.isRequired,
   handleSubmitEditProfil: PropTypes.func.isRequired,
+  closeEditMessage: PropTypes.func.isRequired,
   handleDeleteConfirm: PropTypes.func.isRequired,
   profil: PropTypes.shape({
     pseudo: PropTypes.string.isRequired,
