@@ -5,6 +5,13 @@
 .container {
   display: flex;
   flex-direction: column;
+  .accountUpdateButton {
+    color: #4a6c2f;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    width: 50%;
+  }
   .messageDeleteConfirm {
     text-align: center;
     font-size: 1.6rem;
