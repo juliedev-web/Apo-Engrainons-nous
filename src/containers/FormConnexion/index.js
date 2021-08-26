@@ -9,7 +9,7 @@ import {
 const mapStateToProps = (state) => ({
   emailInputValue: state.user.emailInputValue,
   passwordInputValue: state.user.passwordInputValue,
-  passwordConfirmMessage: state.user.passwordConfirmMessage,
+  connectionFailedMessage: state.user.connectionFailedMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
