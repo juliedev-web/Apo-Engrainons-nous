@@ -192,6 +192,12 @@ const reducer = (state = initialState, action = {}) => {
         myList: [...action.list],
       };
 
+    case 'CANCEL_CONFIRM_DELETE_BTN':
+      return {
+        ...state,
+        confirmDelete: false,
+      };
+
     default:
       return state;
   }

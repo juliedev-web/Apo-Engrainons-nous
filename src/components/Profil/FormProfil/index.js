@@ -23,6 +23,7 @@ export default function FormProfil({
   toggleEditProfil,
   handleDisconnect,
   handleDeleteConfirm,
+  cancelConfirmDeleteBtn,
 }) {
   return (
     <div className="container">
@@ -53,10 +54,9 @@ export default function FormProfil({
                       className="valider"
                       onClick={() => {
                         validateEditProfil();
-                        // setTimeout(() => {
-                        //   console.log('settimoutProfil');
-                        //   closeEditMessage();
-                        // }, 2000);
+                        setTimeout(() => {
+                          closeEditMessage();
+                        }, 3000);
                       }}
                       type="submit"
                     >Valider
@@ -96,9 +96,26 @@ export default function FormProfil({
                 </button>
                 {
                   confirmDelete ? (
-                    <button onClick={handleDeleteConfirm} className="btn-delete--confirm" type="button">Cliquer pour confirmer la supression.</button>
+                    <button
+                      onClick={() => {
+                        handleDeleteConfirm();
+                      }}
+                      className="btn-delete--confirm"
+                      type="button"
+                    >Cliquer pour confirmer la supression.
+                    </button>
                   ) : (
-                    <button onClick={handleDeleteClick} className="btn-delete" type="button"> Supprimer mon compte</button>
+                    <button
+                      onClick={() => {
+                        handleDeleteClick();
+                        setTimeout(() => {
+                          cancelConfirmDeleteBtn();
+                        }, 3000);
+                      }}
+                      className="btn-delete"
+                      type="button"
+                    > Supprimer mon compte
+                    </button>
                   )
                 }
               </section>
@@ -111,6 +128,7 @@ export default function FormProfil({
 }
 
 FormProfil.propTypes = {
+  cancelConfirmDeleteBtn: PropTypes.func.isRequired,
   pseudoInputValue: PropTypes.string.isRequired,
   emailInputValue: PropTypes.string.isRequired,
   cityInputValue: PropTypes.string.isRequired,

@@ -53,6 +53,10 @@ const mapDispatchToProps = (dispatch) => ({
   closeEditMessage: () => {
     dispatch({ type: 'CLOSE_EDIT_MESSAGE' });
   },
+  cancelConfirmDeleteBtn: () => {
+    console.log('icicicici');
+    dispatch({ type: 'CANCEL_CONFIRM_DELETE_BTN' });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormProfil);
