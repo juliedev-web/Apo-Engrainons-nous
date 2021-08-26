@@ -2,11 +2,11 @@ import React from 'react';
 
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import SeedsList from './SeedsList';
+import SeedsList from 'src/containers/UserSeedsList';
 
 import './styles.scss';
 
-export default function MySeeds({width, breakpoint}) {
+export default function MySeeds({ width, breakpoint }) {
   return (
     <div className="myseeds">
       <Header width={width} breakpoint={breakpoint} />

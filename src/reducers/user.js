@@ -21,6 +21,7 @@ export const initialState = {
   },
   editProfil: false,
   menuIsOpen: false,
+  myList: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -190,6 +191,13 @@ const reducer = (state = initialState, action = {}) => {
           id: '',
         },
       };
+
+    case 'GET_USER_SEEDS_LIST_SUCCESS':
+      return {
+        ...state,
+        myList: [...action.list],
+      };
+
     default:
       return state;
   }
