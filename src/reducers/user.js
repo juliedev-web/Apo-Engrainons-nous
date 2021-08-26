@@ -75,7 +75,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_FAIL':
       return {
         ...state,
-        passwordConfirmMessage: 'Email ou mot de passe incorect',
+        passwordConfirmMessage: 'Email ou mot de passe incorect(s)',
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':
