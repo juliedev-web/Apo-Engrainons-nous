@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const ComponentSeed = ({ seed, getOneSeed }) => {
+const ComponentSeed = ({
+  seed,
+  getOneSeed,
+  toggleMail,
+  showMail,
+  isLogged,
+}) => {
   useEffect(() => {
     getOneSeed();
   }, []);
@@ -27,7 +33,12 @@ const ComponentSeed = ({ seed, getOneSeed }) => {
           </p>
         </div>
       </div>
-      <button type="button">Contacter le propriétaire</button>
+      {isLogged ? (
+        <button type="button" onClick={toggleMail}> {showMail ? 'Mail proprio' : 'Contacter le propriétaire'}</button>
+      ) : (
+        <button type="button" onClick={toggleMail}> {showMail ? `Connectez-vous pour voir l'email` : 'Contacter le propriétaire'}</button>
+      )
+      }
     </div>
   );
 };
@@ -35,6 +46,8 @@ const ComponentSeed = ({ seed, getOneSeed }) => {
 ComponentSeed.propTypes = {
   seed: PropTypes.object.isRequired,
   getOneSeed: PropTypes.func.isRequired,
+  toggleMail: PropTypes.func.isRequired,
+  showMail: PropTypes.bool.isRequired,
 };
 
 export default ComponentSeed;
