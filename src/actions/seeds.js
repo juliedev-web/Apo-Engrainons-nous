@@ -6,3 +6,7 @@ export const gettingOneSeed = (id) => ({
   type: GETTING_ONE_SEED,
   id,
 });
+
+export const toggleMail = () => ({
+  type: 'ON_TOGGLE_CLICK_MAIL_OWNER',
+});
