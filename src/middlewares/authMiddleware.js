@@ -158,7 +158,20 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     default:
       next(action);
+
+      const options = {
+        method: 'DELETE',
+        url: `https://engrainonsnous.herokuapp.com/delete/user/${state.user.profil.id}`,
+      };
+
+      axios(options).then((response) => {
+        store.dispatch({ type: 'DELETE_SUCCESS' });
+      }).catch((error) => {
+        console.error(error);
+      });
   }
+  break;
+}
 };
 
 export default authMiddleware;

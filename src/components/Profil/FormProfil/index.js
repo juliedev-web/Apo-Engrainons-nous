@@ -11,12 +11,14 @@ export default function FormProfil({
   passwordInputValue,
   passwordConfirmInputValue,
   passwordConfirmMessage,
+  deleteConfirmMessage,
   handleInputValueChange,
   handleSubmitEditProfil,
   profil,
   editProfil,
   toggleEditProfil,
   handleDisconnect,
+  handleDeleteAccount,
 }) {
   return (
     <div className="container">
@@ -67,7 +69,7 @@ export default function FormProfil({
           >Déconnexion
           </NavLink>
         </button>
-        <button className="btn-delete" type="submit"> Supprimer mon compte</button>
+        <button onClick={handleDeleteAccount} className="btn-delete" type="submit"> Supprimer mon compte</button>
       </section>
     </div>
   );
@@ -80,8 +82,10 @@ FormProfil.propTypes = {
   passwordInputValue: PropTypes.string.isRequired,
   passwordConfirmInputValue: PropTypes.string.isRequired,
   passwordConfirmMessage: PropTypes.string.isRequired,
+  handleDisconnect: PropTypes.func.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
   handleSubmitEditProfil: PropTypes.func.isRequired,
+  handleDeleteAccount: PropTypes.func.isRequired,
   profil: PropTypes.shape({
     pseudo: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,

@@ -9,6 +9,7 @@ export const initialState = {
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
+  deleteConfirmMessage: '',
   isLogged: false,
   profil: {
     pseudo: '',
@@ -136,8 +137,11 @@ const reducer = (state = initialState, action = {}) => {
           city: '',
           id: '',
         },
+      }; case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        deleteConfirmMessage: 'Votre compte a bien été supprimé',
       };
-
     default:
       return state;
   }
