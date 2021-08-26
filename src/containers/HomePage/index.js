@@ -3,8 +3,9 @@ import { withRouter } from 'react-router-dom';
 
 import HomePage from 'src/components/HomePage';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   list: state.seeds.list,
+  pageNumber: ownProps.match.params.pageNumber,
 });
 
 const mapDispatchToProps = (dispatch) => ({
