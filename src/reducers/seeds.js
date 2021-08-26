@@ -70,6 +70,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         showMail: !state.showMail,
       };
+
     default:
       return state;
   }
