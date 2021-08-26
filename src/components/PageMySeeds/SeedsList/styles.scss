@@ -1,75 +1,77 @@
 @use 'src/styles/vars';
 
-//CSS for mobile first
+.my-seeds {
 
-.seeds-container {
-  display: flex;
-  flex-direction: column;
+  width: 60%;
+  margin: 2rem auto;
 
-  h2 {
-    font-size: 1.8em;
-    margin-top: 2em;
-    margin-bottom: 1.2em;
+  h1 {
     text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .seeds-lists {
-    display: flex;
-    flex-direction: column;
-  }
+  &__list {
+    width: 100%;
+    border: 4px solid vars.$bgd-primary-color;
 
-  .list {
-    width: 85%;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-radius: 10px;
-    &-menu {
+    &__thead {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: rgb(242, 243, 242);
       background-color: vars.$bgd-primary-color;
-      color: #FFF;
+      
+      &__row {
+        &__th {
+          padding: 0.5rem;
+          border-right: 3px solid white;
+        }
 
-      &_item {
-        font-size: 1.3em;
+        &__th:last-child {
+          border-right: none;
+        }
       }
     }
-  }
-  .detail-list {
-    width: 85%;
-    margin: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border-radius: 10px;
 
-    &_item {
-      font-size: 1.2em;
-    }
-
-    .detail-category,
-    .detail-variety {
-      width: 50%;
+    &__tbody {
       text-align: center;
-    }
-  }
-}
+      font-size: 1.2rem;
+ 
+      &__row {
+        width: 100%;
+        border-bottom: 3px solid #CACACA;
+        transition: 0.1s linear;
 
-@media screen and (min-width: 768px) {
-  .seeds-container {
-    h2 {
-      font-size: 2.5em;
-    }
-  
-    .list,
-    .detail-list{
-      width: 60%;
-      font-size: 1.2em;
-    }
+        &__td {
+          padding: 0.5rem;
+          border: 3px solid #CACACA;
+        }
 
+        &__td:nth-child(1) {
+          border-top: none;
+        }
+        &__td:nth-child(2) {
+          border-top: none;
+        }
+        &__td:nth-child(3) {
+          border-top: none;
+        }
+      }
 
+      &__row:first-child {
+        border-top: none;
+      }
+
+      &__row:last-child {
+          border-bottom: none;
+      }
+
+      &__row:hover {
+        background-color: rgb(105, 139, 105);
+        color: white;
+        cursor: pointer;
+      }
+    }
   }
 }
