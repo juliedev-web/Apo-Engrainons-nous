@@ -9,6 +9,7 @@ export const initialState = {
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
   totalSeedsNumber: 0,
+  showMail: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -62,6 +63,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedNewSeedCategory: action.categoryId,
+      };
+
+    case 'ON_TOGGLE_CLICK_MAIL_OWNER':
+      return {
+        ...state,
+        showMail: !state.showMail,
       };
     default:
       return state;
