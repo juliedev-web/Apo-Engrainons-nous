@@ -6,7 +6,7 @@
   font-size: 3em;
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,16 +15,16 @@
   margin: auto;
 
   .photo-profil {
-    width: 30%;
+    width: 40%;
     margin-bottom: 20px;
   }
-  
+
   .name {
     font-size: 2em;
     color: vars.$bgd-footer-color;
     margin-bottom: 10px;
   }
-  .card-dev{
+  .card-dev {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -35,24 +35,24 @@
     border: 2px solid vars.$bgd-footer-color;
     border-radius: 30px;
   }
-  
+
   .role {
     font-size: 1.2em;
     background-color: white;
     border: none;
   }
-  
+
   .socials {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   .socials-img {
     width: 50px;
     margin-right: 10px;
 
-    &_github{
+    &_github {
       width: 40px;
       background-color: black;
     }
@@ -67,21 +67,19 @@
 }
 
 //Responsive design for desktop
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
   .card-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-  
+
     .photo-profil {
       margin-bottom: 10px;
     }
-    
-    .card-dev{
+
+    .card-dev {
       margin-right: 10px;
     }
   }
 }
-
-
