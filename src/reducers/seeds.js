@@ -53,11 +53,11 @@ const reducer = (state = initialState, action = {}) => {
         inputSearchValue: action.inputValue,
       };
 
-    case 'ON_SEARCH_SUBMIT':
-      return {
-        ...state,
-        list: [...filterByVariety(state.list, state.inputSearchValue)],
-      };
+      // case 'ON_SEARCH_SUBMIT':
+      //   return {
+      //     ...state,
+      //     list: [...filterByVariety(state.list, state.inputSearchValue)],
+      //   };
 
     case 'SELECT_CATEGORY_ID':
       return {
@@ -69,6 +69,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         showMail: !state.showMail,
+      };
+
+    case 'ON_INPUT_SEARCH_SUCCESS':
+      return {
+        ...state,
+        list: action.list,
       };
 
     default:
