@@ -20,6 +20,11 @@ const reducer = (state = initialState, action = {}) => {
         list: [...action.data.seed],
         totalSeedsNumber: action.data.nbSeed,
       };
+    case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
+      return {
+        ...state,
+        selectedNewSeedCategory: '',
+      };
 
     case 'GETTING_CATEGORY_SUCCESS':
       return {
@@ -53,11 +58,11 @@ const reducer = (state = initialState, action = {}) => {
         inputSearchValue: action.inputValue,
       };
 
-      // case 'ON_SEARCH_SUBMIT':
-      //   return {
-      //     ...state,
-      //     list: [...filterByVariety(state.list, state.inputSearchValue)],
-      //   };
+    // case 'ON_SEARCH_SUBMIT':
+    //   return {
+    //     ...state,
+    //     list: [...filterByVariety(state.list, state.inputSearchValue)],
+    //   };
 
     case 'SELECT_CATEGORY_ID':
       return {
