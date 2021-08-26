@@ -8,7 +8,7 @@ import './styles.scss';
 
 const HeaderMobile = () => (
   <div className="headerMobile">
-    <Link to="/">
+    <Link to="/page/1">
       <img src={logo} alt="logo feuilles" className="headerMobile__logo" />
     </Link>
     <div className="headerMobile__content">

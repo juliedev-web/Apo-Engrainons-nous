@@ -9,6 +9,9 @@ export const initialState = {
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
+  deleteConfirmMessage: '',
+  validateUpdateProfil: false,
+  confirmDelete: false,
   isLogged: false,
   profil: {
     pseudo: '',
@@ -65,7 +68,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         emailInputValue: '',
         passwordInputValue: '',
-        passwordConfirmMessage: 'Votre compte a bien été créé',
+        inscriptionConfirmMessage: 'Votre compte a bien été créé',
       };
 
     case 'LOGIN_FAIL':
@@ -143,7 +146,50 @@ const reducer = (state = initialState, action = {}) => {
           id: '',
         },
       };
+    case 'ON_DELETE_CLICK':
+      return {
+        ...state,
+        confirmDelete: true,
+      };
+    case 'GETTING_LIST_SUCCESS':
+      return {
+        ...state,
+        deleteConfirmMessage: '',
+      };
+    case 'CLOSE_EDIT_MESSAGE':
+      return {
+        ...state,
+        validateUpdateProfil: '',
+      };
 
+    case 'ON_VALIDATE_CONFIRM':
+      return {
+        ...state,
+        validateUpdateProfil: 'Votre compte a bien été mis a jour.',
+      };
+    case 'DELETE_SUCCESS':
+      return {
+        ...state,
+        pseudoInputValue: '',
+        emailInputValue: '',
+        cityInputValue: '',
+        passwordInputValue: '',
+        passwordConfirmInputValue: '',
+        passwordConfirmMessage: '',
+        inscriptionConfirmMessage: '',
+        varietyInputValue: '',
+        textAreaDetailValue: '',
+        textAreaAdviceValue: '',
+        deleteConfirmMessage: 'Votre compte a bien été supprimé.',
+        confirmDelete: false,
+        isLogged: false,
+        profil: {
+          pseudo: '',
+          email: '',
+          city: '',
+          id: '',
+        },
+      };
     default:
       return state;
   }

@@ -38,7 +38,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
-        listFiltered: [...action.data],
+        list: [...action.data],
       };
 
     case 'GET_CATEGORY_FILTERED':
@@ -56,7 +56,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_SEARCH_SUBMIT':
       return {
         ...state,
-        listFiltered: [...filterByVariety(state.list, state.inputSearchValue)],
+        list: [...filterByVariety(state.list, state.inputSearchValue)],
       };
 
     case 'SELECT_CATEGORY_ID':

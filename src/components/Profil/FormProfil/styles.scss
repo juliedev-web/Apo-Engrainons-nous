@@ -5,7 +5,18 @@
 .container {
   display: flex;
   flex-direction: column;
-
+  .accountUpdateButton {
+    color: #4a6c2f;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    width: 50%;
+  }
+  .messageDeleteConfirm {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 4rem;
+  }
   h2 {
     font-size: 1.8em;
     margin-top: 2em;
@@ -50,18 +61,26 @@
     transition: 0.2s;
     border: solid 3px transparent;
   }
-
-  .btn-delete {
-    background-color: #bc1536;
-  }
-  .btn-deconnexion {
-    background-color: #173042;
-  }
-
   button:hover {
     color: vars.$bgd-primary-color;
     background-color: white;
     border: solid 3px vars.$bgd-primary-color;
+  }
+
+  .btn-delete {
+    background-color: #bc1536;
+    &--confirm {
+      background-color: orange;
+      color: white;
+    }
+    &--confirm:hover {
+      background-color: white;
+      color: orange;
+      border: solid 3px orange;
+    }
+  }
+  .btn-deconnexion {
+    background-color: #173042;
   }
 
   .btn-delete:hover {
