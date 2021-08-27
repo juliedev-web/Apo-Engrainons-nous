@@ -9,6 +9,8 @@ export const initialState = {
   selectedNewSeedCategory: '',
   totalSeedsNumber: 0,
   showMail: false,
+  confirmDeleteSeedMsg: '',
+  toBeDeletedSeedId: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -79,6 +81,18 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
+      };
+    case 'ON_DELETE_SEED_CLICK':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: 'Cliquez pour supprimer',
+        toBeDeletedSeedId: action.seedId,
+      };
+    case 'ON_ClOSE_DELETE_CONFIRM_BUTTON':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: '',
+        toBeDeletedSeedId: '',
       };
 
     default:

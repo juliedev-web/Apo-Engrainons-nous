@@ -5,6 +5,7 @@ import './styles.scss';
 import Cedric from 'src/assets/image/Cedric.jpg';
 import monaliyann from 'src/assets/image/monaliyann.PNG';
 import Mika from 'src/assets/image/mika.PNG';
+import Julie from 'src/assets/image/Julie.PNG';
 import Kevin from 'src/assets/image/Kevin.PNG';
 import Github from 'src/assets/image/github.png';
 import LinkedIn from 'src/assets/image/linkedIn.png';
@@ -113,7 +114,7 @@ export default function TeamCards() {
         </article>
         <article className="card-dev">
           <h3 className="name">Julie Vandard</h3>
-          <img className="photo-profil" src={Cedric} alt="Cedric" />
+          <img className="photo-profil" src={Julie} alt="Julie" />
           <p className="role">Dev front et Scrum master</p>
           <div>
             <ul className="socials">
