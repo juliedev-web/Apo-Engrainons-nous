@@ -84,7 +84,7 @@ const reducer = (state = initialState, action = {}) => {
         list: action.list,
       };
 
-    case 'ON_TOGGLE_CLICK_EDIT_SEED':
+    case 'ON_TOGGLE_EDIT_SEED':
       return {
         ...state,
         editSeed: true,
@@ -96,6 +96,7 @@ const reducer = (state = initialState, action = {}) => {
         confirmDeleteSeedMsg: 'Cliquez pour supprimer',
         toBeDeletedSeedId: action.seedId,
       };
+
     case 'ON_ClOSE_DELETE_CONFIRM_BUTTON':
       return {
         ...state,
