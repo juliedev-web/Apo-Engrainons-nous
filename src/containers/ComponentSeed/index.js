@@ -16,6 +16,7 @@ const mapStateToProps = (state) => ({
   seed: state.seeds.seed,
   showMail: state.seeds.showMail,
   isLogged: state.user.isLogged,
+  editSeed: state.seeds.editSeed,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -25,7 +26,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(toggleMail());
   },
   hideMail: () => dispatch(hideMailAction()),
-  
+
   toggleEditProfil: () => {
     dispatch(toggleEditProfil());
   },

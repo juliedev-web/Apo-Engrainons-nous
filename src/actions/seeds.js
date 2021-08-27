@@ -16,5 +16,5 @@ export const hideMailAction = () => ({
 });
 
 export const toggleEditProfil = () => ({
-  type: 'ON_TOGGLE_CLICK_EDIT_PROFIL',
+  type: 'ON_TOGGLE_CLICK_EDIT_SEED',
 });
