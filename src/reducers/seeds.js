@@ -41,6 +41,12 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'HIDE_MAIL':
+      return {
+        ...state,
+        showMail: false,
+      };
+
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
@@ -68,7 +74,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_TOGGLE_CLICK_MAIL_OWNER':
       return {
         ...state,
-        showMail: !state.showMail,
+        showMail: true,
       };
 
     case 'ON_INPUT_SEARCH_SUCCESS':
