@@ -5,9 +5,9 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 import Filters from 'src/components/Filters';
 import List from 'src/containers/List';
-import Footer from 'src/components/Footer';
 import MenuModal from 'src/containers/MenuModal';
 
 const HomePage = ({

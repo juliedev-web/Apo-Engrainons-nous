@@ -4,20 +4,20 @@
  * @param {array} list of all seeds or filtered by categorie or by variety
  * @returns string in Date format dd/mm/yyyy
  */
-export const formatDate = (seed) => {
-  const date = new Date(seed.created_at);
+export const formatDate = (dateISO) => {
+  const date = new Date(dateISO);
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
-  let dt = date.getDate();
+  let day = date.getDate();
 
-  if (dt < 10) {
-    dt = `0${dt}`;
+  if (day < 10) {
+    day = `0${day}`;
   }
   if (month < 10) {
     month = `0${month}`;
   }
 
-  return `${dt}/${month}/${year}`;
+  return `${day}/${month}/${year}`;
 };
 
 /**

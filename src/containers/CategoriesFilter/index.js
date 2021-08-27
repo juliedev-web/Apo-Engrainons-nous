@@ -7,11 +7,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getCategory: () => dispatch({ type: 'GETTING_CATEGORY' }),
-  handleOptionClick: (categoryId, selectedFrom) => {
-    if (selectedFrom === 'homePage') {
+  handleOptionClick: (categoryId, from) => {
+    if (from === 'homePage') {
       dispatch({ type: 'GET_CATEGORY_FILTERED', categoryId });
     }
-    if (selectedFrom === 'sharedSeedPage') {
+    if (from === 'sharedSeedPage') {
       dispatch({ type: 'SELECT_CATEGORY_ID', categoryId });
     }
   },

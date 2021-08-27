@@ -1,24 +1,20 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// == Component
 
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
 import MySeeds from 'src/components/PageMySeeds';
-
 import Team from 'src/components/Team';
-
 import PageShareSeed from 'src/components/PageShareSeed';
+import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
+import PageDetailSeed from 'src/components/PageDetailSeed';
+import Page404 from 'src/components/Page404';
 
-// == Import
 import './styles.scss';
-import Page404 from '../Page404';
-import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
 const App = ({ getList, menuIsOpen }) => {
@@ -41,8 +37,12 @@ const App = ({ getList, menuIsOpen }) => {
     <div className="app">
       <Switch>
 
-        <Route path="/uservalidate/:un/:deux" exact>
-          <Redirect to="/" />
+        <Route path="/uservalidate/:email/:key" exact>
+          <EmailConfirmationPage
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/" exact>

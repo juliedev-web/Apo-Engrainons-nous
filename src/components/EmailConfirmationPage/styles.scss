@@ -1,0 +1,18 @@
+.email-confirmation-page {
+  height: 100%;
+
+  .messageConfirmEmail {
+    height: 50vh;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.email-confirmation-page .footer-desktop {
+  position: fixed;
+  bottom: 0;
+}
+

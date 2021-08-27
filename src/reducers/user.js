@@ -28,6 +28,7 @@ export const initialState = {
   editProfil: false,
   menuIsOpen: false,
   myList: [],
+  emailConfirmMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -225,22 +226,37 @@ const reducer = (state = initialState, action = {}) => {
         connectionFailedMessage: '',
         connectionSuccessMessage: '',
       };
+
     case 'HIDE_FIELD_CONNEXION':
       return {
         ...state,
         fieldConnexion: true,
       };
+
     case 'HANDLE_RESETPASSWORD_VALUE':
       return {
         ...state,
         emailResetInputValue: action.emailResetInputValue,
       };
+
     case 'SHOW_FIELD_CONNEXION':
       return {
         ...state,
         fieldConnexion: false,
         emailResetInputValue: '',
         validateSendMsgResetPwd: '',
+      };
+
+    case 'CHECK_EMAIL_SUCCESS':
+      return {
+        ...state,
+        emailConfirmMsg: action.message,
+      };
+
+    case 'CHECK_EMAIL_FAIL':
+      return {
+        ...state,
+        emailConfirmMsg: action.message,
       };
     default:
       return state;
