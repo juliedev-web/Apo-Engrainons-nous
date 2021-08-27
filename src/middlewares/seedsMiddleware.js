@@ -113,6 +113,20 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       });
     }
       break;
+    case 'ON_DELETE_SEED_CLICK_CONFIRM': {
+      const options = {
+        method: 'DELETE',
+        url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
+      };
+
+      axios(options).then((response) => {
+        console.log(response);
+        store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
 
     default:
       next(action);
