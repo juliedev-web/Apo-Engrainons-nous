@@ -9,7 +9,15 @@ import {
 
 import './styles.scss';
 
-export default function MySeeds({ myList, getUserSeedsList }) {
+export default function MySeeds({
+  myList,
+  getUserSeedsList,
+  handleDeleteSeedClickConfirm,
+  confirmDeleteSeedMsg,
+  handleDeleteSeedClick,
+  toBeDeletedSeedId,
+  closeDeleteConfirmButton,
+}) {
   const history = useHistory();
   useEffect(() => {
     console.log('test my graines');
@@ -41,10 +49,31 @@ export default function MySeeds({ myList, getUserSeedsList }) {
                 />
               </td>
               <td className="my-seeds__list__tbody__row__td">
-                <FontAwesomeIcon
-                  icon={faTrashAlt}
-                  className="faTrashAlt"
-                />
+                {
+                  (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
+                    <button
+                      className="btn-delete-one-seed"
+                      type="button"
+                      onClick={() => {
+                        console.log('test');
+                        handleDeleteSeedClickConfirm(seed.id);
+                      }}
+                    > {confirmDeleteSeedMsg}
+                    </button>
+                  )
+                    : (
+                      <FontAwesomeIcon
+                        icon={faTrashAlt}
+                        className="faTrashAlt"
+                        onClick={() => {
+                          handleDeleteSeedClick(seed.id);
+                          setTimeout(() => {
+                            closeDeleteConfirmButton();
+                          }, 3000);
+                        }}
+                      />
+                    )
+                }
               </td>
             </tr>
           ))}
