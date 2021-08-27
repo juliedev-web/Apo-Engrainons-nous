@@ -25,6 +25,7 @@ export const initialState = {
   editProfil: false,
   menuIsOpen: false,
   myList: [],
+  emailConfirmMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -215,6 +216,18 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         connectionFailedMessage: '',
         connectionSuccessMessage: '',
+      };
+
+    case 'EMAIL_CONFIRM_SUCCESS':
+      return {
+        ...state,
+        emailConfirmMsg: 'Votre Email a bien été confirmé ! Bienvenue 😊',
+      };
+
+    case 'EMAIL_CONFIRM_ERROR':
+      return {
+        ...state,
+        emailConfirmMsg: "Votre email n'a pas pu être confirmé 😔... n'hésitez pas contacter le site pour nous signaler l'erreur !",
       };
 
     default:

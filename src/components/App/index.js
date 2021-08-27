@@ -10,7 +10,7 @@ import Profil from 'src/components/Profil';
 import MySeeds from 'src/components/PageMySeeds';
 import Team from 'src/components/Team';
 import PageShareSeed from 'src/components/PageShareSeed';
-import EmailConfirmationPage from 'src/components/EmailConfirmationPage';
+import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
 import PageDetailSeed from 'src/components/PageDetailSeed';
 import Page404 from 'src/components/Page404';
 

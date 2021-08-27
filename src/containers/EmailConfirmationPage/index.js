@@ -4,13 +4,11 @@ import { withRouter } from 'react-router-dom';
 import EmailConfirmationPage from 'src/components/EmailConfirmationPage';
 
 const mapStateToProps = (state) => ({
-
+  emailConfirmMsg: state.user.emailConfirmMsg,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   checkConfirmEmail: () => {
-    console.log(ownProps.match.params);
-
     dispatch({ type: 'CHECK_CONFIRM_EMAIL', payload: ownProps.match.params });
   },
 });
