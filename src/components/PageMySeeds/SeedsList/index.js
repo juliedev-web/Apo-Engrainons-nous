@@ -9,7 +9,7 @@ import {
 
 import './styles.scss';
 
-export default function MySeeds({ myList, getUserSeedsList }) {
+export default function MySeeds({ myList, getUserSeedsList, handleDeleteSeedClick }) {
   const history = useHistory();
   useEffect(() => {
     console.log('test my graines');
@@ -44,6 +44,7 @@ export default function MySeeds({ myList, getUserSeedsList }) {
                 <FontAwesomeIcon
                   icon={faTrashAlt}
                   className="faTrashAlt"
+                  onClick={() => handleDeleteSeedClick(seed.id)}
                 />
               </td>
             </tr>
