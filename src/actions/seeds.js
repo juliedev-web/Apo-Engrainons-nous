@@ -14,3 +14,7 @@ export const toggleMail = () => ({
 export const hideMailAction = () => ({
   type: 'HIDE_MAIL',
 });
+
+export const toggleEditSeed = () => ({
+  type: 'ON_TOGGLE_EDIT_SEED',
+});

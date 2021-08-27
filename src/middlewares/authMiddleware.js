@@ -165,22 +165,19 @@ const authMiddleware = (store) => (next) => (action) => {
       });
     }
       break;
-
-    case 'CHECK_CONFIRM_EMAIL': {
+    case 'HANDLE_SUBMIT_RESET': {
+      const state = store.getState();
       const options = {
         method: 'PATCH',
-        url: `https://engrainonsnous.herokuapp.com/uservalidate/${action.payload.email}/${action.payload.key}`,
+        url: `https://engrainonsnous.herokuapp.com/reset/${state.user.emailResetInputValue}`,
       };
       axios(options).then((response) => {
-        console.log('réponse check email: ', response.data);
-        store.dispatch({ type: 'EMAIL_CONFIRM_SUCCESS' });
+        store.dispatch({ type: 'SUBMIT_RESET_MESSAGE_SUCCESS' });
       }).catch((error) => {
-        console.error('réponse check email: ', error);
-        store.dispatch({ type: 'EMAIL_CONFIRM_ERROR' });
+        console.error(error);
       });
     }
       break;
-
     default:
       next(action);
   }

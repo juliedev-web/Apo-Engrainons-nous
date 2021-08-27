@@ -12,9 +12,12 @@ export const initialState = {
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
   deleteConfirmMessage: '',
+  emailResetInputValue: '',
+  validateSendMsgResetPwd: '',
   validateUpdateProfil: false,
   confirmDelete: false,
   isLogged: false,
+  fieldConnexion: false,
   profil: {
     pseudo: '',
     email: '',
@@ -175,6 +178,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         validateUpdateProfil: 'Votre compte a bien été mis a jour.',
       };
+    case 'SUBMIT_RESET_MESSAGE_SUCCESS':
+      return {
+        ...state,
+        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe.',
+      };
+
     case 'DELETE_SUCCESS':
       return {
         ...state,
@@ -217,19 +226,23 @@ const reducer = (state = initialState, action = {}) => {
         connectionFailedMessage: '',
         connectionSuccessMessage: '',
       };
-
-    case 'EMAIL_CONFIRM_SUCCESS':
+    case 'HIDE_FIELD_CONNEXION':
       return {
         ...state,
-        emailConfirmMsg: 'Votre Email a bien été confirmé ! Bienvenue 😊',
+        fieldConnexion: true,
       };
-
-    case 'EMAIL_CONFIRM_ERROR':
+    case 'HANDLE_RESETPASSWORD_VALUE':
       return {
         ...state,
-        emailConfirmMsg: "Votre email n'a pas pu être confirmé 😔... n'hésitez pas contacter le site pour nous signaler l'erreur !",
+        emailResetInputValue: action.emailResetInputValue,
       };
-
+    case 'SHOW_FIELD_CONNEXION':
+      return {
+        ...state,
+        fieldConnexion: false,
+        emailResetInputValue: '',
+        validateSendMsgResetPwd: '',
+      };
     default:
       return state;
   }
