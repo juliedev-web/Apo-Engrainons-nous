@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
@@ -38,11 +39,14 @@ const ComponentSeed = ({
         </div>
       </div>
       {isLogged ? (
-        <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
+        showMail ? (
+          <p className="user-email">{seed.email_user}</p>
+        ) : (
+          <button type="button" onClick={toggleMail}>Contacter le propriétaire</button>
+        )
       ) : (
-        <button type="button" onClick={toggleMail}> {showMail ? `Connectez-vous pour voir l'email` : 'Contacter le propriétaire'}</button>
-      )
-      }
+        <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>
+      )}
     </div>
   );
 };
