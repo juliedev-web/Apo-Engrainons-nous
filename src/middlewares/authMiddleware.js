@@ -178,6 +178,23 @@ const authMiddleware = (store) => (next) => (action) => {
       });
     }
       break;
+    case 'GET_LIST_WITH_JWT': {
+      const state = store.getState();
+      const options = {
+        method: 'GET',
+        url: 'https://engrainonsnous.herokuapp.com/',
+        headers: {
+          Authorization: `Bearer ${state.user.profil.token}`,
+        },
+      };
+      axios(options).then((response) => {
+        console.log(response);
+        // store.dispatch({ type: 'SUBMIT_RESET_MESSAGE_SUCCESS' });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
     default:
       next(action);
   }

@@ -17,10 +17,18 @@ const HomePage = ({
   menuIsOpen,
   getPage,
   pageNumber,
+  loadList,
+  profil,
 }) => {
   const history = useHistory();
   useEffect(() => {
-    history.push(`/page/${+pageNumber || 1}`);
+    loadList();
+    localStorage.setItem('token', profil.token);
+    localStorage.setItem('pseudo', profil.pseudo);
+    localStorage.setItem('email', profil.email);
+    localStorage.setItem('city', profil.city);
+    localStorage.setItem('id', profil.id);
+    // history.push(`/page/${+pageNumber || 1}`);
     getPage(+pageNumber - 1);
   }, []);
   return (
@@ -57,6 +65,7 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
+  loadList: PropTypes.func.isRequired,
 };
 
 export default HomePage;
