@@ -9,6 +9,8 @@ export const initialState = {
   selectedNewSeedCategory: '',
   totalSeedsNumber: 0,
   showMail: false,
+  confirmDeleteSeedMsg: '',
+  toBeDeletedSeedId: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,6 +41,12 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'HIDE_MAIL':
+      return {
+        ...state,
+        showMail: false,
+      };
+
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
@@ -66,13 +74,25 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_TOGGLE_CLICK_MAIL_OWNER':
       return {
         ...state,
-        showMail: !state.showMail,
+        showMail: true,
       };
 
     case 'ON_INPUT_SEARCH_SUCCESS':
       return {
         ...state,
         list: action.list,
+      };
+    case 'ON_DELETE_SEED_CLICK':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: 'Cliquez pour supprimer',
+        toBeDeletedSeedId: action.seedId,
+      };
+    case 'ON_ClOSE_DELETE_CONFIRM_BUTTON':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: '',
+        toBeDeletedSeedId: '',
       };
 
     default:

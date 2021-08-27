@@ -8,9 +8,13 @@ const ComponentSeed = ({
   toggleMail,
   showMail,
   isLogged,
+  hideMail,
 }) => {
   useEffect(() => {
     getOneSeed();
+    return () => {
+      hideMail();
+    };
   }, []);
   return (
     <div className="container-seed">
@@ -34,7 +38,7 @@ const ComponentSeed = ({
         </div>
       </div>
       {isLogged ? (
-        <button type="button" onClick={toggleMail}> {showMail ? 'Mail proprio' : 'Contacter le propriétaire'}</button>
+        <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
       ) : (
         <button type="button" onClick={toggleMail}> {showMail ? `Connectez-vous pour voir l'email` : 'Contacter le propriétaire'}</button>
       )
@@ -48,6 +52,8 @@ ComponentSeed.propTypes = {
   getOneSeed: PropTypes.func.isRequired,
   toggleMail: PropTypes.func.isRequired,
   showMail: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  hideMail: PropTypes.func.isRequired,
 };
 
 export default ComponentSeed;

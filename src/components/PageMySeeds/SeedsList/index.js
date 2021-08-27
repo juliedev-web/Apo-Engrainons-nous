@@ -9,7 +9,15 @@ import {
 
 import './styles.scss';
 
-export default function MySeeds({ myList, getUserSeedsList }) {
+export default function MySeeds({
+  myList,
+  getUserSeedsList,
+  handleDeleteSeedClickConfirm,
+  confirmDeleteSeedMsg,
+  handleDeleteSeedClick,
+  toBeDeletedSeedId,
+  closeDeleteConfirmButton,
+}) {
   const history = useHistory();
   useEffect(() => {
     console.log('test my graines');
@@ -28,6 +36,47 @@ export default function MySeeds({ myList, getUserSeedsList }) {
               <th className="my-seeds__list__thead__row__th">Editer</th>
               <th className="my-seeds__list__thead__row__th">Supprimer</th>
             </tr>
+          </thead>
+          <tbody className="my-seeds__list__tbody">
+            {myList.map((seed) => (
+              <tr className="my-seeds__list__tbody__row">
+                <td className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
+                <td className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
+                <td className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
+                <td className="my-seeds__list__tbody__row__td">
+                  <FontAwesomeIcon
+                    icon={faEdit}
+                    className="faEdit"
+                  />
+                </td>
+                <td className="my-seeds__list__tbody__row__td">
+                  {
+                    (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
+                      <button
+                        className="btn-delete-one-seed"
+                        type="button"
+                        onClick={() => {
+                          console.log('test');
+                          handleDeleteSeedClickConfirm(seed.id);
+                        }}
+                      > {confirmDeleteSeedMsg}
+                      </button>
+                    )
+                      : (
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          className="faTrashAlt"
+                          onClick={() => {
+                            handleDeleteSeedClick(seed.id);
+                            setTimeout(() => {
+                              closeDeleteConfirmButton();
+                            }, 3000);
+                          }}
+                        />
+                      )
+                  }
+                </td>
+              </tr>
           </thead>
           <tbody className="my-seeds__list__tbody">
             {myList.map((seed) => (

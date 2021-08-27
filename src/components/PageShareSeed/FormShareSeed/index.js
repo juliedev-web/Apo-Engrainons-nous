@@ -31,7 +31,7 @@ const FormShareSeed = ({
         <button type="submit">Valider</button>
       ) : (
         <Link className="link-to-connexion" to="/connexion">
-          pour partager nes
+          Pour partager vos graines, connectez-vous
           <span>se connecter</span>
         </Link>
       )}
