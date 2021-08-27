@@ -9,6 +9,7 @@ const ComponentSeed = ({
   showMail,
   isLogged,
   hideMail,
+  toggleEditProfil,
 }) => {
   useEffect(() => {
     getOneSeed();
@@ -37,6 +38,7 @@ const ComponentSeed = ({
           </p>
         </div>
       </div>
+      <button type="button" onClick={toggleEditProfil}>Modifier ma graine</button>
       {isLogged ? (
         <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
       ) : (
@@ -54,6 +56,7 @@ ComponentSeed.propTypes = {
   showMail: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired,
   hideMail: PropTypes.func.isRequired,
+  toggleEditProfil: PropTypes.func.isRequired,
 };
 
 export default ComponentSeed;

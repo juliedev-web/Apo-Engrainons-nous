@@ -14,3 +14,7 @@ export const toggleMail = () => ({
 export const hideMailAction = () => ({
   type: 'HIDE_MAIL',
 });
+
+export const toggleEditProfil = () => ({
+  type: 'ON_TOGGLE_CLICK_EDIT_PROFIL',
+});
