@@ -77,26 +77,6 @@ export default function MySeeds({
                   }
                 </td>
               </tr>
-          </thead>
-          <tbody className="my-seeds__list__tbody">
-            {myList.map((seed) => (
-              <tr className="my-seeds__list__tbody__row">
-                <td className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
-                <td className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
-                <td className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
-                <td className="my-seeds__list__tbody__row__td">
-                  <FontAwesomeIcon
-                    icon={faEdit}
-                    className="faEdit"
-                  />
-                </td>
-                <td className="my-seeds__list__tbody__row__td">
-                  <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    className="faTrashAlt"
-                  />
-                </td>
-              </tr>
             ))}
           </tbody>
         </table>
