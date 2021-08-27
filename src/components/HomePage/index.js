@@ -20,7 +20,7 @@ const HomePage = ({
 }) => {
   const history = useHistory();
   useEffect(() => {
-    // history.push(`/page/${+pageNumber || 1}`);
+    history.push(`/page/${+pageNumber || 1}`);
     getPage(+pageNumber - 1);
   }, []);
   return (

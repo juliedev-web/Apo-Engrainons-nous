@@ -42,7 +42,7 @@ const List = ({
         nextLabel=">"
         pageCount={pageCount}
         onPageChange={(selected) => {
-          // history.push(`/page/${selected.selected + 1}`);
+          history.push(`/page/${selected.selected + 1}`);
           handlePageChange(selected.selected);
         }}
         containerClassName="paginationBttns"
