@@ -7,6 +7,7 @@ export const initialState = {
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
   connectionFailedMessage: '',
+  connectionSuccessMessage: '',
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
@@ -19,6 +20,7 @@ export const initialState = {
     email: '',
     city: '',
     id: '',
+    token: '',
   },
   editProfil: false,
   menuIsOpen: false,
@@ -62,7 +64,10 @@ const reducer = (state = initialState, action = {}) => {
           email: action.data.user.email,
           city: action.data.user.city,
           id: action.data.user.id,
+          token: action.data.token,
         },
+        connectionSuccessMessage: action.message,
+
       };
 
     case 'SIGNIN_SUCCESS':
@@ -203,6 +208,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         confirmDelete: false,
+      };
+
+    case 'CLOSE_MESSAGE':
+      return {
+        ...state,
+        connectionFailedMessage: '',
+        connectionSuccessMessage: '',
       };
 
     default:

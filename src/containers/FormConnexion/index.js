@@ -10,6 +10,8 @@ const mapStateToProps = (state) => ({
   emailInputValue: state.user.emailInputValue,
   passwordInputValue: state.user.passwordInputValue,
   connectionFailedMessage: state.user.connectionFailedMessage,
+  isLogged: state.user.isLogged,
+  connectionSuccessMessage: state.user.connectionSuccessMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -21,6 +23,8 @@ const mapDispatchToProps = (dispatch) => ({
     e.preventDefault();
     dispatch(createSubmitConnexion());
   },
+
+  closeMessage: () => dispatch({ type: 'CLOSE_MESSAGE' }),
 
 });
 

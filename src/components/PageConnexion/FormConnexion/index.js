@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 
@@ -10,13 +10,19 @@ const FormConnexion = ({
   handleInputValueChange,
   handleSubmitSignin,
   connectionFailedMessage,
+  isLogged,
+  closeMessage,
+  connectionSuccessMessage,
 }) => {
   const history = useHistory();
 
+  useEffect(() => {
+    if (isLogged) setTimeout(() => history.push('/'), 3000);
+    if (!isLogged || connectionSuccessMessage) setTimeout(() => closeMessage(), 2900);
+  }, [isLogged, connectionFailedMessage]);
+
   const onSubmit = (e) => {
     handleSubmitSignin(e);
-    console.log('failed', !!connectionFailedMessage);
-    if (connectionFailedMessage) setTimeout(() => history.push('/'), 1000);
   };
   return (
     <div className="connexion-input">
@@ -24,7 +30,8 @@ const FormConnexion = ({
       <form onSubmit={onSubmit}>
         <input type="email" name="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
         <input type="password" name="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
-        {connectionFailedMessage && <p className="connection-not-confirmed-message">{connectionFailedMessage}</p>}
+        {(connectionFailedMessage) && <p className="connection-not-confirmed-message">{connectionFailedMessage}</p>}
+        {(connectionSuccessMessage) && <p className="connection-confirmed-message">{connectionSuccessMessage}</p>}
         <button type="submit">Valider</button>
       </form>
       <Link className="forget-password" to="#">Mot de passe oublié ?</Link>
