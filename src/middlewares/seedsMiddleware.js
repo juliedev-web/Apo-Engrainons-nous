@@ -114,16 +114,15 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       });
     }
       break;
-    case 'ON_DELETE_SEED_CLICK': {
+    case 'ON_DELETE_SEED_CLICK_CONFIRM': {
       const options = {
         method: 'DELETE',
         url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
       };
 
       axios(options).then((response) => {
-        console.log('baba');
         console.log(response);
-        // store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data.resul });
+        store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
       }).catch((error) => {
         console.error(error);
       });
