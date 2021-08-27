@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
   list: state.seeds.list,
   pageNumber: ownProps.match.params.pageNumber || '1',
   profil: state.user.profil,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

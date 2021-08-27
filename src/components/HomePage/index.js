@@ -19,16 +19,20 @@ const HomePage = ({
   pageNumber,
   loadList,
   profil,
+  isLogged,
 }) => {
   const history = useHistory();
   useEffect(() => {
+    if (!localStorage.getItem('pseudo')) {
+      localStorage.setItem('token', profil.token);
+      localStorage.setItem('pseudo', profil.pseudo);
+      localStorage.setItem('email', profil.email);
+      localStorage.setItem('city', profil.city);
+      localStorage.setItem('id', profil.id);
+      localStorage.setItem('isLogged', isLogged);
+    }
     loadList();
-    localStorage.setItem('token', profil.token);
-    localStorage.setItem('pseudo', profil.pseudo);
-    localStorage.setItem('email', profil.email);
-    localStorage.setItem('city', profil.city);
-    localStorage.setItem('id', profil.id);
-    // history.push(`/page/${+pageNumber || 1}`);
+    history.push(`/page/${+pageNumber || 1}`);
     getPage(+pageNumber - 1);
   }, []);
   return (
