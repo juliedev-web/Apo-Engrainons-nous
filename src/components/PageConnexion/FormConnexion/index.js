@@ -17,8 +17,8 @@ const FormConnexion = ({
   const history = useHistory();
 
   useEffect(() => {
-    if (isLogged) setTimeout(() => history.push('/'), 3000);
-    if (!isLogged || connectionSuccessMessage) setTimeout(() => closeMessage(), 2900);
+    if (isLogged) setTimeout(() => history.push('/'), 1000);
+    if (!isLogged || connectionSuccessMessage) setTimeout(() => closeMessage(), 900);
   }, [isLogged, connectionFailedMessage]);
 
   const onSubmit = (e) => {
