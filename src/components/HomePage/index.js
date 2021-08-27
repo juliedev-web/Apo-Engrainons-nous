@@ -17,9 +17,21 @@ const HomePage = ({
   menuIsOpen,
   getPage,
   pageNumber,
+  loadList,
+  profil,
+  isLogged,
 }) => {
   const history = useHistory();
   useEffect(() => {
+    if (!localStorage.getItem('pseudo')) {
+      localStorage.setItem('token', profil.token);
+      localStorage.setItem('pseudo', profil.pseudo);
+      localStorage.setItem('email', profil.email);
+      localStorage.setItem('city', profil.city);
+      localStorage.setItem('id', profil.id);
+      localStorage.setItem('isLogged', isLogged);
+    }
+    loadList();
     history.push(`/page/${+pageNumber || 1}`);
     getPage(+pageNumber - 1);
   }, []);
@@ -57,6 +69,7 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
+  loadList: PropTypes.func.isRequired,
 };
 
 export default HomePage;

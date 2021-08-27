@@ -6,11 +6,16 @@ import HomePage from 'src/components/HomePage';
 const mapStateToProps = (state, ownProps) => ({
   list: state.seeds.list,
   pageNumber: ownProps.match.params.pageNumber || '1',
+  profil: state.user.profil,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getPage: (pageNumber) => {
     dispatch({ type: 'GET_LIST_PAGE', pageNumber: pageNumber });
+  },
+  loadList: () => {
+    dispatch({ type: 'GET_LIST_WITH_JWT' });
   },
 });
 
