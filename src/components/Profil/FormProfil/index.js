@@ -89,7 +89,10 @@ export default function FormProfil({
                   <NavLink
                     to="/"
                     exact
-                    onClick={handleDisconnect}
+                    onClick={() => {
+                      localStorage.clear();
+                      handleDisconnect();
+                    }}
                     activeClassName="myseed--active"
                   >Déconnexion
                   </NavLink>

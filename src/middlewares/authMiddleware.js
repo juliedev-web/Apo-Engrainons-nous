@@ -188,11 +188,11 @@ const authMiddleware = (store) => (next) => (action) => {
         store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
       }).catch((error) => {
         store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contacter le site si elle se reproduit ' });
-
         console.error(error);
       });
     }
       break;
+      
     default:
       next(action);
   }
