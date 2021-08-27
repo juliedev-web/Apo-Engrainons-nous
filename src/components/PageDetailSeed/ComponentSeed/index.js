@@ -8,9 +8,13 @@ const ComponentSeed = ({
   toggleMail,
   showMail,
   isLogged,
+  hideMail,
 }) => {
   useEffect(() => {
     getOneSeed();
+    return () => {
+      hideMail();
+    };
   }, []);
   return (
     <div className="container-seed">
@@ -49,6 +53,7 @@ ComponentSeed.propTypes = {
   toggleMail: PropTypes.func.isRequired,
   showMail: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  hideMail: PropTypes.func.isRequired,
 };
 
 export default ComponentSeed;

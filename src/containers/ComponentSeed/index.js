@@ -6,6 +6,7 @@ import ComponentSeed from 'src/components/PageDetailSeed/ComponentSeed';
 import {
   gettingOneSeed,
   toggleMail,
+  hideMailAction,
 } from '../../actions/seeds';
 
 // import { findSeed } from 'src/selectors/seeds';
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   toggleMail: () => {
     dispatch(toggleMail());
   },
+  hideMail: () => dispatch(hideMailAction()),
 });
 const container = connect(mapStateToProps, mapDispatchToProps)(ComponentSeed);
 
