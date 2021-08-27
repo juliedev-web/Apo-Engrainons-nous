@@ -165,6 +165,19 @@ const authMiddleware = (store) => (next) => (action) => {
       });
     }
       break;
+    case 'HANDLE_SUBMIT_RESET': {
+      const state = store.getState();
+      const options = {
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/reset/${state.user.emailResetInputValue}`,
+      };
+      axios(options).then((response) => {
+        store.dispatch({ type: 'SUBMIT_RESET_MESSAGE_SUCCESS' });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
     default:
       next(action);
   }
