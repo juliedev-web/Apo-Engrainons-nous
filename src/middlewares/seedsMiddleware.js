@@ -31,10 +31,9 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
     case 'GET_CATEGORY_FILTERED': {
       if (action.categoryId === 'categories') {
-        store.dispatch({ type: 'GETTING_LIST' });
+        store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0' });
         return;
       }
-
       const options = {
         method: 'GET',
         url: `https://engrainonsnous.herokuapp.com/category/${action.categoryId}`,

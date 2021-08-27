@@ -1,6 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Component
@@ -40,6 +40,10 @@ const App = ({ getList, menuIsOpen }) => {
   return (
     <div className="app">
       <Switch>
+
+        <Route path="/uservalidate/:un/:deux" exact>
+          <Redirect to="/" />
+        </Route>
 
         <Route path="/" exact>
           <HomePage
