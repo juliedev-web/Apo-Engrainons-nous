@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { formatDate } from 'src/selectors/seeds';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -43,10 +43,18 @@ export default function MySeeds({
               <td className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
               <td className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
               <td className="my-seeds__list__tbody__row__td">
-                <FontAwesomeIcon
-                  icon={faEdit}
-                  className="faEdit"
-                />
+                <NavLink
+                  className="seed-category"
+                  to={`/detail-graine/${seed.id}`}
+                  key={seed.id}
+                  exact
+                  activeClassName="seed-category"
+                >
+                  <FontAwesomeIcon
+                    icon={faEdit}
+                    className="faEdit"
+                  />
+                </NavLink>
               </td>
               <td className="my-seeds__list__tbody__row__td">
                 {
