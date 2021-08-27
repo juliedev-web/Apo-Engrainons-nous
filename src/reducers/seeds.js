@@ -11,6 +11,7 @@ export const initialState = {
   showMail: false,
   confirmDeleteSeedMsg: '',
   toBeDeletedSeedId: '',
+  editSeed: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -82,12 +83,20 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: action.list,
       };
+
+    case 'ON_TOGGLE_EDIT_SEED':
+      return {
+        ...state,
+        editSeed: true,
+      };
+
     case 'ON_DELETE_SEED_CLICK':
       return {
         ...state,
         confirmDeleteSeedMsg: 'Cliquez pour supprimer',
         toBeDeletedSeedId: action.seedId,
       };
+
     case 'ON_ClOSE_DELETE_CONFIRM_BUTTON':
       return {
         ...state,

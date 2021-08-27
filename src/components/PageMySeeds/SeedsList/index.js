@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { formatDate } from 'src/selectors/seeds';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,10 +40,10 @@ export default function MySeeds({
           <tbody className="my-seeds__list__tbody">
             {myList.map((seed) => (
               <tr className="my-seeds__list__tbody__row">
-                <td className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
-                <td className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
-                <td className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
-                <td className="my-seeds__list__tbody__row__td">
+                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
+                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
+                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
+                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">
                   <FontAwesomeIcon
                     icon={faEdit}
                     className="faEdit"
@@ -51,29 +51,27 @@ export default function MySeeds({
                 </td>
                 <td className="my-seeds__list__tbody__row__td">
                   {
-                    (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
-                      <button
-                        className="btn-delete-one-seed"
-                        type="button"
-                        onClick={() => {
-                          console.log('test');
-                          handleDeleteSeedClickConfirm(seed.id);
-                        }}
-                      > {confirmDeleteSeedMsg}
-                      </button>
-                    )
-                      : (
-                        <FontAwesomeIcon
-                          icon={faTrashAlt}
-                          className="faTrashAlt"
-                          onClick={() => {
-                            handleDeleteSeedClick(seed.id);
-                            setTimeout(() => {
-                              closeDeleteConfirmButton();
-                            }, 3000);
-                          }}
-                        />
-                      )
+                  (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
+                    <button
+                      className="btn-delete-one-seed"
+                      type="button"
+                      onClick={() => {
+                        handleDeleteSeedClickConfirm(seed.id);
+                      }}
+                    > {confirmDeleteSeedMsg}
+                    </button>
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faTrashAlt}
+                      className="faTrashAlt"
+                      onClick={() => {
+                        handleDeleteSeedClick(seed.id);
+                        setTimeout(() => {
+                          closeDeleteConfirmButton();
+                        }, 3000);
+                      }}
+                    />
+                  )
                   }
                 </td>
               </tr>

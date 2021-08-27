@@ -7,6 +7,7 @@ import {
   gettingOneSeed,
   toggleMail,
   hideMailAction,
+  toggleEditSeed,
 } from '../../actions/seeds';
 
 // import { findSeed } from 'src/selectors/seeds';
@@ -15,6 +16,8 @@ const mapStateToProps = (state) => ({
   seed: state.seeds.seed,
   showMail: state.seeds.showMail,
   isLogged: state.user.isLogged,
+  editSeed: state.seeds.editSeed,
+  userId: state.user.profil.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -24,6 +27,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(toggleMail());
   },
   hideMail: () => dispatch(hideMailAction()),
+
+  toggleEditSeed: () => {
+    dispatch(toggleEditSeed());
+  },
+
 });
 const container = connect(mapStateToProps, mapDispatchToProps)(ComponentSeed);
 
