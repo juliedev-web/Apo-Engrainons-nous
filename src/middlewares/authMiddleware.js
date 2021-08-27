@@ -178,17 +178,19 @@ const authMiddleware = (store) => (next) => (action) => {
       });
     }
       break;
-
-    case 'CHECK_CONFIRM_EMAIL': {
+    case 'GET_LIST_WITH_JWT': {
+      const state = store.getState();
       const options = {
-        method: 'PATCH',
-        url: `https://engrainonsnous.herokuapp.com/uservalidate/${action.payload.email}/${action.payload.key}`,
+        method: 'GET',
+        url: 'https://engrainonsnous.herokuapp.com/',
+        headers: {
+          Authorization: `Bearer ${state.user.profil.token}`,
+        },
       };
       axios(options).then((response) => {
-        store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
+        console.log(response);
+        // store.dispatch({ type: 'SUBMIT_RESET_MESSAGE_SUCCESS' });
       }).catch((error) => {
-        store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contacter le site si elle se reproduit ' });
-
         console.error(error);
       });
     }
