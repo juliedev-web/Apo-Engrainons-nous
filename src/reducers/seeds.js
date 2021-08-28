@@ -104,6 +104,12 @@ const reducer = (state = initialState, action = {}) => {
         confirmDeleteSeedMsg: '',
         toBeDeletedSeedId: '',
       };
+    case 'ON_CLICK_RESET_FILTER':
+      return {
+        ...state,
+        selectedCategoryIdFilter: '',
+        inputSearchValue: '',
+      };
 
     default:
       return state;
