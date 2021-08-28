@@ -2,12 +2,12 @@
 
 export const initialState = {
   list: [],
+  totalSeedsNumber: 0,
   category: [],
   seed: {},
   inputSearchValue: '',
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
-  totalSeedsNumber: 0,
   showMail: false,
   confirmDeleteSeedMsg: '',
   toBeDeletedSeedId: '',
@@ -82,6 +82,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
+        totalSeedsNumber: 17,
       };
 
     case 'ON_TOGGLE_EDIT_SEED':

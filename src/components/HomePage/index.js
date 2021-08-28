@@ -33,7 +33,7 @@ const HomePage = ({
     }
     loadList();
     history.push(`/page/${+pageNumber || 1}`);
-    getPage(+pageNumber - 1);
+    getPage(+pageNumber - 1, 'homepage');
   }, []);
   return (
     <div className="home-page">

@@ -102,7 +102,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const state = store.getState();
       const options = {
         method: 'GET',
-        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}`,
+        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}/0`,
       };
 
       axios(options).then((response) => {

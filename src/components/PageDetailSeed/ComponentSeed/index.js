@@ -65,7 +65,7 @@ ComponentSeed.propTypes = {
   getOneSeed: PropTypes.func.isRequired,
   toggleMail: PropTypes.func.isRequired,
   showMail: PropTypes.bool.isRequired,
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   hideMail: PropTypes.func.isRequired,
   toggleEditSeed: PropTypes.func.isRequired,
   editSeed: PropTypes.bool.isRequired,

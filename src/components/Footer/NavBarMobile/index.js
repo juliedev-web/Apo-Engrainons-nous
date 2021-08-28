@@ -46,7 +46,7 @@ const NavBarMobile = ({
 );
 
 NavBarMobile.propTypes = {
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   handleMenuIsOpenClick: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,

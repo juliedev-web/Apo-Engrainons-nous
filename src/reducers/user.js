@@ -16,7 +16,7 @@ export const initialState = {
   validateSendMsgResetPwd: '',
   validateUpdateProfil: false,
   confirmDelete: false,
-  isLogged: !!localStorage.getItem('isLogged') || '',
+  isLogged: !!localStorage.getItem('isLogged') || false,
   fieldConnexion: false,
   profil: {
     pseudo: localStorage.getItem('pseudo') || '',

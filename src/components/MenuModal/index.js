@@ -46,7 +46,7 @@ const MenuModal = ({
 MenuModal.propTypes = {
   menuIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   handleDisconnect: PropTypes.func.isRequired,
 };
 
