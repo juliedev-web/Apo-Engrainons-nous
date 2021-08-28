@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 import {
-  faUserAlt, faPlus, faBars,
+  faUserAlt, faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,8 +36,6 @@ const NavBarMobile = ({
     >
       <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     </NavLink>
-
-    {/* <FontAwesomeIcon icon={faBars} className="faUserAlt" /> */}
     <div
       className={menuIsOpen ? 'menu-burger menu-burger--active' : 'menu-burger'}
       onClick={handleMenuIsOpenClick}

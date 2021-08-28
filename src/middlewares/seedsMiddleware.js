@@ -31,10 +31,9 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
     case 'GET_CATEGORY_FILTERED': {
       if (action.categoryId === 'categories') {
-        store.dispatch({ type: 'GETTING_LIST' });
+        store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0' });
         return;
       }
-
       const options = {
         method: 'GET',
         url: `https://engrainonsnous.herokuapp.com/category/${action.categoryId}`,
@@ -103,12 +102,26 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const state = store.getState();
       const options = {
         method: 'GET',
-        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}`,
+        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}/0`,
       };
 
       axios(options).then((response) => {
         console.log(response.data);
         store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data.resul });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
+    case 'ON_DELETE_SEED_CLICK_CONFIRM': {
+      const options = {
+        method: 'DELETE',
+        url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
+      };
+
+      axios(options).then((response) => {
+        console.log(response);
+        store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
       }).catch((error) => {
         console.error(error);
       });

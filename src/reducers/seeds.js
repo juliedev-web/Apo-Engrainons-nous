@@ -1,15 +1,17 @@
 // import
-import { filterByVariety } from '../selectors/seeds';
 
 export const initialState = {
   list: [],
+  totalSeedsNumber: 0,
   category: [],
   seed: {},
   inputSearchValue: '',
   selectedCategoryIdFilter: '',
   selectedNewSeedCategory: '',
-  totalSeedsNumber: 0,
   showMail: false,
+  confirmDeleteSeedMsg: '',
+  toBeDeletedSeedId: '',
+  editSeed: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,6 +21,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data.seed],
         totalSeedsNumber: action.data.nbSeed,
+      };
+    case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
+      return {
+        ...state,
+        selectedNewSeedCategory: '',
       };
 
     case 'GETTING_CATEGORY_SUCCESS':
@@ -33,6 +40,12 @@ const reducer = (state = initialState, action = {}) => {
         seed: {
           ...action.data,
         },
+      };
+
+    case 'HIDE_MAIL':
+      return {
+        ...state,
+        showMail: false,
       };
 
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
@@ -53,12 +66,6 @@ const reducer = (state = initialState, action = {}) => {
         inputSearchValue: action.inputValue,
       };
 
-      // case 'ON_SEARCH_SUBMIT':
-      //   return {
-      //     ...state,
-      //     list: [...filterByVariety(state.list, state.inputSearchValue)],
-      //   };
-
     case 'SELECT_CATEGORY_ID':
       return {
         ...state,
@@ -68,13 +75,34 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_TOGGLE_CLICK_MAIL_OWNER':
       return {
         ...state,
-        showMail: !state.showMail,
+        showMail: true,
       };
 
     case 'ON_INPUT_SEARCH_SUCCESS':
       return {
         ...state,
         list: action.list,
+        totalSeedsNumber: 17,
+      };
+
+    case 'ON_TOGGLE_EDIT_SEED':
+      return {
+        ...state,
+        editSeed: true,
+      };
+
+    case 'ON_DELETE_SEED_CLICK':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: 'Cliquez pour supprimer',
+        toBeDeletedSeedId: action.seedId,
+      };
+
+    case 'ON_ClOSE_DELETE_CONFIRM_BUTTON':
+      return {
+        ...state,
+        confirmDeleteSeedMsg: '',
+        toBeDeletedSeedId: '',
       };
 
     default:

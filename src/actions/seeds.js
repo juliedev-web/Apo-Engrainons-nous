@@ -10,3 +10,11 @@ export const gettingOneSeed = (id) => ({
 export const toggleMail = () => ({
   type: 'ON_TOGGLE_CLICK_MAIL_OWNER',
 });
+
+export const hideMailAction = () => ({
+  type: 'HIDE_MAIL',
+});
+
+export const toggleEditSeed = () => ({
+  type: 'ON_TOGGLE_EDIT_SEED',
+});

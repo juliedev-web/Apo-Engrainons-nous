@@ -18,17 +18,17 @@ const List = ({
     <div className="listContainer">
       <div className="list">
         {
-          list.map((l) => (
-            <NavLink to={`/detail-graine/${l.id}`} key={l.id} className="card">
-              <img src={l.category_img} alt="img" />
+          list.map((seed) => (
+            <NavLink to={`/detail-graine/${seed.id}`} key={seed.id} className="card">
+              <img src={seed.category_img} alt="img" />
               <div className="content">
                 <div className="content__description">
-                  <p className="content__description__category">{l.category_name}</p>
-                  <p className="content__description__variety">{l.variety_name}</p>
+                  <p className="content__description__category">{seed.category_name}</p>
+                  <p className="content__description__variety">{seed.variety_name}</p>
                 </div>
                 <div className="content__infos">
-                  <p className="content__infos__pseudo">{l.pseudo_user}</p>
-                  <p className="content__infos__date">{formatDate(l)}</p>
+                  <p className="content__infos__pseudo">{seed.pseudo_user}</p>
+                  <p className="content__infos__date">{formatDate(seed.created_at)}</p>
                 </div>
               </div>
             </NavLink>

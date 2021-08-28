@@ -7,22 +7,28 @@ export const initialState = {
   passwordConfirmMessage: '',
   inscriptionConfirmMessage: '',
   connectionFailedMessage: '',
+  connectionSuccessMessage: '',
   varietyInputValue: '',
   textAreaDetailValue: '',
   textAreaAdviceValue: '',
   deleteConfirmMessage: '',
+  emailResetInputValue: '',
+  validateSendMsgResetPwd: '',
   validateUpdateProfil: false,
   confirmDelete: false,
-  isLogged: false,
+  isLogged: !!localStorage.getItem('isLogged') || false,
+  fieldConnexion: false,
   profil: {
-    pseudo: '',
-    email: '',
-    city: '',
-    id: '',
+    pseudo: localStorage.getItem('pseudo') || '',
+    email: localStorage.getItem('email') || '',
+    city: localStorage.getItem('city') || '',
+    id: localStorage.getItem('id') || '',
+    token: localStorage.getItem('token') || '',
   },
   editProfil: false,
   menuIsOpen: false,
   myList: [],
+  emailConfirmMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -54,7 +60,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_SUCCESS':
       return {
         ...state,
-        isLogged: true,
+        isLogged: 'true',
         emailInputValue: '',
         passwordInputValue: '',
         profil: {
@@ -62,7 +68,10 @@ const reducer = (state = initialState, action = {}) => {
           email: action.data.user.email,
           city: action.data.user.city,
           id: action.data.user.id,
+          token: action.data.token,
         },
+        connectionSuccessMessage: action.message,
+
       };
 
     case 'SIGNIN_SUCCESS':
@@ -140,7 +149,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_DISCONNECT_CLICK':
       return {
         ...state,
-        isLogged: false,
+        isLogged: '',
         profil: {
           pseudo: '',
           email: '',
@@ -169,6 +178,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         validateUpdateProfil: 'Votre compte a bien été mis a jour.',
       };
+    case 'SUBMIT_RESET_MESSAGE_SUCCESS':
+      return {
+        ...state,
+        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe.',
+      };
+
     case 'DELETE_SUCCESS':
       return {
         ...state,
@@ -184,7 +199,7 @@ const reducer = (state = initialState, action = {}) => {
         textAreaAdviceValue: '',
         deleteConfirmMessage: 'Votre compte a bien été supprimé.',
         confirmDelete: false,
-        isLogged: false,
+        isLogged: '',
         profil: {
           pseudo: '',
           email: '',
@@ -205,6 +220,50 @@ const reducer = (state = initialState, action = {}) => {
         confirmDelete: false,
       };
 
+    case 'CLOSE_MESSAGE':
+      return {
+        ...state,
+        connectionFailedMessage: '',
+        connectionSuccessMessage: '',
+      };
+
+    case 'HIDE_FIELD_CONNEXION':
+      return {
+        ...state,
+        fieldConnexion: true,
+      };
+
+    case 'CANCEL_REINIT_PWD':
+      return {
+        ...state,
+        fieldConnexion: false,
+      };
+
+    case 'HANDLE_RESETPASSWORD_VALUE':
+      return {
+        ...state,
+        emailResetInputValue: action.emailResetInputValue,
+      };
+
+    case 'SHOW_FIELD_CONNEXION':
+      return {
+        ...state,
+        fieldConnexion: false,
+        emailResetInputValue: '',
+        validateSendMsgResetPwd: '',
+      };
+
+    case 'CHECK_EMAIL_SUCCESS':
+      return {
+        ...state,
+        emailConfirmMsg: action.message,
+      };
+
+    case 'CHECK_EMAIL_FAIL':
+      return {
+        ...state,
+        emailConfirmMsg: action.message,
+      };
     default:
       return state;
   }

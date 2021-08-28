@@ -3,22 +3,18 @@ import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-// == Component
-
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
 import Profil from 'src/components/Profil';
 import MySeeds from 'src/components/PageMySeeds';
-
 import Team from 'src/components/Team';
-
 import PageShareSeed from 'src/components/PageShareSeed';
+import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
+import PageDetailSeed from 'src/components/PageDetailSeed';
+import Page404 from 'src/components/Page404';
 
-// == Import
 import './styles.scss';
-import Page404 from '../Page404';
-import PageDetailSeed from '../PageDetailSeed';
 
 // == Composant
 const App = ({ getList, menuIsOpen }) => {
@@ -41,6 +37,14 @@ const App = ({ getList, menuIsOpen }) => {
     <div className="app">
       <Switch>
 
+        <Route path="/uservalidate/:email/:key" exact>
+          <EmailConfirmationPage
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
+        </Route>
+
         <Route path="/" exact>
           <HomePage
             width={width}
@@ -58,39 +62,75 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/connexion" exact>
-          <PageConnexion width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageConnexion
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/equipe" exact>
-          <Team width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Team
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/detail-graine/:id" exact>
-          <PageDetailSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageDetailSeed
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Profil
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <SignIn
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/mesgraines" exact>
-          <MySeeds width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <MySeeds
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/partager-une-graine" exact>
-          <PageShareSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageShareSeed
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Profil
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route>
-          <Page404 width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Page404
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
       </Switch>

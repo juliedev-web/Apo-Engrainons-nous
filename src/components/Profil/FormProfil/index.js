@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -25,6 +25,11 @@ export default function FormProfil({
   handleDeleteConfirm,
   cancelConfirmDeleteBtn,
 }) {
+  useEffect(() => {
+    localStorage.setItem('pseudo', profil.pseudo);
+    localStorage.setItem('email', profil.email);
+    localStorage.setItem('city', profil.city);
+  }, [editProfil]);
   return (
     <div className="container">
       {
@@ -47,8 +52,8 @@ export default function FormProfil({
                       <input name="email" type="email" placeholder="Email" value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
                       <input name="city" type="text" placeholder="Ville" value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
                       <label htmlFor="password"> Au moins 8 caractères, une majuscule, une minuscule, un nombre et un caractère spécial</label>
-                      <input name="password" type="password" placeholder="Mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
-                      <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
+                      <input name="password" type="password" placeholder="Nouveau mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
+                      <input name="confirm" type="password" placeholder="Confirmer votre nouveau mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
                     </div>
                     <button
                       className="valider"
@@ -68,7 +73,7 @@ export default function FormProfil({
                       <p>{profil.pseudo}</p>
                       <p>{profil.email}</p>
                       <p>{profil.city}</p>
-                      <p> ************ </p>
+                      <p>************</p>
                     </div>
                   )
               }
@@ -89,7 +94,10 @@ export default function FormProfil({
                   <NavLink
                     to="/"
                     exact
-                    onClick={handleDisconnect}
+                    onClick={() => {
+                      localStorage.clear();
+                      handleDisconnect();
+                    }}
                     activeClassName="myseed--active"
                   >Déconnexion
                   </NavLink>

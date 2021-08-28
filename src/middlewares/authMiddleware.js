@@ -31,9 +31,10 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
+        console.log('réponse Inscription: ', response);
         store.dispatch({ type: 'SIGNIN_SUCCESS' });
       }).catch((error) => {
-        console.error(error);
+        console.error('réponse Inscription: ', error);
       });
     }
       break;
@@ -49,19 +50,20 @@ const authMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        console.log(response.data);
-        if (response.data.return === 'Email ou mot de passe incorrect') {
+        console.log('réponse connexion: ', response.data);
+        if (response.data.return === 'Email ou mot de passe incorrect' || response.data.error === ' Email not confirm') {
           store.dispatch({ type: 'LOGIN_FAIL', data: response.data.return });
         }
         else {
-          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data });
+          console.log('réponse connexion: ', response.data);
+          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté !' });
         }
       }).catch((error) => {
-        console.error(error);
+        console.error('réponse connexion: ', error);
       });
     }
-
       break;
+
     case 'ON_PROFIL_SUBMIT': {
       const state = store.getState();
       if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
@@ -89,20 +91,17 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
+        console.log('inscription réussi', response.data);
         store.dispatch({ type: 'SIGNIN_SUCCESS', data: response.data });
       }).catch((error) => {
-        console.error(error);
+        console.error('erreur inscription', error);
       });
     }
       break;
     case 'UPDATE_PROFIL': {
       const state = store.getState();
-      console.log(state.user.passwordInputValue.length > 0);
-      if (state.user.passwordInputValue.length > 0) {
-        console.log(state.user.passwordInputValue);
-        console.log('check password good :', state.user.passwordInputValue !== state.user.passwordConfirmInputValue);
-        console.log('check password good :', !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue));
 
+      if (state.user.passwordInputValue.length > 0) {
         if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
           store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
           return;
@@ -111,12 +110,6 @@ const authMiddleware = (store) => (next) => (action) => {
           store.dispatch({ type: 'PWD_WRONG' });
           return;
         }
-
-        console.log(state.user.pseudoInputValue,
-          state.user.emailInputValue,
-          state.user.cityInputValue,
-          state.user.passwordInputValue,
-          state.user.passwordConfirmInputValue);
 
         const options = {
           method: 'PATCH',
@@ -130,10 +123,10 @@ const authMiddleware = (store) => (next) => (action) => {
           },
         };
         axios(options).then((response) => {
-          console.log(response);
+          console.log('réponse update profil: ', response);
           store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD' });
         }).catch((error) => {
-          console.error(error);
+          console.error('réponse update profil: ', error);
         });
         return;
       }
@@ -151,10 +144,10 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response);
+        console.log('réponse update profil: ', response.data);
         store.dispatch({ type: 'UPDATE_SUCCESS_WITHOUT_PASSWORD' });
       }).catch((error) => {
-        console.error(error);
+        console.error('réponse update profil: ', error);
       });
     }
       break;
@@ -165,12 +158,41 @@ const authMiddleware = (store) => (next) => (action) => {
         url: `https://engrainonsnous.herokuapp.com/delete/user/${state.user.profil.id}`,
       };
       axios(options).then((response) => {
+        console.log('réponse delete account: ', response.data);
         store.dispatch({ type: 'DELETE_SUCCESS' });
+      }).catch((error) => {
+        console.error('réponse delete account: ', error);
+      });
+    }
+      break;
+    case 'HANDLE_SUBMIT_RESET': {
+      const state = store.getState();
+      const options = {
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/reset/${state.user.emailResetInputValue}`,
+      };
+      axios(options).then((response) => {
+        store.dispatch({ type: 'SUBMIT_RESET_MESSAGE_SUCCESS' });
       }).catch((error) => {
         console.error(error);
       });
     }
       break;
+
+    case 'CHECK_CONFIRM_EMAIL': {
+      const options = {
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/uservalidate/${action.payload.email}/${action.payload.key}`,
+      };
+      axios(options).then((response) => {
+        store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
+      }).catch((error) => {
+        store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contacter le site si elle se reproduit ' });
+        console.error(error);
+      });
+    }
+      break;
+
     default:
       next(action);
   }

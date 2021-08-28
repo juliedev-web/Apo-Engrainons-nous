@@ -1,0 +1,30 @@
+.email-confirmation-page {
+  height: 100%;
+
+  .messageConfirmEmail {
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link-to-connexion {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #458114;
+  }
+
+  .link-to-connexion:hover {
+    text-decoration: underline;
+  }
+}
+
+.email-confirmation-page .footer-desktop {
+  position: fixed;
+  bottom: 0;
+}
+

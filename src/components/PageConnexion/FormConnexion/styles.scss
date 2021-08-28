@@ -1,10 +1,8 @@
 @use 'src/styles/vars';
 
 .connexion-input {
-
- display: flex;
- flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 
   h2 {
     font-size: 1.8em;
@@ -16,7 +14,7 @@
   form {
     display: flex;
     flex-direction: column;
-    
+
     input {
       font-size: 1rem;
       width: 40%;
@@ -27,7 +25,7 @@
       border-radius: 4px;
       margin-bottom: 1.2em;
     }
-  
+
     button {
       padding: 0.6em 0.8em;
       margin: auto;
@@ -36,7 +34,7 @@
       border-radius: 5px;
       color: white;
     }
-  
+
     button:hover {
       background-color: white;
       color: #418608;
@@ -44,7 +42,7 @@
       border: 2px solid #418608;
     }
   }
-  
+
   .connection-not-confirmed-message {
     color: #bc1536;
     font-weight: bold;
@@ -54,9 +52,18 @@
     width: 50%;
   }
 
+  .connection-confirmed-message {
+    color: #15bc2b;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    width: 50%;
+  }
+
   .forget-password {
     text-align: center;
-    margin-top: 2rem ;
+    margin-top: 2rem;
   }
 
   .forget-password:hover {
@@ -66,7 +73,7 @@
 
   .insciption {
     text-align: center;
-    margin-top: 2rem ;
+    margin-top: 2rem;
   }
 
   .subscribe {
@@ -80,10 +87,41 @@
     font-weight: bold;
   }
 }
+.validate-message {
+  color: #418608;
+  text-align: center;
+  margin-top: 2.5rem;
+  input {
+    margin-top: 2.5rem;
+  }
+}
+.messageMailRedirect {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.navlink_redirect_loggin {
+  text-align: center;
+  color: #418608;
+  text-decoration: underline;
+}
 
 // Desktop
 @media only screen and (min-width: 1025px) {
   .connexion-input {
     margin-top: 2em;
+  }
+}
+
+
+.field-connexion {
+
+  .annuler-reinitialisation-mdp {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .annuler-reinitialisation-mdp:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }

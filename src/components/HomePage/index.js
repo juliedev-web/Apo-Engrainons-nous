@@ -5,9 +5,9 @@ import './styles.scss';
 import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 import Filters from 'src/components/Filters';
 import List from 'src/containers/List';
-import Footer from 'src/components/Footer';
 import MenuModal from 'src/containers/MenuModal';
 
 const HomePage = ({
@@ -17,11 +17,23 @@ const HomePage = ({
   menuIsOpen,
   getPage,
   pageNumber,
+  loadList,
+  profil,
+  isLogged,
 }) => {
   const history = useHistory();
   useEffect(() => {
+    if (profil.pseudo) {
+      localStorage.setItem('token', profil.token);
+      localStorage.setItem('pseudo', profil.pseudo);
+      localStorage.setItem('email', profil.email);
+      localStorage.setItem('city', profil.city);
+      localStorage.setItem('id', profil.id);
+      localStorage.setItem('isLogged', isLogged);
+    }
+    loadList();
     history.push(`/page/${+pageNumber || 1}`);
-    getPage(+pageNumber - 1);
+    getPage(+pageNumber - 1, 'homepage');
   }, []);
   return (
     <div className="home-page">
@@ -33,13 +45,13 @@ const HomePage = ({
       <MenuModal />
 
       {
-      !menuIsOpen && (
-        <>
-          <Filters />
-          <List list={list} />
-        </>
-      )
-    }
+        !menuIsOpen && (
+          <>
+            <Filters />
+            <List list={list} />
+          </>
+        )
+      }
 
       <Footer
         width={width}
@@ -57,8 +69,7 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
+  loadList: PropTypes.func.isRequired,
 };
 
 export default HomePage;
-
-// un commentaire
