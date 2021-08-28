@@ -46,7 +46,7 @@ export default function MySeeds({
           </thead>
           <tbody className="my-seeds__list__tbody">
             {myList.map((seed) => (
-              <tr className="my-seeds__list__tbody__row">
+              <tr key={seed.id} className="my-seeds__list__tbody__row">
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
                 {width > breakpoint && (
