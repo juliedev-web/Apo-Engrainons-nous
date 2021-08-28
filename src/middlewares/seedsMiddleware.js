@@ -30,8 +30,10 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       break;
 
     case 'GET_CATEGORY_FILTERED': {
+      console.log(action.categoryId);
       if (action.categoryId === 'categories') {
-        store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0' });
+        store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0', categoryId: action.categoryId });
+        next(action);
         return;
       }
       const options = {
