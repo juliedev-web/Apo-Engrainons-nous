@@ -69,7 +69,7 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
 );
 
 HeaderDesktop.propTypes = {
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
 };
 export default HeaderDesktop;

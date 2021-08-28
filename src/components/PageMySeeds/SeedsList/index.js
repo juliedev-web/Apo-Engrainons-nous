@@ -17,6 +17,8 @@ export default function MySeeds({
   handleDeleteSeedClick,
   toBeDeletedSeedId,
   closeDeleteConfirmButton,
+  width,
+  breakpoint,
 }) {
   const history = useHistory();
   useEffect(() => {
@@ -32,9 +34,14 @@ export default function MySeeds({
             <tr className="my-seeds__list__thead__row">
               <th className="my-seeds__list__thead__row__th">Catégorie</th>
               <th className="my-seeds__list__thead__row__th">Variété</th>
-              <th className="my-seeds__list__thead__row__th">Date de création/mise à jour</th>
-              <th className="my-seeds__list__thead__row__th">Editer</th>
-              <th className="my-seeds__list__thead__row__th">Supprimer</th>
+              {width > breakpoint && (
+                <>
+                  <th className="my-seeds__list__thead__row__th">Date de création/mise à jour</th>
+                  <th className="my-seeds__list__thead__row__th">Editer</th>
+                </>
+              )}
+              <th className="my-seeds__list__thead__row__th">{width > breakpoint ? 'Supprimer' : 'suppr.'}
+              </th>
             </tr>
           </thead>
           <tbody className="my-seeds__list__tbody">
@@ -42,13 +49,17 @@ export default function MySeeds({
               <tr className="my-seeds__list__tbody__row">
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
-                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed.created_at)}</td>
-                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">
-                  <FontAwesomeIcon
+                {width > breakpoint && (
+                <>
+                  <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed.created_at)}</td>
+                  <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td"><FontAwesomeIcon
                     icon={faEdit}
                     className="faEdit"
                   />
-                </td>
+                  </td>
+                </>
+                )}
+
                 <td className="my-seeds__list__tbody__row__td">
                   {
                   (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (

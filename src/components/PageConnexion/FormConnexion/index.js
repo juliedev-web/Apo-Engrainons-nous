@@ -107,7 +107,7 @@ FormConnexion.propTypes = {
   passwordInputValue: PropTypes.string.isRequired,
   emailInputValue: PropTypes.string.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   closeMessage: PropTypes.func.isRequired,
   connectionSuccessMessage: PropTypes.string.isRequired,
   fieldConnexion: PropTypes.bool.isRequired,

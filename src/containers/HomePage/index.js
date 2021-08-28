@@ -11,8 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getPage: (pageNumber) => {
-    dispatch({ type: 'GET_LIST_PAGE', pageNumber: pageNumber });
+  getPage: (pageNumber, from) => {
+    dispatch({ type: 'GET_LIST_PAGE', pageNumber: pageNumber, from });
   },
   loadList: () => {
     dispatch({ type: 'GET_LIST_WITH_JWT' });

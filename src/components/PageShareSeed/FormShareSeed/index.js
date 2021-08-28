@@ -40,7 +40,7 @@ const FormShareSeed = ({
   </div>
 );
 FormShareSeed.propTypes = {
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   varietyInputValue: PropTypes.string.isRequired,
   handleInputValue: PropTypes.func.isRequired,
   textAreaDetailValue: PropTypes.string.isRequired,
