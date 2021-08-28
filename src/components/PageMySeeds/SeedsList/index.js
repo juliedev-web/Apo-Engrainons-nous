@@ -42,7 +42,7 @@ export default function MySeeds({
               <tr className="my-seeds__list__tbody__row">
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.category_name}</td>
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{seed.variety_name}</td>
-                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed)}</td>
+                <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed.created_at)}</td>
                 <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">
                   <FontAwesomeIcon
                     icon={faEdit}

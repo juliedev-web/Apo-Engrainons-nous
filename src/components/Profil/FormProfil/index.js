@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -25,6 +25,11 @@ export default function FormProfil({
   handleDeleteConfirm,
   cancelConfirmDeleteBtn,
 }) {
+  useEffect(() => {
+    localStorage.setItem('pseudo', profil.pseudo);
+    localStorage.setItem('email', profil.email);
+    localStorage.setItem('city', profil.city);
+  }, [editProfil]);
   return (
     <div className="container">
       {
@@ -68,7 +73,7 @@ export default function FormProfil({
                       <p>{profil.pseudo}</p>
                       <p>{profil.email}</p>
                       <p>{profil.city}</p>
-                      <p> ************ </p>
+                      <p>************</p>
                     </div>
                   )
               }

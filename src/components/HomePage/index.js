@@ -23,7 +23,7 @@ const HomePage = ({
 }) => {
   const history = useHistory();
   useEffect(() => {
-    if (!localStorage.getItem('pseudo')) {
+    if (profil.pseudo) {
       localStorage.setItem('token', profil.token);
       localStorage.setItem('pseudo', profil.pseudo);
       localStorage.setItem('email', profil.email);

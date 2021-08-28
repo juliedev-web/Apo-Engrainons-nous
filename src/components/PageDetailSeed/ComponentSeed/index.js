@@ -47,14 +47,6 @@ const ComponentSeed = ({
           </div>
         </div>
         {isLogged ? (
-          <div>
-            {(seed.user_id === userId) && <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>}
-            <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
-          </div>
-        ) : (
-          <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>
-        )}
-        {isLogged ? (
           showMail ? (
             <p className="user-email">{seed.email_user}</p>
           ) : (
@@ -73,7 +65,7 @@ ComponentSeed.propTypes = {
   getOneSeed: PropTypes.func.isRequired,
   toggleMail: PropTypes.func.isRequired,
   showMail: PropTypes.bool.isRequired,
-  isLogged: PropTypes.bool.isRequired,
+  isLogged: PropTypes.string.isRequired,
   hideMail: PropTypes.func.isRequired,
   toggleEditSeed: PropTypes.func.isRequired,
   editSeed: PropTypes.bool.isRequired,
