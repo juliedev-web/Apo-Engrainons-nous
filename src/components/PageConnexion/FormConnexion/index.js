@@ -21,6 +21,7 @@ const FormConnexion = ({
   handleSubmitReset,
   validateSendMsgResetPwd,
   showFieldConnexion,
+  handleCancelReinitPwd,
 }) => {
   const history = useHistory();
 
@@ -36,7 +37,7 @@ const FormConnexion = ({
     <>
       {
         fieldConnexion ? (
-          <div>
+          <div className="field-connexion">
             {
               validateSendMsgResetPwd && (
                 <p className="messageMailRedirect">{validateSendMsgResetPwd}
@@ -59,6 +60,7 @@ const FormConnexion = ({
               <input type="email" value={emailResetInputValue} onChange={(e) => handleInputValuePasswordResetChange(e.target.value)} />
               <button type="submit">Valider</button>
             </form>
+            <p onClick={handleCancelReinitPwd} className="annuler-reinitialisation-mdp">Annuler</p>
           </div>
         )
           : (
@@ -96,6 +98,7 @@ const FormConnexion = ({
 };
 FormConnexion.propTypes = {
   handleSubmitSignin: PropTypes.func.isRequired,
+  handleCancelReinitPwd: PropTypes.func.isRequired,
   connectionFailedMessage: PropTypes.string.isRequired,
   handleSubmitReset: PropTypes.func.isRequired,
   validateSendMsgResetPwd: PropTypes.string.isRequired,
@@ -104,7 +107,7 @@ FormConnexion.propTypes = {
   passwordInputValue: PropTypes.string.isRequired,
   emailInputValue: PropTypes.string.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool.isRequired,
+  isLogged: PropTypes.string.isRequired,
   closeMessage: PropTypes.func.isRequired,
   connectionSuccessMessage: PropTypes.string.isRequired,
   fieldConnexion: PropTypes.bool.isRequired,

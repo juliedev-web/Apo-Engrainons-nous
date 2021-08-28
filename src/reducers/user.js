@@ -60,7 +60,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_SUCCESS':
       return {
         ...state,
-        isLogged: true,
+        isLogged: 'true',
         emailInputValue: '',
         passwordInputValue: '',
         profil: {
@@ -149,7 +149,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_DISCONNECT_CLICK':
       return {
         ...state,
-        isLogged: false,
+        isLogged: '',
         profil: {
           pseudo: '',
           email: '',
@@ -199,7 +199,7 @@ const reducer = (state = initialState, action = {}) => {
         textAreaAdviceValue: '',
         deleteConfirmMessage: 'Votre compte a bien été supprimé.',
         confirmDelete: false,
-        isLogged: false,
+        isLogged: '',
         profil: {
           pseudo: '',
           email: '',
@@ -231,6 +231,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         fieldConnexion: true,
+      };
+
+    case 'CANCEL_REINIT_PWD':
+      return {
+        ...state,
+        fieldConnexion: false,
       };
 
     case 'HANDLE_RESETPASSWORD_VALUE':

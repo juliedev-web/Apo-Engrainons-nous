@@ -35,6 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({ type: 'HANDLE_SUBMIT_RESET' });
   },
   showFieldConnexion: () => dispatch({ type: 'SHOW_FIELD_CONNEXION' }),
+  handleCancelReinitPwd: () => dispatch({ type: 'CANCEL_REINIT_PWD' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormConnexion);

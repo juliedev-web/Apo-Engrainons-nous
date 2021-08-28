@@ -111,3 +111,17 @@
     margin-top: 2em;
   }
 }
+
+
+.field-connexion {
+
+  .annuler-reinitialisation-mdp {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .annuler-reinitialisation-mdp:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

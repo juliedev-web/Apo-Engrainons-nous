@@ -62,39 +62,75 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/connexion" exact>
-          <PageConnexion width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageConnexion
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/equipe" exact>
-          <Team width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Team
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/detail-graine/:id" exact>
-          <PageDetailSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageDetailSeed
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Profil
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <SignIn
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/mesgraines" exact>
-          <MySeeds width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <MySeeds
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/partager-une-graine" exact>
-          <PageShareSeed width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <PageShareSeed
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route path="/compte" exact>
-          <Profil width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Profil
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
         <Route>
-          <Page404 width={width} breakpoint={breakpoint} menuIsOpen={menuIsOpen} />
+          <Page404
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
         </Route>
 
       </Switch>

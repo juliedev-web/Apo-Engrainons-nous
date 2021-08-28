@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
@@ -21,6 +22,7 @@ const EmailConfirmationPage = ({
       />
 
       <h1 className="messageConfirmEmail">{emailConfirmMsg}</h1>
+      {emailConfirmMsg === 'Votre email est confirmé ! bienvenue 🙂' && <Link className="link-to-connexion" to="/connexion">Par ici pour vous connecter</Link>}
 
       <Footer
         width={width}
