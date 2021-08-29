@@ -54,7 +54,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({ type: 'CLOSE_EDIT_MESSAGE' });
   },
   cancelConfirmDeleteBtn: () => {
-    console.log('icicicici');
     dispatch({ type: 'CANCEL_CONFIRM_DELETE_BTN' });
   },
 });

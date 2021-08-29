@@ -8,8 +8,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  checkConfirmEmail: (pseudo) => {
-    dispatch({ type: 'CHECK_CONFIRM_EMAIL', payload: ownProps.match.params, pseudo });
+  checkConfirmEmail: (pseudo, email) => {
+    dispatch({
+      type: 'CHECK_CONFIRM_EMAIL', payload: ownProps.match.params, pseudo, email,
+    });
   },
 });
 

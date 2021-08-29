@@ -13,7 +13,7 @@ import PageShareSeed from 'src/components/PageShareSeed';
 import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
 import PageDetailSeed from 'src/components/PageDetailSeed';
 import Page404 from 'src/components/Page404';
-import Tchat from '../Tchat';
+import Tchat from 'src/containers/Tchat';
 
 import './styles.scss';
 

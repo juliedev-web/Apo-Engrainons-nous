@@ -9,6 +9,7 @@ import Footer from 'src/components/Footer';
 import Filters from 'src/containers/Filters';
 import List from 'src/containers/List';
 import MenuModal from 'src/containers/MenuModal';
+import DirectChatPage from 'src/containers/DirectChatPage';
 
 const HomePage = ({
   list,
@@ -49,6 +50,9 @@ const HomePage = ({
           <>
             <Filters />
             <List list={list} />
+            <div className="tchat">
+              <DirectChatPage />
+            </div>
           </>
         )
       }

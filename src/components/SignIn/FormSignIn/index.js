@@ -24,6 +24,7 @@ export default function FormSignIn({
 
   const onSubmit = (e) => {
     localStorage.setItem('pseudo', pseudoInputValue);
+    localStorage.setItem('chatEngine_email', emailInputValue);
     handleSubmitSignin(e);
   };
 
