@@ -24,6 +24,7 @@ export const initialState = {
     city: localStorage.getItem('city') || '',
     id: localStorage.getItem('id') || '',
     token: localStorage.getItem('token') || '',
+    yourPseudo: '',
   },
   editProfil: false,
   menuIsOpen: false,
@@ -70,6 +71,7 @@ const reducer = (state = initialState, action = {}) => {
         emailInputValue: '',
         passwordInputValue: '',
         profil: {
+          ...state.profil,
           pseudo: action.data.user.pseudo,
           email: action.data.user.email,
           city: action.data.user.city,
@@ -269,6 +271,15 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         emailConfirmMsg: action.message,
+      };
+
+    case 'GETTING_ONE_SEED_SUCCESS':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          yourPseudo: action.data.pseudo_user,
+        },
       };
     default:
       return state;
