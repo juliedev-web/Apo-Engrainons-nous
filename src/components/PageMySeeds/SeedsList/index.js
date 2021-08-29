@@ -51,10 +51,11 @@ export default function MySeeds({
                 {width > breakpoint && (
                 <>
                   <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">{formatDate(seed.created_at)}</td>
-                  <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td"><FontAwesomeIcon
-                    icon={faEdit}
-                    className="faEdit"
-                  />
+                  <td onClick={() => history.push(`/detail-graine/${seed.id}`)} className="my-seeds__list__tbody__row__td">
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      className="faEdit"
+                    />
                   </td>
                 </>
                 )}

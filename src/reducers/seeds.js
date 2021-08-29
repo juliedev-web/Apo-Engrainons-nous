@@ -12,6 +12,7 @@ export const initialState = {
   confirmDeleteSeedMsg: '',
   toBeDeletedSeedId: '',
   editSeed: false,
+  createSeedConfirmMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -25,7 +26,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
       return {
         ...state,
-        selectedNewSeedCategory: '',
+        createSeedConfirmMsg: action.msg,
       };
 
     case 'GETTING_CATEGORY_SUCCESS':
@@ -110,11 +111,24 @@ const reducer = (state = initialState, action = {}) => {
         confirmDeleteSeedMsg: '',
         toBeDeletedSeedId: '',
       };
+
     case 'ON_CLICK_RESET_FILTER':
       return {
         ...state,
         selectedCategoryIdFilter: '',
         inputSearchValue: '',
+      };
+
+    case 'CLOSE_CREATE_SEED_CONFIRM_MSG':
+      return {
+        ...state,
+        createSeedConfirmMsg: '',
+      };
+
+    case 'ON_SUBMIT_SHARED_SEED_FAIL':
+      return {
+        ...state,
+        createSeedConfirmMsg: action.msg,
       };
 
     default:

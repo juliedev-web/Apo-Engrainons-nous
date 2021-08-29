@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
   varietyInputValue: state.user.varietyInputValue,
   textAreaDetailValue: state.user.textAreaDetailValue,
   textAreaAdviceValue: state.user.textAreaAdviceValue,
+  createSeedConfirmMsg: state.seeds.createSeedConfirmMsg,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
     }
   },
   closeEditSeed: () => dispatch({ type: 'CLOSE_EDIT_SEED' }),
+  closeMessage: () => dispatch({ type: 'CLOSE_CREATE_SEED_CONFIRM_MSG' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormShareSeed);
