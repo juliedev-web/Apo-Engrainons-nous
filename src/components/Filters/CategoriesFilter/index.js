@@ -21,7 +21,7 @@ const CategoriesFilter = ({
 
   return (
     <div className="categories-filter">
-      <select name="category" id="categories" onChange={(e) => handleOptionClick(e.target.value, from)}>
+      <select name="category" value={idCategory} id="categories" onChange={(e) => handleOptionClick(e.target.value, from)}>
         <option value="categories">Catégories</option>
         {category.map((cat) => (
           <option value={cat.id} key={cat.id}>
