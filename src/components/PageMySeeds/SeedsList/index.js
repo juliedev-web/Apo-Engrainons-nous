@@ -22,7 +22,6 @@ export default function MySeeds({
 }) {
   const history = useHistory();
   useEffect(() => {
-    console.log('test my graines');
     getUserSeedsList();
   }, []);
   return (

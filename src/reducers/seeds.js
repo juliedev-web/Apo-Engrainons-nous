@@ -91,6 +91,12 @@ const reducer = (state = initialState, action = {}) => {
         editSeed: true,
       };
 
+    case 'CLOSE_EDIT_SEED':
+      return {
+        ...state,
+        editSeed: false,
+      };
+
     case 'ON_DELETE_SEED_CLICK':
       return {
         ...state,

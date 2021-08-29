@@ -27,6 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
     e.preventDefault();
     dispatch(createSubmitSigninAction());
   },
+
+  closePasswordConfirmMessage: () => dispatch({ type: 'CLOSE_PWD_ERROR_MSG' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormSignIn);

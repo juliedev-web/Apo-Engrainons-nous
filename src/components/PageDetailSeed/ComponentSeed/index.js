@@ -24,7 +24,7 @@ const ComponentSeed = ({
   }, []);
   return (
     editSeed ? (
-      <FormShareSeed />
+      <FormShareSeed from="editSeedForm" />
     ) : (
       <div className="container-seed">
         <div className="top">
@@ -47,11 +47,10 @@ const ComponentSeed = ({
           </div>
         </div>
         {isLogged ? (
-          showMail ? (
-            <p className="user-email">{seed.email_user}</p>
-          ) : (
-            <button type="button" onClick={toggleMail}>Contacter le propriétaire</button>
-          )
+          <div>
+            {(seed.user_id === userId) && <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>}
+            <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
+          </div>
         ) : (
           <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>
         )}

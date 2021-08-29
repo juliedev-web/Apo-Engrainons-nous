@@ -21,6 +21,20 @@
     flex-direction: column;
   }
 
+  .inscription-confirm-message {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    color: rgb(11, 153, 11)
+  }
+
+  .password-not-confirmed-message {
+    background-color: transparent;
+    border: none;
+    color: rgb(189, 0, 38);
+  }
+
   input {
     font-size: 1rem;
     width: 80%;
@@ -30,6 +44,7 @@
     border: 1px solid vars.$border-input;
     border-radius: 4px;
     margin-bottom: 1.2em;
+
   }
 
   button {
@@ -71,7 +86,7 @@
     .signInput {
       display: grid;
       grid-template-columns: repeat (2, 1fr);
-      grid-template-rows: 3;
+      grid-template-rows: 4;
     }
 
     input:nth-child(1) {
@@ -94,6 +109,11 @@
     input:nth-child(5) {
       grid-column: 2;
       grid-row: 2;
+    }
+
+    .password-not-confirmed-message {
+      grid-column: 2;
+      grid-row: 4;
     }
 
     button {

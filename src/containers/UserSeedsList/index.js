@@ -2,6 +2,10 @@ import { connect } from 'react-redux';
 
 import UserSeedsList from 'src/components/PageMySeeds/SeedsList';
 
+import {
+  toggleEditSeed,
+} from 'src/actions/seeds';
+
 const mapStateToProps = (state) => ({
   myList: state.user.myList,
   confirmDeleteSeedMsg: state.seeds.confirmDeleteSeedMsg,
@@ -18,6 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   closeDeleteConfirmButton: () => {
     dispatch({ type: 'ON_ClOSE_DELETE_CONFIRM_BUTTON' });
+  },
+  toggleEditSeed: () => {
+    dispatch(toggleEditSeed());
   },
 });
 
