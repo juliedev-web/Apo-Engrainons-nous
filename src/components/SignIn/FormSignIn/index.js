@@ -23,6 +23,7 @@ export default function FormSignIn({
   const history = useHistory();
 
   const onSubmit = (e) => {
+    localStorage.setItem('pseudo', pseudoInputValue);
     handleSubmitSignin(e);
   };
 
