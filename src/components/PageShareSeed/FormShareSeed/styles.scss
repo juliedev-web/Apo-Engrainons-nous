@@ -1,10 +1,31 @@
 .form-seed {
   padding-bottom: 2rem;
+  position: relative;
+
+
   h2 {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     padding: 4rem 2rem 2rem;
+  }
+
+  .confirm-seed-created-msg {
+    width: fit-content;
+    margin: auto;
+    padding: 0.8rem;
+    color: rgb(6, 161, 6);
+    border: 2px solid rgb(7, 139, 7);
+    border-radius: 10px;
+  }
+
+  .error-seed-create-msg {
+    width: fit-content;
+    margin: auto;
+    padding: 0.8rem;
+    color: rgb(161, 11, 6);
+    border: 2px solid rgb(161, 11, 6);
+    border-radius: 10px;
   }
 
   form {
