@@ -17,7 +17,7 @@ const mapStateToProps = (state) => ({
   showMail: state.seeds.showMail,
   isLogged: state.user.isLogged,
   editSeed: state.seeds.editSeed,
-  userId: state.user.profil.id,
+  userId: +state.user.profil.id,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

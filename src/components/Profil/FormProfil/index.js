@@ -107,10 +107,11 @@ export default function FormProfil({
                     <button
                       onClick={() => {
                         handleDeleteConfirm();
+                        localStorage.clear();
                       }}
                       className="btn-delete--confirm"
                       type="button"
-                    >Cliquer pour confirmer la supression.
+                    >Cliquer pour confirmer la supression
                     </button>
                   ) : (
                     <button

@@ -130,6 +130,29 @@ const seedsMiddleWare = (store) => (next) => (action) => {
     }
       break;
 
+    case 'ON_SUBMIT_UPDATE_SEED': {
+      const state = store.getState();
+
+      const options = {
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/update/seed/${state.seeds.seed.id}`,
+        data: {
+          variety_name: state.user.varietyInputValue,
+          category_id: state.seeds.selectedNewSeedCategory,
+          description: state.user.textAreaDetailValue,
+          advice: state.user.textAreaAdviceValue,
+        },
+      };
+
+      axios(options).then((response) => {
+        console.log('réponse UPDATE seed: ', response);
+        // store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
+      }).catch((error) => {
+        console.error('réponse UPDATE seed: ', error);
+      });
+    }
+      break;
+
     default:
       next(action);
   }

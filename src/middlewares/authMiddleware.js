@@ -52,7 +52,8 @@ const authMiddleware = (store) => (next) => (action) => {
       axios(options).then((response) => {
         console.log('réponse connexion: ', response.data);
         if (response.data.return === 'Email ou mot de passe incorrect' || response.data.error === ' Email not confirm') {
-          store.dispatch({ type: 'LOGIN_FAIL', data: response.data.return });
+          console.log(response.data.return, response.data.error);
+          store.dispatch({ type: 'LOGIN_FAIL', data: (response.data.return || response.data.error) });
         }
         else {
           console.log('réponse connexion: ', response.data);

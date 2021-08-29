@@ -57,10 +57,16 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirmMessage: '',
       };
 
+    case 'CLOSE_PWD_ERROR_MSG':
+      return {
+        ...state,
+        passwordConfirmMessage: '',
+      };
+
     case 'LOGIN_SUCCESS':
       return {
         ...state,
-        isLogged: 'true',
+        isLogged: true,
         emailInputValue: '',
         passwordInputValue: '',
         profil: {
@@ -85,7 +91,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_FAIL':
       return {
         ...state,
-        connectionFailedMessage: 'Email ou mot de passe incorrect(s)',
+        connectionFailedMessage: action.data,
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':
@@ -149,7 +155,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_DISCONNECT_CLICK':
       return {
         ...state,
-        isLogged: '',
+        isLogged: false,
         profil: {
           pseudo: '',
           email: '',
@@ -199,7 +205,7 @@ const reducer = (state = initialState, action = {}) => {
         textAreaAdviceValue: '',
         deleteConfirmMessage: 'Votre compte a bien été supprimé.',
         confirmDelete: false,
-        isLogged: '',
+        isLogged: false,
         profil: {
           pseudo: '',
           email: '',
