@@ -11,7 +11,7 @@ const EmailConfirmationPage = ({
   checkConfirmEmail, emailConfirmMsg, width, breakpoint,
 }) => {
   useEffect(() => {
-    checkConfirmEmail();
+    checkConfirmEmail(localStorage.getItem('pseudo'));
   });
   return (
     <div className="email-confirmation-page">

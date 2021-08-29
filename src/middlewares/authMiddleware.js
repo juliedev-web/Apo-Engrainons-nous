@@ -185,8 +185,31 @@ const authMiddleware = (store) => (next) => (action) => {
         method: 'PATCH',
         url: `https://engrainonsnous.herokuapp.com/uservalidate/${action.payload.email}/${action.payload.key}`,
       };
+
       axios(options).then((response) => {
         store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
+
+        console.log('pseudo : ', action.pseudo);
+
+        const options2 = {
+          method: 'POST',
+          url: 'https://api.chatengine.io/users/',
+          headers: {
+            'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
+            'content-type': 'application/json',
+          },
+          data: {
+            username: action.pseudo,
+            secret: action.pseudo,
+            custom_json: { high_score: 2000 },
+          },
+        };
+
+        axios(options2).then((response) => {
+          console.log(response);
+        }).catch((error) => {
+          console.error(error);
+        });
       }).catch((error) => {
         store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contacter le site si elle se reproduit ' });
         console.error(error);
@@ -196,18 +219,19 @@ const authMiddleware = (store) => (next) => (action) => {
 
     case 'CONTACT': {
       const state = store.getState();
-
+      console.log(state.user.profil.pseudo);
       const options = {
         method: 'PUT',
         url: 'https://api.chatengine.io/chats/',
         headers: {
           'Project-ID': '0405202d-3de4-4853-b0d8-84e437aa7cfd',
-          'User-Name': state.user.profil.myPseudo,
-          'User-Secret': state.user.profil.myPseudo,
+          'User-Name': state.user.profil.pseudo,
+          'User-Secret': state.user.profil.pseudo,
+          'content-type': 'application/json',
         },
         data: {
-          usernames: [state.user.profil.myPseudo, state.user.profil.yourPseudo],
-          title: 'test',
+          usernames: [state.user.profil.pseudo, state.user.profil.yourPseudo],
+          title: state.user.profil.pseudo + state.user.profil.yourPseudo,
           is_direct_chat: true,
         },
       };
