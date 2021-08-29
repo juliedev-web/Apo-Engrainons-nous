@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { password, mail } from '../data/db';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -37,6 +36,7 @@ const authMiddleware = (store) => (next) => (action) => {
         console.error('réponse Inscription: ', error);
       });
     }
+
       break;
 
     case 'ON_CONNEXION_SUBMIT': {
@@ -58,11 +58,28 @@ const authMiddleware = (store) => (next) => (action) => {
         else {
           console.log('réponse connexion: ', response.data);
           store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté !' });
+
+          const options2 = {
+            method: 'GET',
+            url: 'https://api.chatengine.io/users/',
+            headers: {
+              'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
+              'content-type': 'application/json',
+            },
+          };
+
+          axios(options2).then((response2) => {
+            console.log(response2);
+            localStorage.setItem('chatEngine_id', response2.data.find((user) => user.username === response.data.user.pseudo).id);
+          }).catch((error) => {
+            console.error(error);
+          });
         }
       }).catch((error) => {
         console.error('réponse connexion: ', error);
       });
     }
+
       break;
 
     case 'ON_PROFIL_SUBMIT': {
@@ -98,7 +115,9 @@ const authMiddleware = (store) => (next) => (action) => {
         console.error('erreur inscription', error);
       });
     }
+
       break;
+
     case 'UPDATE_PROFIL': {
       const state = store.getState();
 
@@ -123,8 +142,30 @@ const authMiddleware = (store) => (next) => (action) => {
             confirm: state.user.passwordConfirmInputValue,
           },
         };
+
         axios(options).then((response) => {
           console.log('réponse update profil: ', response);
+
+          const options2 = {
+            method: 'PATCH',
+            url: `https://api.chatengine.io/users/${localStorage.getItem('chatEngine_id')}`,
+            headers: {
+              'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
+              'content-type': 'application/json',
+            },
+            data: {
+              username: state.user.pseudoInputValue,
+              email: state.user.emailInputValue,
+              secret: state.user.pseudoInputValue,
+            },
+          };
+
+          axios(options2).then((response) => {
+            console.log(response);
+          }).catch((error) => {
+            console.error(error);
+          });
+
           store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD' });
         }).catch((error) => {
           console.error('réponse update profil: ', error);
@@ -146,12 +187,35 @@ const authMiddleware = (store) => (next) => (action) => {
 
       axios(options).then((response) => {
         console.log('réponse update profil: ', response.data);
+
+        const options2 = {
+          method: 'PATCH',
+          url: `https://api.chatengine.io/users/${localStorage.getItem('chatEngine_id')}`,
+          headers: {
+            'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
+            'content-type': 'application/json',
+          },
+          data: {
+            username: state.user.pseudoInputValue,
+            email: state.user.emailInputValue,
+            secret: state.user.pseudoInputValue,
+          },
+        };
+
+        axios(options2).then((response) => {
+          console.log(response);
+        }).catch((error) => {
+          console.error(error);
+        });
+
         store.dispatch({ type: 'UPDATE_SUCCESS_WITHOUT_PASSWORD' });
       }).catch((error) => {
         console.error('réponse update profil: ', error);
       });
     }
+
       break;
+
     case 'ON_DELETE_CONFIRM': {
       const state = store.getState();
       const options = {
@@ -160,12 +224,30 @@ const authMiddleware = (store) => (next) => (action) => {
       };
       axios(options).then((response) => {
         console.log('réponse delete account: ', response.data);
+
+        const options2 = {
+          method: 'DELETE',
+          url: `https://api.chatengine.io/users/${localStorage.getItem('chatEngine_id')}`,
+          headers: {
+            'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
+          },
+        };
+
+        axios(options2).then((response) => {
+          console.log(response);
+          localStorage.clear();
+        }).catch((error) => {
+          console.error(error);
+        });
+
         store.dispatch({ type: 'DELETE_SUCCESS' });
       }).catch((error) => {
         console.error('réponse delete account: ', error);
       });
     }
+
       break;
+
     case 'HANDLE_SUBMIT_RESET': {
       const state = store.getState();
       const options = {
@@ -178,6 +260,7 @@ const authMiddleware = (store) => (next) => (action) => {
         console.error(error);
       });
     }
+
       break;
 
     case 'CHECK_CONFIRM_EMAIL': {
@@ -189,8 +272,6 @@ const authMiddleware = (store) => (next) => (action) => {
       axios(options).then((response) => {
         store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
 
-        console.log('pseudo : ', action.pseudo);
-
         const options2 = {
           method: 'POST',
           url: 'https://api.chatengine.io/users/',
@@ -199,14 +280,16 @@ const authMiddleware = (store) => (next) => (action) => {
             'content-type': 'application/json',
           },
           data: {
+            email: action.email,
             username: action.pseudo,
             secret: action.pseudo,
-            custom_json: { high_score: 2000 },
           },
         };
 
         axios(options2).then((response) => {
           console.log(response);
+          store.dispatch({ type: 'GET_CHATENGINE_USER_ID', id: response.data.id });
+          localStorage.setItem('chatEngine_id', response.data.id);
         }).catch((error) => {
           console.error(error);
         });
@@ -215,6 +298,7 @@ const authMiddleware = (store) => (next) => (action) => {
         console.error(error);
       });
     }
+
       break;
 
     case 'CONTACT': {
@@ -241,6 +325,7 @@ const authMiddleware = (store) => (next) => (action) => {
         console.error(error);
       });
     }
+
       break;
 
     default:

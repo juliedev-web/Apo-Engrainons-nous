@@ -25,6 +25,8 @@ export const initialState = {
     id: localStorage.getItem('id') || '',
     token: localStorage.getItem('token') || '',
     yourPseudo: '',
+    chatEngine_id: '',
+    newMessageCounter: 0,
   },
   editProfil: false,
   menuIsOpen: false,
@@ -34,6 +36,24 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'EMPTY_NEW_MESSAGE_COUNTER':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          newMessageCounter: 0,
+        },
+      };
+
+    case 'ON_RECEIVED_NEW_MESSAGE':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          newMessageCounter: state.profil.newMessageCounter + 1,
+        },
+      };
+
     case 'ON_INPUT_CHANGE_SIGNIN':
       return {
         ...state,
@@ -281,6 +301,16 @@ const reducer = (state = initialState, action = {}) => {
           yourPseudo: action.data.pseudo_user,
         },
       };
+
+    case 'GET_CHATENGINE_USER_ID':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          chatEngine_id: action.id,
+        },
+      };
+
     default:
       return state;
   }

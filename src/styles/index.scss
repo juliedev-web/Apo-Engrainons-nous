@@ -31,3 +31,10 @@ body #root {
 {
   background-color: #173042;
 }
+
+.tchat {
+  border: 3px solid red;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(-1000px);
+}
