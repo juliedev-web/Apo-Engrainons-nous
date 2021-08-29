@@ -16,6 +16,9 @@ const ComponentSeed = ({
   toggleEditSeed,
   editSeed,
   userId,
+  myPseudo,
+  yourPseudo,
+  contact,
 }) => {
   useEffect(() => {
     getOneSeed();
@@ -56,14 +59,24 @@ const ComponentSeed = ({
                 <Link
                   className="myseeds"
                   to="/mesgraines"
-                  exact
                 >
                   Mes graines
                 </Link>
               </button>
             </>
             )}
-            {(seed.user_id !== userId) && <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>}
+            {(seed.user_id !== userId) && (
+              <>
+                <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
+                <Link
+                  to="/tchat"
+                  onClick={() => {
+                    contact();
+                  }}
+                >CONTACTEZ LE GRAINISTE !
+                </Link>
+              </>
+            )}
 
           </div>
         ) : (

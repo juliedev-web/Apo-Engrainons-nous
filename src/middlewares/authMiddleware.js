@@ -194,6 +194,31 @@ const authMiddleware = (store) => (next) => (action) => {
     }
       break;
 
+    case 'CONTACT': {
+      const state = store.getState();
+
+      const options = {
+        method: 'PUT',
+        url: 'https://api.chatengine.io/chats/',
+        headers: {
+          'Project-ID': '0405202d-3de4-4853-b0d8-84e437aa7cfd',
+          'User-Name': state.user.profil.myPseudo,
+          'User-Secret': state.user.profil.myPseudo,
+        },
+        data: {
+          usernames: [state.user.profil.myPseudo, state.user.profil.yourPseudo],
+          title: 'test',
+          is_direct_chat: true,
+        },
+      };
+      axios(options).then((response) => {
+        console.log(response);
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+      break;
+
     default:
       next(action);
   }

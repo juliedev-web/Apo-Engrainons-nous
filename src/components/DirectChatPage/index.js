@@ -34,7 +34,10 @@ const DirectChatPage = ({ userName }) => {
       projectID="0405202d-3de4-4853-b0d8-84e437aa7cfd"
       userName={userName}
       userSecret={userName}
-      renderNewChatForm={(creds) => renderChatForm(creds)}
+      renderIceBreaker={() => {}}
+      renderChatSettings={() => {}}
+      renderNewChatForm={() => {}}
+      renderChatHeader={() => {}}
     />
   );
 };

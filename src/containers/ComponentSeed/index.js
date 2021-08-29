@@ -18,6 +18,8 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
   editSeed: state.seeds.editSeed,
   userId: +state.user.profil.id,
+  myPseudo: state.user.profil.pseudo,
+  yourPseudo: state.user.profil.yourPseudo,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -32,6 +34,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(toggleEditSeed());
   },
 
+  contact: () => dispatch({ type: 'CONTACT' }),
 });
 const container = connect(mapStateToProps, mapDispatchToProps)(ComponentSeed);
 
