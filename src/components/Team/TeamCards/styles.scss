@@ -46,22 +46,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+    width: 80%;
 
-  .socials-img {
-    width: 50px;
-    margin-right: 10px;
-
-    &_github {
-      width: 40px;
-      background-color: black;
-    }
-    &_linkedIn {
+    .fa-icon {
       width: 50px;
-    }
-
-    &_twitter {
-      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      color: vars.$bgd-primary-color;
     }
   }
 }

@@ -7,9 +7,13 @@ import monaliyann from 'src/assets/image/monaliyann.PNG';
 import Mika from 'src/assets/image/mika.PNG';
 import Julie from 'src/assets/image/Julie.PNG';
 import Kevin from 'src/assets/image/Kevin.PNG';
-import Github from 'src/assets/image/github.png';
-import LinkedIn from 'src/assets/image/linkedIn.png';
-import Twitter from 'src/assets/image/twitter.png';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLinkedin,
+  faGithubSquare,
+  faTwitterSquare,
+} from '@fortawesome/free-brands-svg-icons';
 
 export default function TeamCards() {
   return (
@@ -23,18 +27,18 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="https://github.com/CedricCT" target="blank">
-                  <img className="socials-img socials-img_github" src={Github} alt="logo Github" />
+                <a href="https://github.com/CedricCT" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://www.linkedin.com/in/cedriccubat/ " target="blank">
-                  <img className="socials-img socials-img_linkedIn" src={LinkedIn} alt="logo LinkedIn" />
+                <a href="https://www.linkedin.com/in/cedriccubat/ " target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://twitter.com/Cedric_Arkyun" target="blank">
-                  <img className="socials-img socials-img_twitter" src={Twitter} alt="logo Twitter" />
+                <a href="https://twitter.com/Cedric_Arkyun" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>
             </ul>
@@ -47,18 +51,18 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="#" target="blank">
-                  <img className="socials-img socials-img_github" src={Github} alt="logo Github" />
+                <a href="#" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="# " target="blank">
-                  <img className="socials-img socials-img_linkedIn" src={LinkedIn} alt="logo LinkedIn" />
+                <a href="# " target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="#" target="blank">
-                  <img className="socials-img socials-img_twitter" src={Twitter} alt="logo Twitter" />
+                <a href="#" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>
             </ul>
@@ -71,18 +75,18 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="https://github.com/mymistake59" target="blank">
-                  <img className="socials-img socials-img_github" src={Github} alt="logo Github" />
+                <a href="https://www.linkedin.com/in/micka%C3%ABl-menet-716883215/" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
+                </a>
+                </li>
+              <li className="socials-links">
+                <a href="https://github.com/mymistake59" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://www.linkedin.com/in/micka%C3%ABl-menet-716883215/" target="blank">
-                  <img className="socials-img socials-img_linkedIn" src={LinkedIn} alt="logo LinkedIn" />
-                </a>
-              </li>
-              <li className="socials-links">
-                <a href="https://twitter.com/mickaelmenet " target="blank">
-                  <img className="socials-img socials-img_twitter" src={Twitter} alt="logo Twitter" />
+                <a href="https://twitter.com/mickaelmenet " target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>
             </ul>
@@ -95,18 +99,18 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="#" target="blank">
-                  <img className="socials-img socials-img_github" src={Github} alt="logo Github" />
+                <a href="#" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="#" target="blank">
-                  <img className="socials-img socials-img_linkedIn" src={LinkedIn} alt="logo LinkedIn" />
+                <a href="#" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="#" target="blank">
-                  <img className="socials-img socials-img_twitter" src={Twitter} alt="logo Twitter" />
+                <a href="#" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>
             </ul>
@@ -119,18 +123,18 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="https://github.com/juliedev-web" target="blank">
-                  <img className="socials-img socials-img_github" src={Github} alt="logo Github" />
+                <a href="https://www.linkedin.com/in/julie-vandard/" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://www.linkedin.com/in/julie-vandard/" target="blank">
-                  <img className="socials-img socials-img_linkedIn" src={LinkedIn} alt="logo LinkedIn" />
+                <a href="https://github.com/juliedev-web" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://twitter.com/jvgazouille" target="blank">
-                  <img className="socials-img socials-img_twitter" src={Twitter} alt="logo Twitter" />
+                <a href="https://twitter.com/jvgazouille" target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>
             </ul>
