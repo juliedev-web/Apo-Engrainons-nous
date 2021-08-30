@@ -8,7 +8,9 @@ import './styles.scss';
 const FooterDesktop = () => (
   <div className="footer-desktop">
     <Link to="/equipe">L'équipe</Link>
-    <p>engrainons-nous@gmail.io</p>
+    <p>
+      contactengrainonsnous@gmail.com
+    </p>
   </div>
 );
 
