@@ -318,7 +318,7 @@ const authMiddleware = (store) => (next) => (action) => {
         url: 'https://api.chatengine.io/chats/',
         headers: {
           'Project-ID': '0405202d-3de4-4853-b0d8-84e437aa7cfd',
-          'Userd-Name': state.user.profil.pseudo,
+          'User-Name': state.user.profil.pseudo,
           'User-Secret': state.user.profil.pseudo,
           'Content-Type': 'application/json',
         },
