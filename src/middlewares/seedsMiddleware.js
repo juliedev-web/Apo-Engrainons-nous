@@ -88,7 +88,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine a bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
-        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contacté le site si elle se reproduit' });
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contactez le site si elle se reproduit' });
       });
     }
       break;

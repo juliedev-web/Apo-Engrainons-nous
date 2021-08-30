@@ -44,7 +44,7 @@ const FormShareSeed = ({
 
         <div className="fields-zone">
           <CategoriesFilter from="sharedSeedPage" />
-          <input className="input" placeholder="Nom de la variété" value={varietyInputValue} onChange={(e) => handleInputValue(e.target.value, 'varietyInputValue')} type="text" name="seed_name" />
+          <input required className="input" placeholder="Nom de la variété" value={varietyInputValue} onChange={(e) => handleInputValue(e.target.value, 'varietyInputValue')} type="text" name="seed_name" />
           <textarea className="description" placeholder={detailData} name="description" cols="100" rows="20" value={textAreaDetailValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaDetailValue')} />
           <textarea className="conseil" placeholder={adviceData} name="advice" cols="100" rows="20" value={textAreaAdviceValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaAdviceValue')} />
         </div>

@@ -29,7 +29,9 @@ const CategoriesFilter = ({
         id="categories"
         value={from === 'sharedSeedPage' ? idNewSeedSelect : idCategory}
         onChange={(e) => {
-          history.push(`/categorie/${e.target.value}/page/1`);
+          if (from === 'homePage') {
+            history.push(`/categorie/${e.target.value}/page/1`);
+          }
           handleOptionClick(e.target.value, from);
         }}
       >
