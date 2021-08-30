@@ -2,45 +2,45 @@
 
 .containerTitle {
   display: flex;
-
 }
 .headerDesktop {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
+
   background-color: vars.$bgd-primary-color;
-  
+
   border-radius: 0 0 150px 0;
-  
+
   border-bottom: 2px solid #4e5a53;
   border-right: 2px solid #4e5a53;
-  
+
   padding: 1.4rem 0.8rem;
-  
+
   box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
-  
+
   &__logo {
     margin-left: 2em;
     width: 60px;
   }
-  
+
   &__content {
     color: white;
     margin-left: 1rem;
     text-align: left;
 
     &__title {
-      font-size: 1.8rem;
+      font-size: 3rem;
       font-family: "Indie Flower", cursive;
-      
-      margin-bottom: 0.4rem;
+
+      margin-bottom: 0.6rem;
     }
-    
+
     &__subtitle {
-      font-size: 0.9rem;
-      width: 80%;
+      margin-left: 6rem;
+      font-size: 1.1rem;
+      width: 100%;
       color: #cacaca;
     }
   }
@@ -51,7 +51,7 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
-  
+
   .navbar_link {
     span {
       font-size: 0.4em;
