@@ -11,7 +11,6 @@
     p {
       font-size: 0.8rem;
       margin-bottom: 0.7em;
-
     }
 
     h2 {
@@ -27,8 +26,8 @@
     padding: 0.5em;
     background-color: vars.$bgd-primary-color;
     color: white;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
   }
 
   .user-email {
@@ -37,11 +36,10 @@
     padding: 1rem;
     color: rgb(54, 54, 54);
     margin-top: 2.6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
-  
-  .imgCat{
 
+  .imgCat {
     img {
       width: 200px;
       height: 200px;
@@ -64,14 +62,13 @@
 
     button {
       margin-top: 4em;
-      }
+    }
 
     .top {
       display: flex;
       justify-content: center;
 
       .imgCat {
-        
         img {
           width: 300px;
           height: 300px;
@@ -81,16 +78,14 @@
       h2 {
         font-weight: bold;
         margin-bottom: 1em;
-
       }
-      
+
       p {
         margin-bottom: 1em;
       }
     }
   }
 }
-
 
 @media only screen and (min-width: 1025px) {
   .container-seed {
@@ -104,7 +99,16 @@
 
     button {
       margin-top: 4em;
-      }
+    }
+    .tchatMySeeds {
+      width: 200px;
+      border: solid 1px black;
+      padding: 0.5em;
+      background-color: vars.$bgd-primary-color;
+      color: white;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
 
     .top {
       display: flex;
@@ -122,9 +126,8 @@
       h2 {
         font-weight: bold;
         margin-bottom: 1em;
-
       }
-      
+
       p {
         margin-bottom: 1em;
       }

@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
@@ -15,16 +16,19 @@ const ComponentSeed = ({
   toggleEditSeed,
   editSeed,
   userId,
+  myPseudo,
+  yourPseudo,
+  contact,
 }) => {
   useEffect(() => {
     getOneSeed();
     return () => {
       hideMail();
     };
-  }, []);
+  }, [editSeed]);
   return (
     editSeed ? (
-      <FormShareSeed />
+      <FormShareSeed from="editSeedForm" title="Modifiez les informations de votre graine" />
     ) : (
       <div className="container-seed">
         <div className="top">
@@ -47,11 +51,35 @@ const ComponentSeed = ({
           </div>
         </div>
         {isLogged ? (
-          showMail ? (
-            <p className="user-email">{seed.email_user}</p>
-          ) : (
-            <button type="button" onClick={toggleMail}>Contacter le propriétaire</button>
-          )
+          <div>
+            {(seed.user_id === userId) && (
+              <>
+                <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>
+                <button type="button">
+                  <Link
+                    className="myseeds"
+                    to="/mesgraines"
+                  >
+                    Mes graines
+                  </Link>
+                </button>
+              </>
+            )}
+            {(seed.user_id !== userId) && (
+              <>
+                <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Email du propriétaire'}</button>
+                <Link
+                  className="tchatMySeeds"
+                  to="/tchat"
+                  onClick={() => {
+                    contact();
+                  }}
+                >Envoyer un message
+                </Link>
+              </>
+            )}
+
+          </div>
         ) : (
           <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>
         )}

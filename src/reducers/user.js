@@ -24,6 +24,9 @@ export const initialState = {
     city: localStorage.getItem('city') || '',
     id: localStorage.getItem('id') || '',
     token: localStorage.getItem('token') || '',
+    yourPseudo: '',
+    chatEngine_id: '',
+    newMessageCounter: 0,
   },
   editProfil: false,
   menuIsOpen: false,
@@ -33,6 +36,24 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'EMPTY_NEW_MESSAGE_COUNTER':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          newMessageCounter: 0,
+        },
+      };
+
+    case 'ON_RECEIVED_NEW_MESSAGE':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          newMessageCounter: state.profil.newMessageCounter + 1,
+        },
+      };
+
     case 'ON_INPUT_CHANGE_SIGNIN':
       return {
         ...state,
@@ -48,7 +69,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'PWD_WRONG':
       return {
         ...state,
-        passwordConfirmMessage: 'password required minimum 8char, 1number, 1lowercase, 1uppercase',
+        passwordConfirmMessage: 'Le mot de passe requiert au minimum 8 caractères, 1 nombre, 1 minuscule, 1 majuscule',
       };
 
     case 'ON_SIGNIN_SUBMIT':
@@ -57,13 +78,20 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirmMessage: '',
       };
 
+    case 'CLOSE_PWD_ERROR_MSG':
+      return {
+        ...state,
+        passwordConfirmMessage: '',
+      };
+
     case 'LOGIN_SUCCESS':
       return {
         ...state,
-        isLogged: 'true',
+        isLogged: true,
         emailInputValue: '',
         passwordInputValue: '',
         profil: {
+          ...state.profil,
           pseudo: action.data.user.pseudo,
           email: action.data.user.email,
           city: action.data.user.city,
@@ -85,7 +113,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'LOGIN_FAIL':
       return {
         ...state,
-        connectionFailedMessage: 'Email ou mot de passe incorrect(s)',
+        connectionFailedMessage: action.data,
       };
 
     case 'ON_TOGGLE_CLICK_PROFIL':
@@ -149,7 +177,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_DISCONNECT_CLICK':
       return {
         ...state,
-        isLogged: '',
+        isLogged: false,
         profil: {
           pseudo: '',
           email: '',
@@ -199,7 +227,7 @@ const reducer = (state = initialState, action = {}) => {
         textAreaAdviceValue: '',
         deleteConfirmMessage: 'Votre compte a bien été supprimé.',
         confirmDelete: false,
-        isLogged: '',
+        isLogged: false,
         profil: {
           pseudo: '',
           email: '',
@@ -264,6 +292,25 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         emailConfirmMsg: action.message,
       };
+
+    case 'GETTING_ONE_SEED_SUCCESS':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          yourPseudo: action.data.pseudo_user,
+        },
+      };
+
+    case 'GET_CHATENGINE_USER_ID':
+      return {
+        ...state,
+        profil: {
+          ...state.profil,
+          chatEngine_id: action.id,
+        },
+      };
+
     default:
       return state;
   }

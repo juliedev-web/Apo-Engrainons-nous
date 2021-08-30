@@ -9,6 +9,7 @@ import Footer from 'src/components/Footer';
 import Filters from 'src/containers/Filters';
 import List from 'src/containers/List';
 import MenuModal from 'src/containers/MenuModal';
+import DirectChatPage from 'src/containers/DirectChatPage';
 
 const HomePage = ({
   list,
@@ -17,9 +18,11 @@ const HomePage = ({
   menuIsOpen,
   getPage,
   pageNumber,
-  loadList,
   profil,
   isLogged,
+  getFromList,
+  categorySlug,
+  categoryId,
 }) => {
   const history = useHistory();
   useEffect(() => {
@@ -31,10 +34,17 @@ const HomePage = ({
       localStorage.setItem('id', profil.id);
       localStorage.setItem('isLogged', isLogged);
     }
-    loadList();
-    history.push(`/page/${+pageNumber || 1}`);
-    getPage(+pageNumber - 1, 'homepage');
+    getPage(+pageNumber - 1, 'homepage', categorySlug);
   }, []);
+
+  useEffect(() => {
+    if (getFromList === localStorage.getItem('getFromList')) {
+      history.push(`/page/${+pageNumber || 1}`);
+    }
+    if (getFromList === localStorage.getItem('getFromList')) {
+      history.push(`/categorie/${categorySlug}/page/${+pageNumber || 1}`);
+    }
+  }, [getFromList]);
   return (
     <div className="home-page">
       <Header
@@ -49,6 +59,9 @@ const HomePage = ({
           <>
             <Filters />
             <List list={list} />
+            <div className="tchat">
+              <DirectChatPage />
+            </div>
           </>
         )
       }
@@ -69,7 +82,6 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
-  loadList: PropTypes.func.isRequired,
 };
 
 export default HomePage;

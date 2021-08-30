@@ -13,6 +13,7 @@ import PageShareSeed from 'src/components/PageShareSeed';
 import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
 import PageDetailSeed from 'src/components/PageDetailSeed';
 import Page404 from 'src/components/Page404';
+import Tchat from 'src/containers/Tchat';
 
 import './styles.scss';
 
@@ -55,6 +56,22 @@ const App = ({ getList, menuIsOpen }) => {
 
         <Route path="/page/:pageNumber" exact>
           <HomePage
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
+        </Route>
+
+        <Route path="/categorie/:category/page/:pageNumber" exact>
+          <HomePage
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
+        </Route>
+
+        <Route path="/tchat" exact>
+          <Tchat
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}

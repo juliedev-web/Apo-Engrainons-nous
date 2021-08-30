@@ -12,7 +12,7 @@ const PageShareSeed = ({ width, breakpoint, menuIsOpen }) => (
   <div className="page-share-seed">
     <Header width={width} breakpoint={breakpoint} />
     <MenuModal />
-    { !menuIsOpen && <FormShareSeed /> }
+    { !menuIsOpen && <FormShareSeed from="shareNewSeedPage" title="Partagez vos graines !" /> }
     <Footer width={width} breakpoint={breakpoint} />
   </div>
 );

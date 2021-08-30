@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -8,11 +8,14 @@ import { formatDate } from '../../selectors/seeds';
 import './styles.scss';
 
 const List = ({
-  list, totalSeedsNumber, handlePageChange, pageNumber,
+  list, totalSeedsNumber, handlePageChange, pageNumber, getFromList, categoryId,
 }) => {
   const history = useHistory();
   const seedPerPage = 12;
   const pageCount = Math.ceil(totalSeedsNumber / seedPerPage);
+
+  useEffect(() => {
+  });
 
   return (
     <div className="listContainer">
@@ -42,8 +45,14 @@ const List = ({
         nextLabel=">"
         pageCount={pageCount}
         onPageChange={(selected) => {
-          history.push(`/page/${selected.selected + 1}`);
-          handlePageChange(selected.selected);
+          if (getFromList === 'fullList') {
+            history.push(`/page/${selected.selected + 1}`);
+            handlePageChange(selected.selected, getFromList);
+          }
+          if (getFromList === 'byCategoryList') {
+            history.push(`/categorie/${categoryId}/page/${selected.selected + 1}`);
+            handlePageChange(selected.selected, getFromList, categoryId);
+          }
         }}
         containerClassName="paginationBttns"
         previousLinkClassName="previousBttn"

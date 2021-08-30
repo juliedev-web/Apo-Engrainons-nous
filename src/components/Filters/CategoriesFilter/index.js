@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import { useHistory } from 'react-router-dom';
 // FontAwesome
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,15 +13,28 @@ const CategoriesFilter = ({
   getCategory,
   handleOptionClick,
   idCategory,
+  idNewSeedSelect,
   from,
 }) => {
+  const history = useHistory();
+
   useEffect(() => {
     getCategory();
   }, []);
 
   return (
     <div className="categories-filter">
-      <select name="category" value={idCategory} id="categories" onChange={(e) => handleOptionClick(e.target.value, from)}>
+      <select
+        name="category"
+        id="categories"
+        value={from === 'sharedSeedPage' ? idNewSeedSelect : idCategory}
+        onChange={(e) => {
+          if (from === 'homePage') {
+            history.push(`/categorie/${e.target.value}/page/1`);
+          }
+          handleOptionClick(e.target.value, from);
+        }}
+      >
         <option value="categories">Catégories</option>
         {category.map((cat) => (
           <option value={cat.id} key={cat.id}>
@@ -35,6 +48,7 @@ const CategoriesFilter = ({
 };
 
 CategoriesFilter.propTypes = {
+  idNewSeedSelect: PropTypes.string.isRequired,
   category: PropTypes.array.isRequired,
   getCategory: PropTypes.func.isRequired,
   from: PropTypes.string.isRequired,

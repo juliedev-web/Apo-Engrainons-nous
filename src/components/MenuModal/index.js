@@ -8,15 +8,13 @@ import './styles.scss';
 
 const MenuModal = ({
   menuIsOpen, closeModal, isLogged, handleDisconnect,
-}) => {
-  console.log('test');
-  return (
-    <div className={`menu-modal ${menuIsOpen && 'isOpen'}`}>
-      <div className="menu-modal__links-container">
-        <Link onClick={closeModal} to="/" className="menu-modal__links-container__link">Accueil</Link>
-        <Link onClick={closeModal} to="/partager-une-graine" className="menu-modal__links-container__link">Partager une graine</Link>
+}) => (
+  <div className={`menu-modal ${menuIsOpen && 'isOpen'}`}>
+    <div className="menu-modal__links-container">
+      <Link onClick={closeModal} to="/" className="menu-modal__links-container__link">Accueil</Link>
+      <Link onClick={closeModal} to="/partager-une-graine" className="menu-modal__links-container__link">Partager une graine</Link>
 
-        {
+      {
           isLogged ? (
             <Link onClick={closeModal} to={isLogged ? '/compte' : '/connexion'} className="menu-modal__links-container__link">Profil</Link>
           ) : (
@@ -24,8 +22,8 @@ const MenuModal = ({
           )
         }
 
-        <Link onClick={closeModal} to="/equipe" className="menu-modal__links-container__link">L'équipe</Link>
-        {
+      <Link onClick={closeModal} to="/equipe" className="menu-modal__links-container__link">L'équipe</Link>
+      {
           isLogged && (
             <Link
               to="/"
@@ -38,10 +36,9 @@ const MenuModal = ({
             </Link>
           )
         }
-      </div>
     </div>
-  );
-};
+  </div>
+);
 
 MenuModal.propTypes = {
   menuIsOpen: PropTypes.bool.isRequired,

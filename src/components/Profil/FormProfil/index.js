@@ -110,7 +110,7 @@ export default function FormProfil({
                       }}
                       className="btn-delete--confirm"
                       type="button"
-                    >Cliquer pour confirmer la supression.
+                    >Cliquer pour confirmer la supression
                     </button>
                   ) : (
                     <button

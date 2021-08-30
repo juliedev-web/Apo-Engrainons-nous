@@ -6,11 +6,14 @@ import './styles.scss';
 import logo from 'src/assets/image/Logo.png';
 
 import {
-  faHome, faPlus, faUserAlt,
+  faEnvelope,
+  faHome,
+  faPlus,
+  faUserAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const HeaderDesktop = ({ isLogged, pseudo }) => (
+const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
   <div className="containerTitle">
     <div className="headerDesktop">
       <img src={logo} alt="logo feuilles" className="headerDesktop__logo" />
@@ -54,6 +57,24 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
 
       <NavLink
         className="navbar_link"
+        to="/tchat"
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon icon={faEnvelope} className="faUserAlt" />
+          <span className="messagerie">Messagerie {
+            newMessageCounter !== 0 && (
+              <span className="new-message-counter">{newMessageCounter}</span>
+            )
+          }
+          </span>
+
+        </div>
+      </NavLink>
+
+      <NavLink
+        className="navbar_link"
         to={isLogged ? '/compte' : '/connexion'}
         exact
         activeClassName="navbar_link--active"
@@ -67,7 +88,6 @@ const HeaderDesktop = ({ isLogged, pseudo }) => (
     </div>
   </div>
 );
-
 HeaderDesktop.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,

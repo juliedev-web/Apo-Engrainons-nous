@@ -9,7 +9,8 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data });
+        localStorage.setItem('getFromList', 'fullList');
+        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data, from: 'fullList' });
       }).catch((error) => {
         console.error(error);
       });
@@ -30,19 +31,23 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       break;
 
     case 'GET_CATEGORY_FILTERED': {
-      console.log(action.categoryId);
+      const state = store.getState();
+
       if (action.categoryId === 'categories') {
         store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0', categoryId: action.categoryId });
         next(action);
         return;
       }
+
       const options = {
         method: 'GET',
-        url: `https://engrainonsnous.herokuapp.com/category/${action.categoryId}`,
+        url: `https://engrainonsnous.herokuapp.com/paginate/category/${action.categoryId || state.seeds.selectedCategoryIdFilter}/${(action.pageNumber * 12) || 0}`,
       };
       next(action);
       axios(options).then((response) => {
-        store.dispatch({ type: 'GETTING_CATEGORY_FILTERED_SUCCESS', data: response.data.result });
+        console.log('réponse CATEGORY FILTERED: ', response.data);
+        localStorage.setItem('getFromList', 'byCategoryList');
+        store.dispatch({ type: 'GETTING_CATEGORY_FILTERED_SUCCESS', data: response.data, from: 'byCategoryList' });
       }).catch((error) => {
         console.error(error);
       });
@@ -67,6 +72,9 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const options = {
         method: 'POST',
         url: 'https://engrainonsnous.herokuapp.com/create/seed',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
         data: {
           user_id: state.user.profil.id,
           variety_name: state.user.varietyInputValue,
@@ -77,9 +85,10 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
       axios(options).then((response) => {
         console.log(response);
-        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS' });
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine a bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contactez le site si elle se reproduit' });
       });
     }
       break;
@@ -92,7 +101,6 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response.data);
         store.dispatch({ type: 'GET_USER_SEEDS_LIST_SUCCESS', list: response.data.seed });
       }).catch((error) => {
         console.error(error);
@@ -108,24 +116,54 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response.data);
-        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data.resul });
+        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data, from: 'byVarietyList' });
+      }).catch((error) => {
+        console.error(error);
+      });
+    }
+
+      break;
+
+    case 'ON_DELETE_SEED_CLICK_CONFIRM': {
+      const options = {
+        method: 'DELETE',
+        url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      };
+
+      axios(options).then((response) => {
+        store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
       }).catch((error) => {
         console.error(error);
       });
     }
       break;
-    case 'ON_DELETE_SEED_CLICK_CONFIRM': {
+
+    case 'ON_SUBMIT_UPDATE_SEED': {
+      const state = store.getState();
+
       const options = {
-        method: 'DELETE',
-        url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
+        method: 'PATCH',
+        url: `https://engrainonsnous.herokuapp.com/update/seed/${state.seeds.seed.id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        data: {
+          variety_name: state.user.varietyInputValue,
+          category_id: state.seeds.selectedNewSeedCategory,
+          description: state.user.textAreaDetailValue,
+          advice: state.user.textAreaAdviceValue,
+        },
       };
 
       axios(options).then((response) => {
-        console.log(response);
-        store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
+        console.log('réponse UPDATE seed: ', response);
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Les informations de votre graine ont bien été mise à jour !' });
       }).catch((error) => {
-        console.error(error);
+        console.error('réponse UPDATE seed: ', error);
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contacté le site si elle se reproduit' });
       });
     }
       break;

@@ -4,6 +4,7 @@ import CategoriesFilter from 'src/components/Filters/CategoriesFilter';
 const mapStateToProps = (state) => ({
   category: state.seeds.category,
   idCategory: state.seeds.selectedCategoryIdFilter,
+  idNewSeedSelect: state.seeds.selectedNewSeedCategory,
 });
 
 const mapDispatchToProps = (dispatch) => ({
