@@ -14,7 +14,6 @@ const mapDispatchToProps = (dispatch) => ({
       dispatch({ type: 'GET_CATEGORY_FILTERED', categoryId });
     }
     if (from === 'sharedSeedPage') {
-      console.log('partage de graine');
       dispatch({ type: 'SELECT_CATEGORY_ID', categoryId });
     }
   },

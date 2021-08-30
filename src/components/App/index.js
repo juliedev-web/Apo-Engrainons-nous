@@ -54,16 +54,24 @@ const App = ({ getList, menuIsOpen }) => {
           />
         </Route>
 
-        <Route path="/tchat" exact>
-          <Tchat
+        <Route path="/page/:pageNumber" exact>
+          <HomePage
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
           />
         </Route>
 
-        <Route path="/page/:pageNumber" exact>
+        <Route path="/categorie/:category/page/:pageNumber" exact>
           <HomePage
+            width={width}
+            breakpoint={breakpoint}
+            menuIsOpen={menuIsOpen}
+          />
+        </Route>
+
+        <Route path="/tchat" exact>
+          <Tchat
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
