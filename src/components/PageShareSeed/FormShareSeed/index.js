@@ -32,9 +32,6 @@ const FormShareSeed = ({
   useEffect(() => {
     setTimeout(() => {
       closeMessage();
-      // if (createSeedConfirmMsg === 'Les informations de votre graine ont bien été mise à jour !') {
-      //   history.push('/mesgraines');
-      // }
     }, 3000);
   }, [createSeedConfirmMsg]);
   return (

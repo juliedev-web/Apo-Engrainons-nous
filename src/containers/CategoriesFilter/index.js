@@ -4,6 +4,7 @@ import CategoriesFilter from 'src/components/Filters/CategoriesFilter';
 const mapStateToProps = (state) => ({
   category: state.seeds.category,
   idCategory: state.seeds.selectedCategoryIdFilter,
+  idNewSeedSelect: state.seeds.selectedNewSeedCategory,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
       dispatch({ type: 'GET_CATEGORY_FILTERED', categoryId });
     }
     if (from === 'sharedSeedPage') {
+      console.log('partage de graine');
       dispatch({ type: 'SELECT_CATEGORY_ID', categoryId });
     }
   },
