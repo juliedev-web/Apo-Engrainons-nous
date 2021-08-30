@@ -72,6 +72,9 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const options = {
         method: 'POST',
         url: 'https://engrainonsnous.herokuapp.com/create/seed',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
         data: {
           user_id: state.user.profil.id,
           variety_name: state.user.varietyInputValue,
@@ -118,11 +121,16 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         console.error(error);
       });
     }
+
       break;
+
     case 'ON_DELETE_SEED_CLICK_CONFIRM': {
       const options = {
         method: 'DELETE',
         url: `https://engrainonsnous.herokuapp.com/delete/seed/${action.seedId}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
       };
 
       axios(options).then((response) => {
@@ -139,6 +147,9 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const options = {
         method: 'PATCH',
         url: `https://engrainonsnous.herokuapp.com/update/seed/${state.seeds.seed.id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
         data: {
           variety_name: state.user.varietyInputValue,
           category_id: state.seeds.selectedNewSeedCategory,
