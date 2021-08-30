@@ -69,7 +69,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'PWD_WRONG':
       return {
         ...state,
-        passwordConfirmMessage: 'Le mot de passe requiert au minimum 8 charactères, 1 nombre, 1 minuscule, 1 majuscule',
+        passwordConfirmMessage: 'Le mot de passe requiert au minimum 8 caractères, 1 nombre, 1 minuscule, 1 majuscule',
       };
 
     case 'ON_SIGNIN_SUBMIT':
