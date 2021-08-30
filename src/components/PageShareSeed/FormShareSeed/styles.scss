@@ -2,7 +2,6 @@
   padding-bottom: 2rem;
   position: relative;
 
-
   h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -56,21 +55,19 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
-      grid-template-areas: 
-      "A"
-      "B"
-      "C"
-      "D";
+      grid-template-areas:
+        "A"
+        "B"
+        "C"
+        "D";
 
       gap: 2rem;
-   
 
       textarea {
         padding: 0.6rem;
         resize: none;
         width: 100%;
       }
-
       .input {
         margin: auto;
         padding: 0.6rem;
@@ -83,16 +80,14 @@
         width: 100%;
         grid-area: A;
       }
-  
+
       .description {
         grid-area: C;
       }
-  
+
       .conseil {
         grid-area: D;
       }
-  
-      
     }
 
     button {
@@ -122,41 +117,39 @@
 
 @media only screen and (min-width: 599px) {
   .form-seed {
-
     h2 {
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
       padding: 4rem 2rem 2rem;
     }
-  
+
     form {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-  
+
       .fields-zone {
         padding: 2rem;
-  
+
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "A B"
-        "C D";
+        grid-template-areas:
+          "A B"
+          "C D";
         gap: 2rem 4rem;
-
 
         .input {
           width: 300px;
         }
-  
+
         .categories-filter {
           width: 300px;
         }
       }
-  
+
       button {
         font-weight: bold;
         font-size: 1rem;
@@ -167,14 +160,13 @@
         border-radius: 5px;
         transition: 0.3s;
       }
-  
+
       button:hover {
         background-color: white;
         color: #4b7e22;
         border: 2px solid #4b7e22;
         text-decoration: underline;
       }
-  
     }
   }
 }
