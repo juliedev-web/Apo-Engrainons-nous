@@ -57,7 +57,7 @@ const authMiddleware = (store) => (next) => (action) => {
         }
         else {
           console.log('réponse connexion: ', response.data);
-          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté !' });
+          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté(e) !' });
 
           const options2 = {
             method: 'GET',
