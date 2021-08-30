@@ -13,6 +13,7 @@ const CategoriesFilter = ({
   getCategory,
   handleOptionClick,
   idCategory,
+  idNewSeedSelect,
   from,
 }) => {
   useEffect(() => {
@@ -21,7 +22,7 @@ const CategoriesFilter = ({
 
   return (
     <div className="categories-filter">
-      <select name="category" value={idCategory} id="categories" onChange={(e) => handleOptionClick(e.target.value, from)}>
+      <select name="category" id="categories" value={from === 'sharedSeedPage' ? idNewSeedSelect : idCategory} onChange={(e) => handleOptionClick(e.target.value, from)}>
         <option value="categories">Catégories</option>
         {category.map((cat) => (
           <option value={cat.id} key={cat.id}>
@@ -35,6 +36,7 @@ const CategoriesFilter = ({
 };
 
 CategoriesFilter.propTypes = {
+  idNewSeedSelect: PropTypes.string.isRequired,
   category: PropTypes.array.isRequired,
   getCategory: PropTypes.func.isRequired,
   from: PropTypes.string.isRequired,

@@ -64,7 +64,7 @@ const authMiddleware = (store) => (next) => (action) => {
             url: 'https://api.chatengine.io/users/',
             headers: {
               'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
-              'content-type': 'application/json',
+              'Content-Type': 'application/json',
             },
           };
 
@@ -151,7 +151,7 @@ const authMiddleware = (store) => (next) => (action) => {
             url: `https://api.chatengine.io/users/${localStorage.getItem('chatEngine_id')}`,
             headers: {
               'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
-              'content-type': 'application/json',
+              'Content-Type': 'application/json',
             },
             data: {
               username: state.user.pseudoInputValue,
@@ -193,7 +193,7 @@ const authMiddleware = (store) => (next) => (action) => {
           url: `https://api.chatengine.io/users/${localStorage.getItem('chatEngine_id')}`,
           headers: {
             'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
           },
           data: {
             username: state.user.pseudoInputValue,
@@ -277,7 +277,7 @@ const authMiddleware = (store) => (next) => (action) => {
           url: 'https://api.chatengine.io/users/',
           headers: {
             'PRIVATE-KEY': 'e1537622-de34-46a1-b0b1-668a482550e2',
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
           },
           data: {
             email: action.email,
@@ -309,9 +309,9 @@ const authMiddleware = (store) => (next) => (action) => {
         url: 'https://api.chatengine.io/chats/',
         headers: {
           'Project-ID': '0405202d-3de4-4853-b0d8-84e437aa7cfd',
-          'User-Name': state.user.profil.pseudo,
+          'Userd-Name': state.user.profil.pseudo,
           'User-Secret': state.user.profil.pseudo,
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
         data: {
           usernames: [state.user.profil.pseudo, state.user.profil.yourPseudo],
