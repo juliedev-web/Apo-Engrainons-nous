@@ -1,0 +1,83 @@
+.filter {
+  width: 90%;
+  margin: 2.5rem auto;
+  padding: 0.8rem;
+  text-align: center;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+  border-radius: 4px;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+          box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+}
+
+.filter .linkReset {
+  text-decoration: underline;
+  color: #173042;
+  font-weight: bold;
+}
+
+.filter .linkReset:hover {
+  color: #4a6c2f;
+}
+
+.filter .filterComponent {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 599px) {
+  .filter {
+    width: 85%;
+    margin: 2.5rem auto;
+    padding: 2rem 0 1.5rem;
+    border: solid 1px rgba(0, 0, 0, 0.26);
+    border-radius: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+            box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+  }
+  .filter .filterComponent {
+    width: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .filter {
+    width: 40%;
+    min-width: 580px;
+    margin: 2.5rem auto;
+    padding: 2rem 0 1.5rem;
+    border: solid 1px rgba(0, 0, 0, 0.26);
+    border-radius: 4px;
+    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+            box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

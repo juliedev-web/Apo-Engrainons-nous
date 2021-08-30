@@ -12,18 +12,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  margin: auto;
 
   .photo-profil {
     width: 40%;
     margin-bottom: 20px;
+    background-color: aquamarine;
   }
 
-  .name {
-    font-size: 2em;
-    color: vars.$bgd-footer-color;
-    margin-bottom: 10px;
-  }
   .card-dev {
     display: flex;
     flex-direction: column;
@@ -34,12 +29,18 @@
     padding: 10px;
     border: 2px solid vars.$bgd-footer-color;
     border-radius: 30px;
-  }
 
-  .role {
-    font-size: 1.2em;
-    background-color: white;
-    border: none;
+    .name {
+      font-size: 2em;
+      color: vars.$bgd-footer-color;
+      margin-bottom: 20px;
+    }
+
+    .role {
+      font-size: 1.2em;
+      background-color: white;
+      border: none;
+    }
   }
 
   .socials {
@@ -49,8 +50,8 @@
     width: 80%;
 
     .fa-icon {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       margin-right: 10px;
       color: vars.$bgd-primary-color;
     }
@@ -60,17 +61,24 @@
 //Responsive design for desktop
 @media screen and (min-width: 768px) {
   .card-container {
+
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-
-    .photo-profil {
-      margin-bottom: 10px;
-    }
+    margin: auto;
 
     .card-dev {
-      margin-right: 10px;
+      margin-right: 20px;
+      padding: 10px;
+
+      .photo-profil {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        background-color: aquamarine;
+      }
     }
   }
 }
