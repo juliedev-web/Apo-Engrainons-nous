@@ -18,9 +18,11 @@ const HomePage = ({
   menuIsOpen,
   getPage,
   pageNumber,
-  loadList,
   profil,
   isLogged,
+  getFromList,
+  categorySlug,
+  categoryId,
 }) => {
   const history = useHistory();
   useEffect(() => {
@@ -32,10 +34,17 @@ const HomePage = ({
       localStorage.setItem('id', profil.id);
       localStorage.setItem('isLogged', isLogged);
     }
-    loadList();
-    history.push(`/page/${+pageNumber || 1}`);
-    getPage(+pageNumber - 1, 'homepage');
+    getPage(+pageNumber - 1, 'homepage', categorySlug);
   }, []);
+
+  useEffect(() => {
+    if (getFromList === localStorage.getItem('getFromList')) {
+      history.push(`/page/${+pageNumber || 1}`);
+    }
+    if (getFromList === localStorage.getItem('getFromList')) {
+      history.push(`/categorie/${categorySlug}/page/${+pageNumber || 1}`);
+    }
+  }, [getFromList]);
   return (
     <div className="home-page">
       <Header
@@ -73,7 +82,6 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
-  loadList: PropTypes.func.isRequired,
 };
 
 export default HomePage;
