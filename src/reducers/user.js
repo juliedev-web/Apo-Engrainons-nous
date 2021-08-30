@@ -204,12 +204,12 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_VALIDATE_CONFIRM':
       return {
         ...state,
-        validateUpdateProfil: 'Votre compte a bien été mis a jour.',
+        validateUpdateProfil: 'Votre compte a bien été mis a jour',
       };
     case 'SUBMIT_RESET_MESSAGE_SUCCESS':
       return {
         ...state,
-        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe.',
+        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe',
       };
 
     case 'DELETE_SUCCESS':
@@ -225,7 +225,7 @@ const reducer = (state = initialState, action = {}) => {
         varietyInputValue: '',
         textAreaDetailValue: '',
         textAreaAdviceValue: '',
-        deleteConfirmMessage: 'Votre compte a bien été supprimé.',
+        deleteConfirmMessage: 'Votre compte a bien été supprimé',
         confirmDelete: false,
         isLogged: false,
         profil: {

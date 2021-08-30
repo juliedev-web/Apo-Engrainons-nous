@@ -54,7 +54,7 @@ const FormConnexion = ({
             <form className="validate-message" onSubmit={(e) => handleSubmitReset(e)}>
               {
                 !validateSendMsgResetPwd && (
-                  <h2>Veuillez saisir votre adresse Email afin de reinitialiser votre mot de passe.</h2>
+                  <h2>Veuillez saisir votre adresse email afin de réinitialiser votre mot de passe</h2>
                 )
               }
               <input type="email" value={emailResetInputValue} onChange={(e) => handleInputValuePasswordResetChange(e.target.value)} />

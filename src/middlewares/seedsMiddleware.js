@@ -160,10 +160,10 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
       axios(options).then((response) => {
         console.log('réponse UPDATE seed: ', response);
-        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Les informations de votre graine ont bien été mise à jour !' });
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Les informations de votre graine ont bien été mises à jour !' });
       }).catch((error) => {
         console.error('réponse UPDATE seed: ', error);
-        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contacté le site si elle se reproduit' });
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contactez le site si elle se reproduit' });
       });
     }
       break;
