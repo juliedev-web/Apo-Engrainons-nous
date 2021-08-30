@@ -134,6 +134,9 @@ const authMiddleware = (store) => (next) => (action) => {
         const options = {
           method: 'PATCH',
           url: `https://engrainonsnous.herokuapp.com/update/user/${state.user.profil.id}`,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
           data: {
             pseudo: state.user.pseudoInputValue,
             email: state.user.emailInputValue,
@@ -178,6 +181,9 @@ const authMiddleware = (store) => (next) => (action) => {
       const options = {
         method: 'PATCH',
         url: `https://engrainonsnous.herokuapp.com/update/user/${state.user.profil.id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
         data: {
           pseudo: state.user.pseudoInputValue,
           email: state.user.emailInputValue,
@@ -221,6 +227,9 @@ const authMiddleware = (store) => (next) => (action) => {
       const options = {
         method: 'DELETE',
         url: `https://engrainonsnous.herokuapp.com/delete/user/${state.user.profil.id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
       };
       axios(options).then((response) => {
         console.log('réponse delete account: ', response.data);
