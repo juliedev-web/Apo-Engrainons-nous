@@ -53,27 +53,28 @@ const ComponentSeed = ({
         {isLogged ? (
           <div>
             {(seed.user_id === userId) && (
-            <>
-              <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>
-              <button type="button">
-                <Link
-                  className="myseeds"
-                  to="/mesgraines"
-                >
-                  Mes graines
-                </Link>
-              </button>
-            </>
+              <>
+                <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>
+                <button type="button">
+                  <Link
+                    className="myseeds"
+                    to="/mesgraines"
+                  >
+                    Mes graines
+                  </Link>
+                </button>
+              </>
             )}
             {(seed.user_id !== userId) && (
               <>
-                <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Contacter le propriétaire'}</button>
+                <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Email du propriétaire'}</button>
                 <Link
+                  className="tchatMySeeds"
                   to="/tchat"
                   onClick={() => {
                     contact();
                   }}
-                >CONTACTEZ LE GRAINISTE !
+                >Envoyer un message
                 </Link>
               </>
             )}
