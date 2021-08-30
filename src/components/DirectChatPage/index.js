@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './styles.scss';
 
-import { ChatEngine, getOrCreateChat } from 'react-chat-engine';
+import { ChatEngine } from 'react-chat-engine';
 
 const DirectChatPage = ({ userName, receivedNewMessage, from }) => (
   <div className="chat-window">

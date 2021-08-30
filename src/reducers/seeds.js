@@ -115,7 +115,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_CLICK_RESET_FILTER':
       return {
         ...state,
-        selectedCategoryIdFilter: '',
+        selectedCategoryIdFilter: 'categories',
         inputSearchValue: '',
       };
 
