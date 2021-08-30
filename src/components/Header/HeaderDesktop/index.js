@@ -22,7 +22,7 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
           Engrainons-nous !
         </h1>
         <p className="headerDesktop__content__subtitle">
-          Bienvenue sur notre plateforme d'échange de graine !
+          Bienvenue sur notre plateforme d'échange de graines !
         </p>
       </div>
     </div>
@@ -81,7 +81,7 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
       >
         <div className="iconText">
           <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-          <span>{ pseudo || 'Profil' }</span>
+          <span>{pseudo || 'Profil'}</span>
         </div>
       </NavLink>
 
