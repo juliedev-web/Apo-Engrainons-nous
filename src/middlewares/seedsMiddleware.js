@@ -77,7 +77,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
       axios(options).then((response) => {
         console.log(response);
-        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine à bien été ajoutée !' });
+        store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine a bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_FAIL', msg: 'Une erreur est survenue, contacté le site si elle se reproduit' });
