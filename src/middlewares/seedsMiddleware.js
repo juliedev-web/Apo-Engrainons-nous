@@ -9,7 +9,8 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data });
+        localStorage.setItem('getFromList', 'fullList');
+        store.dispatch({ type: 'GETTING_LIST_SUCCESS', data: response.data, from: 'fullList' });
       }).catch((error) => {
         console.error(error);
       });
@@ -30,19 +31,23 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       break;
 
     case 'GET_CATEGORY_FILTERED': {
-      console.log(action.categoryId);
+      const state = store.getState();
+
       if (action.categoryId === 'categories') {
         store.dispatch({ type: 'GET_LIST_PAGE', pageNumber: '0', categoryId: action.categoryId });
         next(action);
         return;
       }
+
       const options = {
         method: 'GET',
-        url: `https://engrainonsnous.herokuapp.com/category/${action.categoryId}`,
+        url: `https://engrainonsnous.herokuapp.com/paginate/category/${action.categoryId || state.seeds.selectedCategoryIdFilter}/${(action.pageNumber * 12) || 0}`,
       };
       next(action);
       axios(options).then((response) => {
-        store.dispatch({ type: 'GETTING_CATEGORY_FILTERED_SUCCESS', data: response.data.result });
+        console.log('réponse CATEGORY FILTERED: ', response.data);
+        localStorage.setItem('getFromList', 'byCategoryList');
+        store.dispatch({ type: 'GETTING_CATEGORY_FILTERED_SUCCESS', data: response.data, from: 'byCategoryList' });
       }).catch((error) => {
         console.error(error);
       });
@@ -76,7 +81,6 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        console.log(response);
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine à bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
@@ -93,7 +97,6 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response.data);
         store.dispatch({ type: 'GET_USER_SEEDS_LIST_SUCCESS', list: response.data.seed });
       }).catch((error) => {
         console.error(error);
@@ -109,8 +112,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response.data);
-        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data.resul });
+        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data, from: 'byVarietyList' });
       }).catch((error) => {
         console.error(error);
       });
@@ -123,7 +125,6 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log(response);
         store.dispatch({ type: 'GET_USER_SEEDS_LIST' });
       }).catch((error) => {
         console.error(error);

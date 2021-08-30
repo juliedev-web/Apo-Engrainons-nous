@@ -13,6 +13,8 @@ export const initialState = {
   toBeDeletedSeedId: '',
   editSeed: false,
   createSeedConfirmMsg: '',
+  getFromList: '',
+  categorySlug: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -22,6 +24,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: [...action.data.seed],
         totalSeedsNumber: action.data.nbSeed,
+        getFromList: action.from,
       };
     case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
       return {
@@ -52,7 +55,9 @@ const reducer = (state = initialState, action = {}) => {
     case 'GETTING_CATEGORY_FILTERED_SUCCESS':
       return {
         ...state,
-        list: [...action.data],
+        list: [...action.data.seed],
+        totalSeedsNumber: action.data.nbSeed,
+        getFromList: action.from,
       };
 
     case 'GET_CATEGORY_FILTERED':
@@ -82,8 +87,9 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_INPUT_SEARCH_SUCCESS':
       return {
         ...state,
-        list: action.list,
-        totalSeedsNumber: 17,
+        list: [...action.data.seed],
+        totalSeedsNumber: action.data.nbSeed,
+        getFromList: action.from,
       };
 
     case 'ON_TOGGLE_EDIT_SEED':
