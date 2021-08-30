@@ -279,7 +279,7 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! bienvenue 🙂' });
+        store.dispatch({ type: 'CHECK_EMAIL_SUCCESS', message: 'Votre email est confirmé ! Bienvenue 🙂' });
 
         const options2 = {
           method: 'POST',
@@ -303,7 +303,7 @@ const authMiddleware = (store) => (next) => (action) => {
           console.error(error);
         });
       }).catch((error) => {
-        store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contacter le site si elle se reproduit ' });
+        store.dispatch({ type: 'CHECK_EMAIL_FAIL', message: 'Une erreur est survenue, contactez le site si elle se reproduit ' });
         console.error(error);
       });
     }
