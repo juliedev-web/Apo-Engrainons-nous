@@ -8,7 +8,13 @@ import { formatDate } from '../../selectors/seeds';
 import './styles.scss';
 
 const List = ({
-  list, totalSeedsNumber, handlePageChange, pageNumber, getFromList, categoryId, inputSearchValue,
+  list,
+  totalSeedsNumber,
+  handlePageChange,
+  pageNumber,
+  getFromList,
+  categoryId,
+  inputSearchValue,
 }) => {
   const history = useHistory();
   const seedPerPage = 12;
@@ -72,6 +78,8 @@ List.propTypes = {
     PropTypes.object.isRequired,
   ).isRequired,
   pageNumber: PropTypes.string.isRequired,
+  getFromList: PropTypes.string.isRequired,
+  categoryId: PropTypes.string.isRequired,
 };
 
 export default List;

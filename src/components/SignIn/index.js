@@ -24,4 +24,5 @@ export default function SignIn({ width, breakpoint, menuIsOpen }) {
 SignIn.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };

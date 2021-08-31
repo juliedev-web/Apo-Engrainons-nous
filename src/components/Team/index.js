@@ -24,4 +24,5 @@ export default function Team({ width, breakpoint, menuIsOpen }) {
 Team.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };

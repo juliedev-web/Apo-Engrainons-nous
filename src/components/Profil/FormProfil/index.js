@@ -145,6 +145,7 @@ FormProfil.propTypes = {
   confirmDelete: PropTypes.bool.isRequired,
   passwordConfirmMessage: PropTypes.string.isRequired,
   validateEditProfil: PropTypes.func.isRequired,
+  validateUpdateProfil: PropTypes.func.isRequired,
   deleteConfirmMessage: PropTypes.string.isRequired,
   handleDisconnect: PropTypes.func.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,

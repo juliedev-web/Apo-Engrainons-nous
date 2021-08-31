@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import seed from 'src/assets/image/seed.png';
 
@@ -15,7 +14,4 @@ const Form404 = () => (
   </div>
 );
 
-Form404.propTypes = {
-
-};
 export default Form404;

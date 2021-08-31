@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 import FormShareSeed from 'src/containers/FormShareSeed';
@@ -16,8 +17,6 @@ const ComponentSeed = ({
   toggleEditSeed,
   editSeed,
   userId,
-  myPseudo,
-  yourPseudo,
   contact,
 }) => {
   useEffect(() => {
@@ -100,6 +99,7 @@ ComponentSeed.propTypes = {
   toggleEditSeed: PropTypes.func.isRequired,
   editSeed: PropTypes.bool.isRequired,
   userId: PropTypes.number.isRequired,
+  contact: PropTypes.string.isRequired,
 };
 
 export default ComponentSeed;

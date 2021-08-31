@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { formatDate } from 'src/selectors/seeds';
+import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -95,3 +96,15 @@ export default function MySeeds({
     </div>
   );
 }
+
+MySeeds.propTypes = {
+  myList: PropTypes.string.isRequired,
+  getUserSeedsList: PropTypes.func.isRequired,
+  handleDeleteSeedClickConfirm: PropTypes.func.isRequired,
+  confirmDeleteSeedMsg: PropTypes.string.isRequired,
+  handleDeleteSeedClick:PropTypes.func.isRequired,
+  toBeDeletedSeedId: PropTypes.number.isRequired,
+  closeDeleteConfirmButton: PropTypes.func.isRequired,
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+};

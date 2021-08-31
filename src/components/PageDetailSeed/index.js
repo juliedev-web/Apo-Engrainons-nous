@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
@@ -16,5 +17,11 @@ const PageDetailSeed = ({ width, breakpoint, menuIsOpen }) => (
     <Footer width={width} breakpoint={breakpoint} />
   </div>
 );
+
+PageDetailSeed.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
+};
 
 export default PageDetailSeed;

@@ -21,6 +21,7 @@ const PageConnexion = ({ width, breakpoint, menuIsOpen }) => (
 PageConnexion.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
 };
 
 export default PageConnexion;
