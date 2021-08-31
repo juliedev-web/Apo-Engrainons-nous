@@ -50,7 +50,19 @@ const FormShareSeed = ({
         </div>
 
         {isLogged ? (
-          <button type="submit">Valider</button>
+          <>
+            <button type="submit">Valider</button>
+            {
+              title === 'Modifiez les informations de votre graine' && (
+                <Link
+                  className="cancelSeedModification"
+                  to="/mesgraines"
+                >
+                  Annuler
+                </Link>
+              )
+            }
+          </>
         ) : (
           <Link className="link-to-connexion" to="/connexion">
             Pour partager vos graines, connectez-vous
@@ -60,7 +72,7 @@ const FormShareSeed = ({
 
       </form>
 
-      <div className="fake-footer" />
+      {/* <div className="fake-footer" /> */}
     </div>
   );
 };
