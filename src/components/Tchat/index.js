@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import MenuModal from 'src/containers/MenuModal';
@@ -32,4 +34,12 @@ const Tchat = ({
     </div>
   );
 };
+
+Tchat.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
+  emptyNewMessageCounter: PropTypes.number.isRequired,
+};
+
 export default Tchat;

@@ -6,7 +6,7 @@ import './styles.scss';
 import CategoriesFilter from '../../containers/CategoriesFilter';
 import SearchSeedInput from '../../containers/SearchSeedInput';
 
-const Filters = ({ handleClickResetFilter, toto }) => (
+const Filters = ({ handleClickResetFilter }) => (
   <div className="filter">
     <div className="filterComponent">
       <CategoriesFilter from="homePage" />

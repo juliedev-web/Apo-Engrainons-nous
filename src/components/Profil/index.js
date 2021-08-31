@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
@@ -18,3 +19,8 @@ export default function Profil({ width, breakpoint, menuIsOpen }) {
     </div>
   );
 }
+Profil.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
+};

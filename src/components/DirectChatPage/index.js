@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.scss';
 
@@ -18,5 +19,15 @@ const DirectChatPage = ({ userName, receivedNewMessage, from }) => (
     />
   </div>
 );
+
+DirectChatPage.propTypes = {
+  userName: PropTypes.string.isRequired,
+  receivedNewMessage: PropTypes.func.isRequired,
+  // from: PropTypes.string,
+};
+
+// DirectChatPage.defaultProps = {
+//   from:
+// };
 
 export default DirectChatPage;

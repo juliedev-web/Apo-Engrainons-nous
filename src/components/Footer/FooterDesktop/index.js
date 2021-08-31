@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
-
 import './styles.scss';
 
 const FooterDesktop = () => (
@@ -13,9 +11,5 @@ const FooterDesktop = () => (
     </p>
   </div>
 );
-
-FooterDesktop.propTypes = {
-
-};
 
 export default FooterDesktop;

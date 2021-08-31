@@ -2,7 +2,6 @@
   padding-bottom: 2rem;
   position: relative;
 }
-
 .form-seed h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -37,15 +36,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .form-seed form .link-to-connexion span {
@@ -67,10 +66,10 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "A" "B" "C" "D";
+  grid-template-rows: auto;
+  grid-template-areas: "A" "B" "C" "D";
   gap: 2rem;
 }
 
@@ -145,25 +144,25 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .form-seed form .fields-zone {
     padding: 2rem;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
-        grid-template-rows: auto;
-        grid-template-areas: "A B" "C D";
+    grid-template-rows: auto;
+    grid-template-areas: "A B" "C D";
     gap: 2rem 4rem;
   }
   .form-seed form .fields-zone .input {
@@ -190,4 +189,5 @@
     text-decoration: underline;
   }
 }
+
 /*# sourceMappingURL=styles.css.map */
