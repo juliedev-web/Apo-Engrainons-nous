@@ -87,6 +87,11 @@
   color: #CACACA;
 }
 
+.navbar_link--active {
+  .faUserAlt {
+    color: vars.$bgd-primary-color;
+  }
+}
 
 
 @media only screen and (min-width: 599px) {
