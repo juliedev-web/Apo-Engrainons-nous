@@ -23,11 +23,7 @@ const DirectChatPage = ({ userName, receivedNewMessage, from }) => (
 DirectChatPage.propTypes = {
   userName: PropTypes.string.isRequired,
   receivedNewMessage: PropTypes.func.isRequired,
-  // from: PropTypes.string,
+  from: PropTypes.string.isRequired,
 };
-
-// DirectChatPage.defaultProps = {
-//   from:
-// };
 
 export default DirectChatPage;
