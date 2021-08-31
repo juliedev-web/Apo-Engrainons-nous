@@ -80,6 +80,7 @@ List.propTypes = {
   pageNumber: PropTypes.string.isRequired,
   getFromList: PropTypes.string.isRequired,
   categoryId: PropTypes.string.isRequired,
+  inputSearchValue: PropTypes.string.isRequired,
 };
 
 export default List;
