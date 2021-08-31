@@ -112,11 +112,14 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       const state = store.getState();
       const options = {
         method: 'GET',
-        url: `https://engrainonsnous.herokuapp.com/search/${state.seeds.inputSearchValue}/0`,
+        url: `https://engrainonsnous.herokuapp.com/search/${action.slug || state.seeds.inputSearchValue}/${(action.pageNumber * 12) || 0}`,
       };
 
       axios(options).then((response) => {
-        store.dispatch({ type: 'ON_INPUT_SEARCH_SUCCESS', list: response.data, from: 'byVarietyList' });
+        localStorage.setItem('getFromList', 'byVarietyList');
+        store.dispatch({
+          type: 'ON_INPUT_SEARCH_SUCCESS', data: response.data, from: 'byVarietyList', slug: action.slug,
+        });
       }).catch((error) => {
         console.error(error);
       });

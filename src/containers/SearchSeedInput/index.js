@@ -10,7 +10,6 @@ const mapDispatchToProps = (dispatch) => ({
   handleInputSearchChange: (inputValue) => (dispatch({ type: 'SEARCH_CHANGE', inputValue })),
 
   handleSubmitSearch: (e) => {
-    e.preventDefault();
     dispatch({ type: 'ON_SEARCH_SUBMIT' });
   },
 });
