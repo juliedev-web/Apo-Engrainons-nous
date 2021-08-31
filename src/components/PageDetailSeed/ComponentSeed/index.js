@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
+
 import './styles.scss';
 
 import FormShareSeed from 'src/containers/FormShareSeed';
@@ -20,6 +22,12 @@ const ComponentSeed = ({
   yourPseudo,
   contact,
 }) => {
+  // DOMPurify to prevent from XSS attacks
+  const createMarkup = (text) => {
+    const cleanText = DOMPurify.sanitize(text, { ALLOWED_TAGS: ['em', 'strong'] });
+    return { __html: cleanText };
+  };
+
   useEffect(() => {
     getOneSeed();
     return () => {
