@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import DOMPurify from 'dompurify';
 
 import './styles.scss';
 
@@ -18,16 +17,8 @@ const ComponentSeed = ({
   toggleEditSeed,
   editSeed,
   userId,
-  myPseudo,
-  yourPseudo,
   contact,
 }) => {
-  // DOMPurify to prevent from XSS attacks
-  const createMarkup = (text) => {
-    const cleanText = DOMPurify.sanitize(text, { ALLOWED_TAGS: ['em', 'strong'] });
-    return { __html: cleanText };
-  };
-
   useEffect(() => {
     getOneSeed();
     return () => {
@@ -106,6 +97,7 @@ ComponentSeed.propTypes = {
   toggleEditSeed: PropTypes.func.isRequired,
   editSeed: PropTypes.bool.isRequired,
   userId: PropTypes.number.isRequired,
+  contact: PropTypes.string.isRequired,
 };
 
 export default ComponentSeed;

@@ -66,4 +66,5 @@ FormSignIn.propTypes = {
   passwordConfirmInputValue: PropTypes.string.isRequired,
   handleInputValueChange: PropTypes.func.isRequired,
   handleSubmitSignin: PropTypes.func.isRequired,
+  closePasswordConfirmMessage: PropTypes.func.isRequired,
 };

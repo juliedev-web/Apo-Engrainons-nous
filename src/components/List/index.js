@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import DOMPurify from 'dompurify';
 
 import ReactPaginate from 'react-paginate';
 import { formatDate } from '../../selectors/seeds';
@@ -16,12 +15,6 @@ const List = ({
   getFromList,
   categoryId,
 }) => {
-  //DOMPurify to prevent from XSS attacks
-  const createMarkup = (text) => {
-    const cleanText = DOMPurify.sanitize(text, { ALLOWED_TAGS: ['em', 'strong'] });
-    return { __html: cleanText };
-  };
-
   const history = useHistory();
   const seedPerPage = 12;
   const pageCount = Math.ceil(totalSeedsNumber / seedPerPage);
@@ -83,6 +76,8 @@ List.propTypes = {
     PropTypes.object.isRequired,
   ).isRequired,
   pageNumber: PropTypes.string.isRequired,
+  getFromList: PropTypes.string.isRequired,
+  categoryId: PropTypes.string.isRequired,
 };
 
 export default List;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 // == Composant
@@ -24,5 +25,11 @@ const Page404 = ({ width, breakpoint, menuIsOpen }) => (
     />
   </div>
 );
+
+Page404.propTypes = {
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+  menuIsOpen: PropTypes.bool.isRequired,
+};
 
 export default Page404;

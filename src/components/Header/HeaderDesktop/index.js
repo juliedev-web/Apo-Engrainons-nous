@@ -91,5 +91,6 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
 HeaderDesktop.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
+  newMessageCounter: PropTypes.number.isRequired,
 };
 export default HeaderDesktop;

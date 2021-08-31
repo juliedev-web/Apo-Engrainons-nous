@@ -50,7 +50,6 @@ NavBarMobile.propTypes = {
   handleMenuIsOpenClick: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-
 };
 
 export default NavBarMobile;

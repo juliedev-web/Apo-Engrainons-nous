@@ -72,6 +72,10 @@ FormShareSeed.propTypes = {
   textAreaDetailValue: PropTypes.string.isRequired,
   textAreaAdviceValue: PropTypes.string.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
+  closeEditSeed: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  createSeedConfirmMsg: PropTypes.string.isRequired,
+  closeMessage: PropTypes.func.isRequired,
 };
 
 export default FormShareSeed;

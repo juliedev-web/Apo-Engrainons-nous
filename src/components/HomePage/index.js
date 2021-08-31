@@ -82,6 +82,10 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
+  profil: PropTypes.object.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  getFromList: PropTypes.string.isRequired,
+  categorySlug: PropTypes.string.isRequired,
 };
 
 export default HomePage;

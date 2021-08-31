@@ -60,6 +60,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         url: `https://engrainonsnous.herokuapp.com/seed/${action.id}`,
       };
       axios(options).then((response) => {
+        console.log(response.data);
         store.dispatch({ type: 'GETTING_ONE_SEED_SUCCESS', data: response.data.result[0] });
       });
     }
