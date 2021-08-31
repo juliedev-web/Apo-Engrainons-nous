@@ -14,7 +14,6 @@ export const initialState = {
   editSeed: false,
   createSeedConfirmMsg: '',
   getFromList: '',
-  categorySlug: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -85,9 +84,18 @@ const reducer = (state = initialState, action = {}) => {
       };
 
     case 'ON_INPUT_SEARCH_SUCCESS':
+      if (action.slug) {
+        return {
+          ...state,
+          list: [...action.data.resul],
+          totalSeedsNumber: action.data.nbSeed,
+          getFromList: action.from,
+          inputSearchValue: action.slug,
+        };
+      }
       return {
         ...state,
-        list: [...action.data.seed],
+        list: [...action.data.resul],
         totalSeedsNumber: action.data.nbSeed,
         getFromList: action.from,
       };

@@ -14,13 +14,11 @@ const List = ({
   pageNumber,
   getFromList,
   categoryId,
+  inputSearchValue,
 }) => {
   const history = useHistory();
   const seedPerPage = 12;
   const pageCount = Math.ceil(totalSeedsNumber / seedPerPage);
-
-  useEffect(() => {
-  });
 
   return (
     <div className="listContainer">
@@ -57,6 +55,10 @@ const List = ({
           if (getFromList === 'byCategoryList') {
             history.push(`/categorie/${categoryId}/page/${selected.selected + 1}`);
             handlePageChange(selected.selected, getFromList, categoryId);
+          }
+          if (getFromList === 'byVarietyList') {
+            history.push(`/search/${inputSearchValue}/page/${selected.selected + 1}`);
+            handlePageChange(selected.selected, getFromList, inputSearchValue);
           }
         }}
         containerClassName="paginationBttns"

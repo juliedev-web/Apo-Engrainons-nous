@@ -23,7 +23,7 @@ const App = ({ getList, menuIsOpen }) => {
   const breakpoint = 1025;
 
   useEffect(() => {
-    getList();
+    // getList();
   }, []);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const App = ({ getList, menuIsOpen }) => {
           />
         </Route>
 
-        <Route path="/categorie/:category/page/:pageNumber" exact>
+        <Route path="/:filter/:slug/page/:pageNumber" exact>
           <HomePage
             width={width}
             breakpoint={breakpoint}

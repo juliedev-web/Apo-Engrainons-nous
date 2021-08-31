@@ -27,7 +27,9 @@ const ComponentSeed = ({
   }, [editSeed]);
   return (
     editSeed ? (
-      <FormShareSeed from="editSeedForm" title="Modifiez les informations de votre graine" />
+      <>
+        <FormShareSeed from="editSeedForm" title="Modifiez les informations de votre graine" />
+      </>
     ) : (
       <div className="container-seed">
         <div className="top">

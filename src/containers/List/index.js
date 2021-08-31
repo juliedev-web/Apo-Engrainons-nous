@@ -9,15 +9,19 @@ const mapStateToProps = (state, ownProps) => ({
   pageNumber: ownProps.match.params.pageNumber || '1',
   getFromList: state.seeds.getFromList,
   categoryId: state.seeds.selectedCategoryIdFilter,
+  inputSearchValue: state.seeds.inputSearchValue,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handlePageChange: (pageNumber, getFromList, categoryId) => {
+  handlePageChange: (pageNumber, getFromList, slug) => {
     if (getFromList === 'fullList') {
       dispatch({ type: 'GET_LIST_PAGE', pageNumber });
     }
     if (getFromList === 'byCategoryList') {
-      dispatch({ type: 'GET_CATEGORY_FILTERED', pageNumber, categoryId });
+      dispatch({ type: 'GET_CATEGORY_FILTERED', pageNumber, categoryId: slug });
+    }
+    if (getFromList === 'byVarietyList') {
+      dispatch({ type: 'ON_SEARCH_SUBMIT', pageNumber, inputSearchValue: slug });
     }
   },
 });

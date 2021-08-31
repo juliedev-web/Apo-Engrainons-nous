@@ -21,8 +21,9 @@ const HomePage = ({
   profil,
   isLogged,
   getFromList,
-  categorySlug,
+  slug,
   categoryId,
+  filterSlug,
 }) => {
   const history = useHistory();
   useEffect(() => {
@@ -34,15 +35,26 @@ const HomePage = ({
       localStorage.setItem('id', profil.id);
       localStorage.setItem('isLogged', isLogged);
     }
-    getPage(+pageNumber - 1, 'homepage', categorySlug);
+
+    if (filterSlug === 'categories') {
+      localStorage.setItem('getFromList', 'byCategoryList');
+    }
+    if (filterSlug === 'search') {
+      localStorage.setItem('getFromList', 'byVarietyList');
+    }
+
+    getPage(+pageNumber - 1, 'homepage', slug, localStorage.getItem('getFromList'));
   }, []);
 
   useEffect(() => {
-    if (getFromList === localStorage.getItem('getFromList')) {
+    if (localStorage.getItem('getFromList') === 'fullList' && !slug) {
       history.push(`/page/${+pageNumber || 1}`);
     }
-    if (getFromList === localStorage.getItem('getFromList')) {
-      history.push(`/categorie/${categorySlug}/page/${+pageNumber || 1}`);
+    if (localStorage.getItem('getFromList') === 'byCategoryList') {
+      history.push(`/categorie/${slug}/page/${+pageNumber || 1}`);
+    }
+    if (localStorage.getItem('getFromList') === 'byVarietyList') {
+      history.push(`/search/${slug}/page/${+pageNumber || 1}`);
     }
   }, [getFromList]);
   return (
