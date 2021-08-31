@@ -110,6 +110,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
     case 'ON_SEARCH_SUBMIT': {
       const state = store.getState();
+      console.log(action.pageNumber);
       const options = {
         method: 'GET',
         url: `https://engrainonsnous.herokuapp.com/search/${action.slug || state.seeds.inputSearchValue}/${(action.pageNumber * 12) || 0}`,
