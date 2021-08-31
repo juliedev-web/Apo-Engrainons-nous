@@ -5,6 +5,7 @@ import NavBarMobile from 'src/components/Footer/NavBarMobile';
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
   menuIsOpen: state.user.menuIsOpen,
+  newMessageCounter: state.user.profil.newMessageCounter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
