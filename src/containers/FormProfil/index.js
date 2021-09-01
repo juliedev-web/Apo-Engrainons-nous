@@ -47,9 +47,6 @@ const mapDispatchToProps = (dispatch) => ({
   handleDeleteConfirm: () => {
     dispatch({ type: 'ON_DELETE_CONFIRM' });
   },
-  validateEditProfil: () => {
-    dispatch({ type: 'ON_VALIDATE_CONFIRM' });
-  },
   closeEditMessage: () => {
     dispatch({ type: 'CLOSE_EDIT_MESSAGE' });
   },

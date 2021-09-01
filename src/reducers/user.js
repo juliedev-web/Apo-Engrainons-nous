@@ -14,7 +14,7 @@ export const initialState = {
   deleteConfirmMessage: '',
   emailResetInputValue: '',
   validateSendMsgResetPwd: '',
-  validateUpdateProfil: false,
+  validateUpdateProfil: '',
   confirmDelete: false,
   isLogged: !!localStorage.getItem('isLogged') || false,
   fieldConnexion: false,
@@ -221,6 +221,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         validateUpdateProfil: 'Votre compte a bien été mis a jour',
+        passwordConfirmMessage: '',
       };
     case 'SUBMIT_RESET_MESSAGE_SUCCESS':
       return {
