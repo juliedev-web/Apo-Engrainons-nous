@@ -16,7 +16,6 @@ export default function FormRegister({
   handleSubmitSignin,
   closePasswordConfirmMessage,
 }) {
-  //Close the message
   useEffect(() => () => {
     closePasswordConfirmMessage();
   }, []);

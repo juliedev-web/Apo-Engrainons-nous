@@ -33,7 +33,7 @@ const NavBarMobile = ({
 
     <NavLink
       className="navbar_link"
-      to="/tchat"
+      to={isLogged ? '/tchat' : '/connexion'}
       exact
       activeClassName="navbar_link--active"
     >

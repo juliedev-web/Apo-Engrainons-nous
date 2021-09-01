@@ -57,7 +57,7 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
 
       <NavLink
         className="navbar_link"
-        to="/tchat"
+        to={isLogged ? '/tchat' : '/connexion'}
         exact
         activeClassName="navbar_link--active"
       >
