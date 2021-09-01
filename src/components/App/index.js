@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 // == import Component
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
-import SignIn from 'src/components/SignIn';
-import Profil from 'src/components/Profil';
+import PageRegister from 'src/components/PageRegister';
+import PageProfil from 'src/components/PageProfil';
 import MySeeds from 'src/components/PageMySeeds';
-import Team from 'src/components/Team';
+import PageTeam from 'src/components/PageTeam';
 import PageShareSeed from 'src/components/PageShareSeed';
 import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
 import PageDetailSeed from 'src/components/PageDetailSeed';
@@ -94,7 +94,7 @@ const App = ({ menuIsOpen, checkToken, isLogged }) => {
         </Route>
 
         <Route path="/equipe" exact>
-          <Team
+          <PageTeam
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -110,7 +110,7 @@ const App = ({ menuIsOpen, checkToken, isLogged }) => {
         </Route>
 
         <Route path="/compte" exact>
-          <Profil
+          <PageProfil
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -118,7 +118,7 @@ const App = ({ menuIsOpen, checkToken, isLogged }) => {
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn
+          <PageRegister
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -135,14 +135,6 @@ const App = ({ menuIsOpen, checkToken, isLogged }) => {
 
         <Route path="/partager-une-graine" exact>
           <PageShareSeed
-            width={width}
-            breakpoint={breakpoint}
-            menuIsOpen={menuIsOpen}
-          />
-        </Route>
-
-        <Route path="/compte" exact>
-          <Profil
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}

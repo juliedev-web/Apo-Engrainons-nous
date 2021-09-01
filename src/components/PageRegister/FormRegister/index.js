@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-export default function FormSignIn({
+export default function FormRegister({
   passwordConfirmMessage,
   inscriptionConfirmMessage,
   pseudoInputValue,
@@ -56,7 +56,7 @@ export default function FormSignIn({
   );
 }
 
-FormSignIn.propTypes = {
+FormRegister.propTypes = {
   passwordConfirmMessage: PropTypes.string.isRequired,
   inscriptionConfirmMessage: PropTypes.string.isRequired,
   pseudoInputValue: PropTypes.string.isRequired,
