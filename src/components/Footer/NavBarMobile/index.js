@@ -31,23 +31,26 @@ const NavBarMobile = ({
       />
     </NavLink>
 
-    <NavLink
-      className="navbar_link"
-      to={isLogged ? '/tchat' : '/connexion'}
-      exact
-      activeClassName="navbar_link--active"
-    >
-      <div className="iconText">
-        <FontAwesomeIcon icon={faEnvelope} className="faUserAlt" />
-        <span className="messagerie"> {
-          newMessageCounter !== 0 && (
-            <span className="new-message-counter">{newMessageCounter}</span>
-          )
-        }
-        </span>
+    {isLogged && (
+      <NavLink
+        className="navbar_link"
+        to="/tchat"
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon icon={faEnvelope} className="faUserAlt" />
+          <span className="messagerie"> {
+            newMessageCounter !== 0 && (
+              <span className="new-message-counter">{newMessageCounter}</span>
+            )
+          }
+          </span>
 
-      </div>
+        </div>
       </NavLink>
+    )}
+    
 
     <NavLink
       onClick={closeModal}
