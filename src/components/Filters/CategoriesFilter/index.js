@@ -1,13 +1,15 @@
+// == Import npm
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-// FontAwesome
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// PropTypes
+
 import PropTypes from 'prop-types';
-// Import CSS
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
 
+// == Component
 const CategoriesFilter = ({
   category,
   getCategory,
@@ -32,6 +34,7 @@ const CategoriesFilter = ({
           if (from === 'homePage') {
             history.push(`/categorie/${e.target.value}/page/1`);
           }
+
           handleOptionClick(e.target.value, from);
         }}
       >
@@ -47,6 +50,7 @@ const CategoriesFilter = ({
   );
 };
 
+// == Props validation
 CategoriesFilter.propTypes = {
   idNewSeedSelect: PropTypes.string.isRequired,
   category: PropTypes.array.isRequired,

@@ -1,8 +1,10 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
+// == import Component
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import SignIn from 'src/components/SignIn';
@@ -17,20 +19,25 @@ import Tchat from 'src/containers/Tchat';
 
 import './styles.scss';
 
-// == Composant
-const App = ({ getList, menuIsOpen }) => {
+// == Componant
+const App = ({ menuIsOpen, checkToken, isLogged }) => {
+  useEffect(() => {
+    if (isLogged) {
+      checkToken();
+    }
+  }, []);
+  /**
+   * get the viewport width on resize
+   * to switch between desktop header/footer to mobile header/footer
+   */
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
-
-  useEffect(() => {
-    // getList();
-  }, []);
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleWindowResize);
 
-    // Return a function from the effect that removes the event listener
+    // willUnmount launch a function that removes the event listener
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
@@ -155,11 +162,9 @@ const App = ({ getList, menuIsOpen }) => {
   );
 };
 
-// Props validation
+// == Props validation
 App.propTypes = {
-  getList: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
 };
 
-// == Export
 export default App;

@@ -19,7 +19,7 @@ const SearchSeedInput = ({
   return (
     <div className="search-seed-input">
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Recherchez un nom de graine" value={inputSearchValue} onChange={(e) => handleInputSearchChange(e.target.value)} />
+        <input required type="text" placeholder="Recherchez un nom de graine" value={inputSearchValue} onChange={(e) => handleInputSearchChange(e.target.value)} />
       </form>
       <FontAwesomeIcon icon={faSearch} size="lg" className="faSearch" />
     </div>

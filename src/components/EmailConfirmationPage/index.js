@@ -1,12 +1,16 @@
+// == Import npm
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
+// == import Component
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
 import './styles.scss';
 
+// == Component
 const EmailConfirmationPage = ({
   checkConfirmEmail, emailConfirmMsg, width, breakpoint,
 }) => {
@@ -32,6 +36,7 @@ const EmailConfirmationPage = ({
   );
 };
 
+// == Props validation
 EmailConfirmationPage.propTypes = {
   checkConfirmEmail: PropTypes.func.isRequired,
   emailConfirmMsg: PropTypes.string.isRequired,

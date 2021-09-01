@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import PropTypes from 'prop-types';
 
 import './styles.scss';
 
 import { ChatEngine } from 'react-chat-engine';
 
+/**
+ *
+ * fake tchat to get new message to pop-up a counter on
+ * message icon
+ *
+ */
 const DirectChatPage = ({ userName, receivedNewMessage, from }) => (
   <div className="chat-window">
     <ChatEngine

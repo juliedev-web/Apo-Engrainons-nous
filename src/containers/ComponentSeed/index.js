@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   hideMail: () => dispatch(hideMailAction()),
 
   toggleEditSeed: () => {
-    dispatch(toggleEditSeed());
+    dispatch({ type: 'ON_TOGGLE_EDIT_SEED' });
   },
 
   contact: () => dispatch({ type: 'CONTACT' }),

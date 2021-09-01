@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 import ReactPaginate from 'react-paginate';

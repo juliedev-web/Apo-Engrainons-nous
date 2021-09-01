@@ -85,7 +85,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        console.log(response);
+        console.log('réponse création graine: ', response);
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine a bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
