@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { NavLink, Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -20,7 +21,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
   <div className="containerTitle">
     <div className="headerDesktop">
-      <img src={logo} alt="logo feuilles" className="headerDesktop__logo" />
+      <Link to="/page/1">
+        <img src={logo} alt="logo feuilles" className="headerDesktop__logo" />
+      </Link>
       <div className="headerDesktop__content">
         <h1 className="headerDesktop__content__title">
           Engrainons-nous !
