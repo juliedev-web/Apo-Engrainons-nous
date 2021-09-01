@@ -22,10 +22,11 @@ const CategoriesFilter = ({
 }) => {
   const history = useHistory();
 
+  console.log(from);
+
   useEffect(() => {
     getCategory();
   }, []);
-  console.log(from);
   return (
     <div className="categories-filter">
       <select
@@ -36,7 +37,6 @@ const CategoriesFilter = ({
           if (from === 'homePage') {
             history.push(`/categorie/${e.target.value}/page/1`);
           }
-
           handleOptionClick(e.target.value, from);
         }}
       >

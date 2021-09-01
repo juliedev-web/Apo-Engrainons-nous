@@ -15,7 +15,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getPage: (pageNumber, from, slug, filter) => {
-    console.log(slug);
     if (!slug) {
       dispatch({ type: 'GET_LIST_PAGE', pageNumber: pageNumber, from });
     }

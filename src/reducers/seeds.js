@@ -18,10 +18,23 @@ export const initialState = {
   textAreaDetailValueEdit: '',
   textAreaAdviceValueEdit: '',
   categorySeedValueEdit: '',
+  copyMailToClipBoardMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'CLEAR_MSG_COPIED':
+      return {
+        ...state,
+        copyMailToClipBoardMsg: '',
+      };
+
+    case 'EMAIL_COPY_TO_CLIPBOARD':
+      return {
+        ...state,
+        copyMailToClipBoardMsg: 'le mail a été copié dans le presse-papier',
+      };
+
     case 'GETTING_LIST_SUCCESS':
       return {
         ...state,
@@ -29,6 +42,7 @@ const reducer = (state = initialState, action = {}) => {
         totalSeedsNumber: action.data.nbSeed,
         getFromList: action.from,
       };
+
     case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
       return {
         ...state,
@@ -92,6 +106,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedNewSeedCategory: action.categoryId,
+      };
+
+    case 'SELECT_CATEGORY_ID_EDIT':
+      return {
+        ...state,
         categorySeedValueEdit: action.categoryId,
       };
 
