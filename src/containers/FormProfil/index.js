@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import FormProfil from 'src/components/Profil/FormProfil';
+import FormProfil from 'src/components/PageProfil/FormProfil';
 
 import {
   createChangePseudoInputValueAction,

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
 import PageRegister from 'src/components/PageRegister';
-import Profil from 'src/components/Profil';
+import PageProfil from 'src/components/PageProfil';
 import MySeeds from 'src/components/PageMySeeds';
 import Team from 'src/components/Team';
 import PageShareSeed from 'src/components/PageShareSeed';
@@ -103,7 +103,7 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/compte" exact>
-          <Profil
+          <PageProfil
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -128,14 +128,6 @@ const App = ({ getList, menuIsOpen }) => {
 
         <Route path="/partager-une-graine" exact>
           <PageShareSeed
-            width={width}
-            breakpoint={breakpoint}
-            menuIsOpen={menuIsOpen}
-          />
-        </Route>
-
-        <Route path="/compte" exact>
-          <Profil
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}

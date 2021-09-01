@@ -8,7 +8,7 @@ import MenuModal from 'src/containers/MenuModal';
 
 import './styles.scss';
 
-export default function Profil({ width, breakpoint, menuIsOpen }) {
+export default function PageProfil({ width, breakpoint, menuIsOpen }) {
   return (
     <div className="sign-in">
       <Header width={width} breakpoint={breakpoint} />
@@ -19,7 +19,7 @@ export default function Profil({ width, breakpoint, menuIsOpen }) {
     </div>
   );
 }
-Profil.propTypes = {
+PageProfil.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
