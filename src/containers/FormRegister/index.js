@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import FormSignIn from 'src/components/SignIn/FormSignIn';
+import FormRegister from 'src/components/PageRegister/FormRegister';
 
 import {
   createChangePseudoInputValueAction,
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => ({
   closePasswordConfirmMessage: () => dispatch({ type: 'CLOSE_PWD_ERROR_MSG' }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormSignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(FormRegister);

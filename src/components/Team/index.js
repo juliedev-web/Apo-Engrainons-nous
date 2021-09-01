@@ -10,6 +10,9 @@ import TeamCards from './TeamCards';
 
 import './styles.scss';
 
+// width, breakpoint : for menu in desktop and mobile
+// isOpen : for modal menu
+
 export default function Team({ width, breakpoint, menuIsOpen }) {
   return (
     <div className="sign-in">

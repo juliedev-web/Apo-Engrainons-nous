@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
-import SignIn from 'src/components/SignIn';
+import PageRegister from 'src/components/PageRegister';
 import Profil from 'src/components/Profil';
 import MySeeds from 'src/components/PageMySeeds';
 import Team from 'src/components/Team';
@@ -111,7 +111,7 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn
+          <PageRegister
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
