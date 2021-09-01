@@ -17,19 +17,21 @@ const CategoriesFilter = ({
   idCategory,
   idNewSeedSelect,
   from,
+  categorySeedValueEdit,
+
 }) => {
   const history = useHistory();
 
   useEffect(() => {
     getCategory();
   }, []);
-
+  console.log(from);
   return (
     <div className="categories-filter">
       <select
         name="category"
         id="categories"
-        value={from === 'sharedSeedPage' ? idNewSeedSelect : idCategory}
+        value={from === 'sharedSeedPage' ? idNewSeedSelect : categorySeedValueEdit}
         onChange={(e) => {
           if (from === 'homePage') {
             history.push(`/categorie/${e.target.value}/page/1`);
