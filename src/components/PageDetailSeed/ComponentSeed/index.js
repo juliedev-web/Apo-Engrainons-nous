@@ -68,7 +68,7 @@ const ComponentSeed = ({
             )}
             {(seed.user_id !== userId) && (
               <>
-                <button type="button" onClick={toggleMail}> {showMail ? seed.email_user : 'Email du propriétaire'}</button>
+                <button className="ownermail" type="button" onClick={toggleMail}>{showMail ? seed.email_user : 'Email du propriétaire'}</button>
                 <Link
                   className="tchatMySeeds"
                   to="/tchat"

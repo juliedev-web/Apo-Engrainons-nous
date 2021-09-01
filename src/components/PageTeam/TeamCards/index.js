@@ -8,7 +8,7 @@ import './styles.scss';
 // import Julie from 'src/assets/image/Julie.PNG';
 // import Kevin from 'src/assets/image/Kevin.PNG';
 
-//Icons for social medias
+// Icons for social medias
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
