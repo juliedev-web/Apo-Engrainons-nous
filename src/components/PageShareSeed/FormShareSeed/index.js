@@ -69,7 +69,7 @@ const FormShareSeed = ({
         }
         {isLogged ? (
           <>
-            <button type="submit">Valider</button>
+            <button className="btn-validate" type="submit">Valider</button>
             {
               from === 'editSeedForm' && (
                 <Link
