@@ -36,6 +36,22 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'CHECK_TOKEN_FAILED':
+      return {
+        ...state,
+        isLogged: !!localStorage.getItem('isLogged') || false,
+        profil: {
+          ...state.profil,
+          pseudo: localStorage.getItem('pseudo') || '',
+          email: localStorage.getItem('email') || '',
+          city: localStorage.getItem('city') || '',
+          id: localStorage.getItem('id') || '',
+          token: localStorage.getItem('token') || '',
+          yourPseudo: '',
+          chatEngine_id: '',
+          newMessageCounter: 0,
+        },
+      };
     case 'EMPTY_NEW_MESSAGE_COUNTER':
       return {
         ...state,

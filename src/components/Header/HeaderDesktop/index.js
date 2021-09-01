@@ -1,6 +1,10 @@
+// == Import npm
 import React from 'react';
+
 import { NavLink, Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
+
 import './styles.scss';
 
 import logo from 'src/assets/image/Logo.png';
@@ -13,6 +17,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// ==  Component
 const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
   <div className="containerTitle">
     <div className="headerDesktop">
@@ -83,7 +88,7 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
       >
         <div className="iconText">
           <FontAwesomeIcon icon={faUserAlt} className="faUserAlt" />
-          <span>{pseudo || 'Profil'}</span>
+          <span>{isLogged ? pseudo : 'Profil'}</span>
         </div>
       </NavLink>
 

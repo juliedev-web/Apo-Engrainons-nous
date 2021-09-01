@@ -85,7 +85,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
-        console.log(response);
+        console.log('réponse création graine: ', response);
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Votre graine a bien été ajoutée !' });
       }).catch((error) => {
         console.error(error);
@@ -111,6 +111,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
     case 'ON_SEARCH_SUBMIT': {
       const state = store.getState();
+      console.log(action.pageNumber);
       const options = {
         method: 'GET',
         url: `https://engrainonsnous.herokuapp.com/search/${action.slug || state.seeds.inputSearchValue}/${(action.pageNumber * 12) || 0}`,

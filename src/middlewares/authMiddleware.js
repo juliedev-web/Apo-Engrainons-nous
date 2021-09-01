@@ -2,6 +2,27 @@ import axios from 'axios';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
+    case 'CHECK_TOKEN': {
+      const options = {
+        method: 'GET',
+        url: 'https://engrainonsnous.herokuapp.com/',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      };
+
+      axios(options).then((response) => {
+        console.log('testestest');
+        console.log(response.data);
+      }).catch((error) => {
+        console.log('mlqksdjf');
+        console.error(error);
+        localStorage.clear();
+        store.dispatch({ type: 'CHECK_TOKEN_FAILED' });
+      });
+    }
+      break;
+
     case 'ON_SIGNIN_SUBMIT': {
       const state = store.getState();
 

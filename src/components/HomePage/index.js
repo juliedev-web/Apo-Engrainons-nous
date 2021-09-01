@@ -72,7 +72,7 @@ const HomePage = ({
             <Filters />
             <List list={list} />
             <div className="tchat">
-              <DirectChatPage />
+              <DirectChatPage from="chatPage" />
             </div>
           </>
         )
@@ -97,7 +97,15 @@ HomePage.propTypes = {
   profil: PropTypes.object.isRequired,
   isLogged: PropTypes.bool.isRequired,
   getFromList: PropTypes.string.isRequired,
-  categorySlug: PropTypes.string.isRequired,
+  slug: PropTypes.string,
+  categoryId: PropTypes.string,
+  filterSlug: PropTypes.string,
+};
+
+HomePage.defaultProps = {
+  slug: '',
+  categoryId: '',
+  filterSlug: '',
 };
 
 export default HomePage;
