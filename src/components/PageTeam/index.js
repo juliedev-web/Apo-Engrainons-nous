@@ -13,7 +13,7 @@ import './styles.scss';
 // width, breakpoint : for menu in desktop and mobile
 // isOpen : for modal menu
 
-export default function Team({ width, breakpoint, menuIsOpen }) {
+export default function PageTeam({ width, breakpoint, menuIsOpen }) {
   return (
     <div className="sign-in">
       <Header width={width} breakpoint={breakpoint} />
@@ -24,7 +24,7 @@ export default function Team({ width, breakpoint, menuIsOpen }) {
   );
 }
 
-Team.propTypes = {
+PageTeam.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
