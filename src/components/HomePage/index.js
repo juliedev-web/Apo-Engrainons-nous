@@ -22,7 +22,6 @@ const HomePage = ({
   isLogged,
   getFromList,
   slug,
-  categoryId,
   filterSlug,
 }) => {
   const history = useHistory();
@@ -98,13 +97,11 @@ HomePage.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   getFromList: PropTypes.string.isRequired,
   slug: PropTypes.string,
-  categoryId: PropTypes.string,
   filterSlug: PropTypes.string,
 };
 
 HomePage.defaultProps = {
   slug: '',
-  categoryId: '',
   filterSlug: '',
 };
 

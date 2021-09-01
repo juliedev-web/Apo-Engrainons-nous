@@ -71,11 +71,13 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
       >
         <div className="iconText">
           <FontAwesomeIcon icon={faEnvelope} className="faUserAlt" />
-          <span className="messagerie">Messagerie {
-            newMessageCounter !== 0 && (
-              <span className="new-message-counter">{newMessageCounter}</span>
-            )
-          }
+          <span className="messagerie">
+            Messagerie
+            {
+              newMessageCounter !== 0 && !isLogged && (
+                <span className="new-message-counter">{newMessageCounter}</span>
+              )
+            }
           </span>
 
         </div>
