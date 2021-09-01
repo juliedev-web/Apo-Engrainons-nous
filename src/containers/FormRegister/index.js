@@ -13,7 +13,6 @@ const mapStateToProps = (state) => ({
   cityInputValue: state.user.cityInputValue,
   passwordInputValue: state.user.passwordInputValue,
   passwordConfirmInputValue: state.user.passwordConfirmInputValue,
-
   passwordConfirmMessage: state.user.passwordConfirmMessage,
   inscriptionConfirmMessage: state.user.inscriptionConfirmMessage,
 });

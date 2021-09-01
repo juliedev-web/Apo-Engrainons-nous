@@ -50,7 +50,6 @@ const NavBarMobile = ({
         </div>
       </NavLink>
     )}
-    
 
     <NavLink
       onClick={closeModal}
