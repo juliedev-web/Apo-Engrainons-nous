@@ -45,12 +45,11 @@ const FormShareSeed = ({
       {createSeedConfirmMsg && <p className={(createSeedConfirmMsg === 'Votre graine a bien été ajoutée !' || createSeedConfirmMsg === 'Les informations de votre graine ont bien été mises à jour !') ? 'confirm-seed-created-msg' : 'error-seed-create-msg'}>{createSeedConfirmMsg}</p>}
 
       <form onSubmit={(e) => {
-        // console.log('hello my fwiend');
         handleOnSubmit(e, from);
       }}
       >
         {
-          from
+          from === 'editSeedForm'
             ? (
               <div className="fields-zone">
                 <CategoriesFilter from="editSeedPage" categorySeedValueEdit={categorySeedValueEdit} />
@@ -62,9 +61,9 @@ const FormShareSeed = ({
             : (
               <div className="fields-zone">
                 <CategoriesFilter from="sharedSeedPage" />
-                <input required className="input" placeholder="Nom de la variété" value={varietyInputValue} onChange={(e) => handleInputValue(e.target.value, 'varietyInputValue')} type="text" name="seed_name" />
-                <textarea className="description" placeholder={detailData} name="description" cols="100" rows="20" value={textAreaDetailValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaDetailValue')} />
-                <textarea className="conseil" placeholder={adviceData} name="advice" cols="100" rows="20" value={textAreaAdviceValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaAdviceValue')} />
+                <input required className="input" placeholder="Nom de la variété" value={varietyInputValue} onChange={(e) => handleInputValue(e.target.value, 'varietyInputValue', from)} type="text" name="seed_name" />
+                <textarea className="description" placeholder={detailData} name="description" cols="100" rows="20" value={textAreaDetailValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaDetailValue', from)} />
+                <textarea className="conseil" placeholder={adviceData} name="advice" cols="100" rows="20" value={textAreaAdviceValue} onChange={(e) => handleInputValue(e.target.value, 'textAreaAdviceValue', from)} />
               </div>
             )
         }
@@ -72,7 +71,7 @@ const FormShareSeed = ({
           <>
             <button type="submit">Valider</button>
             {
-              from && (
+              from === 'editSeedForm' && (
                 <Link
                   className="cancelSeedModification"
                   to="/mesgraines"

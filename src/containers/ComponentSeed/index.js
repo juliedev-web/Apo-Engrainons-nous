@@ -20,6 +20,8 @@ const mapStateToProps = (state) => ({
   userId: +state.user.profil.id,
   myPseudo: state.user.profil.pseudo,
   yourPseudo: state.user.profil.yourPseudo,
+  copyMailToClipBoardMsg: state.seeds.copyMailToClipBoardMsg,
+
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -28,6 +30,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   toggleMail: () => {
     dispatch(toggleMail());
   },
+
   hideMail: () => dispatch(hideMailAction()),
 
   toggleEditSeed: () => {
@@ -35,6 +38,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 
   contact: () => dispatch({ type: 'CONTACT' }),
+
+  copytoClipBoard: () => dispatch({ type: 'EMAIL_COPY_TO_CLIPBOARD' }),
+
+  clearMessageCopy: () => {
+    dispatch({ type: 'CLEAR_MSG_COPIED' });
+  },
 });
 const container = connect(mapStateToProps, mapDispatchToProps)(ComponentSeed);
 

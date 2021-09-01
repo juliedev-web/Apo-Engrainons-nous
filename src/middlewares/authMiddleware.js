@@ -12,10 +12,8 @@ const authMiddleware = (store) => (next) => (action) => {
       };
 
       axios(options).then((response) => {
-        console.log('testestest');
         console.log(response.data);
       }).catch((error) => {
-        console.log('mlqksdjf');
         console.error(error);
         localStorage.clear();
         store.dispatch({ type: 'CHECK_TOKEN_FAILED' });

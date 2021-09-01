@@ -16,10 +16,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleInputValue: (inputValue, inputName, from) => {
-    if (from === '') {
+    if (from === 'shareNewSeedPage') {
       dispatch({ type: 'ON_SHARE_SEED_FORM_CHANGE', inputValue, inputName });
     }
-    else {
+    if (from === 'editSeedForm') {
       dispatch({ type: 'ON_EDIT_SEED_FORM_CHANGE', inputValue, inputName });
     }
   },
