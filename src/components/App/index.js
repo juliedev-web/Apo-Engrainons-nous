@@ -23,7 +23,7 @@ import './styles.scss';
 const App = ({ menuIsOpen, checkToken, isLogged }) => {
   useEffect(() => {
     if (isLogged) {
-      checkToken();
+      // checkToken();
     }
   }, []);
   /**

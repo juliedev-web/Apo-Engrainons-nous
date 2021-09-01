@@ -14,6 +14,10 @@ export const initialState = {
   editSeed: false,
   createSeedConfirmMsg: '',
   getFromList: '',
+  varietyInputValueEdit: '',
+  textAreaDetailValueEdit: '',
+  textAreaAdviceValueEdit: '',
+  categorySeedValueEdit: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -36,6 +40,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         category: [...action.data],
       };
+    case 'ON_EDIT_SEED_FORM_CHANGE':
+      return {
+        ...state,
+        [action.inputName]: action.inputValue,
+      };
 
     case 'GETTING_ONE_SEED_SUCCESS':
       return {
@@ -43,6 +52,14 @@ const reducer = (state = initialState, action = {}) => {
         seed: {
           ...action.data,
         },
+      };
+    case 'DEFAULT_EDIT_SEED_VALUE':
+      return {
+        ...state,
+        varietyInputValueEdit: state.seed.variety_name,
+        textAreaDetailValueEdit: state.seed.description,
+        textAreaAdviceValueEdit: state.seed.conseil,
+        categorySeedValueEdit: state.seed.category_id,
       };
 
     case 'HIDE_MAIL':
@@ -75,6 +92,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedNewSeedCategory: action.categoryId,
+        categorySeedValueEdit: action.categoryId,
       };
 
     case 'ON_TOGGLE_CLICK_MAIL_OWNER':
