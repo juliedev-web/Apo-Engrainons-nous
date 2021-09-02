@@ -58,17 +58,17 @@ const ComponentSeed = ({
         {isLogged ? (
           <div>
             {(seed.user_id === userId) && (
-              <>
+              <div className="container_mobile_myseed">
                 <button type="button" className="btn_modify_seed" onClick={toggleEditSeed}>Modifier ma graine</button>
                 {/* <button type="button"> */}
                 <Link
-                  className="myseeds"
+                  className="btn_myseeds"
                   to="/mesgraines"
                 >
                   Mes graines
                 </Link>
                 {/* </button> */}
-              </>
+              </div>
             )}
             {(seed.user_id !== userId) && (
               <div className="buttons-detail-seed">
