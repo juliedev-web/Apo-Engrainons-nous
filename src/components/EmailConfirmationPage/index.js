@@ -26,7 +26,7 @@ const EmailConfirmationPage = ({
       />
 
       <h1 className="messageConfirmEmail">{emailConfirmMsg}</h1>
-      {emailConfirmMsg === 'Votre email est confirmé ! bienvenue 🙂' && <Link className="link-to-connexion" to="/connexion">Par ici pour vous connecter</Link>}
+      {emailConfirmMsg === 'Votre email est confirmé ! Bienvenue 🙂' && <Link className="link-to-connexion" to="/connexion">Par ici pour vous connecter</Link>}
 
       <Footer
         width={width}
