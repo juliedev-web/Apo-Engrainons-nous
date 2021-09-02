@@ -41,15 +41,15 @@ const ComponentSeed = ({
             <img src={seed.category_img} alt="legume" />
           </div>
           <div className="descriptionVariety">
-            <h2>Catégorie : </h2>
+            <h4>Catégorie : </h4>
             <p>{seed.category_name}</p>
-            <h2>Nom de la variété : </h2>
+            <h4>Nom de la variété : </h4>
             <p>{seed.variety_name}</p>
             <h2>Description : </h2>
             <p>
               {seed.description}
             </p>
-            <h2>Conseils :</h2>
+            <h4>Conseils :</h4>
             <p>
               {seed.conseil}
             </p>
