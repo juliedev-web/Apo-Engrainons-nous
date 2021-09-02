@@ -18,7 +18,7 @@
 
     input {
       font-size: 1rem;
-      width: 60%;
+      width: 40%;
       margin: auto;
       padding: 0.4rem;
       background-color: vars.$bgd-input-color;
@@ -28,24 +28,28 @@
     }
 
     button {
-      padding: 0.6em 0.8em;
       margin: auto;
-      margin-top: 2em;
+      margin-top: 0.3rem;
       background-color: vars.$bgd-primary-color;
-      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding: 0.8rem 1.2rem;
       color: white;
+      border-radius: 5px;
+      transition: 0.3s;
     }
 
     button:hover {
       background-color: white;
-      color: #418608;
+      color: vars.$bgd-primary-color;
       text-decoration: underline;
-      border: 2px solid #418608;
+      border: 2px solid vars.$bgd-primary-color;
     }
   }
 
   .connection-not-confirmed-message {
-    color: #bc1536;
+    color: vars.$bgd-delete-color;
     font-weight: bold;
     text-align: center;
     margin: auto;
@@ -54,7 +58,7 @@
   }
 
   .connection-confirmed-message {
-    color: #15bc2b;
+    color: vars.$bgd-primary-color;
     font-weight: bold;
     text-align: center;
     margin: auto;
@@ -64,7 +68,7 @@
 
   .forget-password {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 0.3rem;
   }
 
   .forget-password:hover {
@@ -78,7 +82,7 @@
   }
 
   .subscribe {
-    color: #418608;
+    color: vars.$bgd-primary-color;
     font-weight: bold;
     text-decoration: underline;
     transition: 0.2s;
@@ -89,7 +93,7 @@
   }
 }
 .validate-message {
-  color: #418608;
+  color: vars.$bgd-primary-color;
   text-align: center;
   margin-top: 2.5rem;
   input {
@@ -102,17 +106,16 @@
 }
 .navlink_redirect_loggin {
   text-align: center;
-  color: #418608;
+  color: vars.$bgd-primary-color;
   text-decoration: underline;
 }
 
-// == MEDIA QUERY DESKTOP ===
+// === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
-    margin-top: 2em;
+    margin-top: 5rem;
   }
 }
-
 .field-connexion {
   .annuler-reinitialisation-mdp {
     text-align: center;
