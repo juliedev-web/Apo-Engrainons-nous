@@ -84,7 +84,7 @@ const FormShareSeed = ({
         ) : (
           <Link className="link-to-connexion" to="/connexion">
             Pour partager vos graines, connectez-vous
-            <span>se connecter</span>
+            <span>Se connecter</span>
           </Link>
         )}
 
