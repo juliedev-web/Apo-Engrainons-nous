@@ -96,7 +96,7 @@
 
 @media only screen and (min-width: 599px) {
   .navbar-mobile {
-    font-size: 46px; // FontAwesome Icon Size
+    font-size: 36px; // FontAwesome Icon Size
 
     background-color: vars.$bgd-footer-color;
   
@@ -105,21 +105,21 @@
     .menu-burger {
     
       .barre {
-        width: 2.5rem;
-        height: 0.43rem;
-        bottom: 2.6rem;
+        width: 2.1rem;
+        height: 0.35rem;
+        bottom: 2.2rem;
         right: 6rem;
     
         &:before {
-          width: 2.5rem;
-          height: 0.43rem;
-          transform: translateY(-0.8rem);
+          width: 2.1rem;
+          height: 0.35rem;
+          transform: translateY(-0.7rem);
         }
     
         &:after {
-          width: 2.5rem;
-          height: 0.43rem;
-          transform: translateY(0.8rem);
+          width: 2.1rem;
+          height: 0.35rem;
+          transform: translateY(0.7rem);
         }
     
         
@@ -127,18 +127,18 @@
     
       &.menu-burger--active{
         .barre {
-          height: 0.47rem;
-          width: 2.7rem;
+          height: 0.43rem;
+          width: 2.3rem;
         }
     
         :after {
-          height: 0.47rem;
-          width: 2.7rem;
+          height: 0.43rem;
+          width: 2.3rem;
         }
     
         :before {
-          height: 0.47rem;
-          width: 2.7rem;
+          height: 0.43rem;
+          width: 2.3rem;
         }
       }
     }
