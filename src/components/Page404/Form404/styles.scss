@@ -1,38 +1,98 @@
 // === IMPORT CSS ===
 @use 'src/styles/vars';
 
+// Mobile
 .form-404 {
   display: flex;
-  justify-content: stretch;
   align-items: center;
   flex-direction: column;
-  margin: 5rem auto;
+  margin: 1rem auto 5rem;
+  
 
   h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
+    text-align: center;
   }
+  
+  h3 {
+    margin-top: 0.8rem;
+    font-size: 2rem;
+  }
+
   img {
-    width: 320px;
+    width: 200px;
+    transform: rotate(0);
+    transition: 1s;
+
   }
+
+  img:hover {
+    // animation-name: youSeeMeRolling 1s linear infinite;
+    transform: rotate(360deg);
+  }
+
   p {
-    font-size: 1.5rem;
-    margin-bottom: 1em;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
     text-align: center;
     width: 80%;
   }
+
   .navlink {
     border: solid 1px black;
     padding: 0.5em;
-    margin: 2em auto;
+    margin: 2rem auto 4rem;
     background-color: vars.$bgd-primary-color;
     color: white;
     font-size: 1.5em;
     transition: 0.2s;
   }
+
   .navlink:hover {
     color: vars.$bgd-primary-color;
     background-color: white;
     border: solid 3px vars.$bgd-primary-color;
   }
 }
+
+// Tablet
+@media screen and (min-width: 599px) {
+  .form-404 {
+    margin: 3rem auto 5rem;
+  
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  
+    img {
+      width: 320px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1025px) {
+  .form-404 {
+    margin: 3rem auto 5rem;
+  
+    h2 {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  
+    img {
+      width: 320px;
+    }
+  
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+

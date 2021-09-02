@@ -6,13 +6,23 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   padding: 2rem;
+  
   width: max-content;
   margin: auto;
   background-color: #FFF;
   margin-top: 2em;
   border-radius: 10px;
 
+  .container_mobile_myseed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
   .descriptionVariety {
     p {
       font-size: 0.9rem;
@@ -204,7 +214,7 @@
   }
 }
 
-.myseeds {
+.btn_myseeds {
   font-weight: bold;
   font-size: 1.4rem;
   margin-bottom: 2rem;
@@ -213,9 +223,8 @@
   color: white;
   border-radius: 5px;
   transition: 0.3s;
-  margin-left: 1rem;
 }
-.myseeds:hover {
+.btn_myseeds:hover {
   background-color: white;
   color: vars.$bgd-primary-color;
   border: 2px solid vars.$bgd-primary-color;
@@ -230,6 +239,7 @@
   color: white;
   border-radius: 5px;
   transition: 0.3s;
+  margin-right: 2rem;
 }
 .btn_modify_seed:hover {
   background-color: white;
