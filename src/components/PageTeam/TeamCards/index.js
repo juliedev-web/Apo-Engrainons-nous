@@ -19,7 +19,7 @@ import {
 export default function TeamCards() {
   return (
     <div className="container">
-      <h2 className="team-title">L'équipe d'Engrainons-nous</h2>
+      <h3 className="team-title">L'équipe d'Engrainons-nous</h3>
       <section className="card-container">
         <article className="card-dev">
           <h3 className="name">Cédric Cubat</h3>

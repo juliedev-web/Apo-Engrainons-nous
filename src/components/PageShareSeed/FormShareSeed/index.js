@@ -40,7 +40,7 @@ const FormShareSeed = ({
   }, [createSeedConfirmMsg]);
   return (
     <div className="form-seed">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
 
       {createSeedConfirmMsg && <p className={(createSeedConfirmMsg === 'Votre graine a bien été ajoutée !' || createSeedConfirmMsg === 'Les informations de votre graine ont bien été mises à jour !') ? 'confirm-seed-created-msg' : 'error-seed-create-msg'}>{createSeedConfirmMsg}</p>}
 

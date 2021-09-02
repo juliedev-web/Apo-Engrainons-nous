@@ -10,11 +10,12 @@
   justify-content: center;
   align-items: center;
 
-  h2 {
+  h3 {
     text-align: center;
     font-weight: bold;
     font-size: vars.$page-title;
     margin-bottom: 2rem;
+    margin-top: vars.$page-title-mag-top;
   }
 
   .no-seeds-message {
@@ -26,6 +27,7 @@
   &__list {
     width: 60%;
     border: 4px solid vars.$bgd-primary-color;
+    background-color: #FFF;
 
     &__thead {
       font-size: 1.4rem;

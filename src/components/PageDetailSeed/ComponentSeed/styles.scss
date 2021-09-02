@@ -7,17 +7,21 @@
   justify-content: space-around;
   align-items: center;
   padding: 2rem;
+  width: max-content;
+  margin: auto;
+  background-color: #FFF;
+  margin-top: 2em;
 
   .descriptionVariety {
     p {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-bottom: 0.7em;
     }
 
-    h2 {
+    h4 {
       font-weight: bold;
       margin-bottom: 0.7em;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -60,8 +64,6 @@
     border-radius: 5px;
     font-size: 0.8rem;
   }
-
-
 
   .imgCat {
     img {
@@ -137,7 +139,7 @@
         }
       }
 
-      h2 {
+      h4 {
         font-weight: bold;
         margin-bottom: 1em;
       }
@@ -181,7 +183,7 @@
         }
       }
 
-      h2 {
+      h4 {
         font-weight: bold;
         margin-bottom: 1em;
       }

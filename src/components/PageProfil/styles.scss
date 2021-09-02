@@ -1,11 +1,15 @@
 // === IMPORT CSS ===
 @use 'src/styles/vars';
 
-.profil {
+.page-profil {
   height: 100%;
+  background-image: url('../../assets/image/backgrounds/profil-nik-shuliahin-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.profil .footer-desktop {
+.page-profil .footer-desktop {
   position: fixed;
   bottom: 0;
 }

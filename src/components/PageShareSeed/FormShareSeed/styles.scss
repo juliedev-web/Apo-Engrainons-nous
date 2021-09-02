@@ -5,11 +5,14 @@
   padding-bottom: 2rem;
   position: relative;
 
-  h2 {
-    font-size: 2rem;
+  h3 {
+    font-size: vars.$page-title;
     font-weight: bold;
     text-align: center;
     padding: 4rem 2rem 2rem;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: #FFF;
   }
 
   .confirm-seed-created-msg {

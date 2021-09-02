@@ -39,7 +39,7 @@ export default function FormProfil({
         )
           : (
             <>
-              <h2>Mon compte</h2>
+              <h3>Mon compte</h3>
               {
                 validateUpdateProfil && (
                   <p className="accountUpdateButton"> {validateUpdateProfil}</p>
