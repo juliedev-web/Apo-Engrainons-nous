@@ -1,8 +1,6 @@
-// === IMPORT CSS ===
-@use 'src/styles/vars';
-
 .home-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.8fr 2fr 4fr 0.5fr;
 }
