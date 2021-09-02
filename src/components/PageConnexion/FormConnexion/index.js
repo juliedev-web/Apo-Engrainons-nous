@@ -54,7 +54,7 @@ const FormConnexion = ({
             <form className="validate-message" onSubmit={(e) => handleSubmitReset(e)}>
               {
                 !validateSendMsgResetPwd && (
-                  <h2>Veuillez saisir votre adresse email afin de réinitialiser votre mot de passe</h2>
+                  <p className="messageMailRedirect">Veuillez saisir votre adresse email afin de réinitialiser votre mot de passe</p>
                 )
               }
               <input type="email" value={emailResetInputValue} onChange={(e) => handleInputValuePasswordResetChange(e.target.value)} />
@@ -65,7 +65,7 @@ const FormConnexion = ({
         )
           : (
             <div className="connexion-input">
-              <h2>Connexion</h2>
+              <h3>Connexion</h3>
               <form onSubmit={onSubmit}>
                 <input type="email" name="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
                 <input type="password" name="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
@@ -79,7 +79,7 @@ const FormConnexion = ({
                 className="forget-password"
               >Mot de passe oublié ?
               </Link>
-              <div className="insciption">
+              <div className="inscription">
                 <span className="no-account">Pas encore de compte ? </span>
                 <NavLink
                   to="/inscription"

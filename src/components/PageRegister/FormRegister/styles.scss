@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
 
-  h2 {
-    font-size: 1.8em;
-    margin-top: 2em;
-    margin-bottom: 1.2em;
+  h3 {
     text-align: center;
+    font-weight: bold;
+    font-size: vars.$page-title;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: #FFF;
   }
 
   .btn-input-container {
@@ -73,6 +75,7 @@
     width: 80%;
     margin: auto;
     margin-bottom: 1em;
+    color: #FFF;
   }
 }
 // === MEDIA QUERY DESKTOP ===

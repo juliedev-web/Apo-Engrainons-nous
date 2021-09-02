@@ -5,11 +5,14 @@
   padding-bottom: 2rem;
   position: relative;
 
-  h2 {
-    font-size: 2rem;
+  h3 {
+    font-size: vars.$page-title;
     font-weight: bold;
     text-align: center;
     padding: 4rem 2rem 2rem;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: #FFF;
   }
 
   .confirm-seed-created-msg {
@@ -37,13 +40,16 @@
     flex-direction: column;
 
     .link-to-connexion {
+      color: #FFF;
+      background-color: #62923b;
       span {
         display: block;
         text-align: center;
         margin-right: 0.4rem;
         text-decoration: underline;
         font-size: 1.2rem;
-        color: #62923b;
+        //color: #62923b;
+
         font-weight: bold;
         margin-bottom: 3rem;
       }

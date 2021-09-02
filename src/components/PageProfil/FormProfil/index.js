@@ -39,7 +39,7 @@ export default function FormProfil({
         )
           : (
             <>
-              <h2>Mon compte</h2>
+              <h3>Mon compte</h3>
               {
                 validateUpdateProfil && (
                   <p className="accountUpdateButton"> {validateUpdateProfil}</p>
@@ -81,9 +81,8 @@ export default function FormProfil({
               {/* Button toggle on click Modify or Cancel */}
               <section className="button-container">
                 <button type="button" onClick={toggleEditProfil}> {editProfil ? 'Annuler' : 'Modifier mon compte'}</button>
-                <button type="submit">
+                <button type="button" className="btn_myseeds">
                   <NavLink
-                    className="myseeds"
                     to="/mesgraines"
                     exact
                     activeClassName="myseed--active"

@@ -8,7 +8,7 @@ import './styles.scss';
 // import Julie from 'src/assets/image/Julie.PNG';
 // import Kevin from 'src/assets/image/Kevin.PNG';
 
-//Icons for social medias
+// Icons for social medias
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
@@ -19,7 +19,7 @@ import {
 export default function TeamCards() {
   return (
     <div className="container">
-      <h2 className="team-title">L'équipe d'Engrainons-nous</h2>
+      <h3 className="team-title">L'équipe d'Engrainons-nous</h3>
       <section className="card-container">
         <article className="card-dev">
           <h3 className="name">Cédric Cubat</h3>
@@ -28,12 +28,12 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="https://github.com/CedricCT" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/cedriccubat/" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://www.linkedin.com/in/cedriccubat/ " target="_blank" rel="noreferrer">
+                <a href="https://github.com/CedricCT" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>

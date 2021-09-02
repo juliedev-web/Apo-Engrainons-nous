@@ -2,11 +2,18 @@
 @use 'src/styles/vars';
 
 .team-title {
-  color: vars.$bgd-primary-color;
-  font-size: 3em;
+    font-size: vars.$page-title;
+    font-weight: bold;
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: #FFF;
 }
-
+  
 .card-container {
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +27,7 @@
   }
 
   .card-dev {
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -27,18 +35,22 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 10px;
-    border: 2px solid vars.$bgd-footer-color;
+    border: 3px solid #FFF;
     border-radius: 30px;
+    background-color: #FFF;
+    opacity: 0.9;
 
     .name {
       font-size: 2em;
-      color: vars.$bgd-footer-color;
+      //color: #FFF;
+      color: vars.$bgd-primary-color;
       margin-bottom: 20px;
     }
 
     .role {
       font-size: 1.2em;
-      background-color: white;
+      background-color: vars.$bgd-primary-color;
+      color: #FFF;
       border: none;
     }
   }
@@ -53,31 +65,38 @@
       width: 40px;
       height: 40px;
       margin-right: 10px;
+      //color: #FFF;
       color: vars.$bgd-primary-color;
     }
   }
 }
 
+
 // === MEDIA QUERY DESKTOP ===
 @media screen and (min-width: 768px) {
-  .card-container {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    margin: auto;
 
-    .card-dev {
-      margin-right: 20px;
+  .container {
+    .card-container {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       padding: 10px;
-
-      .photo-profil {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 20px;
-        background-color: aquamarine;
+      margin: auto;
+  
+      .card-dev {
+        margin-right: 20px;
+        padding: 10px;
+  
+        .photo-profil {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 20px;
+          background-color: aquamarine;
+        }
       }
     }
   }
+  
 }
