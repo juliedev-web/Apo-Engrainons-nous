@@ -1,14 +1,14 @@
-// === IMPORT CSS ===
-@use 'src/styles/vars';
-
 .listContainer {
-  position: relative;
+    width: 100%;
+    position: relative;
+  
 
   .list {
     
     background-color: #FFF;
     //background-color: #e4ecf1;
     width: 100%;
+    height: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -23,6 +23,7 @@
 
     .card {
       width: 100%;
+
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.164);
@@ -87,7 +88,7 @@
 
   .paginationBttns {
     position: absolute;
-    bottom: 4.5rem;
+    bottom: 1.8rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -98,17 +99,16 @@
     margin: 0.3rem;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s;
   }
 
   .paginationBttns a:hover {
-    color: white;
-    background-color: #80af57;
+    color: #80af57;
   }
 
   .paginationActive a {
-    color: white;
-    background-color: #4a6c2f;
+    color: #4a6c2f;
+    font-weight: bold;
+    text-decoration: underline;
   }
 
   .card:hover {
@@ -117,7 +117,6 @@
   }
 }
 
-// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .listContainer {
     .list {
@@ -132,12 +131,10 @@
       border-top: 2px solid rgba(133, 150, 172, 0.582);
       border-left: 2px solid rgba(133, 150, 172, 0.623);
       border-right: 2px solid rgba(133, 150, 172, 0.623);
+      
       padding: 2rem 2rem 9rem;
 
       align-items: center;
-
-      // border-top: 2px solid rgba(133, 150, 172, 0.582);
-      // border-left: 2px solid rgba(133, 150, 172, 0.623);
 
       border-radius: 50px 50px 0 0;
 
@@ -176,7 +173,6 @@
     }
 
     .paginationBttns {
-      bottom: 6rem;
     }
 
     .paginationBttns a {
@@ -186,12 +182,13 @@
   }
 }
 
-// === MEDIA QUERY DESKTOP ===
+// Desktop
 @media only screen and (min-width: 1025px) {
   .listContainer {
     position: relative;
 
     .list {
+
       width: 80%;
       margin: auto;
 
@@ -199,7 +196,7 @@
       grid-template-rows: auto;
       gap: 3rem;
 
-      padding: 5rem 5rem 10rem;
+      padding: 5rem 5rem 5rem;
       border-radius: 50px 50px 0 0;
 
       .card {
@@ -216,7 +213,6 @@
   }
 }
 
-// === MEDIA QUERY CUSTOM SIZE ===
 @media only screen and (min-width: 1230px) {
   .listContainer {
     position: relative;
@@ -227,7 +223,6 @@
   }
 }
 
-// === MEDIA QUERY CUSTOM SIZE ===
 @media only screen and (min-width: 1640px) {
   .listContainer {
     .list {

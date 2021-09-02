@@ -1,14 +1,19 @@
 // === IMPORT CSS ===
 @use 'src/styles/vars';
 
+// Header Desktop
 .containerTitle {
   display: flex;
 
+  // Logo + Title + Subtitle
   .headerDesktop {
-    width: 100%;
+    width: 50%;
+    height: 120px;
+
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+
+    padding: 1.4rem 3rem 1.4rem 0.8rem;
   
     background-color: vars.$bgd-primary-color;
   
@@ -17,16 +22,15 @@
     border-bottom: 2px solid #4e5a53;
     border-right: 2px solid #4e5a53;
   
-    padding: 1.4rem 0.8rem;
-  
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
   
     &__logo {
-      margin-left: 2em;
+      margin-left: 1rem;
       width: 60px;
     }
   
     &__content {
+      width: fit-content;
       color: white;
       margin-left: 1rem;
       text-align: left;
@@ -34,31 +38,46 @@
       &__title {
         font-size: 3rem;
         font-family: "Indie Flower", cursive;
-  
-        margin-bottom: 0.6rem;
       }
   
       &__subtitle {
-        margin-left: 6rem;
+        margin-left: 5rem;
         font-size: 1.1rem;
-        width: 100%;
         color: #cacaca;
       }
     }
   }
+
+  // Navbar
   .menuDesktop {
-    width: 100%;
+    width: 50%;
     font-size: 40px;
     display: flex;
     justify-content: space-around;
     align-items: baseline;
   
     .navbar_link {
+      color: rgb(160, 160, 160);
+
       span {
         font-size: 0.4em;
         text-align: center;
         margin-top: 0.6rem;
+        color: rgb(71, 71, 71);
       }
+
+
+    &--active {
+
+      .faUserAlt {
+        color: vars.$bgd-primary-color;
+      }
+
+      span {
+        font-weight: bold;
+        color: vars.$bgd-primary-color;
+      }
+    }
   
       .messagerie {
         position: relative;
@@ -80,25 +99,12 @@
       }
   
       .iconText {
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 1rem;
-        color: #FFF;
+        margin-top: 1.6rem;
       }
     }
   }
-  
-  .navbar_link {
-    color: #FFF;
-  }
-  
-  .navbar_link--active {
-    .faUserAlt {
-      color: vars.$bgd-primary-color;
-    }
-  }
 
-}
 

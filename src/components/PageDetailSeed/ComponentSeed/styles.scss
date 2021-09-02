@@ -36,19 +36,37 @@
   }
 
   .email-contact {
-    border: solid 1px black;
-    padding: 0.5em;
+    font-weight: bold;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
+    padding: 0.8rem 1.2rem;
     background-color: vars.$bgd-primary-color;
     color: white;
-    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .email-contact:hover {
+    background-color: white;
+    color: vars.$bgd-primary-color;
+    border: 2px solid vars.$bgd-primary-color;
+    text-decoration: underline;
   }
 
   .tchatMySeeds {
-    border: solid 1px black;
-    padding: 0.5em;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 1.2rem;
     background-color: vars.$bgd-primary-color;
     color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .tchatMySeeds:hover {
+    background-color: white;
+    color: vars.$bgd-primary-color;
+    border: 2px solid vars.$bgd-primary-color;
+    text-decoration: underline;
   }
 
   .copy-clipboard-msg {
@@ -91,8 +109,6 @@
 
     .email-contact {
       border: solid 1px black;
-      margin: 0;
-      // padding: 0.5em;
       margin-right: 2rem;
       background-color: vars.$bgd-primary-color;
       color: white;
@@ -166,10 +182,6 @@
       padding: 2em 0 0 2em;
     }
 
-    button {
-      margin-top: 4em;
-    }
-
     .top {
       display: flex;
       justify-content: center;
@@ -187,10 +199,40 @@
         font-weight: bold;
         margin-bottom: 1em;
       }
-
-      p {
-        margin-bottom: 1em;
-      }
     }
   }
+}
+
+.myseeds {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 1.2rem;
+  background-color: vars.$bgd-primary-color;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-left: 1rem;
+}
+.myseeds:hover {
+  background-color: white;
+  color: vars.$bgd-primary-color;
+  border: 2px solid vars.$bgd-primary-color;
+  text-decoration: underline;
+}
+.btn_modify_seed {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 1.2rem;
+  background-color: vars.$bgd-primary-color;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn_modify_seed:hover {
+  background-color: white;
+  color: vars.$bgd-primary-color;
+  border: 2px solid vars.$bgd-primary-color;
+  text-decoration: underline;
 }
