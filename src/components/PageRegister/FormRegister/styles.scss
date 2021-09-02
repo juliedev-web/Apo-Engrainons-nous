@@ -8,7 +8,7 @@
   h3 {
     text-align: center;
     font-weight: bold;
-    font-size: vars.$page-title;
+    font-size: vars.$page-title-mobile;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
     color: #FFF;
@@ -68,22 +68,23 @@
     text-align: center;
   }
 
-  label {
-    font-size: 0.8em;
+  .label-register {
     font-style: italic;
-    line-height: 1.2em;
+    font-size: 1rem;
+    line-height: 1em;
     width: 80%;
     margin: auto;
     margin-bottom: 1em;
     color: #FFF;
+    font-weight: bold;
   }
 }
 // === MEDIA QUERY DESKTOP ===
 @media screen and (min-width: 768px) {
   .container {
-    h2 {
+    h3 {
       font-weight: semi-bold;
-      font-size: 3em;
+      font-size: vars.$page-title-desktop;
     }
 
     .signInput {
@@ -130,6 +131,16 @@
     a {
       margin-top: 3em;
       text-align: center;
+    }
+
+    .label-register {
+      font-size: 1.2rem;
+      line-height: 1.2em;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 1em;
+      color: #FFF;
+      font-weight: bold;
     }
   }
 }
