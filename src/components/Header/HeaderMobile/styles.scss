@@ -1,49 +1,73 @@
 @use 'src/styles/vars';
 
+
+// Mobile
 .headerMobile {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
+
   align-items: center;
 
+  padding: 0.8rem;
+
   background-color: vars.$bgd-primary-color;
+
   border-bottom: 2px solid #4E5A53;
-  border-right: 2px solid #4E5A53;
-
-
-  padding: 1.4rem 0.8rem;
-
-  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
-
-
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+  
   &__logo {
-    width: 60px;
+    width: 40px;
   }
   
   &__content {
     color: white;
     margin-left: 1rem;
-    text-align: left;
     
     &__title {
-      font-size: 1.8rem;
+      text-align: center;
+      font-size: 1.6rem;
       font-family: 'Indie Flower', cursive;
-
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
     }
-
+    
     &__subtitle {
-      font-size: 0.9rem;
-      width: 80%;
+      text-align: center;
+      font-size: 0.8rem;
       color: #cacaca
     }
   }
 }
 
+// Mobile
+@media only screen and (min-width: 320px) {
+  .headerMobile {
+    padding: 1.2rem 0;
+    &__logo {
+    margin-left: 1.4rem;
+    width: 55px;
+  }
+  
+  &__content {
+    width: fit-content;
+    margin: 0;      
+      &__title {
+        font-size: 1.8rem;
+      }
+  
+      &__subtitle {
+        margin: auto;
+        width: 90%;
+      }
+    }
+
+  }
+}
+
+
 
 // Tablet
 @media only screen and (min-width: 599px) {
   .headerMobile {
+
     &__logo {
     width: 80px;
     margin-left: 2rem;
@@ -51,15 +75,18 @@
     
     &__content {
       
+      
       &__title {
+        text-align: left;
         font-size: 3rem;
         margin-left: 2rem;;
       }
-  
+      
       &__subtitle {
+        text-align: left;
         font-size: 1.4rem;
         margin-left: 8rem;;
-        width: 70%;
+        width: 100%;
       }
     }
 

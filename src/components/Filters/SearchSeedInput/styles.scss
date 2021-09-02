@@ -1,5 +1,7 @@
 @use 'src/styles/vars';
 
+
+// Mobile
 .search-seed-input {
   position: relative;
   margin-top: 0.8rem;
@@ -20,6 +22,7 @@
   }
 }
 
+// Mobile
 @media only screen and (min-width: 320px) {
   .search-seed-input {
     position: relative;
@@ -45,21 +48,3 @@
     }
   }
 }
-
-// @media only screen and (min-width: 1025px) {
-//   .search-seed-input {
-//     width: fit-content;
-//     margin-left: 2rem;
-
-//     input {
-//       min-width: 340px;
-//     }
-//   }
-
-//   .faSearch {
-//     font-size: 1.4rem;
-//     position: absolute;
-//     top: 0.5rem;
-//     right: 0.6rem;
-//   }
-// }
