@@ -5,17 +5,15 @@ const authMiddleware = (store) => (next) => (action) => {
     case 'CHECK_TOKEN': {
       const options = {
         method: 'GET',
-        url: 'https://engrainonsnous.herokuapp.com/',
+        url: 'https://engrainonsnous.herokuapp.com/token',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       };
 
       axios(options).then((response) => {
-        console.log('testestest');
         console.log(response.data);
       }).catch((error) => {
-        console.log('mlqksdjf');
         console.error(error);
         localStorage.clear();
         store.dispatch({ type: 'CHECK_TOKEN_FAILED' });

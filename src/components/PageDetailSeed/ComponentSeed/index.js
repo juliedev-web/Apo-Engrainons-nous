@@ -18,6 +18,9 @@ const ComponentSeed = ({
   editSeed,
   userId,
   contact,
+  copytoClipBoard,
+  copyMailToClipBoardMsg,
+  clearMessageCopy,
 }) => {
   useEffect(() => {
     getOneSeed();
@@ -25,6 +28,7 @@ const ComponentSeed = ({
       hideMail();
     };
   }, [editSeed]);
+
   return (
     editSeed ? (
       <>
@@ -67,8 +71,23 @@ const ComponentSeed = ({
               </>
             )}
             {(seed.user_id !== userId) && (
-              <>
-                <button className="ownermail" type="button" onClick={toggleMail}>{showMail ? seed.email_user : 'Email du propriétaire'}</button>
+              <div className="buttons-detail-seed">
+                <p
+                  className="email-contact"
+                  onClick={() => {
+                    navigator.clipboard.writeText(seed.email_user).then(() => {
+                      copytoClipBoard();
+                    });
+
+                    setTimeout(() => {
+                      clearMessageCopy();
+                    }, 2000);
+
+                    toggleMail();
+                  }}
+                > {showMail ? seed.email_user : 'Email du propriétaire'}
+                </p>
+
                 <Link
                   className="tchatMySeeds"
                   to="/tchat"
@@ -77,9 +96,10 @@ const ComponentSeed = ({
                   }}
                 >Envoyer un message
                 </Link>
-              </>
-            )}
+                {copyMailToClipBoardMsg && <p className="copy-clipboard-msg">{copyMailToClipBoardMsg}</p>}
+              </div>
 
+            )}
           </div>
         ) : (
           <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>

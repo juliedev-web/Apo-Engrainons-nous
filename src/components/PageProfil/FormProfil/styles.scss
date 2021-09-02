@@ -1,6 +1,5 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
-
-//CSS for mobile first
 
 .container {
   display: flex;
@@ -22,7 +21,7 @@
     margin-top: 2em;
     margin-bottom: 1.2em;
     text-align: center;
-    color: white,
+    color: white;
   }
 
   form {
@@ -70,6 +69,7 @@
 
   .btn-delete {
     background-color: #bc1536;
+    margin-bottom: 5rem;
 
     &--confirm {
       background-color: rgb(182, 118, 0);
@@ -104,9 +104,13 @@
     margin: auto;
     margin-bottom: 1em;
   }
+
+  .btn-validate {
+    margin-bottom: 6rem;
+  }
 }
 
-//Desktop media query
+// === MEDIA QUERY DESKTOP ===
 
 @media screen and (min-width: 768px) {
   .container {

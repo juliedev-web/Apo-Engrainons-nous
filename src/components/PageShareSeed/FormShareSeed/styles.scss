@@ -1,3 +1,6 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .form-seed {
   padding-bottom: 2rem;
   position: relative;
@@ -45,6 +48,7 @@
         //color: #62923b;
 
         font-weight: bold;
+        margin-bottom: 3rem;
       }
 
       span:hover {
@@ -117,7 +121,7 @@
     width: 100%;
   }
 }
-
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .form-seed {
     h2 {
@@ -176,7 +180,7 @@
 .cancelSeedModification {
   font-weight: bold;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 0.6rem 1rem;
   background-color: red;
   color: white;

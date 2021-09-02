@@ -1,14 +1,19 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
+// === MEDIA QUERY TABLET ===
+
 @media only screen and (max-width: 576px) {
   .chat-window {
     padding-bottom: 3rem;
     position: relative;
-  
+
     .ce-chat-feed {
       position: absolute;
       right: -10px;
       width: 81.7%;
     }
-  
+
     .ce-chat-list {
       position: absolute;
       left: 0;

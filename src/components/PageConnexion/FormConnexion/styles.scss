@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .connexion-input {
@@ -18,7 +19,7 @@
 
     input {
       font-size: 1rem;
-      width: 40%;
+      width: 60%;
       margin: auto;
       padding: 0.4rem;
       background-color: vars.$bgd-input-color;
@@ -118,30 +119,12 @@
   text-decoration: underline;
 }
 
-// Desktop
+// == MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
     margin-top: 2em;
 
-    h2 {
-      font-size: 3em;
-    }
-
-    button {
-      font-size: 1.2em;
-    }
-
-    .forget-password {
-      font-size: 1.2em;
-    }
-  
-    .forget-password:hover {
-      font-size: 1.2em;
-    }
-  }
-
 .field-connexion {
-
   .annuler-reinitialisation-mdp {
     text-align: center;
     margin-top: 1rem;

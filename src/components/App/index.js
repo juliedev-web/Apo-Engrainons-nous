@@ -22,7 +22,7 @@ import './styles.scss';
 // == Componant
 const App = ({ menuIsOpen, checkToken, isLogged }) => {
   useEffect(() => {
-    if (isLogged) {
+    if (localStorage.getItem('token')) {
       checkToken();
     }
   }, []);
@@ -138,6 +138,7 @@ const App = ({ menuIsOpen, checkToken, isLogged }) => {
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
+            from="shareNewSeedPage"
           />
         </Route>
 

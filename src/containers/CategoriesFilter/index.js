@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch) => ({
     if (from === 'sharedSeedPage') {
       dispatch({ type: 'SELECT_CATEGORY_ID', categoryId });
     }
+    if (from === 'editSeedPage') {
+      dispatch({ type: 'SELECT_CATEGORY_ID_EDIT', categoryId });
+    }
   },
 });
 

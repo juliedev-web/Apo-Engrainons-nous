@@ -1,10 +1,22 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
-//CSS mobile first
-.container {
-  .team-title {
-    color: #FFF;
-    font-size: 3em;
+.team-title {
+  color: vars.$bgd-primary-color;
+  font-size: 3em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .photo-profil {
+    width: 40%;
+    margin-bottom: 20px;
+    background-color: aquamarine;
   }
   
   .card-container {
@@ -68,8 +80,7 @@
   }
 }
 
-
-//Responsive design for desktop
+// === MEDIA QUERY DESKTOP ===
 @media screen and (min-width: 768px) {
 
   .container {

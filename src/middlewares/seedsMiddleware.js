@@ -62,6 +62,7 @@ const seedsMiddleWare = (store) => (next) => (action) => {
       axios(options).then((response) => {
         console.log(response.data);
         store.dispatch({ type: 'GETTING_ONE_SEED_SUCCESS', data: response.data.result[0] });
+        store.dispatch({ type: 'DEFAULT_EDIT_SEED_VALUE' });
       });
     }
 
@@ -148,7 +149,6 @@ const seedsMiddleWare = (store) => (next) => (action) => {
 
     case 'ON_SUBMIT_UPDATE_SEED': {
       const state = store.getState();
-
       const options = {
         method: 'PATCH',
         url: `https://engrainonsnous.herokuapp.com/update/seed/${state.seeds.seed.id}`,
@@ -156,13 +156,13 @@ const seedsMiddleWare = (store) => (next) => (action) => {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
         data: {
-          variety_name: state.user.varietyInputValue,
-          category_id: state.seeds.selectedNewSeedCategory,
-          description: state.user.textAreaDetailValue,
-          advice: state.user.textAreaAdviceValue,
+          variety_name: state.seeds.varietyInputValueEdit,
+          category_id: state.seeds.categorySeedValueEdit,
+          description: state.seeds.textAreaDetailValueEdit,
+          advice: state.seeds.textAreaAdviceValueEdit,
         },
       };
-
+      console.log(options.data);
       axios(options).then((response) => {
         console.log('réponse UPDATE seed: ', response);
         store.dispatch({ type: 'ON_SUBMIT_SHARED_SEED_SUCCESS', msg: 'Les informations de votre graine ont bien été mises à jour !' });

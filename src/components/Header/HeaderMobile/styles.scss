@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .headerMobile {
@@ -7,27 +8,25 @@
   align-items: center;
 
   background-color: vars.$bgd-primary-color;
-  border-bottom: 2px solid #4E5A53;
-  border-right: 2px solid #4E5A53;
-
+  border-bottom: 2px solid #4e5a53;
+  border-right: 2px solid #4e5a53;
 
   padding: 1.4rem 0.8rem;
 
   box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
 
-
   &__logo {
     width: 60px;
   }
-  
+
   &__content {
     color: white;
     margin-left: 1rem;
     text-align: left;
-    
+
     &__title {
       font-size: 1.8rem;
-      font-family: 'Indie Flower', cursive;
+      font-family: "Indie Flower", cursive;
 
       margin-bottom: 0.4rem;
     }
@@ -35,33 +34,30 @@
     &__subtitle {
       font-size: 0.9rem;
       width: 80%;
-      color: #cacaca
+      color: #cacaca;
     }
   }
 }
 
-
-// Tablet
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .headerMobile {
     &__logo {
-    width: 80px;
-    margin-left: 2rem;
+      width: 80px;
+      margin-left: 2rem;
     }
-    
+
     &__content {
-      
       &__title {
         font-size: 3rem;
-        margin-left: 2rem;;
+        margin-left: 2rem;
       }
-  
+
       &__subtitle {
         font-size: 1.4rem;
-        margin-left: 8rem;;
+        margin-left: 8rem;
         width: 70%;
       }
     }
-
-    }
+  }
 }

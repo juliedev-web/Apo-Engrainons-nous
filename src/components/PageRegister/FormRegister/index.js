@@ -48,7 +48,7 @@ export default function FormRegister({
               <input name="confirm" type="password" placeholder="Confirmer votre mot de passe" required value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
               {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
             </div>
-            <button type="submit">Valider</button>
+            <button className="btn-validate" type="submit">Valider</button>
           </section>
         </form>
       )}

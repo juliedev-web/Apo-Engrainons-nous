@@ -7,11 +7,21 @@ const mapStateToProps = (state) => ({
   textAreaDetailValue: state.user.textAreaDetailValue,
   textAreaAdviceValue: state.user.textAreaAdviceValue,
   createSeedConfirmMsg: state.seeds.createSeedConfirmMsg,
+  varietyInputValueEdit: state.seeds.varietyInputValueEdit,
+  textAreaDetailValueEdit: state.seeds.textAreaDetailValueEdit,
+  textAreaAdviceValueEdit: state.seeds.textAreaAdviceValueEdit,
+  categorySeedValueEdit: state.seeds.categorySeedValueEdit,
+  seed: state.seeds.seed,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleInputValue: (inputValue, inputName) => {
-    dispatch({ type: 'ON_SHARE_SEED_FORM_CHANGE', inputValue, inputName });
+  handleInputValue: (inputValue, inputName, from) => {
+    if (from === 'shareNewSeedPage') {
+      dispatch({ type: 'ON_SHARE_SEED_FORM_CHANGE', inputValue, inputName });
+    }
+    if (from === 'editSeedForm') {
+      dispatch({ type: 'ON_EDIT_SEED_FORM_CHANGE', inputValue, inputName });
+    }
   },
   handleOnSubmit: (e, from) => {
     e.preventDefault();
