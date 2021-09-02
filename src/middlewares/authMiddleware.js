@@ -5,7 +5,7 @@ const authMiddleware = (store) => (next) => (action) => {
     case 'CHECK_TOKEN': {
       const options = {
         method: 'GET',
-        url: 'https://engrainonsnous.herokuapp.com/',
+        url: 'https://engrainonsnous.herokuapp.com/token',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
