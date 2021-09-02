@@ -1,3 +1,6 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .form-seed {
   padding-bottom: 2rem;
   position: relative;
@@ -33,10 +36,6 @@
     align-items: center;
     flex-direction: column;
 
-    // .btn-validate {
-    //   margin-bottom: 3rem;
-    // }
-
     .link-to-connexion {
       span {
         display: block;
@@ -48,7 +47,6 @@
         font-weight: bold;
         margin-bottom: 3rem;
       }
-      
 
       span:hover {
         color: rgb(21, 58, 180);
@@ -120,7 +118,7 @@
     width: 100%;
   }
 }
-
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .form-seed {
     h2 {

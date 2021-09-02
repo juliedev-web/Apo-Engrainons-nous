@@ -1,8 +1,9 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .my-seeds {
   width: 100%;
-  margin: 2rem 0 ;
+  margin: 2rem 0;
   padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
@@ -19,7 +20,7 @@
   .no-seeds-message {
     text-align: center;
     font-size: 2rem;
-    color: #909090
+    color: #909090;
   }
 
   &__list {
@@ -94,8 +95,3 @@
     }
   }
 }
-
-
-// @media only screen and (min-width: 599px) {
-  
-// }

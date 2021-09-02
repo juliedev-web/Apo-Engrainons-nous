@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .connexion-input {
@@ -105,16 +106,14 @@
   text-decoration: underline;
 }
 
-// Desktop
+// == MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
     margin-top: 2em;
   }
 }
 
-
 .field-connexion {
-
   .annuler-reinitialisation-mdp {
     text-align: center;
     margin-top: 1rem;

@@ -1,13 +1,8 @@
-.home-page {
-  // height: 100%;
+// === IMPORT CSS ===
+@use 'src/styles/vars';
 
+.home-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
-
-// .home-page .footer-desktop {
-//   position: fixed;
-//   bottom: 0;
-// }

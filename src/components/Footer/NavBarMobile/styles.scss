@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .navbar-mobile {
@@ -28,7 +29,7 @@
       width: 1rem;
       height: 0.2rem;
       border-radius: 3px;
-      background-color: #CACACA;
+      background-color: #cacaca;
       transition: 0.3s;
       bottom: 1.8rem;
 
@@ -38,7 +39,7 @@
         width: 1rem;
         height: 0.2rem;
         border-radius: 3px;
-        background-color: #CACACA;
+        background-color: #cacaca;
         transform: translateY(-0.4rem);
         transition: 0.3s;
       }
@@ -49,15 +50,13 @@
         width: 1rem;
         height: 0.2rem;
         border-radius: 3px;
-        background-color: #CACACA;
+        background-color: #cacaca;
         transform: translateY(0.4rem);
         transition: 0.3s;
       }
-
-      
     }
 
-    &.menu-burger--active{
+    &.menu-burger--active {
       .barre {
         background-color: #cacaca00;
         transform: rotate(180deg);
@@ -66,14 +65,14 @@
       }
 
       :after {
-        background-color: #CACACA;
+        background-color: #cacaca;
         transform: rotate(-45deg);
         width: 1.3rem;
         height: 0.25rem;
       }
 
       :before {
-        background-color: #CACACA;
+        background-color: #cacaca;
         transform: rotate(45deg);
         width: 1.3rem;
         height: 0.25rem;
@@ -83,7 +82,7 @@
 }
 
 .faUserAlt {
-  color: #CACACA;
+  color: #cacaca;
 }
 
 .navbar_link--active {
@@ -92,81 +91,79 @@
   }
 }
 
-
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .navbar-mobile {
     font-size: 46px; // FontAwesome Icon Size
-  
+
     width: 100%;
-  
+
     position: fixed;
     bottom: 0;
-  
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     gap: 10rem;
-  
+
     background-color: vars.$bgd-footer-color;
-  
+
     padding: 0.8rem 2.6rem;
 
     .menu-burger {
       padding: 1rem 0;
       width: 2.64rem;
-    
+
       .barre {
         position: absolute;
         width: 2.5rem;
         height: 0.43rem;
         border-radius: 3px;
-        background-color: #CACACA;
+        background-color: #cacaca;
         transition: 0.3s;
         bottom: 2rem;
-    
+
         &:before {
           position: absolute;
           content: "";
           width: 2.5rem;
           height: 0.43rem;
           border-radius: 3px;
-          background-color: #CACACA;
+          background-color: #cacaca;
           transform: translateY(-0.8rem);
           transition: 0.3s;
         }
-    
+
         &:after {
           position: absolute;
           content: "";
           width: 2.5rem;
           height: 0.43rem;
           border-radius: 3px;
-          background-color: #CACACA;
+          background-color: #cacaca;
           transform: translateY(0.8rem);
           transition: 0.3s;
         }
-    
-        
       }
-    
-      &.menu-burger--active{
+
+      &.menu-burger--active {
         .barre {
           background-color: #cacaca00;
           transform: rotate(180deg);
           height: 0.47rem;
           width: 2.7rem;
         }
-    
+
         :after {
-          background-color: #CACACA;
+          background-color: #cacaca;
           transform: rotate(-45deg);
           height: 0.47rem;
           width: 2.7rem;
         }
-    
+
         :before {
-          background-color: #CACACA;
+          background-color: #cacaca;
           transform: rotate(45deg);
           height: 0.47rem;
           width: 2.7rem;
@@ -174,13 +171,8 @@
       }
     }
   }
-  
+
   .faUserAlt {
-    color: #CACACA;
+    color: #cacaca;
   }
-
-  
 }
-
-
-
