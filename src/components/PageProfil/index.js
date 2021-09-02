@@ -10,7 +10,7 @@ import './styles.scss';
 
 export default function PageProfil({ width, breakpoint, menuIsOpen }) {
   return (
-    <div className="sign-in">
+    <div className="page-profil">
       <Header width={width} breakpoint={breakpoint} />
       <MenuModal />
       { !menuIsOpen && <FormProfil /> }

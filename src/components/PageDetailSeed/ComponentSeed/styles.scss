@@ -7,17 +7,21 @@
   justify-content: space-around;
   align-items: center;
   padding: 2rem;
+  width: max-content;
+  margin: auto;
+  background-color: #FFF;
+  margin-top: 2em;
 
   .descriptionVariety {
     p {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-bottom: 0.7em;
     }
 
-    h2 {
+    h4 {
       font-weight: bold;
       margin-bottom: 0.7em;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -77,15 +81,6 @@
     border: 3px dotted rgba(0, 128, 0, 0.493);
     border-radius: 5px;
     font-size: 0.8rem;
-  }
-
-  .user-email {
-    border: solid 3px vars.$bgd-primary-color;
-    font-size: 1.4rem;
-    padding: 1rem;
-    color: rgb(54, 54, 54);
-    margin-top: 2.6rem;
-    margin-bottom: 1rem;
   }
 
   .imgCat {
@@ -160,7 +155,7 @@
         }
       }
 
-      h2 {
+      h4 {
         font-weight: bold;
         margin-bottom: 1em;
       }
@@ -200,7 +195,7 @@
         }
       }
 
-      h2 {
+      h4 {
         font-weight: bold;
         margin-bottom: 1em;
       }

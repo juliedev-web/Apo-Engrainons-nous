@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
 
-  h2 {
-    font-size: 1.8em;
-    margin-top: 2em;
-    margin-bottom: 1.2em;
+  h3 {
     text-align: center;
+    font-weight: bold;
+    font-size: vars.$page-title;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: #FFF;
   }
 
   form {
@@ -73,12 +75,14 @@
 
   .forget-password:hover {
     text-decoration: underline;
-    color: #000000;
+    color: #15bc2b;
   }
 
-  .insciption {
+  .inscription {
     text-align: center;
     margin-top: 2rem;
+    color: #FFF;
+    font-size: 1.2em;
   }
 
   .subscribe {
@@ -86,44 +90,61 @@
     font-weight: bold;
     text-decoration: underline;
     transition: 0.2s;
+    font-size: 1.2em;
   }
   .subscribe:hover {
-    color: #1490e9;
+    //color: #1490e9;
+    color: #418608;
     font-weight: bold;
   }
 }
-.validate-message {
-  color: vars.$bgd-primary-color;
-  text-align: center;
-  margin-top: 2.5rem;
-  input {
+
+.field-connexion {
+  .validate-message {
+    color: vars.$bgd-primary-color;
+    text-align: center;
     margin-top: 2.5rem;
+    input {
+      margin-top: 2.5rem;
+    }
+  }
+  .messageMailRedirect {
+    font-size: 1.2em;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+  .navlink_redirect_loggin {
+    font-size: 1.2em;
+    text-align: center;
+    color: vars.$bgd-primary-color;
+    text-decoration: underline;
   }
 }
-.messageMailRedirect {
-  margin-top: 2.5rem;
-  text-align: center;
-}
-.navlink_redirect_loggin {
-  text-align: center;
-  color: vars.$bgd-primary-color;
-  text-decoration: underline;
-}
+
 
 // === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
     margin-top: 5rem;
   }
-}
-.field-connexion {
-  .annuler-reinitialisation-mdp {
-    text-align: center;
-    margin-top: 1rem;
-  }
 
-  .annuler-reinitialisation-mdp:hover {
-    text-decoration: underline;
-    cursor: pointer;
+  .field-connexion {
+    .annuler-reinitialisation-mdp {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+      .annuler-reinitialisation-mdp:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.2em;
+      }
+
+      .messageMailRedirect {
+          font-size: 1.2em;
+        }
+        .navlink_redirect_loggin {
+          font-size: 1.2em;
+        }
   }
 }

@@ -16,12 +16,12 @@
     font-size: 1.6rem;
     margin-top: 4rem;
   }
-  h2 {
-    font-size: 1.8em;
-    margin-top: 2em;
-    margin-bottom: 1.2em;
+  h3 {
     text-align: center;
-    color: white;
+    font-weight: bold;
+    font-size: vars.$page-title;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
   }
 
   form {
@@ -111,11 +111,6 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    h2 {
-      font-weight: semi-bold;
-      font-size: 3em;
-    }
-
     .signInput,
     p {
       display: grid;
