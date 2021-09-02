@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .footer-desktop {
@@ -12,8 +13,6 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  
-  
 
   a {
     transition: 0.3s;

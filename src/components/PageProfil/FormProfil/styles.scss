@@ -1,6 +1,5 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
-
-//CSS for mobile first
 
 .container {
   display: flex;
@@ -22,7 +21,7 @@
     margin-top: 2em;
     margin-bottom: 1.2em;
     text-align: center;
-    color: white,
+    color: white;
   }
 
   form {
@@ -111,7 +110,7 @@
   }
 }
 
-//Desktop media query
+// === MEDIA QUERY DESKTOP ===
 
 @media screen and (min-width: 768px) {
   .container {
