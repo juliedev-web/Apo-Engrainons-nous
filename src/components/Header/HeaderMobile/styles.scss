@@ -40,22 +40,25 @@
 // Mobile
 @media only screen and (min-width: 320px) {
   .headerMobile {
-    padding: 1.2rem 0;
+    
     &__logo {
-    margin-left: 1.4rem;
-    width: 55px;
-  }
-  
-  &__content {
-    width: fit-content;
-    margin: 0;      
+      margin-left: 1.4rem;
+      margin-right: 1.4rem;
+      width: 55px;
+    }
+    
+    &__content {
+      width: fit-content;
+      margin: auto;
+      
       &__title {
         font-size: 1.8rem;
       }
   
       &__subtitle {
-        margin: auto;
-        width: 90%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #cacaca
       }
     }
 
@@ -67,6 +70,7 @@
 // Tablet
 @media only screen and (min-width: 599px) {
   .headerMobile {
+    padding-right: 3rem;
 
     &__logo {
     width: 80px;
@@ -83,12 +87,10 @@
       }
       
       &__subtitle {
-        text-align: left;
-        font-size: 1.4rem;
-        margin-left: 8rem;;
-        width: 100%;
+        margin-left: 7rem;
+        font-size: 1.1rem;
+        color: #cacaca;
       }
     }
-
-    }
+  }
 }
