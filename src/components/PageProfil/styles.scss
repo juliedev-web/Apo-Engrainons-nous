@@ -2,7 +2,7 @@
 @use 'src/styles/vars';
 
 .page-profil {
-  height: 100%;
+  min-height: 100%;
   background-image: url('../../assets/image/backgrounds/profil-sigmund-unsplash.jpg');
   background-size: cover;
   background-position: center;
