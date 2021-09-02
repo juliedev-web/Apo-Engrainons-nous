@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   .accountUpdateButton {
-    color: #4a6c2f;
+    color: vars.$bgd-primary-color;
     font-weight: bold;
     text-align: center;
     background-color: white;
@@ -50,52 +50,53 @@
     display: flex;
     flex-direction: column;
     align-items: space-between;
+    padding-bottom: 5rem;
   }
 
   button {
-    padding: 0.6em;
-    margin: auto;
-    margin-top: 2em;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
     background-color: vars.$bgd-primary-color;
     color: white;
-    transition: 0.2s;
-    border: solid 3px transparent;
+    border-radius: 5px;
+    transition: 0.3s;
   }
   button:hover {
     color: vars.$bgd-primary-color;
+    border: solid 2px vars.$bgd-primary-color;
     background-color: white;
-    border: solid 3px vars.$bgd-primary-color;
+    text-decoration: underline;
   }
 
   .btn-delete {
-    background-color: #bc1536;
-    margin-bottom: 5rem;
+    background-color: vars.$bgd-delete-color;
 
     &--confirm {
-      background-color: rgb(182, 118, 0);
+      background-color: vars.$bgd-validate-color;
       color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      transition: 0.3s;
     }
     &--confirm:hover {
       background-color: white;
-      color: rgb(182, 118, 0);
-      border: solid 3px rgb(182, 118, 0);
+      color: vars.$bgd-validate-color;
+      border: solid 2px vars.$bgd-validate-color;
+      text-decoration: underline;
     }
   }
   .btn-deconnexion {
-    background-color: #173042;
-  }
-
-  .btn-delete:hover {
-    color: #bc1536;
-    background-color: white;
-    border: solid 3px #bc1536;
+    background-color: vars.$bgd-footer-color;
   }
   .btn-deconnexion:hover {
-    color: #173042;
+    color: vars.$bgd-footer-color;
+    border: solid 2px vars.$bgd-footer-color;
     background-color: white;
-    border: solid 3px #173042;
+    text-decoration: underline;
   }
-
   label {
     font-size: 0.8em;
     font-style: italic;
@@ -103,10 +104,6 @@
     width: 80%;
     margin: auto;
     margin-bottom: 1em;
-  }
-
-  .btn-validate {
-    margin-bottom: 6rem;
   }
 }
 
@@ -156,13 +153,6 @@
       flex-direction: row;
       justify-content: space-between;
     }
-
-    button {
-      padding: 0.5em;
-      margin: 2em auto;
-      font-size: 1.5em;
-    }
-
     label {
       font-size: 0.8em;
       font-style: italic;

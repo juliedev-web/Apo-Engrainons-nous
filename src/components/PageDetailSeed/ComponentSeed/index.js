@@ -59,15 +59,15 @@ const ComponentSeed = ({
           <div>
             {(seed.user_id === userId) && (
               <>
-                <button type="button" onClick={toggleEditSeed}>Modifier ma graine</button>
-                <button type="button">
-                  <Link
-                    className="myseeds"
-                    to="/mesgraines"
-                  >
-                    Mes graines
-                  </Link>
-                </button>
+                <button type="button" className="btn_modify_seed" onClick={toggleEditSeed}>Modifier ma graine</button>
+                {/* <button type="button"> */}
+                <Link
+                  className="myseeds"
+                  to="/mesgraines"
+                >
+                  Mes graines
+                </Link>
+                {/* </button> */}
               </>
             )}
             {(seed.user_id !== userId) && (
