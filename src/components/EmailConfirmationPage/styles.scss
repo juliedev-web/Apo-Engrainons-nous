@@ -1,3 +1,6 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .email-confirmation-page {
   height: 100%;
 
@@ -27,4 +30,3 @@
   position: fixed;
   bottom: 0;
 }
-

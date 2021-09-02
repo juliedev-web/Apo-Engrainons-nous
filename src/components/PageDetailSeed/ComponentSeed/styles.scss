@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .container-seed {
@@ -80,19 +81,19 @@
   }
 }
 
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .container-seed {
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
 
-
     .buttons-detail-seed {
       position: relative;
       display: flex;
       flex-direction: row;
     }
-  
+
     .email-contact {
       border: solid 1px black;
       margin: 0;
@@ -102,14 +103,14 @@
       color: white;
       cursor: pointer;
     }
-  
+
     .tchatMySeeds {
       border: solid 1px black;
       padding: 0.5em;
       background-color: vars.$bgd-primary-color;
       color: white;
     }
-  
+
     .copy-clipboard-msg {
       font-weight: bold;
       width: 300px;
@@ -123,8 +124,6 @@
       border-radius: 5px;
       font-size: 0.8rem;
     }
-
-
 
     .descriptionVariety {
       padding: 2em 0 0 2em;
@@ -157,6 +156,7 @@
   }
 }
 
+// === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .container-seed {
     flex-direction: column;
@@ -174,7 +174,6 @@
     button {
       margin-top: 4em;
     }
-    
 
     .top {
       display: flex;
