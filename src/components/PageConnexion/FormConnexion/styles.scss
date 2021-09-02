@@ -11,7 +11,7 @@
     font-size: vars.$page-title;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
-    color: #FFF;
+    color: #fff;
   }
 
   form {
@@ -53,25 +53,29 @@
   .connection-not-confirmed-message {
     color: vars.$bgd-delete-color;
     font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     text-align: center;
     margin: auto;
     background-color: white;
-    width: 50%;
+    width: 20%;
   }
 
   .connection-confirmed-message {
     color: vars.$bgd-primary-color;
     font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     text-align: center;
     margin: auto;
     background-color: white;
-    width: 50%;
+    width: 20%;
   }
 
   .forget-password {
     text-align: center;
     margin-top: 0.3rem;
-    color:#FFF;
+    color: #fff;
     font-size: 1.2rem;
   }
 
@@ -83,7 +87,7 @@
   .inscription {
     text-align: center;
     margin-top: 2rem;
-    color: #FFF;
+    color: #fff;
     font-size: 1.2em;
   }
 
@@ -123,7 +127,6 @@
   }
 }
 
-
 // === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
@@ -136,17 +139,17 @@
       margin-top: 1rem;
     }
 
-      .annuler-reinitialisation-mdp:hover {
-        text-decoration: underline;
-        cursor: pointer;
-        font-size: 1.2em;
-      }
+    .annuler-reinitialisation-mdp:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
 
-      .messageMailRedirect {
-          font-size: 1.2em;
-        }
-        .navlink_redirect_loggin {
-          font-size: 1.2em;
-        }
+    .messageMailRedirect {
+      font-size: 1.2em;
+    }
+    .navlink_redirect_loggin {
+      font-size: 1.2em;
+    }
   }
 }
