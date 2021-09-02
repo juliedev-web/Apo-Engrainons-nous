@@ -25,7 +25,7 @@ const EmailConfirmationPage = ({
         breakpoint={breakpoint}
       />
 
-      <h1 className="messageConfirmEmail">{emailConfirmMsg}</h1>
+      <p className="messageConfirmEmail">{emailConfirmMsg}</p>
       {emailConfirmMsg === 'Votre email est confirmé ! bienvenue 🙂' && <Link className="link-to-connexion" to="/connexion">Par ici pour vous connecter</Link>}
 
       <Footer

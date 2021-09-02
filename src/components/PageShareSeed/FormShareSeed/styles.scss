@@ -34,13 +34,16 @@
     flex-direction: column;
 
     .link-to-connexion {
+      color: #FFF;
+      background-color: #62923b;
       span {
         display: block;
         text-align: center;
         margin-right: 0.4rem;
         text-decoration: underline;
         font-size: 1.2rem;
-        color: #62923b;
+        //color: #62923b;
+
         font-weight: bold;
       }
 

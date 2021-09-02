@@ -15,7 +15,7 @@ import './styles.scss';
 
 export default function PageTeam({ width, breakpoint, menuIsOpen }) {
   return (
-    <div className="sign-in">
+    <div className="team">
       <Header width={width} breakpoint={breakpoint} />
       <MenuModal />
       { !menuIsOpen && <TeamCards /> }

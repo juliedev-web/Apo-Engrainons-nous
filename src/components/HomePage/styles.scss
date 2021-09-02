@@ -1,10 +1,13 @@
 .home-page {
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  //background-image: url('https://images.unsplash.com/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80');
+  background-image: url('https://images.unsplash.com/photo-1567718410948-42972320efea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home-page .footer-desktop {

@@ -28,12 +28,12 @@ export default function TeamCards() {
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="https://github.com/CedricCT" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/cedriccubat/" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="https://www.linkedin.com/in/cedriccubat/ " target="_blank" rel="noreferrer">
+                <a href="https://github.com/CedricCT" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>

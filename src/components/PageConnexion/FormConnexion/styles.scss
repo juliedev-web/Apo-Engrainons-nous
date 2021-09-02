@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: column;
 
-  h2 {
-    font-size: 1.8em;
+  h3 {
+    font-size: 2.5em;
     margin-top: 2em;
     margin-bottom: 1.2em;
     text-align: center;
+    color: #FFF;
   }
 
   form {
@@ -45,6 +46,7 @@
 
   .connection-not-confirmed-message {
     color: #bc1536;
+    font-size: 1.2em;
     font-weight: bold;
     text-align: center;
     margin: auto;
@@ -54,6 +56,7 @@
 
   .connection-confirmed-message {
     color: #15bc2b;
+    font-size: 1.2em;
     font-weight: bold;
     text-align: center;
     margin: auto;
@@ -64,30 +67,38 @@
   .forget-password {
     text-align: center;
     margin-top: 2rem;
+    color: #FFF;
+    font-size: 1.2em;
   }
 
   .forget-password:hover {
     text-decoration: underline;
-    color: #000000;
+    color: #15bc2b;
   }
 
-  .insciption {
+  .inscription {
     text-align: center;
     margin-top: 2rem;
+    color: #FFF;
+    font-size: 1.2em;
   }
 
   .subscribe {
-    color: #418608;
+    //color: #418608;
+    color: #FFF;
     font-weight: bold;
     text-decoration: underline;
     transition: 0.2s;
+    font-size: 1.2em;
   }
   .subscribe:hover {
-    color: #1490e9;
+    //color: #1490e9;
+    color: #418608;
     font-weight: bold;
   }
 }
 .validate-message {
+  font-size: 1.2em;
   color: #418608;
   text-align: center;
   margin-top: 2.5rem;
@@ -96,10 +107,12 @@
   }
 }
 .messageMailRedirect {
+  font-size: 1.2em;
   margin-top: 2.5rem;
   text-align: center;
 }
 .navlink_redirect_loggin {
+  font-size: 1.2em;
   text-align: center;
   color: #418608;
   text-decoration: underline;
@@ -109,19 +122,43 @@
 @media only screen and (min-width: 1025px) {
   .connexion-input {
     margin-top: 2em;
-  }
-}
 
+    h2 {
+      font-size: 3em;
+    }
+
+    button {
+      font-size: 1.2em;
+    }
+
+    .forget-password {
+      font-size: 1.2em;
+    }
+  
+    .forget-password:hover {
+      font-size: 1.2em;
+    }
+  }
 
 .field-connexion {
 
   .annuler-reinitialisation-mdp {
     text-align: center;
     margin-top: 1rem;
+    font-size: 1.2em;
   }
 
   .annuler-reinitialisation-mdp:hover {
     text-decoration: underline;
     cursor: pointer;
+    font-size: 1.2em;
+  }
+
+  .messageMailRedirect {
+      font-size: 1.2em;
+    }
+    .navlink_redirect_loggin {
+      font-size: 1.2em;
+    }
   }
 }

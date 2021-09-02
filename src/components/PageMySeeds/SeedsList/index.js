@@ -27,7 +27,7 @@ export default function MySeeds({
   }, []);
   return (
     <div className="my-seeds">
-      <h1>Mes graines</h1>
+      <h2>Mes graines</h2>
       {myList[0] ? (
         <table className="my-seeds__list">
           <thead className="my-seeds__list__thead">

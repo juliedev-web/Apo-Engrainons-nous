@@ -1,87 +1,99 @@
 @use 'src/styles/vars';
 
 //CSS mobile first
-.team-title {
-  color: vars.$bgd-primary-color;
-  font-size: 3em;
-}
-
-.card-container {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-
-  .photo-profil {
-    width: 40%;
-    margin-bottom: 20px;
-    background-color: aquamarine;
+.container {
+  .team-title {
+    color: #FFF;
+    font-size: 3em;
   }
-
-  .card-dev {
-    width: 100%;
+  
+  .card-container {
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
     padding: 10px;
-    border: 2px solid vars.$bgd-footer-color;
-    border-radius: 30px;
-
-    .name {
-      font-size: 2em;
-      color: vars.$bgd-footer-color;
+  
+    .photo-profil {
+      width: 40%;
       margin-bottom: 20px;
+      background-color: aquamarine;
     }
-
-    .role {
-      font-size: 1.2em;
-      background-color: white;
-      border: none;
-    }
-  }
-
-  .socials {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-
-    .fa-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      color: vars.$bgd-primary-color;
-    }
-  }
-}
-
-//Responsive design for desktop
-@media screen and (min-width: 768px) {
-  .card-container {
-    width: 95%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    margin: auto;
-
+  
     .card-dev {
-      margin-right: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
       padding: 10px;
-
-      .photo-profil {
-        width: 100px;
-        height: 100px;
+      border: 3px solid #FFF;
+      border-radius: 30px;
+      background-color: #FFF;
+      opacity: 0.9;
+  
+      .name {
+        font-size: 2em;
+        //color: #FFF;
+        color: vars.$bgd-primary-color;
         margin-bottom: 20px;
-        background-color: aquamarine;
+      }
+  
+      .role {
+        font-size: 1.2em;
+        background-color: vars.$bgd-primary-color;
+        color: #FFF;
+        border: none;
+      }
+    }
+  
+    .socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+  
+      .fa-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        //color: #FFF;
+        color: vars.$bgd-primary-color;
       }
     }
   }
+}
+
+
+//Responsive design for desktop
+@media screen and (min-width: 768px) {
+
+  .container {
+    .card-container {
+      width: 95%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+      margin: auto;
+  
+      .card-dev {
+        margin-right: 20px;
+        padding: 10px;
+  
+        .photo-profil {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 20px;
+          background-color: aquamarine;
+        }
+      }
+    }
+  }
+  
 }
