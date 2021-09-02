@@ -68,7 +68,10 @@
     background-color: white;
     text-decoration: underline;
   }
-
+  .btn-delete:hover {
+    color: vars.$bgd-delete-color;
+    border: solid 2px vars.$bgd-delete-color;
+  }
   .btn-delete {
     background-color: vars.$bgd-delete-color;
 
