@@ -1,50 +1,56 @@
-@use 'src/styles/vars';
-
-
 // Mobile
-.search-seed-input {
-  position: relative;
-  margin-top: 0.8rem;
+.filter {
+  width: 90%;
 
-  input {
-    width: 100%;
-    font-size: 0.8rem;
-    padding: 0.45rem;
-    background-color: vars.$bgd-input-color;
-    border: 1px solid vars.$border-input;
-    border-radius: 4px;
-}
+  margin: 1.4rem auto;
+  padding: 0.8rem;
+  text-align: center;
 
-  .faSearch {
-    position: absolute;
-    right: 0.4rem;
-    top: 0.35rem;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+  border-radius: 4px;
+
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+  .linkReset {
+    text-decoration: underline;
+    color: #173042;
+    font-weight: bold;
   }
-}
+  .linkReset:hover {
+    color: #4a6c2f;
+    cursor: pointer;
+  }
 
-// Mobile
-@media only screen and (min-width: 320px) {
-  .search-seed-input {
-    position: relative;
-
-    input {
-      font-size: 1rem;
-    }
+  .filterComponent {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 
 // Tablet
 @media only screen and (min-width: 599px) {
-  .search-seed-input {
-    min-width: 330px;
-    margin-top: 0;
-  
-    input {
-      font-size: 1.33rem;
+  .filter {
+    width: fit-content;
+
+    margin: 2.5rem auto;
+    padding: 1.5rem 1.5rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .filterComponent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
-  
-    .faSearch {
-      top: 0.6rem;
+}
+
+// Desktop
+@media only screen and (min-width: 1025px) {
+  .filter {
+    
+    p {
+      font-size: 1.2rem;
     }
   }
 }
