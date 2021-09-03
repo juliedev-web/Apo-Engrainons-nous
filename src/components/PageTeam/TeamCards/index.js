@@ -79,7 +79,7 @@ export default function TeamCards() {
                 <a href="https://www.linkedin.com/in/micka%C3%ABl-menet-716883215/" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
-                </li>
+              </li>
               <li className="socials-links">
                 <a href="https://github.com/mymistake59" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
