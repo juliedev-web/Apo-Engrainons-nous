@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 // Mobile
 .filter {
   width: 90%;
@@ -6,17 +8,17 @@
   padding: 0.8rem;
   text-align: center;
 
-  border: solid 1px rgba(0, 0, 0, 0.26);
+  border: solid 1px vars.$text-primary-color;
   border-radius: 4px;
 
-  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
+  box-shadow: 0.2rem 0.2rem 0.2rem vars.$boxShadow-color;
   .linkReset {
     text-decoration: underline;
-    color: #173042;
+    color: vars.$link-before-hover-color;
     font-weight: bold;
   }
   .linkReset:hover {
-    color: #4a6c2f;
+    color: vars.$bg-primary-color;
     cursor: pointer;
   }
 
@@ -48,7 +50,6 @@
 // Desktop
 @media only screen and (min-width: 1025px) {
   .filter {
-    
     p {
       font-size: 1.2rem;
     }
