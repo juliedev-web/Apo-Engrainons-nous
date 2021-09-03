@@ -53,19 +53,23 @@
   .connection-not-confirmed-message {
     color: vars.$bgd-delete-color;
     font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     text-align: center;
     margin: auto;
     background-color: white;
-    width: 50%;
+    width: 20%;
   }
 
   .connection-confirmed-message {
     color: vars.$bgd-primary-color;
     font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     text-align: center;
     margin: auto;
     background-color: white;
-    width: 50%;
+    width: 20%;
   }
 
   .forget-password {
@@ -138,7 +142,6 @@
     }
   }
 }
-
 
 // === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
