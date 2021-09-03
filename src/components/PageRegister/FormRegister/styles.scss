@@ -59,7 +59,7 @@
 
   button:hover {
     color: vars.$bg-primary-color;
-    background-color: white;
+    background-color: vars.$bg-btn-hover-color;
     border: solid 3px vars.$bg-primary-color;
   }
 
@@ -139,8 +139,7 @@
       width: 80%;
       margin: auto;
       margin-bottom: 1em;
-      color: rgb(48, 48, 48);
-      // font-weight: bold;
+      color: vars.$text-primary-color;
     }
   }
 }
