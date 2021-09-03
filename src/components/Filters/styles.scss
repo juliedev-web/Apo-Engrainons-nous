@@ -1,6 +1,21 @@
 @use 'src/styles/vars';
 
 
+.filter {
+  width: 90%;
+
+  max-height: 110px;
+
+  margin: 1.4rem auto;
+  padding: 0.8rem;
+  text-align: center;
+
+  border: solid 1px vars.$text-primary-color;
+  border-radius: 4px;
+
+  box-shadow: 0.2rem 0.2rem 0.2rem vars.$boxShadow-color;
+}
+
 // Mobile
 .search-seed-input {
   position: relative;
