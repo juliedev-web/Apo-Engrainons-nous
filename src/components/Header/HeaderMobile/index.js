@@ -15,7 +15,7 @@ const HeaderMobile = () => (
         Engrainons-nous !
       </h1>
       <p className="headerMobile__content__subtitle">
-        Bienvenue sur notre plateforme d'échange de graine !
+        Bienvenue sur notre plateforme d'échange de graines !
       </p>
     </div>
   </div>

@@ -11,7 +11,7 @@
     font-size: vars.$page-title-mobile;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
-    //color: #FFF;
+    color: vars.$text-primary-color;
   }
 
   .btn-input-container {
@@ -29,13 +29,13 @@
     border: none;
     background-color: transparent;
     font-size: 1.4rem;
-    color: rgb(11, 153, 11);
+    color: vars.$bg-validate-color;
   }
 
   .password-not-confirmed-message {
     background-color: transparent;
     border: none;
-    color: rgb(189, 0, 38);
+    color: vars.$bg-delete-color;
   }
 
   input {
@@ -59,7 +59,7 @@
 
   button:hover {
     color: vars.$bg-primary-color;
-    background-color: white;
+    background-color: vars.$bg-btn-hover-color;
     border: solid 3px vars.$bg-primary-color;
   }
 
@@ -139,8 +139,7 @@
       width: 80%;
       margin: auto;
       margin-bottom: 1em;
-      color: rgb(48, 48, 48);
-      // font-weight: bold;
+      color: vars.$text-primary-color;
     }
   }
 }
