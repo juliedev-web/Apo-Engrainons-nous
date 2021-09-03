@@ -6,6 +6,8 @@ import Footer from 'src/components/Footer';
 import MenuModal from 'src/containers/MenuModal';
 import DirectChatPage from 'src/containers/DirectChatPage';
 
+import './styles.scss';
+
 const Tchat = ({
   width, breakpoint, menuIsOpen, emptyNewMessageCounter,
 }) => {

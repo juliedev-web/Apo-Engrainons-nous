@@ -30,7 +30,7 @@ export default function FormRegister({
 
   return (
     <div className="container">
-      <h3>Inscription</h3>
+      <h3 className="register-title">Inscription</h3>
       {inscriptionConfirmMessage ? (
         <>
           <p className="inscription-confirm-message">{inscriptionConfirmMessage}</p>

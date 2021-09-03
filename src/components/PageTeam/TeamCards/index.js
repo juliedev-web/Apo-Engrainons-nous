@@ -8,6 +8,8 @@ import './styles.scss';
 // import Julie from 'src/assets/image/Julie.PNG';
 // import Kevin from 'src/assets/image/Kevin.PNG';
 
+import Yann from 'src/assets/yann.jpg';
+
 // Icons for social medias
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -95,22 +97,22 @@ export default function TeamCards() {
         </article>
         <article className="card-dev">
           <h4 className="name">Yann Hirlemann</h4>
-          <img className="photo-profil" src="" alt="monaliyann" />
+          <img className="photo-profil" src={Yann} alt="monaliyann" />
           <p className="role">Dev front et Git master</p>
           <div>
             <ul className="socials">
               <li className="socials-links">
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://github.com/Yannize" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faGithubSquare} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/yann-hirlemann-949422214/" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
                 </a>
               </li>
               <li className="socials-links">
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href="https://twitter.com/YannH52661719" target="_blank" rel="noreferrer">
                   <FontAwesomeIcon icon={faTwitterSquare} className="fa-icon" />
                 </a>
               </li>

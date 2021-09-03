@@ -61,17 +61,15 @@ export default function MySeeds({
                 </>
                 )}
 
-                <td className="my-seeds__list__tbody__row__td">
+                <td className={(confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? 'my-seeds__list__tbody__row__td btn-delete-one-seed' : 'my-seeds__list__tbody__row__td'}>
                   {
                   (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
-                    <button
-                      className="btn-delete-one-seed"
-                      type="button"
+                    <div
                       onClick={() => {
                         handleDeleteSeedClickConfirm(seed.id);
                       }}
                     > {confirmDeleteSeedMsg}
-                    </button>
+                    </div>
                   ) : (
                     <FontAwesomeIcon
                       icon={faTrashAlt}
@@ -102,7 +100,7 @@ MySeeds.propTypes = {
   getUserSeedsList: PropTypes.func.isRequired,
   handleDeleteSeedClickConfirm: PropTypes.func.isRequired,
   confirmDeleteSeedMsg: PropTypes.string.isRequired,
-  handleDeleteSeedClick:PropTypes.func.isRequired,
+  handleDeleteSeedClick: PropTypes.func.isRequired,
   toBeDeletedSeedId: PropTypes.number.isRequired,
   closeDeleteConfirmButton: PropTypes.func.isRequired,
   width: PropTypes.number.isRequired,

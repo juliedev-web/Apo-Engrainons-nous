@@ -3,10 +3,6 @@
 
 .email-confirmation-page {
   height: 100%;
-  background-image: url("../../assets/image/backgrounds/emailconfirmation-markus-spiske-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
   .messageConfirmEmail {
     margin-top: 10rem;
@@ -15,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: vars.$text-btn-before-hover-color;
+    color: vars.$text-primary-color;
   }
 
   .link-to-connexion {
@@ -23,7 +19,8 @@
     text-align: center;
     margin-top: 2rem;
     font-size: 1.4rem;
-    color: vars.$text-btn-before-hover-color;
+    color: vars.$link-before-hover-color;
+    text-decoration: underline;
   }
 
   .link-to-connexion:hover {

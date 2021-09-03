@@ -22,6 +22,7 @@ const FormConnexion = ({
   validateSendMsgResetPwd,
   showFieldConnexion,
   handleCancelReinitPwd,
+  closeValidateSendMsgResetPwd,
 }) => {
   const history = useHistory();
 
@@ -29,6 +30,10 @@ const FormConnexion = ({
     if (isLogged) setTimeout(() => history.push('/'), 1000);
     if (!isLogged || connectionSuccessMessage) setTimeout(() => closeMessage(), 1200);
   }, [isLogged, connectionFailedMessage]);
+
+  useEffect(() => () => {
+    closeValidateSendMsgResetPwd();
+  }, []);
 
   const onSubmit = (e) => {
     handleSubmitSignin(e);
@@ -40,7 +45,8 @@ const FormConnexion = ({
           <div className="field-connexion">
             {
               validateSendMsgResetPwd && (
-                <p className="messageMailRedirect">{validateSendMsgResetPwd}
+                <>
+                  <p className="messageMailRedirect">{validateSendMsgResetPwd}</p>
                   <NavLink
                     className="navlink_redirect_loggin"
                     to="/connexion"
@@ -48,7 +54,7 @@ const FormConnexion = ({
                     onClick={showFieldConnexion}
                   > Cliquez ici pour vous connecter
                   </NavLink>
-                </p>
+                </>
               )
             }
             <form className="validate-message" onSubmit={(e) => handleSubmitReset(e)}>
@@ -98,6 +104,7 @@ const FormConnexion = ({
 };
 FormConnexion.propTypes = {
   handleSubmitSignin: PropTypes.func.isRequired,
+  closeValidateSendMsgResetPwd: PropTypes.func.isRequired,
   handleCancelReinitPwd: PropTypes.func.isRequired,
   connectionFailedMessage: PropTypes.string.isRequired,
   handleSubmitReset: PropTypes.func.isRequired,

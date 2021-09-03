@@ -31,6 +31,16 @@ const NavBarMobile = ({
       />
     </NavLink>
 
+    <NavLink
+      onClick={closeModal}
+      className="navbar_link"
+      to="/partager-une-graine"
+      exact
+      activeClassName="navbar_link--active"
+    >
+      <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
+    </NavLink>
+
     {isLogged && (
       <NavLink
         className="navbar_link"
@@ -51,15 +61,6 @@ const NavBarMobile = ({
       </NavLink>
     )}
 
-    <NavLink
-      onClick={closeModal}
-      className="navbar_link"
-      to="/partager-une-graine"
-      exact
-      activeClassName="navbar_link--active"
-    >
-      <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
-    </NavLink>
     <div
       className={menuIsOpen ? 'menu-burger menu-burger--active' : 'menu-burger'}
       onClick={handleMenuIsOpenClick}

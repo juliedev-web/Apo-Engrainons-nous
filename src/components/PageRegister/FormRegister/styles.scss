@@ -5,10 +5,15 @@
   display: flex;
   flex-direction: column;
 
+  // .register-title {
+  //   border: 3px solide red;
+  //   font-size: vars.$page-title-mobile;
+  // }
+
   h3 {
     text-align: center;
     font-weight: bold;
-    font-size: vars.$page-title-mobile;
+    font-size: 10px;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
     color: vars.$text-primary-color;
@@ -61,6 +66,11 @@
     color: vars.$bg-primary-color;
     background-color: vars.$bg-btn-hover-color;
     border: solid 3px vars.$bg-primary-color;
+  }
+
+  .btn-validate {
+    margin: 0 auto;
+    margin-bottom: 4rem;
   }
 
   a {

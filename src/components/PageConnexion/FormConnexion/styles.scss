@@ -4,34 +4,35 @@
 .connexion-input {
   display: flex;
   flex-direction: column;
-
+  
   h3 {
     text-align: center;
     font-weight: bold;
     font-size: vars.$page-title-mobile;
     margin-top: vars.$page-title-mag-top;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     color: vars.$text-primary-color;
   }
 
   form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 
     input {
       font-size: 1rem;
-      width: 40%;
+      width: 80%;
       margin: auto;
       padding: 0.4rem;
       background-color: vars.$bg-input-color;
       border: 1px solid vars.$border-input;
       border-radius: 4px;
-      margin-bottom: 1.2em;
+      margin-bottom: 1.2rem;
     }
 
     button {
       margin: auto;
-      margin-top: 0.3rem;
+      margin-top: 2rem;
       background-color: vars.$bg-primary-color;
       font-weight: bold;
       font-size: 1.4rem;
@@ -76,7 +77,7 @@
     text-align: center;
     margin-top: 0.3rem;
     color: vars.$link-before-hover-color;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: underline;
   }
 
@@ -89,7 +90,8 @@
     text-align: center;
     margin-top: 2rem;
     color: vars.$text-primary-color;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
   }
 
   .subscribe {
@@ -97,7 +99,8 @@
     font-weight: bold;
     text-decoration: underline;
     transition: 0.2s;
-    font-size: 1em;
+    font-size: 1.2rem;
+    display: block;
   }
   .subscribe:hover {
     color: vars.$link-hover-color;
@@ -122,7 +125,7 @@
       background-color: vars.$bg-input-color;
       border: 1px solid vars.$border-input;
       border-radius: 4px;
-      margin-bottom: 1.2em;
+      margin-bottom: 1.2rem;
       margin-top: 2.5rem;
     }
 
@@ -147,23 +150,28 @@
     }
   }
   .messageMailRedirect {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: vars.$text-primary-color;
     padding: 10px;
-    line-height: 1.5em;
+    line-height: 1.5rem;
     margin: auto;
     margin-top: 2.5rem;
     text-align: center;
   }
+
   .navlink_redirect_loggin {
-    font-size: 1.2em;
+    display: block;
+  }
+
+  .navlink_redirect_loggin {
+    font-size: 1.2rem;
     text-align: center;
     color: vars.$bg-primary-color;
     text-decoration: underline;
   }
   .annuler-reinitialisation-mdp {
     text-align: center;
-    margin-top: 1.8em;
+    margin-top: 1.8rem;
     color: vars.$link-before-hover-color;
     font-size: 1.2rem;
     text-decoration: underline;
@@ -171,35 +179,51 @@
     &:hover {
       text-decoration: underline;
       cursor: pointer;
-      font-size: 1.6em;
+      font-size: 1.6rem;
       color: vars.$link-hover-color;
     }
   }
 }
 
+
+@media only screen and (min-width: 599px) {
+  .connexion-input {
+    form {
+
+      input {
+        width: 40%;
+      }
+    }
+  }
+}
 // === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .connexion-input {
-    margin-top: 5rem;
+    margin-top: 3rem;
 
     h3 {
       font-size: vars.$page-title-desktop;
+      margin-bottom: 4rem;
     }
 
     .forget-password {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .inscription {
-      font-size: 1.5em;
+      font-size: 1.5rem;
     }
 
     .subscribe {
-      font-size: 1.5em;
+      font-size: 1.5rem;
+      display: inline-block;
     }
   }
 
   .field-connexion {
+
+    
+
     .annuler-reinitialisation-mdp {
       margin-top: 1rem;
       font-size: 1.5rem;
@@ -211,7 +235,7 @@
     }
 
     .messageMailRedirect {
-      font-size: 1.8em;
+      font-size: 1.8rem;
     }
   }
 }
