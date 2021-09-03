@@ -1,97 +1,158 @@
 // === IMPORT CSS ===
 @use 'src/styles/vars';
 
-.team-title {
-  font-size: vars.$page-title-desktop;
-  font-weight: bold;
-  text-align: center;
-  padding: 4rem 2rem 2rem;
-  margin-top: vars.$page-title-mag-top;
-  margin-bottom: 2rem;
-}
-
-.card-container {
+.team-container {
   width: 80%;
-  margin: auto;
+  margin: 2rem auto;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
 
-  .photo-profil {
-    width: 40%;
-    margin-bottom: 20px;
-    background-color: aquamarine;
-
+  .team-title {
+    font-size: vars.$page-title-mobile;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 2rem;
   }
-
-
-
-  .card-dev {
-    width: 100%;
+  
+  .card-container {
+    width: 90%;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
     padding: 10px;
-    border: 3px solid vars.$border-input;
-    border-radius: 30px;
-    opacity: 0.9;
-
-    .name {
-      font-size: 1.8em;
-      color: vars.$bg-primary-color;
+  
+    .card-dev {
+      width: 100%;
+      height: 100%;;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
-      font-weight: 500;
+      padding: 10px;
+      border: 3px solid vars.$border-input;
+      border-radius: 30px;
+      opacity: 0.9;
+  
+      .name {
+        font-size: 1.8em;
+        color: vars.$bg-primary-color;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+  
+      .photo-profil {
+        width: 150px;
+        height: 200px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+        &_cedric{
+          background-image: url('../../../assets/teampics/cedric.jpg');
+        }
+        &_kevin{
+          background-image: url('../../../assets/teampics/kevin.jpg');
+        }
+        &_mickael{
+          background-image: url('../../../assets/teampics/mickael.jpg');
+        }
+        &_yann{
+          background-image: url('../../../assets/teampics/yann.png');
+        }
+        &_julie{
+          background-image: url('../../../assets/teampics/julie.JPG');
+        }
+        
+      }
+  
+      .role {
+        font-size: 1rem;
+        color: vars.$bg-primary-color;
+        border: none;
+        font-weight: bold;
+        padding: 10px;
+        margin-bottom: 10px;
+        height: 20%;
+      }
     }
-
-    .role {
-      font-size: 1.2em;
-      background-color: vars.$bg-primary-color;
-      color: #fff;
-      border: none;
+  
+    .socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+  
+      .fa-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        color: vars.$bg-primary-color;
+      }
     }
   }
+}
 
-  .socials {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-
-    .fa-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      color: vars.$bg-primary-color;
+// === MEDIA QUERY TABLET ===
+@media screen and (min-width: 599px) {
+  .team-container {
+    
+    .card-container {
+      width: 90%;
+    
+      .card-dev {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
 
 // === MEDIA QUERY DESKTOP ===
-@media screen and (min-width: 768px) {
-  .container {
+@media screen and (min-width: 800px) {
+  .team-container {
+    width: 95%;
+  
+    .team-title {
+      font-size: vars.$page-title-desktop;
+    }
+    
     .card-container {
-      width: 95%;
-      margin: auto;
-      display: flex;
+      width: 100%;
+      height: 100%;
       flex-direction: row;
       justify-content: space-between;
-      padding: 10px;
-      margin: auto;
-
+      align-items: center;
+    
       .card-dev {
-        margin-right: 20px;
-        padding: 10px;
+        width: 100%;
+        margin-right: 10px;
+        margin-bottom: 0;
 
+        .name {
+          font-size: 1.5rem;
+          margin: 10px;
+          height: 50px;
+        }
+    
         .photo-profil {
           width: 100px;
-          height: 100px;
-          margin-bottom: 20px;
-          background-color: aquamarine;
+          height: 150px;
+        }
+    
+        .role {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+          height: 50px;
         }
       }
     }
