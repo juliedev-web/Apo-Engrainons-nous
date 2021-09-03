@@ -3,7 +3,6 @@
 .categories-filter {
   position: relative;
 
-
   select {
     width: 100%;
     font-size: 1rem;
@@ -18,7 +17,7 @@
   .faBars {
     position: absolute;
     left: 0.5rem;
-    top: 0.4rem
+    top: 0.4rem;
   }
 }
 
@@ -27,31 +26,13 @@
   .categories-filter {
     min-width: 200px;
     margin-right: 2rem;
-    
+
     select {
       font-size: 1.4rem;
     }
 
     .faBars {
-      top: 0.65rem
+      top: 0.65rem;
     }
   }
 }
-
-// // desktop
-
-// @media only screen and (min-width: 1025px) {
-//   .categories-filter {
-//   select {
-//     font-size: 1.35rem;
-//     min-width: 200px;
-//   }
-
-//   .faBars {
-//     position: absolute;
-//     left: 0.8rem;
-//     top: 0.65rem
-//   }
-// }
-// }
-

@@ -2,15 +2,14 @@
 @use 'src/styles/vars';
 
 .team-title {
-    font-size: vars.$page-title-desktop;
-    font-weight: bold;
-    text-align: center;
-    padding: 4rem 2rem 2rem;
-    margin-top: vars.$page-title-mag-top;
-    margin-bottom: 2rem;
-    //color: #FFF;
+  font-size: vars.$page-title-desktop;
+  font-weight: bold;
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  margin-top: vars.$page-title-mag-top;
+  margin-bottom: 2rem;
 }
-  
+
 .card-container {
   width: 80%;
   margin: auto;
@@ -35,9 +34,8 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 10px;
-    border: 3px solid -primary-color;
+    border: 3px solid vars.$border-input;
     border-radius: 30px;
-    background-color: #FFF;
     opacity: 0.9;
 
     .name {
@@ -50,7 +48,7 @@
     .role {
       font-size: 1.2em;
       background-color: vars.$bg-primary-color;
-      color: #FFF;
+      color: #fff;
       border: none;
     }
   }
@@ -65,16 +63,13 @@
       width: 40px;
       height: 40px;
       margin-right: 10px;
-      //color: #FFF;
       color: vars.$bg-primary-color;
     }
   }
 }
 
-
 // === MEDIA QUERY DESKTOP ===
 @media screen and (min-width: 768px) {
-
   .container {
     .card-container {
       width: 95%;
@@ -84,11 +79,11 @@
       justify-content: space-between;
       padding: 10px;
       margin: auto;
-  
+
       .card-dev {
         margin-right: 20px;
         padding: 10px;
-  
+
         .photo-profil {
           width: 100px;
           height: 100px;
@@ -98,5 +93,4 @@
       }
     }
   }
-  
 }
