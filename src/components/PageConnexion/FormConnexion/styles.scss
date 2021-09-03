@@ -23,7 +23,7 @@
       width: 40%;
       margin: auto;
       padding: 0.4rem;
-      background-color: vars.$bgd-input-color;
+      background-color: vars.$bg-input-color;
       border: 1px solid vars.$border-input;
       border-radius: 4px;
       margin-bottom: 1.2em;
@@ -32,7 +32,7 @@
     button {
       margin: auto;
       margin-top: 0.3rem;
-      background-color: vars.$bgd-primary-color;
+      background-color: vars.$bg-primary-color;
       font-weight: bold;
       font-size: 1.4rem;
       margin-bottom: 2rem;
@@ -44,14 +44,14 @@
 
     button:hover {
       background-color: white;
-      color: vars.$bgd-primary-color;
+      color: vars.$bg-primary-color;
       text-decoration: underline;
-      border: 2px solid vars.$bgd-primary-color;
+      border: 2px solid vars.$bg-primary-color;
     }
   }
 
   .connection-not-confirmed-message {
-    color: vars.$bgd-delete-color;
+    color: vars.$bg-delete-color;
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0.5rem;
@@ -62,7 +62,7 @@
   }
 
   .connection-confirmed-message {
-    color: vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0.5rem;
@@ -107,7 +107,7 @@
 
 .field-connexion {
   .validate-message {
-    color: vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
     text-align: center;
     margin-top: 2.5rem;
     input {
@@ -126,7 +126,7 @@
   .navlink_redirect_loggin {
     font-size: 1.2em;
     text-align: center;
-    color: vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
     text-decoration: underline;
   }
   .annuler-reinitialisation-mdp {

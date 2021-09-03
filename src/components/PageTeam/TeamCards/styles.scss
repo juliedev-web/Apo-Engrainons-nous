@@ -35,21 +35,21 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 10px;
-    border: 3px solid vars.$bgd-primary-color;
+    border: 3px solid -primary-color;
     border-radius: 30px;
     background-color: #FFF;
     opacity: 0.9;
 
     .name {
       font-size: 1.8em;
-      color: vars.$bgd-primary-color;
+      color: vars.$bg-primary-color;
       margin-bottom: 20px;
       font-weight: 500;
     }
 
     .role {
       font-size: 1.2em;
-      background-color: vars.$bgd-primary-color;
+      background-color: vars.$bg-primary-color;
       color: #FFF;
       border: none;
     }
@@ -66,7 +66,7 @@
       height: 40px;
       margin-right: 10px;
       //color: #FFF;
-      color: vars.$bgd-primary-color;
+      color: vars.$bg-primary-color;
     }
   }
 }

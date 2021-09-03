@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
 
-  background-color: vars.$bgd-footer-color;
+  background-color: vars.$bg-footer-color;
 
   padding: 0.8rem 1.8rem;
 
@@ -86,7 +86,7 @@
   
   .navbar_link--active {
     .faUserAlt {
-      color: vars.$bgd-primary-color;
+      color: vars.$bg-primary-color;
     }
   }
 }
@@ -98,7 +98,7 @@
   .navbar-mobile {
     font-size: 36px; // FontAwesome Icon Size
 
-    background-color: vars.$bgd-footer-color;
+    background-color: vars.$bg-footer-color;
   
     padding: 1.2rem 6rem;
 

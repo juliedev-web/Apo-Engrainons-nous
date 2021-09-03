@@ -106,7 +106,7 @@
       font-size: 1.4rem;
       margin-bottom: 2rem;
       padding: 0.8rem 1.2rem;
-      background-color: vars.$bgd-primary-color;
+      background-color: vars.$bg-primary-color;
       color: white;
       border-radius: 5px;
       transition: 0.3s;
@@ -114,8 +114,8 @@
 
     button:hover {
       background-color: white;
-      color: vars.$bgd-primary-color;
-      border: 2px solid vars.$bgd-primary-color;
+      color: vars.$bg-primary-color;
+      border: 2px solid vars.$bg-primary-color;
       text-decoration: underline;
     }
   }
@@ -177,15 +177,15 @@
   font-size: 1.4rem;
   margin-bottom: 2rem;
   padding: 0.8rem 1.2rem;
-  background-color: vars.$bgd-delete-color;
+  background-color: vars.$bg-delete-color;
   color: white;
   border-radius: 5px;
   transition: 0.3s;
 }
 .cancelSeedModification:hover {
   background-color: white;
-  color: vars.$bgd-delete-color;
-  border: 2px solid vars.$bgd-delete-color;
+  color: vars.$bg-delete-color;
+  border: 2px solid vars.$bg-delete-color;
   text-decoration: underline;
 }
 
