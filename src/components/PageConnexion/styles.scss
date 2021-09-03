@@ -2,10 +2,7 @@
 @use 'src/styles/vars';
 
 .page-connexion {
-  min-height: 100%;
-  background-image: url('../../assets/image/backgrounds/connexion-markus-spiske-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
+  height: 100%;
 }
 .page-connexion .footer-desktop {
   position: fixed;
