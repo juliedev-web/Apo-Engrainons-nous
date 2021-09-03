@@ -29,10 +29,7 @@
     flex-direction: column;
   }
 
-  .signInput {
-    display: flex;
-    flex-direction: column;
-  }
+  
 
   input,
   p {
@@ -46,6 +43,15 @@
     margin-bottom: 1.2em;
   }
 
+  .signInput {
+    display: flex;
+    flex-direction: column;
+
+    p {
+    width: 80%;
+    text-align: center;
+    }
+  }
   .button-container {
     display: flex;
     flex-direction: column;
@@ -54,6 +60,8 @@
   }
 
   button {
+    margin: 0;
+    margin: 1rem auto;
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0.8rem 1.2rem;
@@ -68,6 +76,7 @@
     background-color: vars.$bg-btn-hover-color;
     text-decoration: underline;
   }
+
   .btn-delete:hover {
     color: vars.$bg-delete-color;
     border: solid 2px vars.$bg-delete-color;
@@ -76,7 +85,7 @@
     background-color: vars.$bg-delete-color;
 
     &--confirm {
-      background-color: vars.$bg-validate-color;
+      background-color: vars.$bg-confirm-validate-color;
       color: vars.$text-btn-before-hover-color;
       font-weight: bold;
       font-size: 1.2rem;
@@ -113,18 +122,20 @@
 
 // === MEDIA QUERY DESKTOP ===
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 599px) {
   .container {
 
     h3 {
       font-size: vars.$page-title-desktop;
     }
-    .signInput,
+    .signInput {
     p {
+      width: 50%;
       display: grid;
       grid-template-columns: repeat (2, 1fr);
       grid-template-rows: 3;
     }
+  }
 
     input:nth-child(1),
     p:nth-child(1) {
@@ -152,11 +163,22 @@
     }
 
     .button-container {
-      flex-direction: row;
+      flex-direction: column;
     }
     label {
       font-size: 0.8em;
       font-style: italic;
     }
   }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .container {
+    .button-container {
+      flex-direction: row;
+      margin-top: 2rem;
+    }
+  }
+  
 }

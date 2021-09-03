@@ -223,10 +223,19 @@ const reducer = (state = initialState, action = {}) => {
         validateUpdateProfil: 'Votre compte a bien été mis a jour',
         passwordConfirmMessage: '',
       };
+
     case 'SUBMIT_RESET_MESSAGE_SUCCESS':
       return {
         ...state,
         validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe',
+      };
+
+    case 'CLOSE_VALIDE_SEND_MSG_PWD':
+      return {
+        ...state,
+        validateSendMsgResetPwd: '',
+        fieldConnexion: false,
+        emailResetInputValue: '',
       };
 
     case 'DELETE_SUCCESS':
