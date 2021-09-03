@@ -29,13 +29,13 @@
     border: none;
     background-color: transparent;
     font-size: 1.4rem;
-    color: rgb(11, 153, 11);
+    color: vars.$bg-validate-color;
   }
 
   .password-not-confirmed-message {
     background-color: transparent;
     border: none;
-    color: rgb(189, 0, 38);
+    color: vars.$bg-delete-color;
   }
 
   input {
