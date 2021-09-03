@@ -40,8 +40,7 @@
     flex-direction: column;
 
     .link-to-connexion {
-      color: #FFF;
-      background-color: #62923b;
+      color: rgb(36, 36, 36);
       padding: 0.9rem;
       border-radius: 10px;
 
@@ -53,10 +52,11 @@
         text-decoration: underline;
         font-size: 1.2rem;
         font-weight: bold;
+        color: rgb(2, 107, 226);
       }
 
       span:hover {
-        color: rgb(21, 58, 180);
+        color: rgb(4, 165, 12);
       }
     }
 

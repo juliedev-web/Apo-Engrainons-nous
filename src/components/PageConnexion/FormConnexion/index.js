@@ -66,13 +66,13 @@ const FormConnexion = ({
           : (
             <div className="connexion-input">
               <h3>Connexion</h3>
-              <form onSubmit={onSubmit}>
+              <qform onSubmit={onSubmit}>
                 <input type="email" name="email" placeholder="Email" required value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
                 <input type="password" name="password" placeholder="Mot de passe" required value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
                 {(connectionFailedMessage) && <p className="connection-not-confirmed-message">{connectionFailedMessage}</p>}
                 {(connectionSuccessMessage) && <p className="connection-confirmed-message">{connectionSuccessMessage}</p>}
                 <button type="submit">Valider</button>
-              </form>
+              </qform>
               <Link
                 to="#"
                 onClick={hideFieldConnexion}

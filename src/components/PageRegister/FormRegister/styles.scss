@@ -70,13 +70,13 @@
 
   .label-register {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.6rem;
     line-height: 1em;
     width: 80%;
     margin: auto;
     margin-bottom: 1em;
-    color: #FFF;
-    font-weight: bold;
+    color: rgb(41, 41, 41);
+    // font-weight: bold;
   }
 }
 // === MEDIA QUERY DESKTOP ===
@@ -134,13 +134,13 @@
     }
 
     .label-register {
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       line-height: 1.2em;
       width: 80%;
       margin: auto;
       margin-bottom: 1em;
-      color: #FFF;
-      font-weight: bold;
+      color: rgb(48, 48, 48);
+      // font-weight: bold;
     }
   }
 }
