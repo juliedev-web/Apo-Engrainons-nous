@@ -37,22 +37,24 @@ const ComponentSeed = ({
     ) : (
       <div className="container-seed">
         <div className="top">
-          <div className="imgCat">
-            <img src={seed.category_img} alt="legume" />
-          </div>
           <div className="descriptionVariety">
-            <h4>Catégorie : </h4>
-            <p>{seed.category_name}</p>
-            <h4>Nom de la variété : </h4>
-            <p>{seed.variety_name}</p>
-            <h2>Description : </h2>
-            <p>
-              {seed.description}
-            </p>
-            <h4>Conseils :</h4>
-            <p>
-              {seed.conseil}
-            </p>
+            <div className="imgCat">
+              <img src={seed.category_img} alt="legume" />
+            </div>
+            <div className="infos-seed">
+              <h4>Catégorie : </h4>
+              <p>{seed.category_name}</p>
+              <h4>Nom de la variété : </h4>
+              <p>{seed.variety_name}</p>
+              <h2>Description : </h2>
+              <p>
+                {seed.description}
+              </p>
+              <h4>Conseils :</h4>
+              <p>
+                {seed.conseil}
+              </p>
+            </div>
           </div>
         </div>
         {isLogged ? (

@@ -136,12 +136,11 @@
     }
 
     form {
+
       .fields-zone {
         padding: 0rem 2rem 2rem;
 
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
         grid-template-areas:
           "A B"
           "C C"
@@ -184,9 +183,12 @@
   text-decoration: underline;
 }
 
+
 @media only screen and (min-width: 1025px) {
   .form-seed {
+
     form {
+
       .fields-zone {
         padding: 2rem 2rem 2rem;
 
@@ -197,7 +199,7 @@
         textarea {
           height: 360px;
           margin-bottom: 2rem;
-        }
+        }    
       }
     }
   }
