@@ -26,7 +26,7 @@
       width: 1rem;
       height: 0.2rem;
       border-radius: 3px;
-      background-color: #CACACA;
+      background-color: vars.$icon-navbar-bg-color;
       transition: 0.3s;
       bottom: 1.45rem;
       right: 25px;
@@ -37,7 +37,7 @@
         width: 1rem;
         height: 0.2rem;
         border-radius: 3px;
-        background-color: #CACACA;
+        background-color: vars.$icon-navbar-icon-text-color;
         transform: translateY(-0.4rem);
         transition: 0.3s;
       }
@@ -48,7 +48,7 @@
         width: 1rem;
         height: 0.2rem;
         border-radius: 3px;
-        background-color: #CACACA;
+        background-color: vars.$icon-navbar-icon-text-color;
         transform: translateY(0.4rem);
         transition: 0.3s;
       }
@@ -58,21 +58,21 @@
 
     &.menu-burger--active{
       .barre {
-        background-color: #cacaca00;
+        background-color: vars.$bg-footer-color;
         transform: rotate(180deg);
         width: 1.3rem;
         height: 0.25rem;
       }
 
       :after {
-        background-color: #CACACA;
+        background-color: vars.$icon-navbar-bg-color;
         transform: rotate(-45deg);
         width: 1.3rem;
         height: 0.25rem;
       }
 
       :before {
-        background-color: #CACACA;
+        background-color: vars.$icon-navbar-bg-color;
         transform: rotate(45deg);
         width: 1.3rem;
         height: 0.25rem;
@@ -81,7 +81,7 @@
   }
 
   .faUserAlt {
-    color: #CACACA;
+    color: vars.$icon-navbar-icon-text-color;
   }
   
   .navbar_link--active {

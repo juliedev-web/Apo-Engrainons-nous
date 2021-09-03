@@ -6,7 +6,7 @@
 
   background-color: vars.$bg-footer-color;
 
-  color: white;
+  color: vars.$bg-btn-hover-color;
   font-size: 1.2rem;
 
   display: flex;
@@ -19,7 +19,7 @@
   }
 
   a:hover {
-    color: rgb(37, 163, 37);
+    color: vars.$link-hover-color;
     text-decoration: underline;
   }
 }
