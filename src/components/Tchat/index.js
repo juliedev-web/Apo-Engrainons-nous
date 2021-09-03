@@ -39,7 +39,7 @@ Tchat.propTypes = {
   width: PropTypes.number.isRequired,
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
-  emptyNewMessageCounter: PropTypes.number.isRequired,
+  emptyNewMessageCounter: PropTypes.func.isRequired,
 };
 
 export default Tchat;
