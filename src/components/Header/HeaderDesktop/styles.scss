@@ -14,32 +14,32 @@
     align-items: center;
 
     padding: 1.4rem 3rem 1.4rem 0.8rem;
-  
+
     background-color: vars.$bg-primary-color;
-  
+
     border-radius: 0 0 150px 0;
-  
+
     border-bottom: 2px solid vars.$border-header-color;
     border-right: 2px solid vars.$border-header-color;
-  
+
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
-  
+
     &__logo {
       margin-left: 1rem;
       width: 60px;
     }
-  
+
     &__content {
       width: fit-content;
       margin-left: 1rem;
       text-align: left;
-  
+
       &__title {
         font-size: 3rem;
         font-family: "Indie Flower", cursive;
         color: vars.$title-header-color;
       }
-  
+
       &__subtitle {
         margin-left: 5rem;
         font-size: 1.1rem;
@@ -55,30 +55,28 @@
     display: flex;
     justify-content: space-around;
     align-items: baseline;
-  
+
     .navbar_link {
       color: vars.$icon-navbar-bg-color;
 
       span {
-        font-size: 0.5em;
+        font-size: 1.2rem;
         text-align: center;
         margin-top: 0.6rem;
         color: vars.$icon-navbar-icon-text-color;
       }
 
+      &--active {
+        .faUserAlt {
+          color: vars.$bg-primary-color;
+        }
 
-    &--active {
-
-      .faUserAlt {
-        color: vars.$bg-primary-color;
+        span {
+          font-weight: bold;
+          color: vars.$bg-primary-color;
+        }
       }
 
-      span {
-        font-weight: bold;
-        color: vars.$bg-primary-color;
-      }
-    }
-  
       .messagerie {
         position: relative;
       }
@@ -97,7 +95,7 @@
         top: -35px;
         right: 5px;
       }
-  
+
       .iconText {
         display: flex;
         flex-direction: column;

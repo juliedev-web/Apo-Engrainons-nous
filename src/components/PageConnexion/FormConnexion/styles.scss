@@ -110,7 +110,7 @@
     color: vars.$text-primary-color;
     text-align: center;
     margin-top: 2.5rem;
-    font-size: .7rem;
+    font-size: 0.7rem;
     display: flex;
     flex-direction: column;
 
@@ -150,7 +150,7 @@
     font-size: 1.5em;
     color: vars.$text-primary-color;
     padding: 10px;
-    line-height: 1.5em;;
+    line-height: 1.5em;
     margin: auto;
     margin-top: 2.5rem;
     text-align: center;
@@ -189,11 +189,11 @@
     .forget-password {
       font-size: 1.5rem;
     }
-  
+
     .inscription {
       font-size: 1.5em;
     }
-  
+
     .subscribe {
       font-size: 1.5em;
     }
@@ -201,22 +201,17 @@
 
   .field-connexion {
     .annuler-reinitialisation-mdp {
-      text-align: center;
       margin-top: 1rem;
       font-size: 1.5rem;
     }
 
-      .annuler-reinitialisation-mdp:hover {
-        text-decoration: underline;
-        cursor: pointer;
-        font-size: 1.6rem;
-      }
+    .annuler-reinitialisation-mdp:hover {
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
 
-      .messageMailRedirect {
-          font-size: 1.8em;
-        }
-        .navlink_redirect_loggin {
-          font-size: 1.2em;
-        }
+    .messageMailRedirect {
+      font-size: 1.8em;
+    }
   }
 }

@@ -136,11 +136,6 @@
     }
 
     form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
       .fields-zone {
         padding: 0rem 2rem 2rem;
 
@@ -189,12 +184,9 @@
   text-decoration: underline;
 }
 
-
 @media only screen and (min-width: 1025px) {
   .form-seed {
-
     form {
-
       .fields-zone {
         padding: 2rem 2rem 2rem;
 
@@ -205,7 +197,7 @@
         textarea {
           height: 360px;
           margin-bottom: 2rem;
-        }    
+        }
       }
     }
   }
