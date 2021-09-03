@@ -6,7 +6,7 @@
   position: relative;
 
   .list {
-    background-color: vars.$text-btn-before-hover-color;
+    background-color: vars.$bg-light-list;
     width: 100%;
     height: 100%;
     margin: auto;
@@ -123,11 +123,7 @@
     .list {
       background-color: vars.$bg-light-list;
       width: 90%;
-      margin: auto;
-
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
 
       border-top: 2px solid vars.$border-list-color;
       border-left: 2px solid vars.$border-list-color;

@@ -7,14 +7,13 @@
   align-items: center;
   flex-direction: column;
   margin: 1rem auto 5rem;
-  
 
   h2 {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
   }
-  
+
   h3 {
     margin-top: 0.8rem;
     font-size: 2rem;
@@ -24,7 +23,6 @@
     width: 200px;
     transform: rotate(0);
     transition: 1s;
-
   }
 
   img:hover {
@@ -60,16 +58,15 @@
 @media screen and (min-width: 599px) {
   .form-404 {
     margin: 3rem auto 5rem;
-  
+
     h2 {
       font-size: 3rem;
-      font-weight: bold;
     }
-  
+
     img {
       width: 320px;
     }
-  
+
     p {
       font-size: 1.2rem;
     }
@@ -80,19 +77,18 @@
 @media screen and (min-width: 1025px) {
   .form-404 {
     margin: 3rem auto 5rem;
-  
+
     h2 {
       font-size: 4rem;
       font-weight: bold;
     }
-  
+
     img {
       width: 320px;
     }
-  
+
     p {
       font-size: 1.5rem;
     }
   }
 }
-
