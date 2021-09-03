@@ -13,7 +13,7 @@
   h3 {
     text-align: center;
     font-weight: bold;
-    font-size: vars.$page-title-desktop;
+    font-size: vars.$page-title-mobile;
     margin-bottom: 2rem;
     margin-top: vars.$page-title-mag-top;
   }
@@ -94,6 +94,15 @@
         color: vars.$text-btn-before-hover-color;
         cursor: pointer;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 765px) {
+  .my-seeds {
+
+    h3 {
+      font-size: vars.$page-title-desktop;
     }
   }
 }

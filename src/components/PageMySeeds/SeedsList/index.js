@@ -102,7 +102,7 @@ MySeeds.propTypes = {
   getUserSeedsList: PropTypes.func.isRequired,
   handleDeleteSeedClickConfirm: PropTypes.func.isRequired,
   confirmDeleteSeedMsg: PropTypes.string.isRequired,
-  handleDeleteSeedClick:PropTypes.func.isRequired,
+  handleDeleteSeedClick: PropTypes.func.isRequired,
   toBeDeletedSeedId: PropTypes.number.isRequired,
   closeDeleteConfirmButton: PropTypes.func.isRequired,
   width: PropTypes.number.isRequired,

@@ -19,7 +19,7 @@
   h3 {
     text-align: center;
     font-weight: bold;
-    font-size: vars.$page-title-desktop;
+    font-size: vars.$page-title-mobile;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
   }
@@ -115,6 +115,10 @@
 
 @media screen and (min-width: 768px) {
   .container {
+
+    h3 {
+      font-size: vars.$page-title-desktop;
+    }
     .signInput,
     p {
       display: grid;
