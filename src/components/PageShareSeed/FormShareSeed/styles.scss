@@ -40,7 +40,7 @@
     flex-direction: column;
 
     .link-to-connexion {
-      color: #FFF;
+      color: #fff;
       background-color: #62923b;
       padding: 0.9rem;
       border-radius: 10px;
@@ -105,7 +105,7 @@
       font-size: 1.4rem;
       margin-bottom: 2rem;
       padding: 0.8rem 1.2rem;
-      background-color: #4b7e22;
+      background-color: vars.$bgd-primary-color;
       color: white;
       border-radius: 5px;
       transition: 0.3s;
@@ -113,8 +113,8 @@
 
     button:hover {
       background-color: white;
-      color: #4b7e22;
-      border: 2px solid #4b7e22;
+      color: vars.$bgd-primary-color;
+      border: 2px solid vars.$bgd-primary-color;
       text-decoration: underline;
     }
   }
@@ -164,18 +164,17 @@
 }
 .cancelSeedModification {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin-bottom: 2rem;
-  padding: 0.6rem 1rem;
-  background-color: red;
+  padding: 0.8rem 1.2rem;
+  background-color: vars.$bgd-delete-color;
   color: white;
   border-radius: 5px;
   transition: 0.3s;
-  border: solid 1px black;
 }
 .cancelSeedModification:hover {
   background-color: white;
-  color: red;
-  border: 2px solid red;
+  color: vars.$bgd-delete-color;
+  border: 2px solid vars.$bgd-delete-color;
   text-decoration: underline;
 }
