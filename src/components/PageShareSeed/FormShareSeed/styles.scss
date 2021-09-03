@@ -136,17 +136,11 @@
     }
 
     form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
 
       .fields-zone {
         padding: 0rem 2rem 2rem;
 
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
         grid-template-areas:
           "A B"
           "C C"
