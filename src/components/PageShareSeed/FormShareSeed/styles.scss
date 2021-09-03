@@ -9,7 +9,7 @@
     font-size: vars.$page-title-desktop;
     font-weight: bold;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 1.5rem;
     //color: #FFF;
@@ -40,8 +40,7 @@
     flex-direction: column;
 
     .link-to-connexion {
-      color: #FFF;
-      background-color: #62923b;
+      color: rgb(36, 36, 36);
       padding: 0.9rem;
       border-radius: 10px;
 
@@ -53,15 +52,16 @@
         text-decoration: underline;
         font-size: 1.2rem;
         font-weight: bold;
+        color: rgb(2, 107, 226);
       }
 
       span:hover {
-        color: rgb(21, 58, 180);
+        color: rgb(4, 165, 12);
       }
     }
 
     .fields-zone {
-      padding: 2rem;
+      padding: 1rem 2rem 2rem;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -77,6 +77,7 @@
         padding: 0.6rem;
         resize: none;
         width: 100%;
+        font-size: 1.2rem;
       }
       .input {
         margin: auto;
@@ -141,22 +142,31 @@
       flex-direction: column;
 
       .fields-zone {
-        padding: 2rem;
+        padding: 0rem 2rem 2rem;
 
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         grid-template-areas:
           "A B"
-          "C D";
+          "C C"
+          "D D";
         gap: 2rem 4rem;
 
         .input {
-          width: 300px;
+          max-width: 300px;
         }
 
         .categories-filter {
-          width: 300px;
+          max-width: 300px;
+        }
+
+        textarea {
+          padding: 0.6rem;
+          resize: none;
+          width: 100%;
+          margin: auto;
+          height: 200px;
         }
       }
     }
@@ -178,4 +188,26 @@
   color: red;
   border: 2px solid red;
   text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .form-seed {
+
+    form {
+
+      .fields-zone {
+        padding: 2rem 2rem 2rem;
+
+        grid-template-areas:
+          "A B"
+          "C D";
+
+        textarea {
+          height: 360px;
+          margin-bottom: 2rem;
+        }    
+      }
+    }
+  }
 }
