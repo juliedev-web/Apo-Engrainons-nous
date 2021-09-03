@@ -19,8 +19,8 @@
   
     border-radius: 0 0 150px 0;
   
-    border-bottom: 2px solid #4e5a53;
-    border-right: 2px solid #4e5a53;
+    border-bottom: 2px solid vars.$border-header-color;
+    border-right: 2px solid vars.$border-header-color;
   
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
   
@@ -31,19 +31,19 @@
   
     &__content {
       width: fit-content;
-      color: white;
       margin-left: 1rem;
       text-align: left;
   
       &__title {
         font-size: 3rem;
         font-family: "Indie Flower", cursive;
+        color: vars.$title-header-color;
       }
   
       &__subtitle {
         margin-left: 5rem;
         font-size: 1.1rem;
-        color: #cacaca;
+        color: vars.$subtitle-header-color;
       }
     }
   }
@@ -57,13 +57,13 @@
     align-items: baseline;
   
     .navbar_link {
-      color: #cacaca;
+      color: vars.$icon-navbar-bg-color;
 
       span {
         font-size: 0.5em;
         text-align: center;
         margin-top: 0.6rem;
-        color: #cacaca;
+        color: vars.$icon-navbar-icon-text-color;
       }
 
 
@@ -92,7 +92,7 @@
         font-size: 1rem;
         color: white;
         font-weight: bold;
-        background-color: red;
+        background-color: #bc1536;
         border-radius: 50%;
         top: -35px;
         right: 5px;

@@ -11,7 +11,7 @@
 
   background-color: vars.$bg-primary-color;
 
-  border-bottom: 2px solid #4E5A53;
+  border-bottom: 2px solid vars.$border-header-color;
   box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.301);
   
   &__logo {
@@ -19,7 +19,7 @@
   }
   
   &__content {
-    color: white;
+    color: vars.$title-header-color;
     margin-left: 1rem;
     
     &__title {
@@ -32,7 +32,7 @@
     &__subtitle {
       text-align: center;
       font-size: 0.8rem;
-      color: #cacaca
+      color: vars.$subtitle-header-color
     }
   }
 }
@@ -58,7 +58,6 @@
       &__subtitle {
         text-align: center;
         font-size: 0.8rem;
-        color: #cacaca
       }
     }
 
@@ -89,7 +88,6 @@
       &__subtitle {
         margin-left: 7rem;
         font-size: 1.1rem;
-        color: #cacaca;
       }
     }
   }
