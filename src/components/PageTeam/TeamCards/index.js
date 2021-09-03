@@ -22,7 +22,7 @@ export default function TeamCards() {
       <h3 className="team-title">L'équipe d'Engrainons-nous</h3>
       <section className="card-container">
         <article className="card-dev">
-          <h3 className="name">Cédric Cubat</h3>
+          <h4 className="name">Cédric Cubat</h4>
           <img className="photo-profil" src="" alt="Cedric" />
           <p className="role">Product Owner et lead dev back</p>
           <div>
@@ -46,7 +46,7 @@ export default function TeamCards() {
           </div>
         </article>
         <article className="card-dev">
-          <h3 className="name">Kévin Girault</h3>
+          <h4 className="name">Kévin Girault</h4>
           <img className="photo-profil" src="" alt="Kevin" />
           <p className="role">Dev back et référent technique</p>
           <div>
@@ -70,7 +70,7 @@ export default function TeamCards() {
           </div>
         </article>
         <article className="card-dev">
-          <h3 className="name">Mickaël Menet</h3>
+          <h4 className="name">Mickaël Menet</h4>
           <img className="photo-profil" src="" alt="Mika" />
           <p className="role">Lead dev front</p>
           <div>
@@ -94,7 +94,7 @@ export default function TeamCards() {
           </div>
         </article>
         <article className="card-dev">
-          <h3 className="name">Yann Hirlemann</h3>
+          <h4 className="name">Yann Hirlemann</h4>
           <img className="photo-profil" src="" alt="monaliyann" />
           <p className="role">Dev front et Git master</p>
           <div>
@@ -118,7 +118,7 @@ export default function TeamCards() {
           </div>
         </article>
         <article className="card-dev">
-          <h3 className="name">Julie Vandard</h3>
+          <h4 className="name">Julie Vandard</h4>
           <img className="photo-profil" src="" alt="Julie" />
           <p className="role">Dev front et Scrum master</p>
           <div>
