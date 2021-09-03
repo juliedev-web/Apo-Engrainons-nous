@@ -6,7 +6,7 @@
   flex-direction: column;
   
   .accountUpdateButton {
-    color: vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
     font-weight: bold;
     text-align: center;
     background-color: white;
@@ -41,7 +41,7 @@
     width: 80%;
     margin: auto;
     padding: 0.4rem;
-    background-color: vars.$bgd-input-color;
+    background-color: vars.$bg-input-color;
     border: 1px solid vars.$border-input;
     border-radius: 4px;
     margin-bottom: 1.2em;
@@ -58,26 +58,26 @@
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0.8rem 1.2rem;
-    background-color: vars.$bgd-primary-color;
+    background-color: vars.$bg-primary-color;
     color: white;
     border-radius: 5px;
     transition: 0.3s;
   }
   button:hover {
-    color: vars.$bgd-primary-color;
-    border: solid 2px vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
+    border: solid 2px vars.$bg-primary-color;
     background-color: white;
     text-decoration: underline;
   }
   .btn-delete:hover {
-    color: vars.$bgd-delete-color;
-    border: solid 2px vars.$bgd-delete-color;
+    color: vars.$bg-delete-color;
+    border: solid 2px vars.$bg-delete-color;
   }
   .btn-delete {
-    background-color: vars.$bgd-delete-color;
+    background-color: vars.$bg-delete-color;
 
     &--confirm {
-      background-color: vars.$bgd-validate-color;
+      background-color: vars.$bg-validate-color;
       color: white;
       font-weight: bold;
       font-size: 1.2rem;
@@ -87,17 +87,17 @@
     }
     &--confirm:hover {
       background-color: white;
-      color: vars.$bgd-validate-color;
-      border: solid 2px vars.$bgd-validate-color;
+      color: vars.$bg-validate-color;
+      border: solid 2px vars.$bg-validate-color;
       text-decoration: underline;
     }
   }
   .btn-deconnexion {
-    background-color: vars.$bgd-footer-color;
+    background-color: vars.$bg-footer-color;
   }
   .btn-deconnexion:hover {
-    color: vars.$bgd-footer-color;
-    border: solid 2px vars.$bgd-footer-color;
+    color: vars.$bg-footer-color;
+    border: solid 2px vars.$bg-footer-color;
     background-color: white;
     text-decoration: underline;
   }

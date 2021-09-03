@@ -15,7 +15,7 @@
 
     padding: 1.4rem 3rem 1.4rem 0.8rem;
   
-    background-color: vars.$bgd-primary-color;
+    background-color: vars.$bg-primary-color;
   
     border-radius: 0 0 150px 0;
   
@@ -70,12 +70,12 @@
     &--active {
 
       .faUserAlt {
-        color: vars.$bgd-primary-color;
+        color: vars.$bg-primary-color;
       }
 
       span {
         font-weight: bold;
-        color: vars.$bgd-primary-color;
+        color: vars.$bg-primary-color;
       }
     }
   

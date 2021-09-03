@@ -43,7 +43,7 @@
     width: 80%;
     margin: auto;
     padding: 0.4rem;
-    background-color: vars.$bgd-input-color;
+    background-color: vars.$bg-input-color;
     border: 1px solid vars.$border-input;
     border-radius: 4px;
     margin-bottom: 1.2em;
@@ -53,14 +53,14 @@
     padding: 0.4em;
     margin: auto;
     margin-top: 2em;
-    background-color: vars.$bgd-primary-color;
+    background-color: vars.$bg-primary-color;
     color: white;
   }
 
   button:hover {
-    color: vars.$bgd-primary-color;
+    color: vars.$bg-primary-color;
     background-color: white;
-    border: solid 3px vars.$bgd-primary-color;
+    border: solid 3px vars.$bg-primary-color;
   }
 
   a {
@@ -123,7 +123,7 @@
     button {
       padding: 0.5em;
       margin: 2em auto;
-      background-color: vars.$bgd-primary-color;
+      background-color: vars.$bg-primary-color;
       color: white;
       font-size: 1.5em;
     }
