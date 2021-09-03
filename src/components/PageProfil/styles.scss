@@ -2,11 +2,7 @@
 @use 'src/styles/vars';
 
 .page-profil {
-  min-height: 100%;
-  background-image: url('../../assets/markus-spiske-vrbZVyX2k4I-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .page-profil .footer-desktop {
