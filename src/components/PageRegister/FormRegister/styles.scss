@@ -1,0 +1,155 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  // .register-title {
+  //   border: 3px solide red;
+  //   font-size: vars.$page-title-mobile;
+  // }
+
+  h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 2rem;
+    color: vars.$text-primary-color;
+  }
+
+  .btn-input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signInput {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inscription-confirm-message {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    color: vars.$bg-validate-color;
+  }
+
+  .password-not-confirmed-message {
+    background-color: transparent;
+    border: none;
+    color: vars.$bg-delete-color;
+  }
+
+  input {
+    font-size: 1rem;
+    width: 80%;
+    margin: auto;
+    padding: 0.4rem;
+    background-color: vars.$bg-input-color;
+    border: 1px solid vars.$border-input;
+    border-radius: 4px;
+    margin-bottom: 1.2em;
+  }
+
+  button {
+    padding: 0.4em;
+    margin: auto;
+    margin-top: 2em;
+    background-color: vars.$bg-primary-color;
+    color: white;
+  }
+
+  button:hover {
+    color: vars.$bg-primary-color;
+    background-color: vars.$bg-btn-hover-color;
+    border: solid 3px vars.$bg-primary-color;
+  }
+
+  .btn-validate {
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  a {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+  .label-register {
+    font-style: italic;
+    font-size: 0.6rem;
+    line-height: 1em;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+    color: rgb(41, 41, 41);
+    // font-weight: bold;
+  }
+}
+// === MEDIA QUERY DESKTOP ===
+@media screen and (min-width: 768px) {
+  .container {
+    h3 {
+      font-weight: semi-bold;
+      font-size: vars.$page-title-desktop;
+    }
+
+    .signInput {
+      display: grid;
+      grid-template-columns: repeat (2, 1fr);
+      grid-template-rows: 4;
+    }
+
+    input:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+    }
+    input:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    input:nth-child(3) {
+      grid-column: 1;
+      grid-row: 3;
+    }
+    input:nth-child(4) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    input:nth-child(5) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .password-not-confirmed-message {
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    button {
+      padding: 0.5em;
+      margin: 2em auto;
+      background-color: vars.$bg-primary-color;
+      color: white;
+      font-size: 1.5em;
+    }
+
+    a {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .label-register {
+      font-size: 0.8rem;
+      line-height: 1.2em;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 1em;
+      color: vars.$text-primary-color;
+    }
+  }
+}

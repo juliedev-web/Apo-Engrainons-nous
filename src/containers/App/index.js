@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getList: () => dispatch({ type: 'GETTING_LIST' }),
+  checkToken: () => dispatch({ type: 'CHECK_TOKEN' }),
+  getList: () => dispatch({ type: 'GETTING_LIST_PAGE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

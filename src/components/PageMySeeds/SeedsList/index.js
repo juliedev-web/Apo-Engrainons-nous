@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { formatDate } from 'src/selectors/seeds';
+import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -26,7 +27,7 @@ export default function MySeeds({
   }, []);
   return (
     <div className="my-seeds">
-      <h1>Mes graines</h1>
+      <h3>Mes graines</h3>
       {myList[0] ? (
         <table className="my-seeds__list">
           <thead className="my-seeds__list__thead">
@@ -60,17 +61,15 @@ export default function MySeeds({
                 </>
                 )}
 
-                <td className="my-seeds__list__tbody__row__td">
+                <td className={(confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? 'my-seeds__list__tbody__row__td btn-delete-one-seed' : 'my-seeds__list__tbody__row__td'}>
                   {
                   (confirmDeleteSeedMsg && toBeDeletedSeedId === seed.id) ? (
-                    <button
-                      className="btn-delete-one-seed"
-                      type="button"
+                    <div
                       onClick={() => {
                         handleDeleteSeedClickConfirm(seed.id);
                       }}
                     > {confirmDeleteSeedMsg}
-                    </button>
+                    </div>
                   ) : (
                     <FontAwesomeIcon
                       icon={faTrashAlt}
@@ -95,3 +94,15 @@ export default function MySeeds({
     </div>
   );
 }
+
+MySeeds.propTypes = {
+  myList: PropTypes.string.isRequired,
+  getUserSeedsList: PropTypes.func.isRequired,
+  handleDeleteSeedClickConfirm: PropTypes.func.isRequired,
+  confirmDeleteSeedMsg: PropTypes.string.isRequired,
+  handleDeleteSeedClick: PropTypes.func.isRequired,
+  toBeDeletedSeedId: PropTypes.number.isRequired,
+  closeDeleteConfirmButton: PropTypes.func.isRequired,
+  width: PropTypes.number.isRequired,
+  breakpoint: PropTypes.number.isRequired,
+};

@@ -2,6 +2,25 @@ import axios from 'axios';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
+    case 'CHECK_TOKEN': {
+      const options = {
+        method: 'GET',
+        url: 'https://engrainonsnous.herokuapp.com/token',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      };
+
+      axios(options).then((response) => {
+        console.log(response.data);
+      }).catch((error) => {
+        console.error(error);
+        localStorage.clear();
+        store.dispatch({ type: 'CHECK_TOKEN_FAILED' });
+      });
+    }
+      break;
+
     case 'ON_SIGNIN_SUBMIT': {
       const state = store.getState();
 
@@ -57,7 +76,7 @@ const authMiddleware = (store) => (next) => (action) => {
         }
         else {
           console.log('réponse connexion: ', response.data);
-          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté !' });
+          store.dispatch({ type: 'LOGIN_SUCCESS', data: response.data, message: 'Vous êtes connecté(e) !' });
 
           const options2 = {
             method: 'GET',
@@ -122,11 +141,14 @@ const authMiddleware = (store) => (next) => (action) => {
       const state = store.getState();
 
       if (state.user.passwordInputValue.length > 0) {
+        console.log(1);
         if (state.user.passwordInputValue !== state.user.passwordConfirmInputValue) {
+          console.log(2);
           store.dispatch({ type: 'PWD_NOT_CONFIRMED' });
           return;
         }
         if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(state.user.passwordInputValue)) {
+          console.log(3);
           store.dispatch({ type: 'PWD_WRONG' });
           return;
         }
@@ -170,6 +192,7 @@ const authMiddleware = (store) => (next) => (action) => {
           });
 
           store.dispatch({ type: 'UPDATE_SUCCESS_WITH_PASSWORD' });
+          store.dispatch({ type: 'ON_VALIDATE_CONFIRM' });
         }).catch((error) => {
           console.error('réponse update profil: ', error);
         });

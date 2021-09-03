@@ -14,11 +14,27 @@ export const initialState = {
   editSeed: false,
   createSeedConfirmMsg: '',
   getFromList: '',
-  categorySlug: '',
+  varietyInputValueEdit: '',
+  textAreaDetailValueEdit: '',
+  textAreaAdviceValueEdit: '',
+  categorySeedValueEdit: '',
+  copyMailToClipBoardMsg: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'CLEAR_MSG_COPIED':
+      return {
+        ...state,
+        copyMailToClipBoardMsg: '',
+      };
+
+    case 'EMAIL_COPY_TO_CLIPBOARD':
+      return {
+        ...state,
+        copyMailToClipBoardMsg: 'le mail a été copié dans le presse-papier',
+      };
+
     case 'GETTING_LIST_SUCCESS':
       return {
         ...state,
@@ -26,6 +42,7 @@ const reducer = (state = initialState, action = {}) => {
         totalSeedsNumber: action.data.nbSeed,
         getFromList: action.from,
       };
+
     case 'ON_SUBMIT_SHARED_SEED_SUCCESS':
       return {
         ...state,
@@ -37,6 +54,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         category: [...action.data],
       };
+    case 'ON_EDIT_SEED_FORM_CHANGE':
+      return {
+        ...state,
+        [action.inputName]: action.inputValue,
+      };
 
     case 'GETTING_ONE_SEED_SUCCESS':
       return {
@@ -44,6 +66,14 @@ const reducer = (state = initialState, action = {}) => {
         seed: {
           ...action.data,
         },
+      };
+    case 'DEFAULT_EDIT_SEED_VALUE':
+      return {
+        ...state,
+        varietyInputValueEdit: state.seed.variety_name,
+        textAreaDetailValueEdit: state.seed.description,
+        textAreaAdviceValueEdit: state.seed.conseil,
+        categorySeedValueEdit: state.seed.category_id,
       };
 
     case 'HIDE_MAIL':
@@ -78,6 +108,12 @@ const reducer = (state = initialState, action = {}) => {
         selectedNewSeedCategory: action.categoryId,
       };
 
+    case 'SELECT_CATEGORY_ID_EDIT':
+      return {
+        ...state,
+        categorySeedValueEdit: action.categoryId,
+      };
+
     case 'ON_TOGGLE_CLICK_MAIL_OWNER':
       return {
         ...state,
@@ -85,9 +121,18 @@ const reducer = (state = initialState, action = {}) => {
       };
 
     case 'ON_INPUT_SEARCH_SUCCESS':
+      if (action.slug) {
+        return {
+          ...state,
+          list: [...action.data.resul],
+          totalSeedsNumber: action.data.nbSeed,
+          getFromList: action.from,
+          inputSearchValue: action.slug,
+        };
+      }
       return {
         ...state,
-        list: [...action.data.seed],
+        list: [...action.data.resul],
         totalSeedsNumber: action.data.nbSeed,
         getFromList: action.from,
       };

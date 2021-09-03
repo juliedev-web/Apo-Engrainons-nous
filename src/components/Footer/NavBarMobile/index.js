@@ -5,13 +5,17 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 import {
-  faUserAlt, faPlus,
+  faUserAlt, faPlus, faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavBarMobile = ({
-  isLogged, handleMenuIsOpenClick, menuIsOpen, closeModal,
+  isLogged,
+  handleMenuIsOpenClick,
+  menuIsOpen,
+  closeModal,
+  newMessageCounter,
 }) => (
   <div className="navbar-mobile">
     <NavLink
@@ -36,6 +40,27 @@ const NavBarMobile = ({
     >
       <FontAwesomeIcon icon={faPlus} className="faUserAlt" />
     </NavLink>
+
+    {isLogged && (
+      <NavLink
+        className="navbar_link"
+        to="/tchat"
+        exact
+        activeClassName="navbar_link--active"
+      >
+        <div className="iconText">
+          <FontAwesomeIcon icon={faEnvelope} className="faUserAlt" />
+          <span className="messagerie"> {
+            newMessageCounter !== 0 && (
+              <span className="new-message-counter">{newMessageCounter}</span>
+            )
+          }
+          </span>
+
+        </div>
+      </NavLink>
+    )}
+
     <div
       className={menuIsOpen ? 'menu-burger menu-burger--active' : 'menu-burger'}
       onClick={handleMenuIsOpenClick}
@@ -50,7 +75,7 @@ NavBarMobile.propTypes = {
   handleMenuIsOpenClick: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
-
+  newMessageCounter: PropTypes.number.isRequired,
 };
 
 export default NavBarMobile;

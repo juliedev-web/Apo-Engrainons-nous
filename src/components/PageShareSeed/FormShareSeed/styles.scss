@@ -1,20 +1,26 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .form-seed {
   padding-bottom: 2rem;
   position: relative;
 
-  h2 {
-    font-size: 2rem;
+  h3 {
+    font-size: vars.$page-title-desktop;
     font-weight: bold;
     text-align: center;
-    padding: 4rem 2rem 2rem;
+    padding: 1rem;
+    margin-top: vars.$page-title-mag-top;
+    margin-bottom: 1.5rem;
+    color: vars.$text-primary-color;
   }
 
   .confirm-seed-created-msg {
     width: fit-content;
     margin: auto;
     padding: 0.8rem;
-    color: rgb(6, 161, 6);
-    border: 2px solid rgb(7, 139, 7);
+    color: vars.$bg-validate-color;
+    border: 2px solid vars.$bg-validate-color;
     border-radius: 10px;
   }
 
@@ -22,8 +28,8 @@
     width: fit-content;
     margin: auto;
     padding: 0.8rem;
-    color: rgb(161, 11, 6);
-    border: 2px solid rgb(161, 11, 6);
+    color: vars.$bg-delete-color;
+    border: 2px solid vars.$bg-delete-color;
     border-radius: 10px;
   }
 
@@ -34,24 +40,29 @@
     flex-direction: column;
 
     .link-to-connexion {
+      text-align: center;
+      color: vars.$link-before-hover-color;
+      padding: 0.9rem;
+      border-radius: 10px;
+
       span {
+        padding: 10px;
         display: block;
         text-align: center;
         margin-right: 0.4rem;
         text-decoration: underline;
         font-size: 1.2rem;
-        color: #62923b;
         font-weight: bold;
+        color: vars.$link-before-hover-color;
       }
 
       span:hover {
-        color: rgb(21, 58, 180);
+        color: vars.$link-hover-color;
       }
     }
 
     .fields-zone {
-      padding: 2rem;
-
+      padding: 1rem 2rem 2rem;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: auto;
@@ -67,6 +78,7 @@
         padding: 0.6rem;
         resize: none;
         width: 100%;
+        font-size: 1.2rem;
       }
       .input {
         margin: auto;
@@ -92,19 +104,19 @@
 
     button {
       font-weight: bold;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      padding: 0.6rem 1rem;
-      background-color: #4b7e22;
-      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding: 0.8rem 1.2rem;
+      background-color: vars.$bg-primary-color;
+      color: vars.$text-btn-before-hover-color;
       border-radius: 5px;
       transition: 0.3s;
     }
 
     button:hover {
-      background-color: white;
-      color: #4b7e22;
-      border: 2px solid #4b7e22;
+      background-color: vars.$bg-btn-hover-color;
+      color: vars.$bg-primary-color;
+      border: 2px solid vars.$bg-primary-color;
       text-decoration: underline;
     }
   }
@@ -114,7 +126,7 @@
     width: 100%;
   }
 }
-
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .form-seed {
     h2 {
@@ -125,47 +137,71 @@
     }
 
     form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
 
       .fields-zone {
-        padding: 2rem;
+        padding: 0rem 2rem 2rem;
 
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
         grid-template-areas:
           "A B"
-          "C D";
+          "C C"
+          "D D";
         gap: 2rem 4rem;
 
         .input {
-          width: 300px;
+          max-width: 300px;
         }
 
         .categories-filter {
-          width: 300px;
+          max-width: 300px;
+        }
+
+        textarea {
+          padding: 0.6rem;
+          resize: none;
+          width: 100%;
+          margin: auto;
+          height: 200px;
         }
       }
+    }
+  }
+}
+.cancelSeedModification {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 1.2rem;
+  background-color: vars.$bg-delete-color;
+  color: vars.$text-btn-before-hover-color;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 4rem;
+}
+.cancelSeedModification:hover {
+  background-color: vars.$bg-btn-hover-color;
+  color: vars.$bg-delete-color;
+  border: 2px solid vars.$bg-delete-color;
+  text-decoration: underline;
+}
 
-      button {
-        font-weight: bold;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        padding: 0.6rem 1rem;
-        background-color: #4b7e22;
-        color: white;
-        border-radius: 5px;
-        transition: 0.3s;
-      }
 
-      button:hover {
-        background-color: white;
-        color: #4b7e22;
-        border: 2px solid #4b7e22;
-        text-decoration: underline;
+@media only screen and (min-width: 1025px) {
+  .form-seed {
+
+    form {
+
+      .fields-zone {
+        padding: 2rem 2rem 2rem;
+
+        grid-template-areas:
+          "A B"
+          "C D";
+
+        textarea {
+          height: 360px;
+          margin-bottom: 2rem;
+        }    
       }
     }
   }

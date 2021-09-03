@@ -1,0 +1,11 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
+.team {
+  height: 100%;
+}
+
+.team .footer-desktop {
+  position: fixed;
+  bottom: 0;
+}

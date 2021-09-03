@@ -1,0 +1,11 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
+.page-profil {
+  height: 100%;
+}
+
+.page-profil .footer-desktop {
+  position: fixed;
+  bottom: 0;
+}

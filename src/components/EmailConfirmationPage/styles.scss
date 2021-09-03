@@ -1,3 +1,6 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .email-confirmation-page {
   height: 100%;
 
@@ -8,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: vars.$text-primary-color;
   }
 
   .link-to-connexion {
@@ -15,11 +19,13 @@
     text-align: center;
     margin-top: 2rem;
     font-size: 1.4rem;
-    color: #458114;
+    color: vars.$link-before-hover-color;
+    text-decoration: underline;
   }
 
   .link-to-connexion:hover {
     text-decoration: underline;
+    color: vars.$link-hover-color;
   }
 }
 
@@ -27,4 +33,3 @@
   position: fixed;
   bottom: 0;
 }
-

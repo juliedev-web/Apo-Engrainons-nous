@@ -1,0 +1,11 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
+.sign-in {
+  height: 100%;
+}
+
+.sign-in .footer-desktop {
+  position: fixed;
+  bottom: 0;
+}

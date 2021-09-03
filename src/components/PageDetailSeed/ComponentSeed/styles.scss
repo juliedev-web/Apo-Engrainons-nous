@@ -1,3 +1,4 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .container-seed {
@@ -5,41 +6,155 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   padding: 2rem;
 
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 10px;
+  opacity: 0.9;
+
+
+  .container_mobile_myseed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .btn_myseeds {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding: 1rem 1.2rem;
+      background-color: vars.$bg-primary-color;
+      color: vars.$text-btn-before-hover-color;
+      border-radius: 5px;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+    .btn_myseeds:hover {
+      background-color: vars.$bg-btn-hover-color;
+      color: vars.$bg-primary-color;
+      border: 2px solid vars.$bg-primary-color;
+      text-decoration: underline;
+    }
+    .btn_modify_seed {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding: 1rem 1.2rem;
+      background-color: vars.$bg-primary-color;
+      color: vars.$text-btn-before-hover-color;
+      border-radius: 5px;
+      transition: 0.3s;
+      margin-right: 2rem;
+      border: 2px solid transparent;
+    }
+    .btn_modify_seed:hover {
+      background-color: vars.$bg-btn-hover-color;
+      color: vars.$bg-primary-color;
+      border: 2px solid vars.$bg-primary-color;
+      text-decoration: underline;
+    }
+  }
+
+
   .descriptionVariety {
+    background: vars.$bg-light-list;
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 0 7px vars.$boxShadow-color;
+    text-align: left;
+    letter-spacing: 0.046rem;
+    
     p {
-      font-size: 0.8rem;
+      font-family: 'Nunito', sans-serif;
+      border-radius: 10px;
+      font-size: 1.2rem;
       margin-bottom: 0.7em;
+      width: 100%;
+      line-height: 1.4rem;
+      padding: 1rem;
+    }
+
+    h4 {
+      font-weight: bold;
+      margin-bottom: 0.7em;
+      font-size: 1.1rem;
     }
 
     h2 {
       font-weight: bold;
       margin-bottom: 0.7em;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 
-  button {
-    width: 200px;
-    border: solid 1px black;
-    padding: 0.5em;
-    background-color: vars.$bgd-primary-color;
-    color: white;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
+  .buttons-detail-seed {
+    position: relative;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
   }
 
-  .user-email {
-    border: solid 3px vars.$bgd-primary-color;
+  .email-contact {
+    font-weight: bold;
     font-size: 1.4rem;
-    padding: 1rem;
-    color: rgb(54, 54, 54);
-    margin-top: 2.6rem;
-    margin-bottom: 1rem;
+    border: solid 1px vars.$text-primary-color;
+    background-color: vars.$bg-primary-color;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    color: vars.$text-btn-before-hover-color;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .email-contact:hover {
+    background-color: vars.$bg-btn-hover-color;
+    color: vars.$bg-primary-color;
+    border: 2px solid vars.$bg-primary-color;
+    text-decoration: underline;
+  }
+
+  .tchatMySeeds {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 1.2rem;
+    background-color: vars.$bg-primary-color;
+    color: vars.$text-btn-before-hover-color;
+    border: solid 1px vars.$text-primary-color;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .tchatMySeeds:hover {
+    background-color: vars.$bg-btn-hover-color;
+    color: vars.$bg-primary-color;
+    border: 2px solid vars.$bg-primary-color;
+    text-decoration: underline;
+  }
+
+  .copy-clipboard-msg {
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+    position: absolute;
+    bottom: 105px;
+    left: -47px;
+    padding: 0.2rem;
+    background-color: vars.$bg-validate-color;
+    border: 3px dotted vars.$link-hover-color;
+    border-radius: 5px;
+    font-size: 0.8rem;
   }
 
   .imgCat {
+    text-align: center;
+
     img {
       width: 200px;
       height: 200px;
@@ -48,89 +163,114 @@
       object-fit: cover;
     }
   }
+
+  .infos-seed {
+    margin-top: 2rem;
+  }
+
+  button {
+    margin: auto;
+    margin-top: 0.3rem;
+    background-color: vars.$bg-primary-color;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 1.2rem;
+    color: vars.$text-btn-before-hover-color;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: vars.$bg-btn-hover-color;
+    color: vars.$bg-primary-color;
+    text-decoration: underline;
+    border: 2px solid vars.$bg-primary-color;
+  }
 }
 
+// === MEDIA QUERY TABLET ===
 @media only screen and (min-width: 599px) {
   .container-seed {
-    flex-direction: column;
     justify-content: center;
     padding: 3rem;
 
-    .descriptionVariety {
-      padding: 2em 0 0 2em;
+    .container_mobile_myseed {
+      margin-top: 4rem;
+      flex-direction: row;
+
+      .btn_myseeds {
+        margin: 0;
+      }
+
+      .btn_modify_seed {
+        margin: 0;
+        margin-right: 2rem;
+      }
+    }
+
+    .buttons-detail-seed {
+      flex-direction: row;
+    }
+
+    .email-contact {
+      margin-right: 2rem;
+    }
+
+    .tchatMySeeds {
+      padding: 0.5em;
+    }
+
+    .copy-clipboard-msg {
+      bottom: -40px;
+      left: 50px;
+    }
+
+
+    .top {
+      display: flex;
+      justify-content: center;
+      
+      .descriptionVariety {
+        place-items: center;
+        padding: 2rem;
+        min-width: 600px;
+      }
+
+      h4 {
+        margin-bottom: 1em;
+      }
+      
+      p {
+        margin-bottom: 1em;
+      }
+      
+      .imgCat {
+        float: right;
+        img {
+          width: 250px;
+          height: 250px;
+        }
+      }
     }
 
     button {
       margin-top: 4em;
     }
-
-    .top {
-      display: flex;
-      justify-content: center;
-
-      .imgCat {
-        img {
-          width: 300px;
-          height: 300px;
-        }
-      }
-
-      h2 {
-        font-weight: bold;
-        margin-bottom: 1em;
-      }
-
-      p {
-        margin-bottom: 1em;
-      }
-    }
   }
 }
 
+// === MEDIA QUERY DESKTOP ===
 @media only screen and (min-width: 1025px) {
   .container-seed {
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-
-    .descriptionVariety {
-      padding: 2em 0 0 2em;
-    }
 
     button {
-      margin-top: 4em;
-    }
-    .tchatMySeeds {
-      width: 200px;
-      border: solid 1px black;
-      padding: 0.5em;
-      background-color: vars.$bgd-primary-color;
-      color: white;
-      margin-bottom: 1rem;
-      margin-left: 2rem;
+      font-size: 1.4rem;
     }
 
-    .top {
-      display: flex;
-      justify-content: center;
-
-      .imgCat {
-        display: flex;
-
-        img {
-          width: 400px;
-          height: 400px;
-        }
-      }
-
-      h2 {
-        font-weight: bold;
-        margin-bottom: 1em;
-      }
-
-      p {
-        margin-bottom: 1em;
-      }
+    .descriptionVariety {
+      width: 80%;
     }
   }
 }
+

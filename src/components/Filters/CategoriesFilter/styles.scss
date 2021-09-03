@@ -2,17 +2,13 @@
 
 .categories-filter {
   position: relative;
-  width: 100%;
-  margin-bottom: 1.4rem;
-
 
   select {
-    
+    width: 100%;
     font-size: 1rem;
     padding: 0.4rem;
-    width: 100%;
     padding-left: 2.2rem;
-    background-color: vars.$bgd-input-color;
+    background-color: vars.$bg-input-color;
     border-radius: 4px;
     border: 1px solid vars.$border-input;
     text-align-last: center;
@@ -21,27 +17,22 @@
   .faBars {
     position: absolute;
     left: 0.5rem;
-    top: 0.5rem
+    top: 0.4rem;
   }
 }
-
 
 // Tablet
 @media only screen and (min-width: 599px) {
   .categories-filter {
-    width: 45%;
+    min-width: 200px;
+    margin-right: 2rem;
 
-    margin-bottom: 0;
+    select {
+      font-size: 1.4rem;
+    }
+
+    .faBars {
+      top: 0.65rem;
+    }
   }
 }
-
-// desktop
-
-@media only screen and (min-width: 1025px) {
-  .categories-filter {
-  select {
-    font-size: 1.2rem;
-  }
-}
-}
-

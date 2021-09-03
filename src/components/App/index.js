@@ -1,14 +1,16 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
+// == import Component
 import HomePage from 'src/containers/HomePage';
 import PageConnexion from 'src/components/PageConnexion';
-import SignIn from 'src/components/SignIn';
-import Profil from 'src/components/Profil';
+import PageRegister from 'src/components/PageRegister';
+import PageProfil from 'src/components/PageProfil';
 import MySeeds from 'src/components/PageMySeeds';
-import Team from 'src/components/Team';
+import PageTeam from 'src/components/PageTeam';
 import PageShareSeed from 'src/components/PageShareSeed';
 import EmailConfirmationPage from 'src/containers/EmailConfirmationPage';
 import PageDetailSeed from 'src/components/PageDetailSeed';
@@ -17,20 +19,25 @@ import Tchat from 'src/containers/Tchat';
 
 import './styles.scss';
 
-// == Composant
-const App = ({ getList, menuIsOpen }) => {
+// == Componant
+const App = ({ menuIsOpen, checkToken, isLogged }) => {
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      checkToken();
+    }
+  }, []);
+  /**
+   * get the viewport width on resize
+   * to switch between desktop header/footer to mobile header/footer
+   */
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1025;
-
-  useEffect(() => {
-    getList();
-  }, []);
 
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener('resize', handleWindowResize);
 
-    // Return a function from the effect that removes the event listener
+    // willUnmount launch a function that removes the event listener
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
@@ -62,7 +69,7 @@ const App = ({ getList, menuIsOpen }) => {
           />
         </Route>
 
-        <Route path="/categorie/:category/page/:pageNumber" exact>
+        <Route path="/:filter/:slug/page/:pageNumber" exact>
           <HomePage
             width={width}
             breakpoint={breakpoint}
@@ -87,7 +94,7 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/equipe" exact>
-          <Team
+          <PageTeam
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -103,7 +110,7 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/compte" exact>
-          <Profil
+          <PageProfil
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -111,7 +118,7 @@ const App = ({ getList, menuIsOpen }) => {
         </Route>
 
         <Route path="/inscription" exact>
-          <SignIn
+          <PageRegister
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
@@ -131,14 +138,7 @@ const App = ({ getList, menuIsOpen }) => {
             width={width}
             breakpoint={breakpoint}
             menuIsOpen={menuIsOpen}
-          />
-        </Route>
-
-        <Route path="/compte" exact>
-          <Profil
-            width={width}
-            breakpoint={breakpoint}
-            menuIsOpen={menuIsOpen}
+            from="shareNewSeedPage"
           />
         </Route>
 
@@ -155,11 +155,9 @@ const App = ({ getList, menuIsOpen }) => {
   );
 };
 
-// Props validation
+// == Props validation
 App.propTypes = {
-  getList: PropTypes.func.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
 };
 
-// == Export
 export default App;

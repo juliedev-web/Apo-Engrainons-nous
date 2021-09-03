@@ -14,7 +14,7 @@ export const initialState = {
   deleteConfirmMessage: '',
   emailResetInputValue: '',
   validateSendMsgResetPwd: '',
-  validateUpdateProfil: false,
+  validateUpdateProfil: '',
   confirmDelete: false,
   isLogged: !!localStorage.getItem('isLogged') || false,
   fieldConnexion: false,
@@ -36,6 +36,22 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'CHECK_TOKEN_FAILED':
+      return {
+        ...state,
+        isLogged: !!localStorage.getItem('isLogged') || false,
+        profil: {
+          ...state.profil,
+          pseudo: localStorage.getItem('pseudo') || '',
+          email: localStorage.getItem('email') || '',
+          city: localStorage.getItem('city') || '',
+          id: localStorage.getItem('id') || '',
+          token: localStorage.getItem('token') || '',
+          yourPseudo: '',
+          chatEngine_id: '',
+          newMessageCounter: 0,
+        },
+      };
     case 'EMPTY_NEW_MESSAGE_COUNTER':
       return {
         ...state,
@@ -204,12 +220,22 @@ const reducer = (state = initialState, action = {}) => {
     case 'ON_VALIDATE_CONFIRM':
       return {
         ...state,
-        validateUpdateProfil: 'Votre compte a bien été mis a jour.',
+        validateUpdateProfil: 'Votre compte a bien été mis a jour',
+        passwordConfirmMessage: '',
       };
+
     case 'SUBMIT_RESET_MESSAGE_SUCCESS':
       return {
         ...state,
-        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe.',
+        validateSendMsgResetPwd: 'Un email vous a été envoyé pour la réinitialisation de votre mot de passe',
+      };
+
+    case 'CLOSE_VALIDE_SEND_MSG_PWD':
+      return {
+        ...state,
+        validateSendMsgResetPwd: '',
+        fieldConnexion: false,
+        emailResetInputValue: '',
       };
 
     case 'DELETE_SUCCESS':
@@ -225,7 +251,7 @@ const reducer = (state = initialState, action = {}) => {
         varietyInputValue: '',
         textAreaDetailValue: '',
         textAreaAdviceValue: '',
-        deleteConfirmMessage: 'Votre compte a bien été supprimé.',
+        deleteConfirmMessage: 'Votre compte a bien été supprimé',
         confirmDelete: false,
         isLogged: false,
         profil: {

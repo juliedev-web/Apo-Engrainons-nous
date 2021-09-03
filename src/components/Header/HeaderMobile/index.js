@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import logo from 'src/assets/image/Logo.png';
@@ -16,14 +15,10 @@ const HeaderMobile = () => (
         Engrainons-nous !
       </h1>
       <p className="headerMobile__content__subtitle">
-        Bienvenue sur notre plateforme d'échange de graine !
+        Bienvenue sur notre plateforme d'échange de graines !
       </p>
     </div>
   </div>
 );
-
-HeaderMobile.propTypes = {
-
-};
 
 export default HeaderMobile;

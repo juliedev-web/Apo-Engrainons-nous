@@ -1,9 +1,14 @@
+// === IMPORT CSS ===
+@use 'src/styles/vars';
+
 .listContainer {
+  width: 100%;
   position: relative;
 
   .list {
-    background-color: #e4ecf1;
+    background-color: vars.$bg-light-list;
     width: 100%;
+    height: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -13,21 +18,15 @@
     padding: 3rem 3rem 8rem;
 
     align-items: center;
-    // border-radius: 50px 50px 0 0;
 
-    box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
+    box-shadow: -0.2rem -0.2rem 0.2rem vars.$boxShadow-color;
 
     .card {
       width: 100%;
-      // min-width: 260px;
-
-      // word-break: break-all;
 
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.164);
-
-      transition: 0.3s;
+      box-shadow: 0px 0px 5px 2px vars.$boxShadow-color;
 
       img {
         display: block;
@@ -38,8 +37,8 @@
 
       .content {
         padding: 0.5rem;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349);
+        background-color: vars.$bg-btn-hover-color;
+        box-shadow: 5px 5px 5px vars.$boxShadow-color;
 
         display: flex;
         justify-content: space-between;
@@ -54,10 +53,11 @@
 
           &__category {
             font-weight: bold;
+            margin-right: 1rem;
           }
 
           &__variety {
-            color: rgb(104, 104, 104);
+            color: vars.$card-variety-color;
             font-weight: bold;
           }
         }
@@ -78,7 +78,7 @@
 
           &__date {
             font-size: 0.9rem;
-            color: rgb(104, 104, 104);
+            color: vars.$card-date-color;
           }
         }
       }
@@ -87,7 +87,7 @@
 
   .paginationBttns {
     position: absolute;
-    bottom: 4.5rem;
+    bottom: 1.8rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -98,21 +98,20 @@
     margin: 0.3rem;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s;
   }
 
   .paginationBttns a:hover {
-    color: white;
-    background-color: #80af57;
+    color: vars.$link-hover-color;
   }
 
   .paginationActive a {
-    color: white;
-    background-color: #4a6c2f;
+    color: vars.$bg-primary-color;
+    font-weight: bold;
+    text-decoration: underline;
   }
 
   .card:hover {
-    box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.295);
+    box-shadow: 0px 0px 7px 5px vars.$boxShadow-color;
     transform: scale(1.05);
   }
 }
@@ -120,39 +119,36 @@
 @media only screen and (min-width: 599px) {
   .listContainer {
     .list {
-      background-color: #e4ecf1;
+      background-color: vars.$bg-light-list;
       width: 90%;
-      margin: auto;
-
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
 
-      border-top: 2px solid rgba(133, 150, 172, 0.582);
-      border-left: 2px solid rgba(133, 150, 172, 0.623);
-      border-right: 2px solid rgba(133, 150, 172, 0.623);
+      border-top: 2px solid vars.$border-list-color;
+      border-left: 2px solid vars.$border-list-color;
+      border-right: 2px solid vars.$border-list-color;
+
       padding: 2rem 2rem 9rem;
 
       align-items: center;
 
-      // border-top: 2px solid rgba(133, 150, 172, 0.582);
-      // border-left: 2px solid rgba(133, 150, 172, 0.623);
-
       border-radius: 50px 50px 0 0;
 
-      box-shadow: -0.2rem -0.2rem 0.2rem rgba(0, 0, 0, 0.055);
+      box-shadow: -0.2rem -0.2rem 0.2rem vars.$boxShadow-color;
 
       .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         img {
           height: 200px;
         }
 
         .content {
-          background-color: white;
-
+          background-color: vars.$bg-btn-hover-color;
+          height: 100%;
           padding: 0.6rem;
 
-          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349);
+          box-shadow: 5px 5px 5px vars.$boxShadow-color;
 
           h2 {
             font-weight: bold;
@@ -160,13 +156,13 @@
           }
 
           h3 {
-            color: rgb(104, 104, 104);
+            color: vars.$card-variety-color;
             font-size: 0.8em;
             padding: 0.4rem;
           }
 
           h4 {
-            color: rgb(175, 175, 175);
+            color: vars.$card-variety-color;
             font-size: 0.6em;
             padding: 0.4rem;
           }
@@ -175,7 +171,6 @@
     }
 
     .paginationBttns {
-      bottom: 6rem;
     }
 
     .paginationBttns a {
@@ -191,7 +186,6 @@
     position: relative;
 
     .list {
-
       width: 80%;
       margin: auto;
 
@@ -199,12 +193,11 @@
       grid-template-rows: auto;
       gap: 3rem;
 
-      padding: 5rem 5rem 10rem;
+      padding: 5rem 5rem 5rem;
       border-radius: 50px 50px 0 0;
 
       .card {
         font-size: 20px;
-
         img {
           height: 220px;
         }
@@ -222,6 +215,7 @@
 
     .list {
       grid-template-columns: repeat(3, 1fr);
+      height: 100%;
     }
   }
 }
@@ -230,6 +224,9 @@
   .listContainer {
     .list {
       grid-template-columns: repeat(4, 1fr);
+      .card {
+        height: 80%;
+      }
     }
   }
 }

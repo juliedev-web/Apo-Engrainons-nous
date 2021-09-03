@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 import ReactPaginate from 'react-paginate';
@@ -8,14 +9,17 @@ import { formatDate } from '../../selectors/seeds';
 import './styles.scss';
 
 const List = ({
-  list, totalSeedsNumber, handlePageChange, pageNumber, getFromList, categoryId,
+  list,
+  totalSeedsNumber,
+  handlePageChange,
+  pageNumber,
+  getFromList,
+  categoryId,
+  inputSearchValue,
 }) => {
   const history = useHistory();
   const seedPerPage = 12;
   const pageCount = Math.ceil(totalSeedsNumber / seedPerPage);
-
-  useEffect(() => {
-  });
 
   return (
     <div className="listContainer">
@@ -53,6 +57,10 @@ const List = ({
             history.push(`/categorie/${categoryId}/page/${selected.selected + 1}`);
             handlePageChange(selected.selected, getFromList, categoryId);
           }
+          if (getFromList === 'byVarietyList') {
+            history.push(`/search/${inputSearchValue}/page/${selected.selected + 1}`);
+            handlePageChange(selected.selected, getFromList, inputSearchValue);
+          }
         }}
         containerClassName="paginationBttns"
         previousLinkClassName="previousBttn"
@@ -71,6 +79,9 @@ List.propTypes = {
     PropTypes.object.isRequired,
   ).isRequired,
   pageNumber: PropTypes.string.isRequired,
+  getFromList: PropTypes.string.isRequired,
+  categoryId: PropTypes.string.isRequired,
+  inputSearchValue: PropTypes.string.isRequired,
 };
 
 export default List;

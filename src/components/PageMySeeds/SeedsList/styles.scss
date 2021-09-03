@@ -1,36 +1,39 @@
+// === IMPORT CSS ===
 @use 'src/styles/vars';
 
 .my-seeds {
   width: 100%;
-  margin: 2rem 0 ;
+  margin: 2rem 0;
   padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  h1 {
+  h3 {
     text-align: center;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: vars.$page-title-mobile;
     margin-bottom: 2rem;
+    margin-top: vars.$page-title-mag-top;
   }
 
   .no-seeds-message {
     text-align: center;
     font-size: 2rem;
-    color: #909090
+    color: vars.$bg-secondary-color;
   }
 
   &__list {
     width: 60%;
-    border: 4px solid vars.$bgd-primary-color;
+    border: 4px solid vars.$bg-primary-color;
+    background-color: vars.$text-my-seeds-list-color;
 
     &__thead {
       font-size: 1.4rem;
       font-weight: bold;
-      color: rgb(242, 243, 242);
-      background-color: vars.$bgd-primary-color;
+      color: vars.$text-my-seeds-list-color;
+      background-color: vars.$bg-primary-color;
 
       &__row {
         &__th {
@@ -50,21 +53,22 @@
 
       &__row {
         width: 100%;
-        border-bottom: 3px solid #cacaca;
+        border-bottom: 3px solid vars.$border-input;
         transition: 0.1s linear;
 
         .btn-delete-one-seed {
-          background-color: rgb(182, 118, 0);
-          color: white;
+          width: fit-content;
+          background-color: vars.$bg-confirm-validate-color;
+          color: vars.$text-btn-before-hover-color;
         }
         .btn-delete-one-seed:hover {
-          background-color: white;
-          color: rgb(182, 118, 0);
+          background-color: vars.$bg-btn-hover-color;
+          color: vars.$bg-confirm-validate-color;
         }
 
         &__td {
           padding: 0.5rem;
-          border: 3px solid #cacaca;
+          border: 3px solid vars.$border-input;
         }
 
         &__td:nth-child(1) {
@@ -87,15 +91,19 @@
       }
 
       &__row:hover {
-        background-color: rgb(105, 139, 105);
-        color: white;
+        background-color: vars.$bg-my-seeds-list-hover-color;
+        color: vars.$text-btn-before-hover-color;
         cursor: pointer;
       }
     }
   }
 }
 
+@media screen and (min-width: 765px) {
+  .my-seeds {
 
-// @media only screen and (min-width: 599px) {
-  
-// }
+    h3 {
+      font-size: vars.$page-title-desktop;
+    }
+  }
+}

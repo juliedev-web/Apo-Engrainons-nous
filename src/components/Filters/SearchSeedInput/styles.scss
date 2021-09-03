@@ -1,53 +1,47 @@
 @use 'src/styles/vars';
 
-.search-seed-input {
+// Mobile
+.filter {
+  .linkReset {
+    text-decoration: underline;
+    color: vars.$link-before-hover-color;
+    font-weight: bold;
+  }
+  .linkReset:hover {
+    color: vars.$bg-primary-color;
+    cursor: pointer;
+  }
 
-  position: relative;
-
-  input {
-    font-size: 1rem;
+  .filterComponent {
     width: 100%;
-    padding: 0.4rem;
-    background-color: vars.$bgd-input-color;
-    border: 1px solid vars.$border-input;
-    border-radius: 4px;
-}
-
-  .faSearch {
-    position: absolute;
-    right: 0.8rem;
-    top: 0.4rem;
+    margin-bottom: 1rem;
   }
 }
 
 // Tablet
 @media only screen and (min-width: 599px) {
-  .search-seed-input {
-    position: relative;
+  .filter {
+    width: fit-content;
 
-    width: 45%;
-    
-    margin-bottom: 0;
+    margin: 2.5rem auto;
+    padding: 1.5rem 1.5rem 1rem;
 
+    display: flex;
+    flex-direction: column;
 
-  
-    input {
-      padding: 0.45rem;
-
-      font-size: 1rem;
-
-      background-color: vars.$bgd-input-color;
-
-      border: 1px solid vars.$border-input;
-      border-radius: 4px;
-
-  }
-  
-    .faSearch {
-      position: absolute;
-      right: 0.4rem;
-      top: 0.4rem;
+    .filterComponent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
 
+// Desktop
+@media only screen and (min-width: 1025px) {
+  .filter {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

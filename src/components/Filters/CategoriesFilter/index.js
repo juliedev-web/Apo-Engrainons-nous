@@ -1,13 +1,15 @@
+// == Import npm
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-// FontAwesome
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// PropTypes
+
 import PropTypes from 'prop-types';
-// Import CSS
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
 
+// == Component
 const CategoriesFilter = ({
   category,
   getCategory,
@@ -15,19 +17,22 @@ const CategoriesFilter = ({
   idCategory,
   idNewSeedSelect,
   from,
+  categorySeedValueEdit,
+
 }) => {
   const history = useHistory();
+
+  console.log(from);
 
   useEffect(() => {
     getCategory();
   }, []);
-
   return (
     <div className="categories-filter">
       <select
         name="category"
         id="categories"
-        value={from === 'sharedSeedPage' ? idNewSeedSelect : idCategory}
+        value={from === 'sharedSeedPage' ? idNewSeedSelect : categorySeedValueEdit}
         onChange={(e) => {
           if (from === 'homePage') {
             history.push(`/categorie/${e.target.value}/page/1`);
@@ -47,6 +52,7 @@ const CategoriesFilter = ({
   );
 };
 
+// == Props validation
 CategoriesFilter.propTypes = {
   idNewSeedSelect: PropTypes.string.isRequired,
   category: PropTypes.array.isRequired,

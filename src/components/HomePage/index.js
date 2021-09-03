@@ -21,8 +21,8 @@ const HomePage = ({
   profil,
   isLogged,
   getFromList,
-  categorySlug,
-  categoryId,
+  slug,
+  filterSlug,
 }) => {
   const history = useHistory();
   useEffect(() => {
@@ -34,15 +34,26 @@ const HomePage = ({
       localStorage.setItem('id', profil.id);
       localStorage.setItem('isLogged', isLogged);
     }
-    getPage(+pageNumber - 1, 'homepage', categorySlug);
+
+    if (filterSlug === 'categories') {
+      localStorage.setItem('getFromList', 'byCategoryList');
+    }
+    if (filterSlug === 'search') {
+      localStorage.setItem('getFromList', 'byVarietyList');
+    }
+
+    getPage(+pageNumber - 1, 'homepage', slug, localStorage.getItem('getFromList'));
   }, []);
 
   useEffect(() => {
-    if (getFromList === localStorage.getItem('getFromList')) {
+    if (localStorage.getItem('getFromList') === 'fullList' && !slug) {
       history.push(`/page/${+pageNumber || 1}`);
     }
-    if (getFromList === localStorage.getItem('getFromList')) {
-      history.push(`/categorie/${categorySlug}/page/${+pageNumber || 1}`);
+    if (localStorage.getItem('getFromList') === 'byCategoryList') {
+      history.push(`/categorie/${slug}/page/${+pageNumber || 1}`);
+    }
+    if (localStorage.getItem('getFromList') === 'byVarietyList') {
+      history.push(`/search/${slug}/page/${+pageNumber || 1}`);
     }
   }, [getFromList]);
   return (
@@ -60,7 +71,7 @@ const HomePage = ({
             <Filters />
             <List list={list} />
             <div className="tchat">
-              <DirectChatPage />
+              <DirectChatPage from="chatPage" />
             </div>
           </>
         )
@@ -82,6 +93,16 @@ HomePage.propTypes = {
   breakpoint: PropTypes.number.isRequired,
   menuIsOpen: PropTypes.bool.isRequired,
   pageNumber: PropTypes.string.isRequired,
+  profil: PropTypes.object.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  getFromList: PropTypes.string.isRequired,
+  slug: PropTypes.string,
+  filterSlug: PropTypes.string,
+};
+
+HomePage.defaultProps = {
+  slug: '',
+  filterSlug: '',
 };
 
 export default HomePage;

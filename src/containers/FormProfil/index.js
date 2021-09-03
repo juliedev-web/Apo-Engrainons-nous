@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import FormProfil from 'src/components/Profil/FormProfil';
+import FormProfil from 'src/components/PageProfil/FormProfil';
 
 import {
   createChangePseudoInputValueAction,
@@ -46,9 +46,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleDeleteConfirm: () => {
     dispatch({ type: 'ON_DELETE_CONFIRM' });
-  },
-  validateEditProfil: () => {
-    dispatch({ type: 'ON_VALIDATE_CONFIRM' });
   },
   closeEditMessage: () => {
     dispatch({ type: 'CLOSE_EDIT_MESSAGE' });
