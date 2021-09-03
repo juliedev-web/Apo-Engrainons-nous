@@ -2,10 +2,7 @@
 @use 'src/styles/vars';
 
 .team {
-  min-height: 100%;
-  background-image: url('../../assets/image/backgrounds/team-michael-dziedzic-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
+  height: 100%;
 }
 
 .team .footer-desktop {

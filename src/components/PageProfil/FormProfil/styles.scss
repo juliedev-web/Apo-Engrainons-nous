@@ -4,6 +4,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  
   .accountUpdateButton {
     color: vars.$bgd-primary-color;
     font-weight: bold;
@@ -19,7 +20,7 @@
   h3 {
     text-align: center;
     font-weight: bold;
-    font-size: vars.$page-title;
+    font-size: vars.$page-title-desktop;
     margin-top: vars.$page-title-mag-top;
     margin-bottom: 2rem;
   }
@@ -100,8 +101,9 @@
     background-color: white;
     text-decoration: underline;
   }
-  label {
-    font-size: 0.8em;
+  .label-profil {
+    font-size: 1.2em;
+    color: #FFF;
     font-style: italic;
     line-height: 1.2em;
     width: 80%;

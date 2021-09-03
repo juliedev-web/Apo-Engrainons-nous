@@ -6,13 +6,13 @@
   position: relative;
 
   h3 {
-    font-size: vars.$page-title;
+    font-size: vars.$page-title-desktop;
     font-weight: bold;
     text-align: center;
     padding: 1rem;
     margin-top: vars.$page-title-mag-top;
-    margin-bottom: 1rem;
-    color: #FFF;
+    margin-bottom: 1.5rem;
+    //color: #FFF;
   }
 
   .confirm-seed-created-msg {
@@ -169,24 +169,6 @@
           height: 200px;
         }
       }
-      // REVIEW CSS boublon style mobile
-      // button {
-      // font-weight: bold;
-      // font-size: 1.4rem;
-      // margin-bottom: 1rem;
-      // padding: 0.8rem 1.2rem;
-      // background-color: #4b7e22;
-      // color: white;
-      // border-radius: 5px;
-      // transition: 0.3s;
-      // }
-
-      // button:hover {
-      //   background-color: white;
-      //   color: #4b7e22;
-      //   border: 2px solid #4b7e22;
-      //   text-decoration: underline;
-      // }
     }
   }
 }
