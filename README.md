@@ -1,18 +1,28 @@
 <p align="center">
   <a href="https://engrainons-nous.com">
-    <img alt="Engrainons-nous-logo's" height="125" src="https://nsa40.casimages.com/img/2021/08/23/210823090920339037.png">
-  </a><br>
-
-  <a href="https://github.com/O-clock-Tardis/projet-14-engrainons-nous/blob/master/.github/README_fr.md">
-    <img height="20px" src="https://img.shields.io/badge/FR-flag.svg?color=555555&style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4NCjxwYXRoIGZpbGw9IiNlZDI5MzkiIGQ9Im0wLDBoOTAwdjYwMGgtOTAweiIvPg0KPHBhdGggZmlsbD0iI2ZmZiIgZD0ibTAsMGg2MDB2NjAwaC02MDB6Ii8+DQo8cGF0aCBmaWxsPSIjMDAyMzk1IiBkPSJtMCwwaDMwMHY2MDBoLTMwMHoiLz4NCjwvc3ZnPg0K">
+    <img alt="Engrainons-nous-logo's" height="" src="https://nsa40.casimages.com/img/2021/08/23/210823090920339037.png">
+  </a>	
+	
+<p align="center">
+  <a href="https://engrainons-nous.com">
+    <img alt="Engrainons-nous-logo's" width="370" height="20" src="https://c.tenor.com/3HFKgdT-FiQAAAAC/line-rainbow.gif">
   </a>
+	
+  
+  <p align="center">
+	<a href="https://github.com/O-clock-Tardis/projet-14-engrainons-nous/blob/master/.github/README_fr.md">
+    <img height="20px"
+	src="https://img.shields.io/badge/FR-flag.svg?color=555555&style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4NCjxwYXRoIGZpbGw9IiNlZDI5MzkiIGQ9Im0wLDBoOTAwdjYwMGgtOTAweiIvPg0KPHBhdGggZmlsbD0iI2ZmZiIgZD0ibTAsMGg2MDB2NjAwaC02MDB6Ii8+DQo8cGF0aCBmaWxsPSIjMDAyMzk1IiBkPSJtMCwwaDMwMHY2MDBoLTMwMHoiLz4NCjwvc3ZnPg0K">
+  </a>
+</p>
 
-**Engrainons-Nous** is a platform for the exchange of seeds, free of rights and reproducible, with the aim of preserving seed and vegetable biodiversity.
+
+**Engrainons-Nous** (Let's seed Ourselves) is a French platform for the exchange of seeds, free of rights and reproducible, with the aim of preserving seed and vegetable biodiversity.
 It exists to allow users of the platform to exchange seeds:
 
 - Allow users to add their own seeds to the site
 - Allow users to obtain information on the types of seeds offered in the form of a detailed sheet
-- Allow users to get the email address of a user whose seeds they are interested in
+- Allow users to get the e-mail address of a user whose seeds they are interested in
 
 <a href='https://www.casimages.com/i/210819044439208775.png.html' target='_blank' title='Wireframe'><img src='https://nsa40.casimages.com/img/2021/08/19/210819044439208775.png' border='0' alt='Mon image' /></a>
 
@@ -32,26 +42,27 @@ For Version 1 :
 - <img height="20px" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"> PostgreSQL
 - <img height="20px" src="https://grafikart.fr/uploads/icons/jwt.svg"> JWT (authentication )
 - <img height="20px" src="https://user-images.githubusercontent.com/43313420/105893220-1bae8780-6013-11eb-87be-eeac845ecc6f.png"> Axios
+  
 
-Planned at later date
-----------------------
+## Planned at later date
+------------------------
 
   V2 :
 - <img height="20px" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg"> Socket.io (For messaging between users)
 
-## Graphical charter (or identity guidelines, but it's more for global company graphical charter, no ?)
+## Graphical charter
+--------------------
 
-Logo (font : fontName)
-----------------------
+### Logo (font : Indie Flower)
 
 <a href='https://www.casimages.com/i/210823090920339037.png.html' target='blank' title='Mon image'><img src='https://nsa40.casimages.com/img/2021/08/23/210823090920339037.png' border='0' alt='Mon image' /></a>
 
 
-Site font (except for the logo)
+### Site font (except for the logo)
 --------------------------------
 **Nunito** <a href='https://www.casimages.com/i/210823091156206191.png.html' target='_blank' title="font's screenshot"><img src='https://nsa40.casimages.com/img/2021/08/23/210823091156206191.png' border='0' alt="Font Nunito in regular et Bold" /></a>
 
-Palette de couleurs
+### Color Palette
 --------------------
 
 - White : <input type="color" value="#FFFFFF"> soit #FFFFFF</input>
@@ -73,8 +84,8 @@ Debian / Ubuntu
 sudo apt-get update
 sudo apt-get install nodejs npm
 ```
-
-When is good, to verify the installation, run this :
+NPM is a module
+When is good, to verify the installed version, run this :
 ```
 nodejs --version
 ```
@@ -84,14 +95,19 @@ npm install
 ```
 This will install the necessary dependencies according to the information in the project's package.json file
 
-<p align="center">
-	<a href="https://yarn.pm/thelounge"><img
-		alt="npm version"
-		src="https://img.shields.io/npm/v/thelounge.svg?colorA=333a41&maxAge=3600"></a>
-	<a href="https://github.com/thelounge/thelounge/actions"><img
-		alt="Build Status"
-		src="https://github.com/thelounge/thelounge/workflows/Build/badge.svg"></a>
-	<a href="https://npm-stat.com/charts.html?package=thelounge&from=2016-02-12"><img
-		alt="Total downloads on npm"
-		src="https://img.shields.io/npm/dy/thelounge.svg?colorA=333a41&colorB=007dc7&maxAge=3600&label=Downloads"></a>
-</p>
+```
+                              (_)                                                            
+  ___  _ __    __ _  _ __   __ _  _  _ __    ___   _ __   ___  ______  _ __    ___   _   _  ___ 
+ / _ \| '_ \  / _` || '__| / _` || || '_ \  / _ \ | '_ \ / __||______|| '_ \  / _ \ | | | |/ __|
+|  __/| | | || (_| || |   | (_| || || | | || (_) || | | |\__ \        | | | || (_) || |_| |\__ \
+ \___||_| |_| \__, ||_|    \__,_||_||_| |_| \___/ |_| |_||___/        |_| |_| \___/  \__,_||___/
+               __/ |                                                                            
+              |___/                                                                             
+				      wWWWw               wWWWw
+				vVVVv (___) wWWWw         (___)  vVVVv
+				(___)  ~Y~  (___)  vVVVv   ~Y~   (___)
+				 ~Y~   \|    ~Y~   (___)    |/    ~Y~
+				 \|   \ |/   \| /  \~Y~/   \|    \ |/
+				\\|// \\|// \\|/// \\|//  \\|// \\\|///
+				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
