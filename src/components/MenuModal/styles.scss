@@ -11,8 +11,8 @@
 
   font-size: 2rem;
 
-  background-color: #283844;
-  color: #cacaca;
+  background-color: vars.$bg-modal-color;
+  color: vars.$text-btn-before-hover-color;
 
   transition: 0.6s;
   transform: translateX(-100%);

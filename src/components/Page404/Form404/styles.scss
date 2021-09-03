@@ -40,18 +40,18 @@
   }
 
   .navlink {
-    border: solid 1px black;
     padding: 0.5em;
     margin: 2rem auto 4rem;
     background-color: vars.$bg-primary-color;
-    color: white;
+    color: vars.$text-btn-before-hover-color;
     font-size: 1.5em;
     transition: 0.2s;
+    border: 2px solid transparent;
   }
 
   .navlink:hover {
     color: vars.$bg-primary-color;
-    background-color: white;
+    background-color: vars.$bg-btn-hover-color;
     border: solid 3px vars.$bg-primary-color;
   }
 }
