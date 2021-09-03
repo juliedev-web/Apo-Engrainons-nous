@@ -57,6 +57,7 @@
         transition: 0.1s linear;
 
         .btn-delete-one-seed {
+          width: fit-content;
           background-color: vars.$bg-confirm-validate-color;
           color: vars.$text-btn-before-hover-color;
         }
