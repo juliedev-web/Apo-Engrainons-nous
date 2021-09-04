@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import css
 import './styles.scss';
 
 // Icons for social medias
