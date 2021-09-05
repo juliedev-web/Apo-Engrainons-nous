@@ -6,6 +6,7 @@ import julie from 'src/assets/teampics/julie.JPG';
 import mickael from 'src/assets/teampics/mickael.jpg';
 import kevin from 'src/assets/teampics/kevin.jpg';
 
+// import css
 import './styles.scss';
 
 // Icons for social medias
