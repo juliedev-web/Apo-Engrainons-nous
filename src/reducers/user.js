@@ -113,6 +113,7 @@ const reducer = (state = initialState, action = {}) => {
           city: action.data.user.city,
           id: action.data.user.id,
           token: action.data.token,
+          newMessageCounter: 0,
         },
         connectionSuccessMessage: action.message,
 
@@ -164,6 +165,7 @@ const reducer = (state = initialState, action = {}) => {
           pseudo: state.pseudoInputValue,
           email: state.emailInputValue,
           city: state.cityInputValue,
+          newMessageCounter: 0,
         },
       };
 
@@ -240,26 +242,7 @@ const reducer = (state = initialState, action = {}) => {
 
     case 'DELETE_SUCCESS':
       return {
-        ...state,
-        pseudoInputValue: '',
-        emailInputValue: '',
-        cityInputValue: '',
-        passwordInputValue: '',
-        passwordConfirmInputValue: '',
-        passwordConfirmMessage: '',
-        inscriptionConfirmMessage: '',
-        varietyInputValue: '',
-        textAreaDetailValue: '',
-        textAreaAdviceValue: '',
-        deleteConfirmMessage: 'Votre compte a bien été supprimé',
-        confirmDelete: false,
-        isLogged: false,
-        profil: {
-          pseudo: '',
-          email: '',
-          city: '',
-          id: '',
-        },
+        ...initialState,
       };
 
     case 'GET_USER_SEEDS_LIST_SUCCESS':

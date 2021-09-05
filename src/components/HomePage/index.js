@@ -71,7 +71,7 @@ const HomePage = ({
             <Filters />
             <List list={list} />
             <div className="tchat">
-              <DirectChatPage from="chatPage" />
+              <DirectChatPage />
             </div>
           </>
         )
