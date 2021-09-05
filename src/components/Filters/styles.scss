@@ -6,7 +6,7 @@
 
   max-height: 110px;
 
-  margin: 1.4rem auto;
+  margin: 1rem auto 2rem;
   padding: 0.8rem;
   text-align: center;
 
@@ -14,6 +14,10 @@
   border-radius: 4px;
 
   box-shadow: 0.2rem 0.2rem 0.2rem vars.$boxShadow-color;
+
+  p {
+    padding-top: 0.4rem;
+  }
 }
 
 // Mobile
