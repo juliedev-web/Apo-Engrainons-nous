@@ -1,5 +1,11 @@
 import React from 'react';
 
+import yann from 'src/assets/teampics/yann.png';
+import cedric from 'src/assets/teampics/cedric.jpg';
+import julie from 'src/assets/teampics/julie.JPG';
+import mickael from 'src/assets/teampics/mickael.jpg';
+import kevin from 'src/assets/teampics/kevin.jpg';
+
 import './styles.scss';
 
 // Icons for social medias
@@ -17,7 +23,7 @@ export default function TeamCards() {
       <section className="card-container">
         <article className="card-dev">
           <h4 className="name">Cédric Cubat</h4>
-          <div className="photo-profil photo-profil_cedric" />
+          <img src={cedric} alt="" className="photo-profil photo-profil_yann" />
           <p className="role">Product Owner et lead dev back</p>
           <div>
             <ul className="socials">
@@ -40,8 +46,8 @@ export default function TeamCards() {
           </div>
         </article>
         <article className="card-dev">
-          <h4 className="name">Kévin Girault</h4>
-          <div className="photo-profil photo-profil_kevin" />
+          <h4 className="name">Kevin Girault</h4>
+          <img src={kevin} alt="" className="photo-profil photo-profil_yann" />
           <p className="role">Dev back et référent technique</p>
           <div>
             <ul className="socials">
@@ -65,7 +71,7 @@ export default function TeamCards() {
         </article>
         <article className="card-dev">
           <h4 className="name">Mickaël Menet</h4>
-          <div className="photo-profil photo-profil_mickael" />
+          <img src={mickael} alt="" className="photo-profil photo-profil_yann" />
           <p className="role">Lead dev front</p>
           <div>
             <ul className="socials">
@@ -89,7 +95,7 @@ export default function TeamCards() {
         </article>
         <article className="card-dev">
           <h4 className="name">Yann Hirlemann</h4>
-          <div className="photo-profil photo-profil_yann" />
+          <img src={yann} alt="" className="photo-profil photo-profil_yann" />
           <p className="role">Dev front et Git master</p>
           <div>
             <ul className="socials">
@@ -113,7 +119,7 @@ export default function TeamCards() {
         </article>
         <article className="card-dev">
           <h4 className="name">Julie Vandard</h4>
-          <div className="photo-profil photo-profil_julie" />
+          <img src={julie} alt="" className="photo-profil photo-profil_yann" />
           <p className="role">Dev front et Scrum master</p>
           <div>
             <ul className="socials">
