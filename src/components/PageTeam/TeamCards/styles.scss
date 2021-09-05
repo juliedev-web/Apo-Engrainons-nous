@@ -53,25 +53,22 @@
         height: 200px;
         border-radius: 10px;
         margin-bottom: 20px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    
-        &_cedric{
-          background-image: url('../../../assets/teampics/cedric.jpg');
-        }
-        &_kevin{
-          background-image: url('../../../assets/teampics/kevin.jpg');
-        }
-        &_mickael{
-          background-image: url('../../../assets/teampics/mickael.jpg');
-        }
-        &_yann{
-          background-image: url('../../../assets/teampics/yann.png');
-        }
-        &_julie{
-          background-image: url('../../../assets/teampics/julie.JPG');
-        }
+        object-fit: cover;
+        // &_cedric{
+        //   background-image: url('../../../assets/teampics/cedric.jpg');
+        // }
+        // &_kevin{
+        //   background-image: url('../../../assets/teampics/kevin.jpg');
+        // }
+        // &_mickael{
+        //   background-image: url('../../../assets/teampics/mickael.jpg');
+        // }
+        // &_yann{
+        //   background-image: url('../../../assets/teampics/yann.png');
+        // }
+        // &_julie{
+        //   background-image: url('../../../assets/teampics/julie.JPG');
+        // }
         
       }
   
