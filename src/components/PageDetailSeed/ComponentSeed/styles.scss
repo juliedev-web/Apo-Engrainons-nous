@@ -43,12 +43,10 @@
       font-weight: bold;
       font-size: 1.4rem;
       margin-bottom: 2rem;
-      padding: 1rem 1.2rem;
       background-color: vars.$bg-primary-color;
       color: vars.$text-btn-before-hover-color;
       border-radius: 5px;
       transition: 0.3s;
-      margin-right: 2rem;
       border: 2px solid transparent;
     }
     .btn_modify_seed:hover {
@@ -175,7 +173,7 @@
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 2rem;
-    padding: 0.8rem 1.2rem;
+    padding: 0.9rem 1.2rem;
     color: vars.$text-btn-before-hover-color;
     border-radius: 5px;
     transition: 0.3s;
@@ -196,7 +194,7 @@
     padding: 3rem;
 
     .container_mobile_myseed {
-      margin-top: 4rem;
+      margin-top: 2rem;
       flex-direction: row;
 
       .btn_myseeds {
