@@ -74,7 +74,7 @@ const HeaderDesktop = ({ isLogged, pseudo, newMessageCounter }) => (
           <span className="messagerie">
             Messagerie
             {
-              newMessageCounter !== 0 && !isLogged && (
+              newMessageCounter !== 0 && isLogged && (
                 <span className="new-message-counter">{newMessageCounter}</span>
               )
             }

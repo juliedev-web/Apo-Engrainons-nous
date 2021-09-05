@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   receivedNewMessage: (from) => {
+    console.log(from);
     if (!from) {
       dispatch({ type: 'ON_RECEIVED_NEW_MESSAGE' });
     }
