@@ -29,3 +29,5 @@ export const formatDate = (dateISO) => {
 export const filterByVariety = (seedList, inputValue) => (
   seedList.filter((seed) => seed.variety_name.toLowerCase().includes(inputValue.toLowerCase()))
 );
+
+export const shrinkTxt = (txt) => `${txt.slice(0, 10)}...`;

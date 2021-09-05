@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 
+import { shrinkTxt, formatDate } from 'src/selectors/seeds';
+
 import PropTypes from 'prop-types';
 
 import ReactPaginate from 'react-paginate';
-import { formatDate } from '../../selectors/seeds';
 
 import './styles.scss';
 
@@ -31,7 +32,7 @@ const List = ({
               <div className="content">
                 <div className="content__description">
                   <p className="content__description__category">{seed.category_name}</p>
-                  <p className="content__description__variety">{seed.variety_name}</p>
+                  <p className="content__description__variety" id={seed.variety_name}>{shrinkTxt(seed.variety_name)}</p>
                 </div>
                 <div className="content__infos">
                   <p className="content__infos__pseudo">{seed.pseudo_user}</p>

@@ -45,15 +45,21 @@ export default function FormProfil({
                   <p className="accountUpdateButton"> {validateUpdateProfil}</p>
                 )
               }
+
               {
                 editProfil ? (
                   <form onSubmit={handleSubmitEditProfil}>
                     <div className="signInput">
+                      <span>Pseudo:</span>
                       <input name="pseudo" type="text" placeholder="Pseudo" value={pseudoInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'pseudoInputValue')} />
+                      <span>Email:</span>
                       <input name="email" type="email" placeholder="Email" value={emailInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'emailInputValue')} />
+                      <span>Ville:</span>
                       <input name="city" type="text" placeholder="Ville" value={cityInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'cityInputValue')} />
                       <label className="label-profil" htmlFor="password"> * Au moins 8 caractères, une majuscule, une minuscule, un nombre et un caractère spécial</label>
+                      <span>Nouveau mot de passe:</span>
                       <input name="password" type="password" placeholder="Nouveau mot de passe" value={passwordInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordInputValue')} />
+                      <span>Confirmation nouveau mot de passe:</span>
                       <input name="confirm" type="password" placeholder="Confirmer votre nouveau mot de passe" value={passwordConfirmInputValue} onChange={(e) => handleInputValueChange(e.target.value, 'passwordConfirmInputValue')} />
                       {passwordConfirmMessage && <p className="password-not-confirmed-message">{passwordConfirmMessage}</p>}
                     </div>
@@ -71,9 +77,13 @@ export default function FormProfil({
                 )
                   : (
                     <div className="signInput">
+                      <span>Pseudo:</span>
                       <p>{profil.pseudo}</p>
+                      <span>Email:</span>
                       <p>{profil.email}</p>
+                      <span>Ville:</span>
                       <p>{profil.city}</p>
+                      <span>Mot de passe:</span>
                       <p>************</p>
                     </div>
                   )

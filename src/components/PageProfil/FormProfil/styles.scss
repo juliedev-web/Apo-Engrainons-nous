@@ -129,8 +129,21 @@
       font-size: vars.$page-title-desktop;
     }
     .signInput {
+      width: 40%;
+      margin: auto;
+
+      input {
+        width: 100%;
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-weight: bold;
+        margin-bottom: 0.4rem;
+      }
+
     p {
-      width: 50%;
+      width: 100%;
       display: grid;
       grid-template-columns: repeat (2, 1fr);
       grid-template-rows: 3;
