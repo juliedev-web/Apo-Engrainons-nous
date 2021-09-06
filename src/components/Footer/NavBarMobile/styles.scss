@@ -19,6 +19,25 @@
 
   padding: 0.8rem 1.8rem;
 
+  .messagerie {
+    position: relative;
+  }
+  .new-message-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    background-color: #bc1536;
+    border-radius: 50%;
+    bottom: 0px;
+    left: -10px;
+  }
+
   .menu-burger {
 
     .barre {
