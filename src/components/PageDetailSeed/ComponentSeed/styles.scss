@@ -33,6 +33,7 @@
       transition: 0.3s;
       border: 2px solid transparent;
     }
+
     .btn_myseeds:hover {
       background-color: vars.$bg-btn-hover-color;
       color: vars.$bg-primary-color;
@@ -43,6 +44,7 @@
       font-weight: bold;
       font-size: 1.4rem;
       margin-bottom: 2rem;
+      
       background-color: vars.$bg-primary-color;
       color: vars.$text-btn-before-hover-color;
       border-radius: 5px;
@@ -195,10 +197,13 @@
 
     .container_mobile_myseed {
       margin-top: 2rem;
+      margin-bottom: 2.4rem;
       flex-direction: row;
+
 
       .btn_myseeds {
         margin: 0;
+
       }
 
       .btn_modify_seed {
