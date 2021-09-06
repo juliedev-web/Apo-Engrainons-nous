@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -25,6 +25,8 @@ export default function FormProfil({
   cancelConfirmDeleteBtn,
   passwordConfirmMessage,
 }) {
+  const history = useHistory();
+
   useEffect(() => {
     localStorage.setItem('pseudo', profil.pseudo);
     localStorage.setItem('email', profil.email);
@@ -117,6 +119,7 @@ export default function FormProfil({
                     <button
                       onClick={() => {
                         handleDeleteConfirm();
+                        history.push('/');
                       }}
                       className="btn-delete--confirm"
                       type="button"

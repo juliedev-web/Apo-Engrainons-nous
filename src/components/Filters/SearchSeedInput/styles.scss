@@ -29,6 +29,11 @@
     display: flex;
     flex-direction: column;
 
+
+    .linkReset {
+      margin-top: -10px;
+    }
+
     .filterComponent {
       display: flex;
       justify-content: space-between;
