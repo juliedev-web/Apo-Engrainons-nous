@@ -242,7 +242,39 @@ const reducer = (state = initialState, action = {}) => {
 
     case 'DELETE_SUCCESS':
       return {
-        ...initialState,
+        pseudoInputValue: '',
+        emailInputValue: '',
+        cityInputValue: '',
+        passwordInputValue: '',
+        passwordConfirmInputValue: '',
+        passwordConfirmMessage: '',
+        inscriptionConfirmMessage: '',
+        connectionFailedMessage: '',
+        connectionSuccessMessage: '',
+        varietyInputValue: '',
+        textAreaDetailValue: '',
+        textAreaAdviceValue: '',
+        deleteConfirmMessage: '',
+        emailResetInputValue: '',
+        validateSendMsgResetPwd: '',
+        validateUpdateProfil: '',
+        confirmDelete: false,
+        isLogged: !!localStorage.getItem('isLogged') || false,
+        fieldConnexion: false,
+        profil: {
+          pseudo: localStorage.getItem('pseudo') || '',
+          email: localStorage.getItem('email') || '',
+          city: localStorage.getItem('city') || '',
+          id: localStorage.getItem('id') || '',
+          token: localStorage.getItem('token') || '',
+          yourPseudo: '',
+          chatEngine_id: '',
+          newMessageCounter: 0,
+        },
+        editProfil: false,
+        menuIsOpen: false,
+        myList: [],
+        emailConfirmMsg: '',
       };
 
     case 'GET_USER_SEEDS_LIST_SUCCESS':
