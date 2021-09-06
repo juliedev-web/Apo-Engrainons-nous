@@ -27,12 +27,12 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 25px;
-    height: 25px;
-    font-size: 1rem;
+    width: 15px;
+    height: 15px;
+    font-size: 0.7rem;
     color: white;
     font-weight: bold;
-    background-color: #bc1536;
+      background-color: #bc1536;
     border-radius: 50%;
     bottom: 0px;
     left: -10px;
@@ -120,6 +120,22 @@
     background-color: vars.$bg-footer-color;
   
     padding: 1.2rem 6rem;
+
+    .new-message-counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+      background-color: #bc1536;
+      border-radius: 50%;
+      bottom: 0px;
+      left: -10px;
+    }
 
     .menu-burger {
     
