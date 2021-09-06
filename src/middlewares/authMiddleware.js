@@ -255,6 +255,8 @@ const authMiddleware = (store) => (next) => (action) => {
         },
       };
       axios(options).then((response) => {
+        localStorage.clear();
+        store.dispatch({ type: 'DELETE_SUCCESS' });
         console.log('réponse delete account: ', response.data);
 
         const options2 = {

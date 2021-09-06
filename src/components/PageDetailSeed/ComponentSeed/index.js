@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -22,6 +22,8 @@ const ComponentSeed = ({
   copyMailToClipBoardMsg,
   clearMessageCopy,
 }) => {
+  const history = useHistory();
+
   useEffect(() => {
     getOneSeed();
     return () => {
@@ -104,7 +106,13 @@ const ComponentSeed = ({
             )}
           </div>
         ) : (
-          <button type="button" onClick={toggleMail}> {showMail ? 'Connectez-vous pour voir l\'email' : 'Contacter le propriétaire'}</button>
+          <>
+            {showMail ? (
+              <Link className="button" to="/connexion" type="button" onClick={toggleMail}>Connectez-vous pour voir l'email</Link>
+            ) : (
+              <button className="button" type="button" onClick={toggleMail}>Contacter le propriétaire</button>
+            )}
+          </>
         )}
       </div>
     )
